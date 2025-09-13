@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Modal, Button } from 'react-bootstrap';
 
-interface Website {
+interface AppItem {
   name: string;
   url: string;
 }
@@ -19,7 +19,7 @@ const backgroundImages = [
 ];
 
 function App() {
-  const [websites, setWebsites] = useState<Website[]>([]);
+  const [appItems, setAppItems] = useState<AppItem[]>([]);
   const [newSiteName, setNewSiteName] = useState('');
   const [newSiteUrl, setNewSiteUrl] = useState('');
   const [theme, setTheme] = useState('light');
@@ -50,20 +50,20 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    const storedWebsites = localStorage.getItem('teslahub_websites');
+    const storedWebsites = localStorage.getItem('teslahub_apps');
     if (storedWebsites) {
-      setWebsites(JSON.parse(storedWebsites));
+      setAppItems(JSON.parse(storedWebsites));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('teslahub_websites', JSON.stringify(websites));
-  }, [websites]);
+    localStorage.setItem('teslahub_apps', JSON.stringify(appItems));
+  }, [appItems]);
 
   const handleAddWebsite = (e: React.FormEvent) => {
     e.preventDefault();
     if (newSiteName && newSiteUrl) {
-      setWebsites([...websites, { name: newSiteName, url: newSiteUrl }]);
+      setAppItems([...appItems, { name: newSiteName, url: newSiteUrl }]);
       setNewSiteName('');
       setNewSiteUrl('');
       handleClose();
@@ -71,9 +71,9 @@ function App() {
   };
 
   const handleDeleteWebsite = (index: number) => {
-    const newWebsites = [...websites];
-    newWebsites.splice(index, 1);
-    setWebsites(newWebsites);
+    const newAppItems = [...appItems];
+    newAppItems.splice(index, 1);
+    setAppItems(newAppItems);
   };
 
   const handleOpenInTesla = (url: string) => {
@@ -109,19 +109,17 @@ function App() {
               {theme === 'light' ? 'Dark' : 'Light'} Mode
             </button>
         </div>
-        <h1 className="display-4">TeslaHub</h1>
+        <h1 className="display-4 fw-bold">TeslaHub</h1>
         <p className="lead">Your Personal Tesla Companion</p>
       </div>
       <div className="container mt-4">
         <div className="d-grid gap-2">
-            <Button variant="primary" size="lg" onClick={handleShow}>
-                Add a new website
-            </Button>
+            <Button variant="primary" size="lg" onClick={handleShow}>Add an App</Button>
         </div>
 
         <Modal show={showModal} onHide={handleClose} centered>
           <Modal.Header closeButton>
-            <Modal.Title>Add a new website</Modal.Title>
+            <Modal.Title>Add an App</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form onSubmit={handleAddWebsite}>
@@ -158,23 +156,23 @@ function App() {
         </Modal>
 
         <div className="card mt-4">
-          <div className="card-header">My Websites</div>
+          <div className="card-header">My Apps</div>
           <ul className="list-group list-group-flush">
-            {websites.map((site, index) => (
+            {appItems.map((item, index) => (
               <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
                 <div>
                   <img
-                    src={getFaviconUrl(site.url)}
+                    src={getFaviconUrl(item.url)}
                     alt=""
                     width="16"
                     height="16"
                     className="me-2"
                     onError={handleFaviconError}
                   />
-                  {site.name}
+                  {item.name}
                 </div>
                 <div>
-                  <button className="btn btn-success me-2" onClick={() => handleOpenInTesla(site.url)}>
+                  <button className="btn btn-success me-2" onClick={() => handleOpenInTesla(item.url)}>
                     Open in Tesla
                   </button>
                   <button className="btn btn-danger" onClick={() => handleDeleteWebsite(index)}>

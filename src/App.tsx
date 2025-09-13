@@ -7,15 +7,32 @@ interface Website {
   url: string;
 }
 
+const backgroundImages = [
+  'https://static-assets.tesla.com/v1/compositor/?model=ms&view=STUD_SIDE&size=1920&options=$MTS01,$PPSW,$WS10,$IBB1',
+  'https://static-assets.tesla.com/v1/compositor/?model=ms&view=STUD_REAR&size=1920&options=$MTS01,$PPSW,$WS10,$IBB1',
+  'https://static-assets.tesla.com/v1/compositor/?model=m3&view=STUD_SIDE&size=1920&options=$MT301,$PPMR,$W38B,$IBB1',
+  'https://static-assets.tesla.com/v1/compositor/?model=m3&view=STUD_REAR&size=1920&options=$MT301,$PPMR,$W38B,$IBB1',
+  'https://static-assets.tesla.com/v1/compositor/?model=mx&view=STUD_SIDE&size=1920&options=$MTX01,$PPSW,$WX00,$ICW1',
+  'https://static-assets.tesla.com/v1/compositor/?model=mx&view=STUD_REAR&size=1920&options=$MTX01,$PPSW,$WX00,$ICW1',
+  'https://static-assets.tesla.com/v1/compositor/?model=my&view=STUD_SIDE&size=1920&options=$MTY01,$PPSW,$WY19B,$IBB1',
+  'https://static-assets.tesla.com/v1/compositor/?model=my&view=STUD_REAR&size=1920&options=$MTY01,$PPSW,$WY19B,$IBB1',
+];
+
 function App() {
   const [websites, setWebsites] = useState<Website[]>([]);
   const [newSiteName, setNewSiteName] = useState('');
   const [newSiteUrl, setNewSiteUrl] = useState('');
   const [theme, setTheme] = useState('light');
   const [showModal, setShowModal] = useState(false);
+  const [backgroundUrl, setBackgroundUrl] = useState('');
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+    setBackgroundUrl(backgroundImages[randomIndex]);
+  }, []);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('teslahub_theme');
@@ -82,6 +99,10 @@ function App() {
 
   return (
     <div className={theme === 'light' ? 'light-mode' : 'dark-mode'}>
+      <div
+        className="background-image"
+        style={{ backgroundImage: `url(${backgroundUrl})` }}
+      />
       <div className="container-fluid text-center py-4 bg-dark text-white">
         <div className="d-flex justify-content-end">
             <button className="btn btn-outline-light" onClick={toggleTheme}>

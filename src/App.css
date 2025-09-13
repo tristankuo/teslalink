@@ -1,0 +1,71 @@
+:root {
+  --light-bg: #fff;
+  --light-text: #212529;
+  --light-card-bg: #fff;
+  --light-card-header-bg: #f8f9fa;
+
+  --dark-bg: #212529;
+  --dark-text: #f8f9fa;
+  --dark-card-bg: #343a40;
+  --dark-card-header-bg: #212529;
+}
+
+.light-mode {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  min-height: 100vh;
+}
+
+.light-mode .card {
+  background-color: var(--light-card-bg);
+  color: var(--light-text);
+}
+
+.light-mode .card-header {
+  background-color: var(--light-card-header-bg);
+}
+
+.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  min-height: 100vh;
+}
+
+.dark-mode .card {
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text);
+  border-color: #495057;
+}
+
+.dark-mode .card-header {
+  background-color: var(--dark-card-header-bg);
+  border-bottom-color: #495057;
+}
+
+.dark-mode .form-control {
+  background-color: #495057;
+  color: var(--dark-text);
+  border-color: #6c757d;
+}
+
+.dark-mode .form-control:focus {
+  background-color: #495057;
+  color: var(--dark-text);
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.dark-mode .list-group-item {
+    background-color: var(--dark-card-bg);
+    border-color: #495057;
+    color: var(--dark-text);
+}
+
+.dark-mode .modal-content {
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text);
+}
+
+.dark-mode .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}

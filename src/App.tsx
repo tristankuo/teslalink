@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
+import { Modal, Button } from 'react-bootstrap';
 
 interface Website {
   name: string;
@@ -9,6 +11,26 @@ function App() {
   const [websites, setWebsites] = useState<Website[]>([]);
   const [newSiteName, setNewSiteName] = useState('');
   const [newSiteUrl, setNewSiteUrl] = useState('');
+  const [theme, setTheme] = useState('light');
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('teslahub_theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (prefersDark) {
+      setTheme('dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    document.body.className = `${theme}-mode`;
+    localStorage.setItem('teslahub_theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     const storedWebsites = localStorage.getItem('teslahub_websites');
@@ -27,6 +49,7 @@ function App() {
       setWebsites([...websites, { name: newSiteName, url: newSiteUrl }]);
       setNewSiteName('');
       setNewSiteUrl('');
+      handleClose();
     }
   };
 
@@ -40,16 +63,46 @@ function App() {
     window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url)}`, '_blank');
   };
 
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  const getFaviconUrl = (url: string) => {
+    try {
+      const urlObject = new URL(url);
+      return `https://www.google.com/s2/favicons?domain=${urlObject.hostname}`;
+    } catch (error) {
+      return 'default-icon.svg';
+    }
+  };
+
+  const handleFaviconError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = 'default-icon.svg';
+  };
+
   return (
-    <div>
-      <div className="container-fluid text-center py-5 bg-dark text-white">
+    <div className={theme === 'light' ? 'light-mode' : 'dark-mode'}>
+      <div className="container-fluid text-center py-4 bg-dark text-white">
+        <div className="d-flex justify-content-end">
+            <button className="btn btn-outline-light" onClick={toggleTheme}>
+              {theme === 'light' ? 'Dark' : 'Light'} Mode
+            </button>
+        </div>
         <h1 className="display-4">TeslaHub</h1>
         <p className="lead">Your Personal Tesla Companion</p>
       </div>
       <div className="container mt-4">
-        <div className="card">
-          <div className="card-header">Add a new website</div>
-          <div className="card-body">
+        <div className="d-grid gap-2">
+            <Button variant="primary" size="lg" onClick={handleShow}>
+                Add a new website
+            </Button>
+        </div>
+
+        <Modal show={showModal} onHide={handleClose} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Add a new website</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
             <form onSubmit={handleAddWebsite}>
               <div className="mb-3">
                 <label htmlFor="siteName" className="form-label">Name</label>
@@ -73,17 +126,32 @@ function App() {
                   placeholder="e.g., https://www.kktv.me/"
                 />
               </div>
-              <button type="submit" className="btn btn-primary">Add</button>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant="primary" type="submit">
+                Add
+              </Button>
             </form>
-          </div>
-        </div>
+          </Modal.Body>
+        </Modal>
 
         <div className="card mt-4">
           <div className="card-header">My Websites</div>
           <ul className="list-group list-group-flush">
             {websites.map((site, index) => (
               <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
-                {site.name}
+                <div>
+                  <img
+                    src={getFaviconUrl(site.url)}
+                    alt=""
+                    width="16"
+                    height="16"
+                    className="me-2"
+                    onError={handleFaviconError}
+                  />
+                  {site.name}
+                </div>
                 <div>
                   <button className="btn btn-success me-2" onClick={() => handleOpenInTesla(site.url)}>
                     Open in Tesla

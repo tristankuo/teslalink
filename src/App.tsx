@@ -7,22 +7,22 @@ interface AppItem {
   url: string;
 }
 
-const backgroundImages = [
-  'https://static-assets.tesla.com/v1/compositor/?model=ms&view=STUD_SIDE&size=1920&options=$MTS01,$PPSW,$WS10,$IBB1',
-  'https://static-assets.tesla.com/v1/compositor/?model=ms&view=STUD_REAR&size=1920&options=$MTS01,$PPSW,$WS10,$IBB1',
-  'https://static-assets.tesla.com/v1/compositor/?model=m3&view=STUD_SIDE&size=1920&options=$MT301,$PPMR,$W38B,$IBB1',
-  'https://static-assets.tesla.com/v1/compositor/?model=m3&view=STUD_REAR&size=1920&options=$MT301,$PPMR,$W38B,$IBB1',
-  'https://static-assets.tesla.com/v1/compositor/?model=mx&view=STUD_SIDE&size=1920&options=$MTX01,$PPSW,$WX00,$ICW1',
-  'https://static-assets.tesla.com/v1/compositor/?model=mx&view=STUD_REAR&size=1920&options=$MTX01,$PPSW,$WX00,$ICW1',
-  'https://static-assets.tesla.com/v1/compositor/?model=my&view=STUD_SIDE&size=1920&options=$MTY01,$PPSW,$WY19B,$IBB1',
-  'https://static-assets.tesla.com/v1/compositor/?model=my&view=STUD_REAR&size=1920&options=$MTY01,$PPSW,$WY19B,$IBB1',
-];
-
 function App() {
   const [appItems, setAppItems] = useState<AppItem[]>([]);
   const [newSiteName, setNewSiteName] = useState('');
   const [newSiteUrl, setNewSiteUrl] = useState('');
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('teslahub_theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+      return savedTheme;
+    } else if (prefersDark) {
+      return 'dark';
+    } else {
+      return 'light';
+    }
+  });
   const [showModal, setShowModal] = useState(false);
   const [backgroundUrl, setBackgroundUrl] = useState('');
 
@@ -30,19 +30,19 @@ function App() {
   const handleShow = () => setShowModal(true);
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * backgroundImages.length);
-    setBackgroundUrl(backgroundImages[randomIndex]);
+    import('./image-manifest').then(module => {
+      const imageNames = module.default;
+      const fullImagePaths = imageNames.map((name: string) => `/images/${name}`);
+      const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
+      setBackgroundUrl(fullImagePaths[randomIndex]);
+    }).catch(error => {
+      console.error('Failed to load image manifest:', error);
+      // Fallback to a default image if manifest fails to load
+      setBackgroundUrl('/images/default-background.jpg'); // You might want to add a default image
+    });
   }, []);
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('teslahub_theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (prefersDark) {
-      setTheme('dark');
-    }
-  }, []);
+  
 
   useEffect(() => {
     document.body.className = `${theme}-mode`;
@@ -98,92 +98,92 @@ function App() {
   };
 
   return (
-    <div className={theme === 'light' ? 'light-mode' : 'dark-mode'}>
+    <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
       <div
         className="background-image"
         style={{ backgroundImage: `url(${backgroundUrl})` }}
-      />
-      <div className="container-fluid text-center py-4 bg-dark text-white">
-        <div className="d-flex justify-content-end">
-            <button className="btn btn-outline-light" onClick={toggleTheme}>
-              {theme === 'light' ? 'Dark' : 'Light'} Mode
-            </button>
-        </div>
-        <h1 className="display-4 fw-bold">TeslaHub</h1>
-        <p className="lead">Your Personal Tesla Companion</p>
-      </div>
-      <div className="container mt-4">
-        <div className="d-grid gap-2">
-            <Button variant="primary" size="lg" onClick={handleShow}>Add an App</Button>
+      ></div>
+      <div className="container mt-5" style={{ position: 'relative', zIndex: 2 }}>
+        <h1 className="text-center mb-4">TeslaHub</h1>
+        <h2 className="text-center mb-4">Your Personal Companion in Tesla</h2>
+        <div className="d-flex justify-content-center mb-4">
+          <Button variant="primary" onClick={handleShow}>
+            Add New Website
+          </Button>
+          <Button variant="secondary" onClick={toggleTheme} className="ms-2">
+            Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
+          </Button>
         </div>
 
-        <Modal show={showModal} onHide={handleClose} centered>
-          <Modal.Header closeButton>
-            <Modal.Title>Add an App</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form onSubmit={handleAddWebsite}>
-              <div className="mb-3">
-                <label htmlFor="siteName" className="form-label">Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="siteName"
-                  value={newSiteName}
-                  onChange={(e) => setNewSiteName(e.target.value)}
-                  placeholder="e.g., KKTV"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="siteUrl" className="form-label">URL</label>
-                <input
-                  type="url"
-                  className="form-control"
-                  id="siteUrl"
-                  value={newSiteUrl}
-                  onChange={(e) => setNewSiteUrl(e.target.value)}
-                  placeholder="e.g., https://www.kktv.me/"
-                />
-              </div>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" type="submit">
-                Add
-              </Button>
-            </form>
-          </Modal.Body>
-        </Modal>
-
-        <div className="card mt-4">
-          <div className="card-header">My Apps</div>
-          <ul className="list-group list-group-flush">
-            {appItems.map((item, index) => (
-              <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
-                <div>
+        <div className="row justify-content-center">
+          {appItems.map((item, index) => (
+            <div key={index} className="col-md-4 mb-3">
+              <div className="card">
+                <div className="card-body text-center">
                   <img
                     src={getFaviconUrl(item.url)}
-                    alt=""
-                    width="16"
-                    height="16"
-                    className="me-2"
+                    alt="Favicon"
+                    className="favicon mb-2"
                     onError={handleFaviconError}
+                    style={{ width: '32px', height: '32px' }}
                   />
-                  {item.name}
-                </div>
-                <div>
-                  <button className="btn btn-success me-2" onClick={() => handleOpenInTesla(item.url)}>
+                  <h5 className="card-title">{item.name}</h5>
+                  <p className="card-text">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                      {item.url}
+                    </a>
+                  </p>
+                  <Button variant="success" onClick={() => handleOpenInTesla(item.url)} className="me-2">
                     Open in Tesla
-                  </button>
-                  <button className="btn btn-danger" onClick={() => handleDeleteWebsite(index)}>
+                  </Button>
+                  <Button variant="danger" onClick={() => handleDeleteWebsite(index)}>
                     Delete
-                  </button>
+                  </Button>
                 </div>
-              </li>
-            ))}
-          </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add New Website</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form onSubmit={handleAddWebsite}>
+            <div className="mb-3">
+              <label htmlFor="siteName" className="form-label">
+                Site Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="siteName"
+                value={newSiteName}
+                onChange={(e) => setNewSiteName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="siteUrl" className="form-label">
+                Site URL
+              </label>
+              <input
+                type="url"
+                className="form-control"
+                id="siteUrl"
+                value={newSiteUrl}
+                onChange={(e) => setNewSiteUrl(e.target.value)}
+                required
+              />
+            </div>
+            <Button variant="primary" type="submit">
+              Add Website
+            </Button>
+          </form>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }

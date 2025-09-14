@@ -11,9 +11,8 @@
 }
 
 .light-mode {
-  background-color: var(--light-bg);
+  background-color: transparent;
   color: var(--light-text);
-  min-height: 100vh;
 }
 
 .light-mode .card {
@@ -26,9 +25,8 @@
 }
 
 .dark-mode {
-  background-color: var(--dark-bg);
+  background-color: transparent;
   color: var(--dark-text);
-  min-height: 100vh;
 }
 
 .dark-mode .card {
@@ -78,6 +76,19 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  filter: grayscale(1) opacity(0.3);
   z-index: -1;
+  transition: background-image 1s ease-in-out, filter 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.light-mode .background-image {
+  filter: grayscale(1) opacity(0.5) brightness(1.1);
+}
+
+.dark-mode .background-image {
+  filter: grayscale(1) opacity(0.9) brightness(0.2);
+}
+
+h1{
+  font-weight: bold;
 }

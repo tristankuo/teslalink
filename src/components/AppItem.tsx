@@ -11,9 +11,13 @@ interface AppItemProps {
   deleteModeActive: boolean;
   handleDeleteWebsite: (index: number) => void;
   onLongPress: () => void;
+  handleDragStart: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
+  handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
+  handleDrop: (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => void;
+  handleDragEnd: () => void;
 }
 
-const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress }) => {
+const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, handleDragEnd }) => {
   const onClick = () => {
     if (!deleteModeActive) {
       window.open(item.url, '_blank');
@@ -36,7 +40,15 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
   };
 
   return (
-    <div className="col-md-2 mb-3" {...longPressProps}>
+    <div
+      className="col-md-2 mb-3 app-block-wrapper"
+      {...longPressProps}
+      draggable={deleteModeActive}
+      onDragStart={(e) => handleDragStart(e, index)}
+      onDragOver={handleDragOver}
+      onDrop={(e) => handleDrop(e, index)}
+      onDragEnd={handleDragEnd}
+    >
       <div className={`card ${deleteModeActive ? 'delete-mode' : ''}`}>
         {deleteModeActive && (
           <Button variant="danger" className="delete-btn" onClick={() => handleDeleteWebsite(index)}>
@@ -49,7 +61,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
             alt="Favicon"
             className="favicon mb-2"
             onError={handleFaviconError}
-            style={{ width: '32px', height: '32px' }}
+            style={{ width: '36px', height: '36px' }}
           />
           <h5 className="card-title">{item.name}</h5>
         </div>

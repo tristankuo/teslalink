@@ -28,6 +28,7 @@ function App() {
   const [backgroundUrl, setBackgroundUrl] = useState(`${process.env.PUBLIC_URL}/images/default-background.jpg`);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [deleteModeActive, setDeleteModeActive] = useState(false);
+  const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
@@ -85,6 +86,32 @@ function App() {
     setAppItems(newAppItems);
   };
 
+  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
+    setDraggedItemIndex(index);
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', e.currentTarget.outerHTML);
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => {
+    e.preventDefault();
+    if (draggedItemIndex === null) return;
+
+    const newAppItems = [...appItems];
+    const [draggedItem] = newAppItems.splice(draggedItemIndex, 1);
+    newAppItems.splice(dropIndex, 0, draggedItem);
+
+    setAppItems(newAppItems);
+    setDraggedItemIndex(null);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedItemIndex(null);
+  };
+
   const toggleFullscreen = () => {
     if (isFullscreen) {
       window.top?.location.replace(window.location.href);
@@ -131,15 +158,19 @@ function App() {
         <div className="row justify-content-center">
           {appItems.map((item, index) => (
             <AppItemComponent
-              key={index}
+              key={item.url} // Use item.url as key for stable reordering
               item={item}
               index={index}
               deleteModeActive={deleteModeActive}
               handleDeleteWebsite={handleDeleteWebsite}
               onLongPress={onLongPress}
+              handleDragStart={handleDragStart}
+              handleDragOver={handleDragOver}
+              handleDrop={handleDrop}
+              handleDragEnd={handleDragEnd}
             />
           ))}
-          <div className="col-md-2 mb-3">
+          <div className="col-md-2 mb-3 app-block-wrapper">
             <div className="card add-app-block" onClick={handleShow}>
               +
             </div>

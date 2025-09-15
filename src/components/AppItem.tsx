@@ -54,7 +54,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
     >
       <div className={`card ${deleteModeActive ? 'delete-mode' : ''}`}>
         {deleteModeActive && (
-          <Button variant="danger" className="delete-btn" onClick={() => handleDeleteWebsite(index)}>
+          <Button variant="danger" className="delete-btn" onClick={(e) => { e.stopPropagation(); handleDeleteWebsite(index); }}>
             &times;
           </Button>
         )}

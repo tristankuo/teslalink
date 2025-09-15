@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Modal, Button } from 'react-bootstrap';
+import AppItemComponent from './components/AppItem';
 
 interface AppItem {
   name: string;
@@ -24,10 +25,16 @@ function App() {
     }
   });
   const [showModal, setShowModal] = useState(false);
-  const [backgroundUrl, setBackgroundUrl] = useState('');
+  const [backgroundUrl, setBackgroundUrl] = useState(`${process.env.PUBLIC_URL}/images/default-background.jpg`);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [deleteModeActive, setDeleteModeActive] = useState(false);
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
+
+  useEffect(() => {
+    setIsFullscreen(window.self !== window.top);
+  }, []);
 
   useEffect(() => {
     import('./image-manifest').then(module => {
@@ -37,8 +44,6 @@ function App() {
       setBackgroundUrl(fullImagePaths[randomIndex]);
     }).catch(error => {
       console.error('Failed to load image manifest:', error);
-      // Fallback to a default image if manifest fails to load
-      setBackgroundUrl(`${process.env.PUBLIC_URL}/images/default-background.jpg`); // You might want to add a default image
     });
   }, []);
 
@@ -80,25 +85,21 @@ function App() {
     setAppItems(newAppItems);
   };
 
-  const handleOpenInTesla = (url: string) => {
-    window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url)}`, '_blank');
+  const toggleFullscreen = () => {
+    if (isFullscreen) {
+      window.top?.location.replace(window.location.href);
+    } else {
+      const url = window.location.href;
+      window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url)}`, '_blank');
+    }
   };
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  const getFaviconUrl = (url: string) => {
-    try {
-      const urlObject = new URL(url);
-      return `https://www.google.com/s2/favicons?domain=${urlObject.hostname}`;
-    } catch (error) {
-      return 'default-icon.svg';
-    }
-  };
-
-  const handleFaviconError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = 'default-icon.svg';
+  const onLongPress = () => {
+    setDeleteModeActive(true);
   };
 
   return (
@@ -111,42 +112,38 @@ function App() {
         <h1 className="text-center mb-4">TeslaHub</h1>
         <h2 className="text-center mb-4">Your Personal Companion in Tesla</h2>
         <div className="d-flex justify-content-center mb-4">
-          <Button variant="primary" onClick={handleShow}>
-            Add New Website
-          </Button>
-          <Button variant="secondary" onClick={toggleTheme} className="ms-2">
-            Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
-          </Button>
+          {!deleteModeActive ? (
+            <>
+              <Button variant="info" onClick={toggleFullscreen} className="ms-2">
+                {isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+              </Button>
+              <Button variant="secondary" onClick={toggleTheme} className="ms-2">
+                Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
+              </Button>
+            </>
+          ) : (
+            <Button variant="danger" onClick={() => setDeleteModeActive(false)}>
+              Done
+            </Button>
+          )}
         </div>
 
         <div className="row justify-content-center">
           {appItems.map((item, index) => (
-            <div key={index} className="col-md-4 mb-3">
-              <div className="card">
-                <div className="card-body text-center">
-                  <img
-                    src={getFaviconUrl(item.url)}
-                    alt="Favicon"
-                    className="favicon mb-2"
-                    onError={handleFaviconError}
-                    style={{ width: '32px', height: '32px' }}
-                  />
-                  <h5 className="card-title">{item.name}</h5>
-                  <p className="card-text">
-                    <a href={item.url} target="_blank" rel="noopener noreferrer">
-                      {item.url}
-                    </a>
-                  </p>
-                  <Button variant="success" onClick={() => handleOpenInTesla(item.url)} className="me-2">
-                    Open in Tesla
-                  </Button>
-                  <Button variant="danger" onClick={() => handleDeleteWebsite(index)}>
-                    Delete
-                  </Button>
-                </div>
-              </div>
-            </div>
+            <AppItemComponent
+              key={index}
+              item={item}
+              index={index}
+              deleteModeActive={deleteModeActive}
+              handleDeleteWebsite={handleDeleteWebsite}
+              onLongPress={onLongPress}
+            />
           ))}
+          <div className="col-md-2 mb-3">
+            <div className="card add-app-block" onClick={handleShow}>
+              +
+            </div>
+          </div>
         </div>
       </div>
 

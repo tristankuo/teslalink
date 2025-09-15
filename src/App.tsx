@@ -6,6 +6,7 @@ import AppItemComponent from './components/AppItem';
 interface AppItem {
   name: string;
   url: string;
+  index?: number;
 }
 
 function App() {
@@ -29,9 +30,28 @@ function App() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [deleteModeActive, setDeleteModeActive] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
+  const [editingItem, setEditingItem] = useState<AppItem | null>(null);
+  const [isEditMode, setIsEditMode] = useState(false);
 
-  const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
+  const handleClose = () => {
+    setShowModal(false);
+    setEditingItem(null);
+    setIsEditMode(false);
+  };
+
+  const handleShow = (itemToEdit?: AppItem, indexToEdit?: number) => {
+    if (itemToEdit && indexToEdit !== undefined) {
+      setEditingItem({ ...itemToEdit, index: indexToEdit });
+      setNewSiteName(itemToEdit.name);
+      setNewSiteUrl(itemToEdit.url);
+      setIsEditMode(true);
+    } else {
+      setNewSiteName('');
+      setNewSiteUrl('');
+      setIsEditMode(false);
+    }
+    setShowModal(true);
+  };
 
   useEffect(() => {
     setIsFullscreen(window.self !== window.top);
@@ -76,6 +96,17 @@ function App() {
       setAppItems([...appItems, { name: newSiteName, url: formattedUrl }]);
       setNewSiteName('');
       setNewSiteUrl('');
+      handleClose();
+    }
+  };
+
+  const handleEditWebsite = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (editingItem && newSiteName && newSiteUrl) {
+      const updatedAppItems = appItems.map((item, idx) =>
+        idx === editingItem.index ? { ...item, name: newSiteName, url: newSiteUrl } : item
+      );
+      setAppItems(updatedAppItems);
       handleClose();
     }
   };
@@ -168,10 +199,11 @@ function App() {
               handleDragOver={handleDragOver}
               handleDrop={handleDrop}
               handleDragEnd={handleDragEnd}
+              handleShowEdit={handleShow}
             />
           ))}
-          <div className="col-md-2 mb-3 app-block-wrapper">
-            <div className="card add-app-block" onClick={handleShow}>
+          <div className="col-md-3 mb-3 app-block-wrapper">
+            <div className="card add-app-block" onClick={() => handleShow()}>
               +
             </div>
           </div>
@@ -180,10 +212,10 @@ function App() {
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New Website</Modal.Title>
+          <Modal.Title>{isEditMode ? 'Edit Website' : 'Add New Website'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form onSubmit={handleAddWebsite}>
+          <form onSubmit={isEditMode ? handleEditWebsite : handleAddWebsite}>
             <div className="mb-3">
               <label htmlFor="siteName" className="form-label">
                 Site Name
@@ -211,7 +243,7 @@ function App() {
               />
             </div>
             <Button variant="primary" type="submit">
-              Add Website
+              {isEditMode ? 'Save Changes' : 'Add Website'}
             </Button>
           </form>
         </Modal.Body>

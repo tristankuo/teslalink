@@ -109,13 +109,13 @@ h1{
 }
 
 .card-title {
-  font-size: 1rem; /* Even smaller font size for title */
+  font-size: 1.2rem; /* Increased font size for title */
   margin-top: 0.5rem; /* Adjust spacing */
 }
 
 .favicon {
-  width: 36px; /* Even smaller favicon */
-  height: 36px;
+  width: 48px; /* Increased favicon size */
+  height: 48px;
 }
 
 .card.delete-mode {
@@ -148,11 +148,11 @@ h1{
 }
 
 .app-block-wrapper {
-  padding: 15px; /* Increase padding to create more distance */
+  padding: 10px; /* Adjust padding to control distance */
 }
 
 .app-block-wrapper .card {
   width: 100%; /* Ensure card takes full width of its wrapper */
-  max-width: 120px; /* Set a max-width for smaller blocks */
+  /* Removed max-width for bigger blocks */
   margin: 0 auto; /* Center the card within its wrapper */
 }

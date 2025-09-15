@@ -15,11 +15,14 @@ interface AppItemProps {
   handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
   handleDrop: (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => void;
   handleDragEnd: () => void;
+  handleShowEdit: (item: any, index: number) => void;
 }
 
-const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, handleDragEnd }) => {
+const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, handleDragEnd, handleShowEdit }) => {
   const onClick = () => {
-    if (!deleteModeActive) {
+    if (deleteModeActive) {
+      handleShowEdit(item, index);
+    } else {
       window.open(item.url, '_blank');
     }
   };
@@ -41,7 +44,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
 
   return (
     <div
-      className="col-md-2 mb-3 app-block-wrapper"
+      className="col-md-3 mb-3 app-block-wrapper"
       {...longPressProps}
       draggable={deleteModeActive}
       onDragStart={(e) => handleDragStart(e, index)}
@@ -61,7 +64,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
             alt="Favicon"
             className="favicon mb-2"
             onError={handleFaviconError}
-            style={{ width: '36px', height: '36px' }}
+            style={{ width: '48px', height: '48px' }}
           />
           <h5 className="card-title">{item.name}</h5>
         </div>

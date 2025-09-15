@@ -141,7 +141,7 @@ function App() {
           ))}
           <div className="col-md-2 mb-3">
             <div className="card add-app-block" onClick={handleShow}>
-              +
+              Add
             </div>
           </div>
         </div>

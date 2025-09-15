@@ -212,7 +212,7 @@ function App() {
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{isEditMode ? 'Edit Website' : 'Add New Website'}</Modal.Title>
+          <Modal.Title>{isEditMode ? 'Edit' : 'Add New'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={isEditMode ? handleEditWebsite : handleAddWebsite}>
@@ -243,7 +243,7 @@ function App() {
               />
             </div>
             <Button variant="primary" type="submit">
-              {isEditMode ? 'Save Changes' : 'Add Website'}
+              {isEditMode ? 'Save Changes' : 'Add'}
             </Button>
           </form>
         </Modal.Body>

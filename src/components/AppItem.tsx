@@ -44,7 +44,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
 
   return (
     <div
-      className="col-md-1 mb-3 app-block-wrapper"
+      className="col-md-2 mb-3 app-block-wrapper col-8-per-row"
       {...longPressProps}
       draggable={deleteModeActive}
       onDragStart={(e) => handleDragStart(e, index)}
@@ -64,7 +64,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
             alt="Favicon"
             className="favicon mb-2"
             onError={handleFaviconError}
-            style={{ width: '48px', height: '48px' }}
+            style={{ width: '42px', height: '42px' }}
           />
           <h5 className="card-title">{item.name}</h5>
         </div>

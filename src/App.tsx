@@ -202,7 +202,7 @@ function App() {
               handleShowEdit={handleShow}
             />
           ))}
-          <div className="col-md-1 mb-3 app-block-wrapper">
+          <div className="col-md-2 mb-3 app-block-wrapper col-8-per-row">
             <div className="card add-app-block" onClick={() => handleShow()}>
               +
             </div>

@@ -109,13 +109,13 @@ h1{
 }
 
 .card-title {
-  font-size: 0.9rem; /* Smaller font size for title */
+  font-size: 1.5rem; /* Larger font size for title */
   margin-top: 0.5rem; /* Adjust spacing */
 }
 
 .favicon {
-  width: 24px; /* Smaller favicon */
-  height: 24px;
+  width: 48px; /* Larger favicon */
+  height: 48px;
 }
 
 .card.delete-mode {
@@ -143,6 +143,6 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem; /* Smaller font size for Add text */
+  font-size: 4rem; /* Larger font size for Add text */
   cursor: pointer;
 }

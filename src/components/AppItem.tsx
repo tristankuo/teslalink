@@ -19,7 +19,14 @@ interface AppItemProps {
 }
 
 const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, handleDragEnd, handleShowEdit }) => {
-  const onClick = () => {
+  const onClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
+    // Check if the clicked element is the delete button or a child of it
+    const deleteButton = e.currentTarget.querySelector('.delete-btn');
+    if (deleteButton && (e.target === deleteButton || deleteButton.contains(e.target as Node))) {
+        // If the delete button was clicked, do nothing here, as handleDeleteWebsite is already called
+        return;
+    }
+
     if (deleteModeActive) {
       handleShowEdit(item, index);
     } else {

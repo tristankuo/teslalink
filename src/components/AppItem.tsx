@@ -44,7 +44,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
 
   return (
     <div
-      className="col-md-3 mb-3 app-block-wrapper"
+      className="col-md-1 mb-3 app-block-wrapper"
       {...longPressProps}
       draggable={deleteModeActive}
       onDragStart={(e) => handleDragStart(e, index)}

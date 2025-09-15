@@ -32,13 +32,13 @@ function App() {
   useEffect(() => {
     import('./image-manifest').then(module => {
       const imageNames = module.default;
-      const fullImagePaths = imageNames.map((name: string) => `/images/${name}`);
+      const fullImagePaths = imageNames.map((name: string) => `${process.env.PUBLIC_URL}/images/${name}`);
       const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
       setBackgroundUrl(fullImagePaths[randomIndex]);
     }).catch(error => {
       console.error('Failed to load image manifest:', error);
       // Fallback to a default image if manifest fails to load
-      setBackgroundUrl('/images/default-background.jpg'); // You might want to add a default image
+      setBackgroundUrl(`${process.env.PUBLIC_URL}/images/default-background.jpg`); // You might want to add a default image
     });
   }, []);
 
@@ -63,7 +63,11 @@ function App() {
   const handleAddWebsite = (e: React.FormEvent) => {
     e.preventDefault();
     if (newSiteName && newSiteUrl) {
-      setAppItems([...appItems, { name: newSiteName, url: newSiteUrl }]);
+      let formattedUrl = newSiteUrl;
+      if (!/^https?:\/\//i.test(formattedUrl)) {
+        formattedUrl = 'https://' + formattedUrl;
+      }
+      setAppItems([...appItems, { name: newSiteName, url: formattedUrl }]);
       setNewSiteName('');
       setNewSiteUrl('');
       handleClose();
@@ -170,7 +174,7 @@ function App() {
                 Site URL
               </label>
               <input
-                type="url"
+                type="text"
                 className="form-control"
                 id="siteUrl"
                 value={newSiteUrl}

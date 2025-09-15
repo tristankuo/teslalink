@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# TeslaHub - Your Personalized Tesla Companion
+
+TeslaHub is a web application designed to enhance your in-car browsing experience in Tesla vehicles. It provides a customizable dashboard where you can quickly access your favorite websites, manage them with ease, and optimize your view for the Tesla's large screen.
+
+## Features
+
+-   **Personalized App Dashboard:** Add, edit, and delete your favorite websites as "App Blocks" on a clean, customizable dashboard.
+-   **Intuitive Management:**
+    -   **Drag-and-Drop Repositioning:** Easily reorder your App Blocks by long-pressing and dragging them to your desired position.
+    -   **Edit Functionality:** Long-press any App Block and then click it to open an intuitive edit window, allowing you to update the name or URL.
+    -   **Effortless Deletion:** While in edit mode, simply click the 'x' icon on an App Block to remove it.
+-   **Optimized for Tesla:**
+    -   **Fullscreen Toggle:** Seamlessly switch between the standard browser view and a YouTube-powered fullscreen mode for an immersive experience.
+    -   **Adaptive Layout:** App Blocks are designed to fit comfortably, with up to 8 blocks per row, ensuring a clean and organized display on your Tesla screen.
+-   **Theme Customization:** Toggle between light and dark modes to match your preference or the car's interior.
+-   **Simplified User Interface:** Clean and straightforward modals for adding and editing apps, focusing on essential information.
+
+## Live Demo
+
+Experience TeslaHub directly in your browser or Tesla:
+[https://tristankuo.github.io/teslahub](https://tristankuo.github.io/teslahub)
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+-   `npm start`: Runs the app in the development mode.
+-   `npm run build`: Builds the app for production to the `build` folder.
+-   `npm run deploy`: Deploys the built app to GitHub Pages.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Contributing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Feel free to fork this repository and contribute!
 
-### `npm test`
+## License
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[MIT License](LICENSE)

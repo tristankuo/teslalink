@@ -207,7 +207,7 @@ function App() {
     // Find the drop target based on position
     // This is a simplified example, a real implementation would need to calculate
     // which item the dragged item is currently over.
-    const dropTargetElement = document.elementFromPoint(draggedItemPosition.x, draggedItemPosition.y);
+    const dropTargetElement = document.elementFromPoint(draggedItemPosition!.x, draggedItemPosition!.y);
     let dropIndex = appItems.length - 1; // Default to end
 
     if (dropTargetElement) {

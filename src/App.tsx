@@ -7,6 +7,7 @@ import { getUserRegion } from './utils/location';
 
 
 interface AppItem {
+  id: string;
   name: string;
   url: string;
   index?: number;
@@ -157,7 +158,8 @@ function App() {
       if (!/^https?:\/\//i.test(formattedUrl)) {
         formattedUrl = 'https://' + formattedUrl;
       }
-      setAppItems([...appItems, { name: newSiteName, url: formattedUrl }]);
+      const newId = Date.now().toString();
+      setAppItems([...appItems, { id: newId, name: newSiteName, url: formattedUrl }]);
       setNewSiteName('');
       setNewSiteUrl('');
       handleClose();
@@ -331,7 +333,7 @@ function App() {
         <div className="row justify-content-center">
           {appItems.map((item, index) => (
             <AppItemComponent
-              key={item.url} // Use item.url as key for stable reordering
+              key={item.id} // Use item.id as key for stable reordering
               item={item}
               index={index}
               deleteModeActive={isAppEditMode}

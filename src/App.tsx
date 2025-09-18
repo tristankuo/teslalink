@@ -34,12 +34,8 @@ function App() {
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
   });
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
-  const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
-  const [draggedItemPosition, setDraggedItemPosition] = useState<{ x: number; y: number } | null>(null);
-  const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
   const [editingItem, setEditingItem] = useState<AppItem | null>(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -64,11 +60,7 @@ function App() {
     setShowModal(true);
   };
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const isFullscreenFromUrl = urlParams.has('apps');
-    setIsFullscreen(isFullscreenFromUrl || window.self !== window.top);
-  }, []);
+  
 
   
 
@@ -179,61 +171,26 @@ function App() {
     setAppItems(newAppItems);
   };
 
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>, index: number) => {
-    if (!isAppEditMode) return;
-    const touch = e.touches[0];
-    const targetRect = e.currentTarget.getBoundingClientRect();
-    setDraggedItemOffset({ x: touch.clientX - targetRect.left, y: touch.clientY - targetRect.top });
-    setDraggedItemPosition({ x: touch.clientX, y: touch.clientY });
+  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
     setDraggedItemIndex(index);
-    setGhostItem(appItems[index]); // Set the ghost item
-    e.preventDefault(); // Prevent scrolling
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', e.currentTarget.outerHTML);
   };
 
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => {
     if (draggedItemIndex === null) return;
-    const touch = e.touches[0];
-    setDraggedItemPosition({ x: touch.clientX, y: touch.clientY });
-    e.preventDefault(); // Prevent scrolling
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (draggedItemIndex === null || draggedItemPosition === null) return;
 
     const newAppItems = [...appItems];
     const [draggedItem] = newAppItems.splice(draggedItemIndex, 1);
-
-    let dropIndex = newAppItems.length; // Default to end if no intersection
-
-    const appItemElements = Array.from(document.querySelectorAll('.app-block-wrapper'));
-
-    // Find the element that the dragged item is currently over
-    let targetElement = null;
-    for (let i = 0; i < appItemElements.length; i++) {
-      const element = appItemElements[i];
-      const rect = element.getBoundingClientRect();
-      if (
-        draggedItemPosition.x >= rect.left &&
-        draggedItemPosition.x <= rect.right &&
-        draggedItemPosition.y >= rect.top &&
-        draggedItemPosition.y <= rect.bottom
-      ) {
-        targetElement = element;
-        break;
-      }
-    }
-
-    if (targetElement) {
-      dropIndex = appItemElements.indexOf(targetElement);
-    }
-    
     newAppItems.splice(dropIndex, 0, draggedItem);
 
     setAppItems(newAppItems);
     setDraggedItemIndex(null);
-    setDraggedItemOffset(null);
-    setDraggedItemPosition(null);
-    setGhostItem(null); // Clear the ghost item
   };
 
   const toggleFullscreen = () => {
@@ -312,9 +269,9 @@ function App() {
               deleteModeActive={isAppEditMode}
               handleDeleteWebsite={handleDeleteWebsite}
               onLongPress={onLongPress}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
+              handleDragStart={handleDragStart}
+              handleDragOver={handleDragOver}
+              handleDrop={handleDrop}
               handleShowEdit={handleShow}
               getFaviconUrl={getFaviconUrl}
             />
@@ -328,34 +285,6 @@ function App() {
           )}
         </div>
       </div>
-
-      {ghostItem && draggedItemPosition && (
-        <div
-          className="app-block-wrapper ghost-item"
-          style={{
-            position: 'absolute',
-            left: draggedItemPosition.x - draggedItemOffset!.x,
-            top: draggedItemPosition.y - draggedItemOffset!.y,
-            zIndex: 1000,
-            opacity: 0.8,
-            pointerEvents: 'none', // Allow events to pass through
-            width: '150px', // Assuming a fixed width for app blocks
-            height: '150px', // Assuming a fixed height for app blocks
-          }}
-        >
-          <div className="card">
-            <div className="card-body text-center">
-              <img
-                src={getFaviconUrl(ghostItem.url)}
-                alt="Favicon"
-                className="favicon mb-2"
-                style={{ width: '42px', height: '42px' }}
-              />
-              <h5 className="card-title">{ghostItem.name}</h5>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>

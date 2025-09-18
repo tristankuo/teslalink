@@ -11,19 +11,17 @@ interface AppItemProps {
   deleteModeActive: boolean;
   handleDeleteWebsite: (index: number) => void;
   onLongPress: () => void;
-  onTouchStart: (e: React.TouchEvent<HTMLDivElement>, index: number) => void;
-  onTouchMove: (e: React.TouchEvent<HTMLDivElement>) => void;
-  onTouchEnd: (e: React.TouchEvent<HTMLDivElement>) => void;
+  handleDragStart: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
+  handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
+  handleDrop: (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => void;
   handleShowEdit: (item: any, index: number) => void;
-  getFaviconUrl: (url: string) => string; // Add this line
+  getFaviconUrl: (url: string) => string;
 }
 
-const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit, getFaviconUrl }) => {
+const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, handleShowEdit, getFaviconUrl }) => {
   const onClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
-    // Check if the clicked element is the delete button or a child of it
     const deleteButton = e.currentTarget.querySelector('.delete-btn');
     if (deleteButton && (e.target === deleteButton || deleteButton.contains(e.target as Node))) {
-        // If the delete button was clicked, do nothing here, as handleDeleteWebsite is already called
         return;
     }
 
@@ -35,8 +33,6 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
   };
 
   const longPressProps = useLongPress(onLongPress, onClick, { delay: 500 });
-
-  
 
   const handleFaviconError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.src = 'default-icon.svg';
@@ -52,6 +48,10 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
     <div
       className="col-md-2 mb-3 app-block-wrapper col-8-per-row"
       {...longPressProps}
+      draggable={deleteModeActive}
+      onDragStart={(e) => handleDragStart(e, index)}
+      onDragOver={handleDragOver}
+      onDrop={(e) => handleDrop(e, index)}
     >
       <div className={`card ${deleteModeActive ? 'delete-mode' : ''}`}>
         {deleteModeActive && (

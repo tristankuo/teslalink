@@ -230,6 +230,11 @@ function App() {
         style={{ backgroundImage: `url(${backgroundUrl})` }}
       ></div>
       <div className="container mt-5" style={{ position: 'relative', zIndex: 2 }}>
+        <div>
+          <p>Debug Info:</p>
+          <p>isLoading: {isLoading.toString()}</p>
+          <p>appItems length: {appItems.length}</p>
+        </div>
         <h1 className="text-center mb-4">TeslaHub</h1>
         <h2 className="text-center mb-4">Your Personal Companion in Tesla</h2>
         <div className="d-flex justify-content-center mb-4">

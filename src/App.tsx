@@ -210,6 +210,11 @@ function App() {
     setIsAppEditMode(true);
   };
 
+  const handleResetToDefaults = () => {
+    localStorage.removeItem('teslahub_apps');
+    window.location.reload();
+  };
+
   return (
     <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
       <div
@@ -234,6 +239,9 @@ function App() {
               </Button>
               <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">
                 Edit
+              </Button>
+              <Button variant="warning" onClick={handleResetToDefaults} className="ms-2">
+                Reset to Defaults
               </Button>
             </>
           )}

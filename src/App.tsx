@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Modal, Button } from 'react-bootstrap';
 import AppItemComponent from './components/AppItem';
+import imageNames from './image-manifest';
 
 interface AppItem {
   name: string;
@@ -26,9 +27,13 @@ function App() {
     }
   });
   const [showModal, setShowModal] = useState(false);
-  const [backgroundUrl, setBackgroundUrl] = useState(`${process.env.PUBLIC_URL}/images/default-background.jpg`);
+  const [backgroundUrl, setBackgroundUrl] = useState(() => {
+    const fullImagePaths = imageNames.map((name: string) => `${process.env.PUBLIC_URL}/images/${name}`);
+    const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
+    return fullImagePaths[randomIndex];
+  });
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [deleteModeActive, setDeleteModeActive] = useState(false);
+  const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [editingItem, setEditingItem] = useState<AppItem | null>(null);
   const [isEditMode, setIsEditMode] = useState(false);
@@ -57,17 +62,6 @@ function App() {
     setIsFullscreen(window.self !== window.top);
   }, []);
 
-  useEffect(() => {
-    import('./image-manifest').then(module => {
-      const imageNames = module.default;
-      const fullImagePaths = imageNames.map((name: string) => `${process.env.PUBLIC_URL}/images/${name}`);
-      const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
-      setBackgroundUrl(fullImagePaths[randomIndex]);
-    }).catch(error => {
-      console.error('Failed to load image manifest:', error);
-    });
-  }, []);
-
   
 
   useEffect(() => {
@@ -76,15 +70,46 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    const storedWebsites = localStorage.getItem('teslahub_apps');
-    if (storedWebsites) {
-      setAppItems(JSON.parse(storedWebsites));
+    const urlParams = new URLSearchParams(window.location.search);
+    const appsParam = urlParams.get('apps');
+    let loadedAppItems = null;
+
+    if (appsParam) {
+      try {
+        loadedAppItems = JSON.parse(atob(appsParam));
+      } catch (e) {
+        console.error("Failed to parse apps from URL", e);
+      }
+    }
+
+    if (loadedAppItems) {
+      setAppItems(loadedAppItems);
+      localStorage.setItem('teslahub_apps', JSON.stringify(loadedAppItems));
+    } else {
+      const storedWebsites = localStorage.getItem('teslahub_apps');
+      if (storedWebsites) {
+        setAppItems(JSON.parse(storedWebsites));
+      }
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem('teslahub_apps', JSON.stringify(appItems));
   }, [appItems]);
+
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'teslahub_apps' && e.newValue) {
+        setAppItems(JSON.parse(e.newValue));
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
 
   const handleAddWebsite = (e: React.FormEvent) => {
     e.preventDefault();
@@ -147,8 +172,14 @@ function App() {
     if (isFullscreen) {
       window.top?.location.replace(window.location.href);
     } else {
-      const url = window.location.href;
-      window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url)}`, '_blank');
+      const url = new URL(window.location.href);
+      const appsJson = JSON.stringify(appItems);
+      try {
+        url.searchParams.set('apps', btoa(appsJson));
+      } catch (e) {
+        console.error('Failed to encode apps to base64', e);
+      }
+      window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
     }
   };
 
@@ -157,7 +188,7 @@ function App() {
   };
 
   const onLongPress = () => {
-    setDeleteModeActive(true);
+    setIsAppEditMode(true);
   };
 
   return (
@@ -170,19 +201,22 @@ function App() {
         <h1 className="text-center mb-4">TeslaHub</h1>
         <h2 className="text-center mb-4">Your Personal Companion in Tesla</h2>
         <div className="d-flex justify-content-center mb-4">
-          {!deleteModeActive ? (
+          {isAppEditMode ? (
+            <Button variant="danger" onClick={() => setIsAppEditMode(false)}>
+              Done
+            </Button>
+          ) : (
             <>
               <Button variant="info" onClick={toggleFullscreen} className="ms-2">
-                {isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+                {isFullscreen ? 'Back to Browser' : 'Enter Fullscreen'}
               </Button>
               <Button variant="secondary" onClick={toggleTheme} className="ms-2">
                 Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
               </Button>
+              <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">
+                Edit
+              </Button>
             </>
-          ) : (
-            <Button variant="danger" onClick={() => setDeleteModeActive(false)}>
-              Done
-            </Button>
           )}
         </div>
 
@@ -192,7 +226,7 @@ function App() {
               key={item.url} // Use item.url as key for stable reordering
               item={item}
               index={index}
-              deleteModeActive={deleteModeActive}
+              deleteModeActive={isAppEditMode}
               handleDeleteWebsite={handleDeleteWebsite}
               onLongPress={onLongPress}
               handleDragStart={handleDragStart}
@@ -202,11 +236,13 @@ function App() {
               handleShowEdit={handleShow}
             />
           ))}
-          <div className="col-md-2 mb-3 app-block-wrapper col-8-per-row">
-            <div className="card add-app-block" onClick={() => handleShow()}>
-              +
+          {!isAppEditMode && (
+            <div className="col-md-2 mb-3 app-block-wrapper col-8-per-row">
+              <div className="card add-app-block" onClick={() => handleShow()}>
+                +
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 

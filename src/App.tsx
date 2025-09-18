@@ -39,6 +39,7 @@ function App() {
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [editingItem, setEditingItem] = useState<AppItem | null>(null);
   const [isEditMode, setIsEditMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleClose = () => {
     setShowModal(false);
@@ -89,10 +90,12 @@ function App() {
     if (loadedAppItems) {
       setAppItems(loadedAppItems);
       localStorage.setItem('teslahub_apps', JSON.stringify(loadedAppItems));
+      setIsLoading(false);
     } else {
       const storedWebsites = localStorage.getItem('teslahub_apps');
       if (storedWebsites) {
         setAppItems(JSON.parse(storedWebsites));
+        setIsLoading(false);
       } else {
         // New user, load default apps
         fetch('/default-apps.json')
@@ -107,14 +110,19 @@ function App() {
           })
           .catch(error => {
             console.error("Failed to load default apps:", error);
+          })
+          .finally(() => {
+            setIsLoading(false);
           });
       }
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('teslahub_apps', JSON.stringify(appItems));
-  }, [appItems]);
+    if (!isLoading) {
+      localStorage.setItem('teslahub_apps', JSON.stringify(appItems));
+    }
+  }, [appItems, isLoading]);
 
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {

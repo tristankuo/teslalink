@@ -316,6 +316,7 @@ function App() {
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
               handleShowEdit={handleShow}
+              getFaviconUrl={getFaviconUrl}
             />
           ))}
           {isAppEditMode && (

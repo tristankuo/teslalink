@@ -300,8 +300,7 @@ function App() {
         style={{ backgroundImage: `url(${backgroundUrl})` }}
       ></div>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        <h1 className="text-center mb-4">TeslaHub</h1>
-        <h2 className="text-center mb-4">Your Personal Companion in Tesla</h2>
+        <h1 className="text-center mt-5 mb-4">TeslaHub</h1>
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode ? (
             <>

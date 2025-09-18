@@ -36,6 +36,9 @@ function App() {
   });
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
+  const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
+  const [draggedItemPosition, setDraggedItemPosition] = useState<{ x: number; y: number } | null>(null);
+  const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
   const [editingItem, setEditingItem] = useState<AppItem | null>(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -59,8 +62,6 @@ function App() {
     }
     setShowModal(true);
   };
-
-  
 
   
 
@@ -193,15 +194,61 @@ function App() {
     setDraggedItemIndex(null);
   };
 
-  const toggleFullscreen = () => {
-    const url = new URL(window.location.href);
-    const appsJson = JSON.stringify(appItems);
-    try {
-      url.searchParams.set('apps', btoa(appsJson));
-    } catch (e) {
-      console.error('Failed to encode apps to base64', e);
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>, index: number) => {
+    if (!isAppEditMode) return;
+    const touch = e.touches[0];
+    const targetRect = e.currentTarget.getBoundingClientRect();
+    setDraggedItemOffset({ x: touch.clientX - targetRect.left, y: touch.clientY - targetRect.top });
+    setDraggedItemPosition({ x: touch.clientX, y: touch.clientY });
+    setDraggedItemIndex(index);
+    setGhostItem(appItems[index]); // Set the ghost item
+    e.preventDefault(); // Prevent scrolling
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (draggedItemIndex === null) return;
+    const touch = e.touches[0];
+    setDraggedItemPosition({ x: touch.clientX, y: touch.clientY });
+    e.preventDefault(); // Prevent scrolling
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (draggedItemIndex === null || draggedItemPosition === null) return;
+
+    const newAppItems = [...appItems];
+    const [draggedItem] = newAppItems.splice(draggedItemIndex, 1);
+
+    let dropIndex = newAppItems.length; // Default to end if no intersection
+
+    const appItemElements = Array.from(document.querySelectorAll('.app-block-wrapper'));
+
+    // Find the element that the dragged item is currently over
+    let targetElement = null;
+    for (let i = 0; i < appItemElements.length; i++) {
+      const element = appItemElements[i];
+      const rect = element.getBoundingClientRect();
+      if (
+        draggedItemPosition.x >= rect.left &&
+        draggedItemPosition.x <= rect.right &&
+        draggedItemPosition.y >= rect.top &&
+        draggedItemPosition.y <= rect.bottom
+      ) {
+        targetElement = element;
+        break;
+      }
     }
-    window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
+
+    if (targetElement) {
+      dropIndex = appItemElements.indexOf(targetElement);
+    }
+    
+    newAppItems.splice(dropIndex, 0, draggedItem);
+
+    setAppItems(newAppItems);
+    setDraggedItemIndex(null);
+    setDraggedItemOffset(null);
+    setDraggedItemPosition(null);
+    setGhostItem(null); // Clear the ghost item
   };
 
   const toggleTheme = () => {
@@ -247,9 +294,6 @@ function App() {
             </>
           ) : (
             <>
-              <Button variant="info" onClick={toggleFullscreen} className="ms-2">
-                Enter Fullscreen
-              </Button>
               <Button variant="secondary" onClick={toggleTheme} className="ms-2">
                 Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
               </Button>
@@ -272,6 +316,9 @@ function App() {
               handleDragStart={handleDragStart}
               handleDragOver={handleDragOver}
               handleDrop={handleDrop}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
               handleShowEdit={handleShow}
               getFaviconUrl={getFaviconUrl}
             />
@@ -285,6 +332,34 @@ function App() {
           )}
         </div>
       </div>
+
+      {ghostItem && draggedItemPosition && (
+        <div
+          className="app-block-wrapper ghost-item"
+          style={{
+            position: 'absolute',
+            left: draggedItemPosition.x - draggedItemOffset!.x,
+            top: draggedItemPosition.y - draggedItemOffset!.y,
+            zIndex: 1000,
+            opacity: 0.8,
+            pointerEvents: 'none', // Allow events to pass through
+            width: '150px', // Assuming a fixed width for app blocks
+            height: '150px', // Assuming a fixed height for app blocks
+          }}
+        >
+          <div className="card">
+            <div className="card-body text-center">
+              <img
+                src={getFaviconUrl(ghostItem.url)}
+                alt="Favicon"
+                className="favicon mb-2"
+                style={{ width: '42px', height: '42px' }}
+              />
+              <h5 className="card-title">{ghostItem.name}</h5>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>

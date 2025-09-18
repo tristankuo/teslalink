@@ -14,11 +14,14 @@ interface AppItemProps {
   handleDragStart: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
   handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
   handleDrop: (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => void;
+  onTouchStart: (e: React.TouchEvent<HTMLDivElement>, index: number) => void;
+  onTouchMove: (e: React.TouchEvent<HTMLDivElement>) => void;
+  onTouchEnd: (e: React.TouchEvent<HTMLDivElement>) => void;
   handleShowEdit: (item: any, index: number) => void;
   getFaviconUrl: (url: string) => string;
 }
 
-const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, handleShowEdit, getFaviconUrl }) => {
+const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit, getFaviconUrl }) => {
   const onClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
     const deleteButton = e.currentTarget.querySelector('.delete-btn');
     if (deleteButton && (e.target === deleteButton || deleteButton.contains(e.target as Node))) {
@@ -52,6 +55,9 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
       onDragStart={(e) => handleDragStart(e, index)}
       onDragOver={handleDragOver}
       onDrop={(e) => handleDrop(e, index)}
+      onTouchStart={(e) => onTouchStart(e, index)}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       <div className={`card ${deleteModeActive ? 'delete-mode' : ''}`}>
         {deleteModeActive && (

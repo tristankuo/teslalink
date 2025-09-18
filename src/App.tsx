@@ -40,7 +40,6 @@ function App() {
   const [editingItem, setEditingItem] = useState<AppItem | null>(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [debugInfo, setDebugInfo] = useState<string>('');
 
   const handleClose = () => {
     setShowModal(false);
@@ -113,11 +112,11 @@ function App() {
             const newAppItems = [...regionalApps, ...globalApps];
             setAppItems(newAppItems);
             localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
-            setDebugInfo(`Region: ${userRegion}, Loaded ${newAppItems.length} default apps.`);
+            
           })
           .catch(error => {
             console.error("Failed to load default apps:", error);
-            setDebugInfo(`Error loading default apps: ${error.message}`);
+            
           })
           .finally(() => {
             setIsLoading(false);
@@ -238,12 +237,6 @@ function App() {
         style={{ backgroundImage: `url(${backgroundUrl})` }}
       ></div>
       <div className="container mt-5" style={{ position: 'relative', zIndex: 2 }}>
-        <div>
-          <p>Debug Info:</p>
-          <p>isLoading: {isLoading.toString()}</p>
-          <p>appItems length: {appItems.length}</p>
-          <p>Debug message: {debugInfo}</p>
-        </div>
         <h1 className="text-center mb-4">TeslaHub</h1>
         <h2 className="text-center mb-4">Your Personal Companion in Tesla</h2>
         <div className="d-flex justify-content-center mb-4">
@@ -287,7 +280,7 @@ function App() {
               handleShowEdit={handleShow}
             />
           ))}
-          {!isAppEditMode && (
+          {isAppEditMode && (
             <div className="col-md-2 mb-3 app-block-wrapper col-8-per-row">
               <div className="card add-app-block" onClick={() => handleShow()}>
                 +

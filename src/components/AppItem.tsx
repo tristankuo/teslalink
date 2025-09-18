@@ -15,9 +15,10 @@ interface AppItemProps {
   onTouchMove: (e: React.TouchEvent<HTMLDivElement>) => void;
   onTouchEnd: (e: React.TouchEvent<HTMLDivElement>) => void;
   handleShowEdit: (item: any, index: number) => void;
+  getFaviconUrl: (url: string) => string; // Add this line
 }
 
-const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit }) => {
+const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit, getFaviconUrl }) => {
   const onClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
     // Check if the clicked element is the delete button or a child of it
     const deleteButton = e.currentTarget.querySelector('.delete-btn');
@@ -35,14 +36,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
 
   const longPressProps = useLongPress(onLongPress, onClick, { delay: 500 });
 
-  const getFaviconUrl = (url: string) => {
-    try {
-      const urlObject = new URL(url);
-      return `https://www.google.com/s2/favicons?domain=${urlObject.hostname}`;
-    } catch (error) {
-      return 'default-icon.svg';
-    }
-  };
+  
 
   const handleFaviconError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.src = 'default-icon.svg';

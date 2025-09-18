@@ -39,6 +39,7 @@ function App() {
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
   const [draggedItemPosition, setDraggedItemPosition] = useState<{ x: number; y: number } | null>(null);
+  const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
   const [editingItem, setEditingItem] = useState<AppItem | null>(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -185,6 +186,7 @@ function App() {
     setDraggedItemOffset({ x: touch.clientX - targetRect.left, y: touch.clientY - targetRect.top });
     setDraggedItemPosition({ x: touch.clientX, y: touch.clientY });
     setDraggedItemIndex(index);
+    setGhostItem(appItems[index]); // Set the ghost item
     e.preventDefault(); // Prevent scrolling
   };
 
@@ -196,27 +198,33 @@ function App() {
   };
 
   const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (draggedItemIndex === null) return;
+    if (draggedItemIndex === null || draggedItemPosition === null) return;
 
-    // Determine drop index based on draggedItemPosition
-    // This is complex and will require iterating through app item positions
-    // For now, just reset
     const newAppItems = [...appItems];
     const [draggedItem] = newAppItems.splice(draggedItemIndex, 1);
 
-    // Find the drop target based on position
-    // This is a simplified example, a real implementation would need to calculate
-    // which item the dragged item is currently over.
-    const dropTargetElement = document.elementFromPoint(draggedItemPosition!.x, draggedItemPosition!.y);
-    let dropIndex = appItems.length - 1; // Default to end
+    let dropIndex = newAppItems.length; // Default to end if no intersection
 
-    if (dropTargetElement) {
-      const dropTargetAppItem = dropTargetElement.closest('.app-block-wrapper');
-      if (dropTargetAppItem) {
-        const allAppItems = Array.from(document.querySelectorAll('.app-block-wrapper'));
-        dropIndex = allAppItems.indexOf(dropTargetAppItem);
-        if (dropIndex === -1) dropIndex = appItems.length - 1; // Fallback
+    const appItemElements = Array.from(document.querySelectorAll('.app-block-wrapper'));
+
+    // Find the element that the dragged item is currently over
+    let targetElement = null;
+    for (let i = 0; i < appItemElements.length; i++) {
+      const element = appItemElements[i];
+      const rect = element.getBoundingClientRect();
+      if (
+        draggedItemPosition.x >= rect.left &&
+        draggedItemPosition.x <= rect.right &&
+        draggedItemPosition.y >= rect.top &&
+        draggedItemPosition.y <= rect.bottom
+      ) {
+        targetElement = element;
+        break;
       }
+    }
+
+    if (targetElement) {
+      dropIndex = appItemElements.indexOf(targetElement);
     }
     
     newAppItems.splice(dropIndex, 0, draggedItem);
@@ -225,21 +233,18 @@ function App() {
     setDraggedItemIndex(null);
     setDraggedItemOffset(null);
     setDraggedItemPosition(null);
+    setGhostItem(null); // Clear the ghost item
   };
 
   const toggleFullscreen = () => {
-    if (isFullscreen) {
-      window.top?.location.replace(window.location.href);
-    } else {
-      const url = new URL(window.location.href);
-      const appsJson = JSON.stringify(appItems);
-      try {
-        url.searchParams.set('apps', btoa(appsJson));
-      } catch (e) {
-        console.error('Failed to encode apps to base64', e);
-      }
-      window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
+    const url = new URL(window.location.href);
+    const appsJson = JSON.stringify(appItems);
+    try {
+      url.searchParams.set('apps', btoa(appsJson));
+    } catch (e) {
+      console.error('Failed to encode apps to base64', e);
     }
+    window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
   };
 
   const toggleTheme = () => {
@@ -253,6 +258,15 @@ function App() {
   const handleResetToDefaults = () => {
     localStorage.removeItem('teslahub_apps');
     window.location.reload();
+  };
+
+  const getFaviconUrl = (url: string) => {
+    try {
+      const urlObject = new URL(url);
+      return `https://www.google.com/s2/favicons?domain=${urlObject.hostname}`;
+    } catch (error) {
+      return 'default-icon.svg';
+    }
   };
 
   return (
@@ -277,7 +291,7 @@ function App() {
           ) : (
             <>
               <Button variant="info" onClick={toggleFullscreen} className="ms-2">
-                {isFullscreen ? 'Back to Browser' : 'Enter Fullscreen'}
+                Enter Fullscreen
               </Button>
               <Button variant="secondary" onClick={toggleTheme} className="ms-2">
                 Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
@@ -313,6 +327,34 @@ function App() {
           )}
         </div>
       </div>
+
+      {ghostItem && draggedItemPosition && (
+        <div
+          className="app-block-wrapper ghost-item"
+          style={{
+            position: 'absolute',
+            left: draggedItemPosition.x - draggedItemOffset!.x,
+            top: draggedItemPosition.y - draggedItemOffset!.y,
+            zIndex: 1000,
+            opacity: 0.8,
+            pointerEvents: 'none', // Allow events to pass through
+            width: '150px', // Assuming a fixed width for app blocks
+            height: '150px', // Assuming a fixed height for app blocks
+          }}
+        >
+          <div className="card">
+            <div className="card-body text-center">
+              <img
+                src={getFaviconUrl(ghostItem.url)}
+                alt="Favicon"
+                className="favicon mb-2"
+                style={{ width: '42px', height: '42px' }}
+              />
+              <h5 className="card-title">{ghostItem.name}</h5>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>

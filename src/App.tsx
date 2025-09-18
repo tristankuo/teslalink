@@ -40,6 +40,7 @@ function App() {
   const [editingItem, setEditingItem] = useState<AppItem | null>(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [debugInfo, setDebugInfo] = useState<string>('');
 
   const handleClose = () => {
     setShowModal(false);
@@ -98,8 +99,13 @@ function App() {
         setIsLoading(false);
       } else {
         // New user, load default apps
-        fetch('/default-apps.json')
-          .then(response => response.json())
+        fetch(`${process.env.PUBLIC_URL}/default-apps.json`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
           .then(defaultApps => {
             const userRegion = getUserRegion();
             const regionalApps = defaultApps.filter((app: any) => app.region === userRegion);
@@ -107,9 +113,11 @@ function App() {
             const newAppItems = [...regionalApps, ...globalApps];
             setAppItems(newAppItems);
             localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
+            setDebugInfo(`Region: ${userRegion}, Loaded ${newAppItems.length} default apps.`);
           })
           .catch(error => {
             console.error("Failed to load default apps:", error);
+            setDebugInfo(`Error loading default apps: ${error.message}`);
           })
           .finally(() => {
             setIsLoading(false);
@@ -234,6 +242,7 @@ function App() {
           <p>Debug Info:</p>
           <p>isLoading: {isLoading.toString()}</p>
           <p>appItems length: {appItems.length}</p>
+          <p>Debug message: {debugInfo}</p>
         </div>
         <h1 className="text-center mb-4">TeslaHub</h1>
         <h2 className="text-center mb-4">Your Personal Companion in Tesla</h2>

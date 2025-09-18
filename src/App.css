@@ -94,6 +94,102 @@
   border-color: #6c757d;
 }
 
+:root {
+  --light-bg: #fff;
+  --light-text: #212529;
+  --light-card-bg: #fff;
+  --light-card-header-bg: #f8f9fa;
+
+  --dark-bg: #212529;
+  --dark-text: #f8f9fa;
+  --dark-card-bg: #343a40;
+  --dark-card-header-bg: #212529;
+}
+
+.light-mode {
+  background-color: transparent;
+  color: var(--light-text);
+}
+
+.light-mode .card {
+  background-color: var(--light-card-bg);
+  color: var(--light-text);
+}
+
+.light-mode .card-header {
+  background-color: var(--light-card-header-bg);
+}
+
+.dark-mode {
+  background-color: transparent;
+  color: var(--dark-text);
+}
+
+.dark-mode .card {
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text);
+  border-color: #495057;
+}
+
+.dark-mode .card-header {
+  background-color: var(--dark-card-header-bg);
+  border-bottom-color: #495057;
+}
+
+.dark-mode .form-control {
+  background-color: #495057;
+  color: var(--dark-text);
+  border-color: #6c757d;
+}
+
+:root {
+  --light-bg: #fff;
+  --light-text: #212529;
+  --light-card-bg: #fff;
+  --light-card-header-bg: #f8f9fa;
+
+  --dark-bg: #212529;
+  --dark-text: #f8f9fa;
+  --dark-card-bg: #343a40;
+  --dark-card-header-bg: #212529;
+}
+
+.light-mode {
+  background-color: transparent;
+  color: var(--light-text);
+}
+
+.light-mode .card {
+  background-color: var(--light-card-bg);
+  color: var(--light-text);
+}
+
+.light-mode .card-header {
+  background-color: var(--light-card-header-bg);
+}
+
+.dark-mode {
+  background-color: transparent;
+  color: var(--dark-text);
+}
+
+.dark-mode .card {
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text);
+  border-color: #495057;
+}
+
+.dark-mode .card-header {
+  background-color: var(--dark-card-header-bg);
+  border-bottom-color: #495057;
+}
+
+.dark-mode .form-control {
+  background-color: #495057;
+  color: var(--dark-text);
+  border-color: #6c757d;
+}
+
 .dark-mode .form-control:focus {
   background-color: #495057;
   color: var(--dark-text);
@@ -313,4 +409,23 @@ h1{
   width: 100%; /* Ensure card takes full width of its wrapper */
   /* Removed max-width for bigger blocks */
   margin: 0 auto; /* Center the card within its wrapper */
+}
+
+.ad-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #dee2e6;
+}
+
+.dark-mode .ad-container {
+  background-color: #343a40;
+  border-top: 1px solid #495057;
+}
+
+.container {
+  margin-bottom: 100px; /* Add margin to the bottom of the container */
 }

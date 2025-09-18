@@ -141,6 +141,12 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    document.body.appendChild(script);
+  }, []);
+
   const handleAddWebsite = (e: React.FormEvent) => {
     e.preventDefault();
     if (newSiteName && newSiteUrl) {
@@ -399,6 +405,14 @@ function App() {
           </form>
         </Modal.Body>
       </Modal>
+      <div className="ad-container">
+        <ins className="adsbygoogle"
+            style={{ display: 'block' }}
+            data-ad-client="ca-pub-7161979735172843"
+            data-ad-slot="1234567890"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+      </div>
     </div>
   );
 }

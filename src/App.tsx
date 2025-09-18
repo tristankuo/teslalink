@@ -37,6 +37,8 @@ function App() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
+  const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
+  const [draggedItemPosition, setDraggedItemPosition] = useState<{ x: number; y: number } | null>(null);
   const [editingItem, setEditingItem] = useState<AppItem | null>(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -176,30 +178,53 @@ function App() {
     setAppItems(newAppItems);
   };
 
-  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>, index: number) => {
+    if (!isAppEditMode) return;
+    const touch = e.touches[0];
+    const targetRect = e.currentTarget.getBoundingClientRect();
+    setDraggedItemOffset({ x: touch.clientX - targetRect.left, y: touch.clientY - targetRect.top });
+    setDraggedItemPosition({ x: touch.clientX, y: touch.clientY });
     setDraggedItemIndex(index);
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/html', e.currentTarget.outerHTML);
+    e.preventDefault(); // Prevent scrolling
   };
 
-  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (draggedItemIndex === null) return;
+    const touch = e.touches[0];
+    setDraggedItemPosition({ x: touch.clientX, y: touch.clientY });
+    e.preventDefault(); // Prevent scrolling
   };
 
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => {
-    e.preventDefault();
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     if (draggedItemIndex === null) return;
 
+    // Determine drop index based on draggedItemPosition
+    // This is complex and will require iterating through app item positions
+    // For now, just reset
     const newAppItems = [...appItems];
     const [draggedItem] = newAppItems.splice(draggedItemIndex, 1);
+
+    // Find the drop target based on position
+    // This is a simplified example, a real implementation would need to calculate
+    // which item the dragged item is currently over.
+    const dropTargetElement = document.elementFromPoint(draggedItemPosition.x, draggedItemPosition.y);
+    let dropIndex = appItems.length - 1; // Default to end
+
+    if (dropTargetElement) {
+      const dropTargetAppItem = dropTargetElement.closest('.app-block-wrapper');
+      if (dropTargetAppItem) {
+        const allAppItems = Array.from(document.querySelectorAll('.app-block-wrapper'));
+        dropIndex = allAppItems.indexOf(dropTargetAppItem);
+        if (dropIndex === -1) dropIndex = appItems.length - 1; // Fallback
+      }
+    }
+    
     newAppItems.splice(dropIndex, 0, draggedItem);
 
     setAppItems(newAppItems);
     setDraggedItemIndex(null);
-  };
-
-  const handleDragEnd = () => {
-    setDraggedItemIndex(null);
+    setDraggedItemOffset(null);
+    setDraggedItemPosition(null);
   };
 
   const toggleFullscreen = () => {
@@ -273,10 +298,9 @@ function App() {
               deleteModeActive={isAppEditMode}
               handleDeleteWebsite={handleDeleteWebsite}
               onLongPress={onLongPress}
-              handleDragStart={handleDragStart}
-              handleDragOver={handleDragOver}
-              handleDrop={handleDrop}
-              handleDragEnd={handleDragEnd}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
               handleShowEdit={handleShow}
             />
           ))}

@@ -11,14 +11,13 @@ interface AppItemProps {
   deleteModeActive: boolean;
   handleDeleteWebsite: (index: number) => void;
   onLongPress: () => void;
-  handleDragStart: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
-  handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
-  handleDrop: (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => void;
-  handleDragEnd: () => void;
+  onTouchStart: (e: React.TouchEvent<HTMLDivElement>, index: number) => void;
+  onTouchMove: (e: React.TouchEvent<HTMLDivElement>) => void;
+  onTouchEnd: (e: React.TouchEvent<HTMLDivElement>) => void;
   handleShowEdit: (item: any, index: number) => void;
 }
 
-const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, handleDragEnd, handleShowEdit }) => {
+const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit }) => {
   const onClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
     // Check if the clicked element is the delete button or a child of it
     const deleteButton = e.currentTarget.querySelector('.delete-btn');
@@ -59,11 +58,6 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
     <div
       className="col-md-2 mb-3 app-block-wrapper col-8-per-row"
       {...longPressProps}
-      draggable={deleteModeActive}
-      onDragStart={(e) => handleDragStart(e, index)}
-      onDragOver={handleDragOver}
-      onDrop={(e) => handleDrop(e, index)}
-      onDragEnd={handleDragEnd}
     >
       <div className={`card ${deleteModeActive ? 'delete-mode' : ''}`}>
         {deleteModeActive && (
@@ -78,6 +72,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
             className="favicon mb-2"
             onError={handleFaviconError}
             style={{ width: '42px', height: '42px' }}
+            draggable="false"
           />
           <h5 className="card-title">{item.name}</h5>
         </div>

@@ -411,21 +411,4 @@ h1{
   margin: 0 auto; /* Center the card within its wrapper */
 }
 
-.ad-container {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #f8f9fa;
-  text-align: center;
-  padding: 10px;
-  border-top: 1px solid #dee2e6;
-}
 
-.dark-mode .ad-container {
-  background-color: #343a40;
-  border-top: 1px solid #495057;
-}
-
-.container {
-  margin-bottom: 100px; /* Add margin to the bottom of the container */
-}

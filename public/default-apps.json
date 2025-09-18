@@ -1,0 +1,24 @@
+[
+  { "name": "YouTube", "url": "https://www.youtube.com", "region": "Global" },
+  { "name": "Netflix", "url": "https://www.netflix.com", "region": "Global" },
+  { "name": "Disney+", "url": "https://www.disneyplus.com", "region": "Global" },
+  { "name": "Twitch", "url": "https://www.twitch.tv", "region": "Global" },
+  { "name": "Apple TV+", "url": "https://tv.apple.com", "region": "Global" },
+
+  { "name": "KKTV", "url": "https://www.kktv.me", "region": "TW" },
+  { "name": "LiTV", "url": "https://www.litv.tv", "region": "TW" },
+  { "name": "LINE TV", "url": "https://www.linetv.tw", "region": "TW" },
+
+  { "name": "Tencent Video", "url": "https://v.qq.com", "region": "CN" },
+  { "name": "iQIYI", "url": "https://www.iq.com", "region": "CN" },
+  { "name": "Bilibili", "url": "https://www.bilibili.com", "region": "CN" },
+  { "name": "Youku", "url": "https://www.youku.com", "region": "CN" },
+
+  { "name": "Hulu", "url": "https://www.hulu.com", "region": "US" },
+  { "name": "Max", "url": "https://www.max.com", "region": "US" },
+  { "name": "Peacock TV", "url": "https://www.peacocktv.com", "region": "US" },
+
+  { "name": "U-NEXT", "url": "https://video.unext.jp", "region": "JP" },
+  { "name": "AbemaTV", "url": "https://abema.tv", "region": "JP" },
+  { "name": "TVer", "url": "https://tver.jp", "region": "JP" }
+]

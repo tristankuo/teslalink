@@ -49,6 +49,12 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
     e.currentTarget.src = 'default-icon.svg';
   };
 
+  const handleDelete = (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    handleDeleteWebsite(index);
+  };
+
   return (
     <div
       className="col-md-2 mb-3 app-block-wrapper col-8-per-row"
@@ -61,7 +67,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
     >
       <div className={`card ${deleteModeActive ? 'delete-mode' : ''}`}>
         {deleteModeActive && (
-          <Button variant="danger" className="delete-btn" onClick={(e) => { e.stopPropagation(); handleDeleteWebsite(index); }}>
+          <Button variant="danger" className="delete-btn" onClick={handleDelete} onTouchEnd={handleDelete}>
             &times;
           </Button>
         )}

@@ -3,6 +3,8 @@ import './App.css';
 import { Modal, Button } from 'react-bootstrap';
 import AppItemComponent from './components/AppItem';
 import imageNames from './image-manifest';
+import { getUserRegion } from './utils/location';
+
 
 interface AppItem {
   name: string;
@@ -27,7 +29,7 @@ function App() {
     }
   });
   const [showModal, setShowModal] = useState(false);
-  const [backgroundUrl, setBackgroundUrl] = useState(() => {
+  const [backgroundUrl] = useState(() => {
     const fullImagePaths = imageNames.map((name: string) => `${process.env.PUBLIC_URL}/images/${name}`);
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
@@ -59,7 +61,9 @@ function App() {
   };
 
   useEffect(() => {
-    setIsFullscreen(window.self !== window.top);
+    const urlParams = new URLSearchParams(window.location.search);
+    const isFullscreenFromUrl = urlParams.has('apps');
+    setIsFullscreen(isFullscreenFromUrl || window.self !== window.top);
   }, []);
 
   
@@ -89,6 +93,21 @@ function App() {
       const storedWebsites = localStorage.getItem('teslahub_apps');
       if (storedWebsites) {
         setAppItems(JSON.parse(storedWebsites));
+      } else {
+        // New user, load default apps
+        fetch('/default-apps.json')
+          .then(response => response.json())
+          .then(defaultApps => {
+            const userRegion = getUserRegion();
+            const regionalApps = defaultApps.filter((app: any) => app.region === userRegion);
+            const globalApps = defaultApps.filter((app: any) => app.region === 'Global');
+            const newAppItems = [...regionalApps, ...globalApps];
+            setAppItems(newAppItems);
+            localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
+          })
+          .catch(error => {
+            console.error("Failed to load default apps:", error);
+          });
       }
     }
   }, []);

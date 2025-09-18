@@ -226,9 +226,14 @@ function App() {
         <h2 className="text-center mb-4">Your Personal Companion in Tesla</h2>
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode ? (
-            <Button variant="danger" onClick={() => setIsAppEditMode(false)}>
-              Done
-            </Button>
+            <>
+              <Button variant="danger" onClick={() => setIsAppEditMode(false)}>
+                Done
+              </Button>
+              <Button variant="warning" onClick={handleResetToDefaults} className="ms-2">
+                Reset to Defaults
+              </Button>
+            </>
           ) : (
             <>
               <Button variant="info" onClick={toggleFullscreen} className="ms-2">
@@ -239,9 +244,6 @@ function App() {
               </Button>
               <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">
                 Edit
-              </Button>
-              <Button variant="warning" onClick={handleResetToDefaults} className="ms-2">
-                Reset to Defaults
               </Button>
             </>
           )}

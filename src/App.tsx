@@ -34,6 +34,7 @@ function App() {
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
   });
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
@@ -62,6 +63,12 @@ function App() {
     }
     setShowModal(true);
   };
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isFullscreenFromUrl = urlParams.has('apps');
+    setIsFullscreen(isFullscreenFromUrl || window.self !== window.top);
+  }, []);
 
   
 
@@ -257,6 +264,17 @@ function App() {
     setGhostItem(null); // Clear the ghost item
   };
 
+  const toggleFullscreen = () => {
+    const url = new URL(window.location.href);
+    const appsJson = JSON.stringify(appItems);
+    try {
+      url.searchParams.set('apps', btoa(appsJson));
+    } catch (e) {
+      console.error('Failed to encode apps to base64', e);
+    }
+    window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
+  };
+
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
@@ -300,6 +318,11 @@ function App() {
             </>
           ) : (
             <>
+              {!isFullscreen && (
+                <Button variant="info" onClick={toggleFullscreen} className="ms-2">
+                  Enter Fullscreen
+                </Button>
+              )}
               <Button variant="secondary" onClick={toggleTheme} className="ms-2">
                 Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
               </Button>

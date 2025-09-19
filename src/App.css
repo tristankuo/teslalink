@@ -46,266 +46,12 @@
   border-color: #6c757d;
 }
 
-:root {
-  --light-bg: #fff;
-  --light-text: #212529;
-  --light-card-bg: #fff;
-  --light-card-header-bg: #f8f9fa;
-
-  --dark-bg: #212529;
-  --dark-text: #f8f9fa;
-  --dark-card-bg: #343a40;
-  --dark-card-header-bg: #212529;
-}
-
-.light-mode {
-  background-color: transparent;
-  color: var(--light-text);
-}
-
-.light-mode .card {
-  background-color: var(--light-card-bg);
-  color: var(--light-text);
-}
-
-.light-mode .card-header {
-  background-color: var(--light-card-header-bg);
-}
-
-.dark-mode {
-  background-color: transparent;
-  color: var(--dark-text);
-}
-
-.dark-mode .card {
-  background-color: var(--dark-card-bg);
-  color: var(--dark-text);
-  border-color: #495057;
-}
-
-.dark-mode .card-header {
-  background-color: var(--dark-card-header-bg);
-  border-bottom-color: #495057;
-}
-
-.dark-mode .form-control {
-  background-color: #495057;
-  color: var(--dark-text);
-  border-color: #6c757d;
-}
-
-:root {
-  --light-bg: #fff;
-  --light-text: #212529;
-  --light-card-bg: #fff;
-  --light-card-header-bg: #f8f9fa;
-
-  --dark-bg: #212529;
-  --dark-text: #f8f9fa;
-  --dark-card-bg: #343a40;
-  --dark-card-header-bg: #212529;
-}
-
-.light-mode {
-  background-color: transparent;
-  color: var(--light-text);
-}
-
-.light-mode .card {
-  background-color: var(--light-card-bg);
-  color: var(--light-text);
-}
-
-.light-mode .card-header {
-  background-color: var(--light-card-header-bg);
-}
-
-.dark-mode {
-  background-color: transparent;
-  color: var(--dark-text);
-}
-
-.dark-mode .card {
-  background-color: var(--dark-card-bg);
-  color: var(--dark-text);
-  border-color: #495057;
-}
-
-.dark-mode .card-header {
-  background-color: var(--dark-card-header-bg);
-  border-bottom-color: #495057;
-}
-
-.dark-mode .form-control {
-  background-color: #495057;
-  color: var(--dark-text);
-  border-color: #6c757d;
-}
-
-:root {
-  --light-bg: #fff;
-  --light-text: #212529;
-  --light-card-bg: #fff;
-  --light-card-header-bg: #f8f9fa;
-
-  --dark-bg: #212529;
-  --dark-text: #f8f9fa;
-  --dark-card-bg: #343a40;
-  --dark-card-header-bg: #212529;
-}
-
-.light-mode {
-  background-color: transparent;
-  color: var(--light-text);
-}
-
-.light-mode .card {
-  background-color: var(--light-card-bg);
-  color: var(--light-text);
-}
-
-.light-mode .card-header {
-  background-color: var(--light-card-header-bg);
-}
-
-.dark-mode {
-  background-color: transparent;
-  color: var(--dark-text);
-}
-
-.dark-mode .card {
-  background-color: var(--dark-card-bg);
-  color: var(--dark-text);
-  border-color: #495057;
-}
-
-.dark-mode .card-header {
-  background-color: var(--dark-card-header-bg);
-  border-bottom-color: #495057;
-}
-
-.dark-mode .form-control {
-  background-color: #495057;
-  color: var(--dark-text);
-  border-color: #6c757d;
-}
-
 .dark-mode .form-control:focus {
   background-color: #495057;
   color: var(--dark-text);
   border-color: #86b7fe;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-
-.dark-mode .list-group-item {
-    background-color: var(--dark-card-bg);
-    border-color: #495057;
-    color: var(--dark-text);
-}
-
-.dark-mode .modal-content {
-  background-color: var(--dark-card-bg);
-  color: var(--dark-text);
-}
-
-.dark-mode .btn-close {
-  filter: invert(1) grayscale(100%) brightness(200%);
-}
-
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  transition: background-image 1s ease-in-out, filter 0.5s ease-in-out;
-  pointer-events: none;
-}
-
-.light-mode .background-image {
-  filter: grayscale(1) opacity(0.5) brightness(1.1);
-}
-
-.dark-mode .background-image {
-  filter: grayscale(1) opacity(0.9) brightness(0.2);
-}
-
-h1{
-  font-weight: bold;
-}
-
-.card {
-  aspect-ratio: 1 / 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%; /* Ensure card-body takes full height of card */
-}
-
-.card-title {
-  font-size: 1.1rem; /* Adjusted font size for title */
-  margin-top: 0.5rem; /* Adjust spacing */
-}
-
-.favicon {
-  width: 42px; /* Adjusted favicon size */
-  height: 42px;
-}
-
-.card.delete-mode {
-  /* Removed animation: shake 0.5s; animation-iteration-count: infinite; */
-}
-
-/* Removed @keyframes shake */
-
-.delete-btn {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  line-height: 1;
-  padding: 0;
-}
-
-.add-app-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem; /* Larger font size for Add text */
-  cursor: pointer;
-}
-
-.app-block-wrapper {
-  padding: 5px; /* Reduced padding to fit more blocks */
-}
-
-.app-block-wrapper .card {
-  width: 100%; /* Ensure card takes full width of its wrapper */
-  /* Removed max-width for bigger blocks */
-  margin: 0 auto; /* Center the card within its wrapper */
-}
-
-.col-8-per-row {
-  flex-basis: 12.5%;
-  max-width: 12.5%;
-}
-
 
 .dark-mode .list-group-item {
     background-color: var(--dark-card-bg);
@@ -372,12 +118,6 @@ h1{
   height: 36px;
 }
 
-.card.delete-mode {
-  /* Removed animation: shake 0.5s; animation-iteration-count: infinite; */
-}
-
-/* Removed @keyframes shake */
-
 .delete-btn {
   position: absolute;
   top: -10px;
@@ -403,12 +143,34 @@ h1{
 
 .app-block-wrapper {
   padding: 5px; /* Reduced padding to fit more blocks */
+  box-sizing: border-box;
 }
 
 .app-block-wrapper .card {
   width: 100%; /* Ensure card takes full width of its wrapper */
-  /* Removed max-width for bigger blocks */
   margin: 0 auto; /* Center the card within its wrapper */
+}
+
+/* Responsive Grid */
+@media (max-width: 767px) {
+  .app-block-wrapper {
+    flex-basis: 25%; /* 4 columns */
+    max-width: 25%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .app-block-wrapper {
+    flex-basis: 16.6667%; /* 6 columns */
+    max-width: 16.6667%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-block-wrapper {
+    flex-basis: 12.5%; /* 8 columns */
+    max-width: 12.5%;
+  }
 }
 
 

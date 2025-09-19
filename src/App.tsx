@@ -113,7 +113,7 @@ function App() {
             const userRegion = getUserRegion();
             const regionalApps = defaultApps.filter((app: any) => app.region === userRegion);
             const globalApps = defaultApps.filter((app: any) => app.region === 'Global');
-            const newAppItems = [...regionalApps, ...globalApps];
+            const newAppItems = [...regionalApps, ...globalApps].map((app, index) => ({ ...app, id: `default-${index}-${Date.now()}` }));
             setAppItems(newAppItems);
             localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
             
@@ -158,7 +158,7 @@ function App() {
       if (!/^https?:\/\//i.test(formattedUrl)) {
         formattedUrl = 'https://' + formattedUrl;
       }
-      const newId = Date.now().toString();
+      const newId = `custom-${Date.now()}`;
       setAppItems([...appItems, { id: newId, name: newSiteName, url: formattedUrl }]);
       setNewSiteName('');
       setNewSiteUrl('');
@@ -284,7 +284,7 @@ function App() {
     window.location.reload();
   };
 
-const getFaviconUrl = (url: string) => {
+const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
   try {
     const urlObject = new URL(url);
     const domain = urlObject.hostname;
@@ -356,7 +356,7 @@ const getFaviconUrl = (url: string) => {
             />
           ))}
           {isAppEditMode && (
-            <div className="col-md-2 mb-3 app-block-wrapper col-8-per-row">
+            <div className="col-md-2 mb-3 app-block-wrapper">
               <div className="card add-app-block" onClick={() => handleShow()}>
                 +
               </div>
@@ -385,6 +385,7 @@ const getFaviconUrl = (url: string) => {
                 src={getFaviconUrl(ghostItem.url).primary}
                 alt="Favicon"
                 className="favicon mb-2"
+                onError={(e) => (e.currentTarget.src = getFaviconUrl(ghostItem.url).fallback)}
                 style={{ width: '42px', height: '42px' }}
               />
               <h5 className="card-title">{ghostItem.name}</h5>

@@ -19,13 +19,13 @@ interface AppItemProps {
   onTouchMove: (e: React.TouchEvent<HTMLDivElement>) => void;
   onTouchEnd: (e: React.TouchEvent<HTMLDivElement>) => void;
   handleShowEdit: (item: any, index: number) => void;
-  getFaviconUrl: (url: string) => { primary: string; fallback: string; };
+  getFaviconUrl: (url: string) => { primary: string; fallback: string };
 }
 
 const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit, getFaviconUrl }) => {
   const onClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
     const deleteButton = e.currentTarget.querySelector('.delete-btn');
-    if (deleteButton && (e.target === deleteButton || deleteButton.contains(e.target as Node))) {
+    if (.target === deleteButton || deleteButton.contains(e.target as Node))) {
         return;
     }
 
@@ -38,8 +38,6 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
 
   const longPressProps = useLongPress(onLongPress, onClick, { delay: 500 });
 
-  
-
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
@@ -48,7 +46,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
 
   return (
     <div
-      className="col-md-2 mb-3 app-block-wrapper col-8-per-row"
+      className="col-md-2 mb-3 app-block-wrapper"
       {...longPressProps}
       draggable={deleteModeActive}
       onDragStart={(e) => handleDragStart(e, index)}

@@ -382,7 +382,7 @@ const getFaviconUrl = (url: string) => {
           <div className="card">
             <div className="card-body text-center">
               <img
-                src={getFaviconUrl(ghostItem.url)}
+                src={getFaviconUrl(ghostItem.url).primary}
                 alt="Favicon"
                 className="favicon mb-2"
                 style={{ width: '42px', height: '42px' }}

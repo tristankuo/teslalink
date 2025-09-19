@@ -4,12 +4,13 @@ import useLongPress from '../useLongPress';
 
 interface AppItemProps {
   item: {
+    id: string;
     name: string;
     url: string;
   };
   index: number;
   deleteModeActive: boolean;
-  handleDeleteWebsite: (index: number) => void;
+  handleDeleteWebsite: (id: string) => void;
   onLongPress: () => void;
   handleDragStart: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
   handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
@@ -18,7 +19,7 @@ interface AppItemProps {
   onTouchMove: (e: React.TouchEvent<HTMLDivElement>) => void;
   onTouchEnd: (e: React.TouchEvent<HTMLDivElement>) => void;
   handleShowEdit: (item: any, index: number) => void;
-  getFaviconUrl: (url: string) => string;
+  getFaviconUrl: (url: string) => { primary: string; fallback: string; };
 }
 
 const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit, getFaviconUrl }) => {

@@ -97,7 +97,7 @@ function App() {
       setIsLoading(false);
     } else {
       const storedWebsites = localStorage.getItem('teslahub_apps');
-      if (storedWebsites) {
+      if (storedWebsites && storedWebsites.length > 2) { // Check for more than just '[]'
         setAppItems(JSON.parse(storedWebsites));
         setIsLoading(false);
       } else {

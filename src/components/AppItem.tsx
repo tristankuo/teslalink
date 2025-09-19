@@ -38,9 +38,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
 
   const longPressProps = useLongPress(onLongPress, onClick, { delay: 500 });
 
-  const handleFaviconError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = 'default-icon.svg';
-  };
+  
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -62,7 +60,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
     >
       <div className={`card ${deleteModeActive ? 'delete-mode' : ''}`}>
         {deleteModeActive && (
-          <Button variant="danger" className="delete-btn" onClick={handleDelete} onTouchEnd={handleDelete}>
+          <Button variant="danger" className="delete-btn" onClick={handleDelete}>
             &times;
           </Button>
         )}

@@ -177,10 +177,8 @@ function App() {
     }
   };
 
-  const handleDeleteWebsite = (index: number) => {
-    const newAppItems = [...appItems];
-    newAppItems.splice(index, 1);
-    setAppItems(newAppItems);
+  const handleDeleteWebsite = (id: string) => {
+    setAppItems((prevAppItems) => prevAppItems.filter((item) => item.id !== id));
   };
 
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
@@ -286,14 +284,22 @@ function App() {
     window.location.reload();
   };
 
-  const getFaviconUrl = (url: string) => {
-    try {
-      const urlObject = new URL(url);
-      return `https://www.google.com/s2/favicons?domain=${urlObject.hostname}`;
-    } catch (error) {
-      return 'default-icon.svg';
-    }
-  };
+const getFaviconUrl = (url: string) => {
+  try {
+    const urlObject = new URL(url);
+    const domain = urlObject.hostname;
+    // Clearbit 先試，若失敗 fallback 到 Google S2
+    return {
+      primary: `https://logo.clearbit.com/${domain}`,
+      fallback: `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+    };
+  } catch (error) {
+    return {
+      primary: 'default-icon.svg',
+      fallback: 'default-icon.svg'
+    };
+  }
+};
 
   return (
     <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>

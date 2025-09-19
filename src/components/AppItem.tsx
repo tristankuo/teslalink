@@ -44,7 +44,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    handleDeleteWebsite(index);
+    handleDeleteWebsite(item.id);
   };
 
   return (
@@ -67,10 +67,10 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
         )}
         <div className="card-body text-center">
           <img
-            src={getFaviconUrl(item.url)}
+            src={getFaviconUrl(item.url).primary}
             alt="Favicon"
             className="favicon mb-2"
-            onError={handleFaviconError}
+            onError={(e) => (e.currentTarget.src = getFaviconUrl(item.url).fallback)}
             style={{ width: '42px', height: '42px' }}
             draggable="false"
           />

@@ -3,12 +3,10 @@
 // Do not modify this file directly.
 
 const imageNames = [
-  "Tesla_0.jpg",
   "Tesla_1.jpg",
   "Tesla_2.jpg",
   "Tesla_3.jpg",
   "Tesla_4.jpg",
-  "Tesla_5.jpg",
   "default-background.jpg"
 ];
 

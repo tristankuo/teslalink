@@ -176,15 +176,31 @@ function App() {
   };
 
   const toggleFullscreen = () => {
-    const url = new URL(window.location.href);
     const appsJson = JSON.stringify(appItems);
+    let encoded = '';
     try {
-      url.searchParams.set('apps', btoa(appsJson));
+      encoded = btoa(unescape(encodeURIComponent(appsJson)));
     } catch (e) {
       console.error('Failed to encode apps to base64', e);
     }
-    window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
+    const url = `${window.location.origin}${window.location.pathname}?apps=${encoded}&fullscreen=1`;
+    window.open(url, '_blank');
   };
+  // On mount, check for ?apps= param and use it if present (fullscreen mode)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const appsParam = params.get('apps');
+    if (appsParam) {
+      try {
+        const decoded = decodeURIComponent(escape(atob(appsParam)));
+        setAppItems(JSON.parse(decoded));
+      } catch (e) {
+        // fallback to localStorage or default
+      }
+      return;
+    }
+    // ...existing code for localStorage/default-apps.json...
+  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');

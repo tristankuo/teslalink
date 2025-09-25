@@ -84,11 +84,8 @@ function App() {
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
   });
-  // Detect fullscreen mode from URL parameter
-  const [isFullscreen, setIsFullscreen] = useState(() => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('fullscreen') === '1';
-  });
+  // Detect fullscreen mode - manual control only (Gemini approach)
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
@@ -189,16 +186,25 @@ function App() {
     sessionStorage.setItem('fullscreenLaunched', 'true');
     sessionStorage.setItem('teslahub_fullscreen_apps', appsJson);
     
-    // Navigate to YouTube - user will then use "Go to site" to return with ?fullscreen=1
-    window.location.href = "https://www.youtube.com";
-  };
-  // On mount, handle fullscreen mode
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const fullscreenParam = params.get('fullscreen') === '1';
+    // Use Gemini's approach: open YouTube in new tab/window
+    // This doesn't rely on Tesla auto-adding URL parameters
+    const youtubeWindow = window.open("https://www.youtube.com", '_blank');
     
-    if (fullscreenParam) {
-      // Load apps from sessionStorage if available
+    if (!youtubeWindow) {
+      // Fallback if popup blocked
+      window.location.href = "https://www.youtube.com";
+    }
+  };
+  // Handle fullscreen mode with automatic detection when returning from YouTube
+  useEffect(() => {
+    // Check if user returned from YouTube (has session data but not in fullscreen yet)
+    const hasYouTubeSession = sessionStorage.getItem('fullscreenLaunched') === 'true';
+    
+    if (hasYouTubeSession && !isFullscreen) {
+      // Automatically enter fullscreen mode
+      setIsFullscreen(true);
+      
+      // Load saved apps
       const storedApps = sessionStorage.getItem('teslahub_fullscreen_apps');
       if (storedApps) {
         try {
@@ -207,22 +213,14 @@ function App() {
           console.error('Failed to parse stored fullscreen apps', e);
         }
       }
-      setIsFullscreen(true);
-    } else {
-      // Clear session storage when not in fullscreen mode
-      sessionStorage.removeItem('fullscreenLaunched');
-      sessionStorage.removeItem('teslahub_fullscreen_apps');
-      setIsFullscreen(false);
     }
-  }, []);
+  }, [isFullscreen]); // Include isFullscreen dependency
 
-  // Handle pageshow event to maintain fullscreen state
+  // Simple pageshow handler - no URL parameter detection
   useEffect(() => {
     const handlePageShow = () => {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('fullscreen') === '1') {
-        setIsFullscreen(true);
-      }
+      // Just maintain current fullscreen state
+      // User controls fullscreen manually
     };
 
     window.addEventListener('pageshow', handlePageShow);
@@ -291,6 +289,7 @@ function App() {
               {!isFullscreen && (
                 <Button variant="info" onClick={toggleFullscreen} className="ms-2">Enter Fullscreen</Button>
               )}
+              {/* Remove manual fullscreen button - will be automated */}
               <Button variant="secondary" onClick={toggleTheme} className="ms-2">Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})</Button>
               <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">Edit</Button>
             </>

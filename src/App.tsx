@@ -205,20 +205,45 @@ function App() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const appsParam = params.get('apps');
-    if (appsParam) {
+    const fullscreenParam = params.get('fullscreen');
+    
+    if (appsParam && fullscreenParam === '1') {
       try {
         const decoded = decodeURIComponent(escape(atob(appsParam)));
-        setAppItems(JSON.parse(decoded));
+        const apps = JSON.parse(decoded);
+        setAppItems(apps);
+        // Store apps in sessionStorage for future use
+        sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(apps));
+        setIsFullscreen(true);
+        
+        // Clean up the URL to avoid long URLs in browser history
+        const cleanUrl = `${window.location.origin}${window.location.pathname}?fullscreen=1`;
+        window.history.replaceState({}, '', cleanUrl);
       } catch (e) {
+        console.error('Failed to decode apps from URL', e);
         // fallback to localStorage or default
       }
-      setIsFullscreen(params.get('fullscreen') === '1');
+      return;
+    }
+    
+    // If we're in fullscreen mode but no apps param, try to get from sessionStorage
+    if (fullscreenParam === '1') {
+      const storedApps = sessionStorage.getItem('teslahub_fullscreen_apps');
+      if (storedApps) {
+        try {
+          setAppItems(JSON.parse(storedApps));
+        } catch (e) {
+          console.error('Failed to parse stored fullscreen apps', e);
+        }
+      }
+      setIsFullscreen(true);
       return;
     }
     
     // Handle Tesla Theater mode - clear session storage when not in fullscreen URL mode
-    if (!params.get('fullscreen')) {
+    if (!fullscreenParam) {
       sessionStorage.removeItem('fullscreenLaunched');
+      sessionStorage.removeItem('teslahub_fullscreen_apps');
       setIsFullscreen(false);
     }
   }, []);
@@ -227,8 +252,15 @@ function App() {
   useEffect(() => {
     const handlePageShow = () => {
       const params = new URLSearchParams(window.location.search);
-      if (!params.get('fullscreen') && !sessionStorage.getItem('fullscreenLaunched')) {
+      const isFullscreenUrl = params.get('fullscreen') === '1';
+      const hasFullscreenSession = sessionStorage.getItem('fullscreenLaunched') === 'true';
+      
+      if (!isFullscreenUrl && !hasFullscreenSession) {
         setIsFullscreen(false);
+        // Clean up any stale fullscreen data
+        sessionStorage.removeItem('teslahub_fullscreen_apps');
+      } else if (isFullscreenUrl) {
+        setIsFullscreen(true);
       }
     };
 

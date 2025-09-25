@@ -41,23 +41,50 @@ function App() {
   // Add or edit app
   const handleAppModalSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!appNameInput.trim() || !appUrlInput.trim()) return;
-    let urlToSave = appUrlInput.trim();
-    // If user enters only a domain, prepend https://
+    
+    // Validation
+    const name = appNameInput.trim();
+    const url = appUrlInput.trim();
+    if (!name || !url) {
+      alert('Please enter both name and URL');
+      return;
+    }
+    
+    // URL formatting
+    let urlToSave = url;
     if (!/^https?:\/\//i.test(urlToSave)) {
       urlToSave = `https://${urlToSave}`;
     }
+    
+    // Validate URL format
+    try {
+      new URL(urlToSave);
+    } catch (error) {
+      alert('Please enter a valid URL');
+      return;
+    }
+    
     let updatedApps;
     if (modalMode === 'add') {
-      updatedApps = [...appItems, { id: `${appNameInput}-${Date.now()}`, name: appNameInput, url: urlToSave }];
+      updatedApps = [...appItems, { id: `${name}-${Date.now()}`, name: name, url: urlToSave }];
     } else if (modalMode === 'edit' && editIndex !== null) {
       updatedApps = [...appItems];
-      updatedApps[editIndex] = { ...updatedApps[editIndex], name: appNameInput, url: urlToSave };
+      updatedApps[editIndex] = { ...updatedApps[editIndex], name: name, url: urlToSave };
     }
+    
     if (updatedApps) {
-      setAppItems(updatedApps);
-      localStorage.setItem('teslahub_apps', JSON.stringify(updatedApps));
+      try {
+        setAppItems(updatedApps);
+        // Update both localStorage and sessionStorage for cross-tab sync
+        localStorage.setItem('teslahub_apps', JSON.stringify(updatedApps));
+        sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(updatedApps));
+      } catch (error) {
+        console.error('Failed to save app data:', error);
+        alert('Failed to save app. Please try again.');
+        return;
+      }
     }
+    
     setShowAppModal(false);
     setAppNameInput('');
     setAppUrlInput('');
@@ -96,12 +123,26 @@ function App() {
   const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
 
   const handleDeleteWebsite = (id: string) => {
+    if (!id) {
+      console.error('Invalid app ID for deletion');
+      return;
+    }
+    
     setAppItems((prevAppItems) => {
       const updated = prevAppItems.filter((item) => item.id !== id);
-      localStorage.setItem('teslahub_apps', JSON.stringify(updated));
+      
+      try {
+        // Update both localStorage and sessionStorage for cross-tab sync
+        localStorage.setItem('teslahub_apps', JSON.stringify(updated));
+        sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(updated));
+      } catch (error) {
+        console.error('Failed to save after deletion:', error);
+        // Even if save fails, still update the UI
+      }
+      
       return updated;
     });
-  } // <-- Properly close the function here
+  };
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
     if (!isAppEditMode) return;
     setDraggedItemIndex(index);
@@ -121,8 +162,14 @@ function App() {
     newAppItems.splice(dropIndex, 0, draggedItem);
     setAppItems(newAppItems);
     setDraggedItemIndex(null);
-    // Save to localStorage
-    localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
+    
+    try {
+      // Save to both localStorage and sessionStorage for cross-tab sync
+      localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
+      sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(newAppItems));
+    } catch (error) {
+      console.error('Failed to save reordered apps:', error);
+    }
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>, index: number) => {
@@ -176,7 +223,15 @@ function App() {
     newAppItems.splice(dropIndex, 0, draggedItem);
 
     setAppItems(newAppItems);
-    localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
+    
+    try {
+      // Update both localStorage and sessionStorage for cross-tab sync
+      localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
+      sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(newAppItems));
+    } catch (error) {
+      console.error('Failed to save reordered apps:', error);
+    }
+    
     setDraggedItemIndex(null);
     setDraggedItemOffset(null);
     setDraggedItemPosition(null);
@@ -201,22 +256,41 @@ function App() {
     // YouTube redirect approach - this was working before!
     window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
   };
-  // Handle URL parameters and fullscreen detection (restore working approach)
+  // Handle URL parameters and fullscreen detection with URL cleanup
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const appsParam = urlParams.get('apps');
-    const isFullscreenFromUrl = urlParams.has('apps') || urlParams.get('fullscreen') === '1';
+    const fullscreenParam = urlParams.get('fullscreen') === '1';
     
     if (appsParam) {
       try {
         const decoded = atob(appsParam);
         const apps = JSON.parse(decoded);
         setAppItems(apps);
+        
+        // Store apps in sessionStorage for future use
+        sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(apps));
+        
+        // Clean up the URL to avoid long URLs in browser history
+        const cleanUrl = `${window.location.origin}${window.location.pathname}?fullscreen=1`;
+        window.history.replaceState({}, '', cleanUrl);
       } catch (e) {
         console.error('Failed to decode apps from URL', e);
       }
+    } else if (fullscreenParam) {
+      // If we have fullscreen param but no apps, try to load from sessionStorage
+      const storedApps = sessionStorage.getItem('teslahub_fullscreen_apps');
+      if (storedApps) {
+        try {
+          const apps = JSON.parse(storedApps);
+          setAppItems(apps);
+        } catch (e) {
+          console.error('Failed to parse stored apps', e);
+        }
+      }
     }
     
+    const isFullscreenFromUrl = !!appsParam || fullscreenParam;
     setIsFullscreen(isFullscreenFromUrl || window.self !== window.top);
   }, [isFullscreen]);
 
@@ -240,7 +314,10 @@ function App() {
   };
 
   const handleResetToDefaults = () => {
+    // Clear both localStorage and sessionStorage for complete reset
     localStorage.removeItem('teslahub_apps');
+    sessionStorage.removeItem('teslahub_fullscreen_apps');
+    sessionStorage.removeItem('fullscreenLaunched');
     window.location.reload();
   };
 

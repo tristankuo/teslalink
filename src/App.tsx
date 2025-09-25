@@ -199,18 +199,23 @@ function App() {
 
   const toggleFullscreen = () => {
     const appsJson = JSON.stringify(appItems);
+    let encoded = '';
+    try {
+      encoded = btoa(unescape(encodeURIComponent(appsJson)));
+    } catch (e) {
+      console.error('Failed to encode apps to base64', e);
+    }
+    const url = `${window.location.origin}${window.location.pathname}?apps=${encoded}&fullscreen=1`;
     
-    // Store state in session storage for when we return from YouTube
+    // Store state in session storage so we know fullscreen was launched
     sessionStorage.setItem('fullscreenLaunched', 'true');
     sessionStorage.setItem('teslahub_fullscreen_apps', appsJson);
     
-    // For Tesla Theater mode, we need to go to YouTube first
-    // Then user clicks "Go to site" in YouTube player to return in fullscreen
-    // Using a reliable, always-available video (YouTube's own "Welcome to YouTube" video)
-    const youtubeUrl = "https://www.youtube.com/watch?v=jNQXAC9IVRw"; // "Me at the zoo" - first YouTube video, always available
-    
-    // Navigate to YouTube - user will then use "Go to site" to return in fullscreen
-    window.location.href = youtubeUrl;
+    // Try window.open first, fallback to location.href
+    const newWindow = window.open(url, '_blank');
+    if (!newWindow) {
+      window.location.href = url;
+    }
   };
   // On mount, check for ?apps= param and use it if present (fullscreen mode)
   useEffect(() => {

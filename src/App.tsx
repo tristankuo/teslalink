@@ -314,8 +314,8 @@ function App() {
                   autoFocus
                 />
                 <input
-                  type="url"
-                  placeholder="App URL (https://...)"
+                  type="text"
+                  placeholder="App URL (e.g. example.com or https://...)"
                   value={appUrlInput}
                   onChange={e => setAppUrlInput(e.target.value)}
                   style={{

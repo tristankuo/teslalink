@@ -68,10 +68,6 @@ function App() {
   // Touch handlers (assign after function definitions)
   const [appItems, setAppItems] = useState<AppItem[]>([]);
   const [showKoFi, setShowKoFi] = useState(false);
-  
-  // Modal state for redirect HTML
-  const [showRedirectModal, setShowRedirectModal] = useState(false);
-  const [redirectHtml, setRedirectHtml] = useState('');
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('teslahub_theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -245,49 +241,6 @@ function App() {
     }
   };
 
-  // Generate redirect HTML for Tesla fullscreen
-  const handleGenerateRedirectHtml = () => {
-    const appsJson = JSON.stringify(appItems);
-    let encoded = '';
-    try {
-      encoded = btoa(unescape(encodeURIComponent(appsJson)));
-    } catch (e) {
-      console.error('Failed to encode apps to base64', e);
-    }
-    const targetURL = `${window.location.origin}${window.location.pathname}?apps=${encoded}&fullscreen=1`;
-    const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Redirecting to TeslaHub...</title>
-<script>
-  window.onload = function() {
-    const targetURL = "${targetURL}";
-    
-    // Simple redirect
-    window.location.href = targetURL;
-
-    // Optional: attempt fullscreen if the browser allows
-    const requestFullScreen = () => {
-      const el = document.documentElement;
-      if (el.requestFullscreen) el.requestFullscreen();
-      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-      else if (el.msRequestFullscreen) el.msRequestFullscreen();
-    };
-
-    // Wait a moment for page load before fullscreen attempt
-    setTimeout(requestFullScreen, 1000);
-  };
-</script>
-</head>
-<body>
-<p>Redirecting to TeslaHub dashboard...</p>
-</body>
-</html>`;
-    setRedirectHtml(html);
-    setShowRedirectModal(true);
-  };
-
   // Load default apps based on region on first mount
   useEffect(() => {
     const saved = localStorage.getItem('teslahub_apps');
@@ -318,40 +271,13 @@ function App() {
           ) : (
             <>
               {!isFullscreen && (
-                <>
-                  <Button variant="info" onClick={toggleFullscreen} className="ms-2">Enter Fullscreen</Button>
-                  <Button variant="outline-info" onClick={handleGenerateRedirectHtml} className="ms-2">Download Fullscreen Redirect</Button>
-                </>
+                <Button variant="info" onClick={toggleFullscreen} className="ms-2">Enter Fullscreen</Button>
               )}
               <Button variant="secondary" onClick={toggleTheme} className="ms-2">Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})</Button>
               <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">Edit</Button>
             </>
           )}
         </div>
-      {/* Redirect HTML Modal */}
-      {showRedirectModal && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowRedirectModal(false)}>
-          <div style={{ background: theme === 'dark' ? '#343a40' : '#fff', color: theme === 'dark' ? '#f8f9fa' : '#212529', padding: 24, borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,0.18)', textAlign: 'center', minWidth: 320, maxWidth: 600, width: '90%', fontSize: 16 }} onClick={e => e.stopPropagation()}>
-            <h4 style={{ marginBottom: 18 }}>Download Fullscreen Redirect HTML</h4>
-            <p>Use this file in Tesla's YouTube app "Go to site" for reliable fullscreen.</p>
-            <textarea readOnly value={redirectHtml} style={{ width: '100%', height: 200, marginBottom: 18, fontSize: 12, background: '#222', color: '#fff', borderRadius: 8, border: '1px solid #bbb' }} />
-            <div style={{ marginTop: 18, display: 'flex', justifyContent: 'center', gap: 12 }}>
-              <Button variant="primary" onClick={() => {
-                const blob = new Blob([redirectHtml], { type: 'text/html' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'teslahub-fullscreen-redirect.html';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                setShowRedirectModal(false);
-              }}>Download HTML</Button>
-              <Button variant="secondary" onClick={() => setShowRedirectModal(false)}>Close</Button>
-            </div>
-          </div>
-        </div>
-      )}
         <div className="row justify-content-center">
           {appItems.map((item, index) => (
             <AppItemComponent

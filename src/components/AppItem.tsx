@@ -25,9 +25,9 @@ interface AppItemProps {
 const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit, getFaviconUrl }) => {
   const onClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
     const deleteButton = e.currentTarget.querySelector('.delete-btn');
-    if (.target === deleteButton || deleteButton.contains(e.target as Node))) {
+      if (e.target === deleteButton || (deleteButton && deleteButton.contains(e.target as Node))) {
         return;
-    }
+      }
 
     if (deleteModeActive) {
       handleShowEdit(item, index);

@@ -206,8 +206,8 @@ function App() {
     
     // For Tesla Theater mode, we need to go to YouTube first
     // Then user clicks "Go to site" in YouTube player to return in fullscreen
-    // Using a short, relevant video about Tesla or apps
-    const youtubeUrl = "https://www.youtube.com/watch?v=jn7fXDy3EzQ"; // Tesla-related video
+    // Using a reliable, always-available video (YouTube's own "Welcome to YouTube" video)
+    const youtubeUrl = "https://www.youtube.com/watch?v=jNQXAC9IVRw"; // "Me at the zoo" - first YouTube video, always available
     
     // Navigate to YouTube - user will then use "Go to site" to return in fullscreen
     window.location.href = youtubeUrl;

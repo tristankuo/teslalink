@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Modal, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import AppItemComponent from './components/AppItem';
 import imageNames from './image-manifest';
-import { getUserRegion } from './utils/location';
 
 
 interface AppItem {
@@ -14,13 +13,22 @@ interface AppItem {
 }
 
 function App() {
+  // Handler to show modal for editing/adding
+  const handleShow = (itemToEdit?: AppItem, indexToEdit?: number) => {
+  // Removed setShowModal
+    if (itemToEdit) {
+      // Removed setEditingItem, setNewSiteName, setNewSiteUrl, setIsEditMode
+    } else {
+      // Removed setEditingItem, setNewSiteName, setNewSiteUrl, setIsEditMode
+    }
+  };
+
+
+  // Touch handlers (assign after function definitions)
   const [appItems, setAppItems] = useState<AppItem[]>([]);
-  const [newSiteName, setNewSiteName] = useState('');
-  const [newSiteUrl, setNewSiteUrl] = useState('');
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('teslahub_theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
     if (savedTheme) {
       return savedTheme;
     } else if (prefersDark) {
@@ -29,160 +37,22 @@ function App() {
       return 'light';
     }
   });
-  const [showModal, setShowModal] = useState(false);
   const [backgroundUrl] = useState(() => {
     const fullImagePaths = imageNames.map((name: string) => `${process.env.PUBLIC_URL}/images/${name}`);
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
   });
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const isFullscreen = false;
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
   const [draggedItemPosition, setDraggedItemPosition] = useState<{ x: number; y: number } | null>(null);
   const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
-  const [editingItem, setEditingItem] = useState<AppItem | null>(null);
-  const [isEditMode, setIsEditMode] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleClose = () => {
-    setShowModal(false);
-    setEditingItem(null);
-    setIsEditMode(false);
-  };
-
-  const handleShow = (itemToEdit?: AppItem, indexToEdit?: number) => {
-    if (itemToEdit && indexToEdit !== undefined) {
-      setEditingItem({ ...itemToEdit, index: indexToEdit });
-      setNewSiteName(itemToEdit.name);
-      setNewSiteUrl(itemToEdit.url);
-      setIsEditMode(true);
-    } else {
-      setNewSiteName('');
-      setNewSiteUrl('');
-      setIsEditMode(false);
-    }
-    setShowModal(true);
-  };
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const isFullscreenFromUrl = urlParams.has('apps');
-    setIsFullscreen(isFullscreenFromUrl || window.self !== window.top);
-  }, []);
-
-  
-
-  useEffect(() => {
-    document.body.className = `${theme}-mode`;
-    localStorage.setItem('teslahub_theme', theme);
-  }, [theme]);
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const appsParam = urlParams.get('apps');
-    let loadedAppItems = null;
-
-    if (appsParam) {
-      try {
-        loadedAppItems = JSON.parse(atob(appsParam));
-      } catch (e) {
-        console.error("Failed to parse apps from URL", e);
-      }
-    }
-
-    if (loadedAppItems) {
-      setAppItems(loadedAppItems);
-      localStorage.setItem('teslahub_apps', JSON.stringify(loadedAppItems));
-      setIsLoading(false);
-    } else {
-      const storedWebsites = localStorage.getItem('teslahub_apps');
-      if (storedWebsites && storedWebsites.length > 2) { // Check for more than just '[]'
-        setAppItems(JSON.parse(storedWebsites));
-        setIsLoading(false);
-      } else {
-        // New user, load default apps
-        fetch(`${process.env.PUBLIC_URL}/default-apps.json`)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then(defaultApps => {
-            const userRegion = getUserRegion();
-            const regionalApps = defaultApps.filter((app: any) => app.region === userRegion);
-            const globalApps = defaultApps.filter((app: any) => app.region === 'Global');
-            const newAppItems = [...regionalApps, ...globalApps].map((app, index) => ({ ...app, id: `default-${index}-${Date.now()}` }));
-            setAppItems(newAppItems);
-            localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
-            
-          })
-          .catch(error => {
-            console.error("Failed to load default apps:", error);
-            
-          })
-          .finally(() => {
-            setIsLoading(false);
-          });
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!isLoading) {
-      localStorage.setItem('teslahub_apps', JSON.stringify(appItems));
-    }
-  }, [appItems, isLoading]);
-
-  useEffect(() => {
-    const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'teslahub_apps' && e.newValue) {
-        setAppItems(JSON.parse(e.newValue));
-      }
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []);
-
-  
-
-  const handleAddWebsite = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newSiteName && newSiteUrl) {
-      let formattedUrl = newSiteUrl;
-      if (!/^https?:\/\//i.test(formattedUrl)) {
-        formattedUrl = 'https://' + formattedUrl;
-      }
-      const newId = `custom-${Date.now()}`;
-      setAppItems([...appItems, { id: newId, name: newSiteName, url: formattedUrl }]);
-      setNewSiteName('');
-      setNewSiteUrl('');
-      handleClose();
-    }
-  };
-
-  const handleEditWebsite = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (editingItem && newSiteName && newSiteUrl) {
-      const updatedAppItems = appItems.map((item, idx) =>
-        idx === editingItem.index ? { ...item, name: newSiteName, url: newSiteUrl } : item
-      );
-      setAppItems(updatedAppItems);
-      handleClose();
-    }
-  };
 
   const handleDeleteWebsite = (id: string) => {
     setAppItems((prevAppItems) => prevAppItems.filter((item) => item.id !== id));
-  };
-
+  } // <-- Properly close the function here
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
-    setDraggedItemIndex(index);
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/html', e.currentTarget.outerHTML);
   };
@@ -284,62 +154,48 @@ function App() {
     window.location.reload();
   };
 
-const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
-  try {
-    const urlObject = new URL(url);
-    const domain = urlObject.hostname;
-    // Clearbit 先試，若失敗 fallback 到 Google S2
-    return {
-      primary: `https://logo.clearbit.com/${domain}`,
-      fallback: `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
-    };
-  } catch (error) {
-    return {
-      primary: 'favicon.svg',
-      fallback: 'favicon.svg'
-    };
-  }
-};
+  const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
+    try {
+      const urlObject = new URL(url);
+      const domain = urlObject.hostname;
+      // Clearbit 先試，若失敗 fallback 到 Google S2
+      return {
+        primary: `https://logo.clearbit.com/${domain}`,
+        fallback: `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+      };
+    } catch (error) {
+      return {
+        primary: 'favicon.svg',
+        fallback: 'favicon.svg'
+      };
+    }
+  };
 
   return (
     <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
-      <div
-        className="background-image"
-        style={{ backgroundImage: `url(${backgroundUrl})` }}
-      ></div>
+  <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <h1 className="text-center mt-5 mb-4">TeslaHub</h1>
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode ? (
             <>
-              <Button variant="danger" onClick={() => setIsAppEditMode(false)}>
-                Done
-              </Button>
-              <Button variant="warning" onClick={handleResetToDefaults} className="ms-2">
-                Reset to Defaults
-              </Button>
+              <Button variant="danger" onClick={() => setIsAppEditMode(false)}>Done</Button>
+              <Button variant="warning" onClick={handleResetToDefaults} className="ms-2">Reset to Defaults</Button>
             </>
           ) : (
             <>
               {!isFullscreen && (
-                <Button variant="info" onClick={toggleFullscreen} className="ms-2">
-                  Enter Fullscreen
-                </Button>
+                <Button variant="info" onClick={toggleFullscreen} className="ms-2">Enter Fullscreen</Button>
               )}
-              <Button variant="secondary" onClick={toggleTheme} className="ms-2">
-                Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
-              </Button>
-              <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">
-                Edit
-              </Button>
+              <Button variant="secondary" onClick={toggleTheme} className="ms-2">Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})</Button>
+              <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">Edit</Button>
             </>
           )}
         </div>
-
         <div className="row justify-content-center">
           {appItems.map((item, index) => (
             <AppItemComponent
-              key={item.id} // Use item.id as key for stable reordering
+              key={item.id}
               item={item}
               index={index}
               deleteModeActive={isAppEditMode}
@@ -357,14 +213,11 @@ const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
           ))}
           {isAppEditMode && (
             <div className="col-md-2 mb-3 app-block-wrapper">
-              <div className="card add-app-block" onClick={() => handleShow()}>
-                +
-              </div>
+              <div className="card add-app-block" onClick={() => handleShow()}>+</div>
             </div>
           )}
         </div>
       </div>
-
       {ghostItem && draggedItemPosition && (
         <div
           className="app-block-wrapper ghost-item"
@@ -374,9 +227,9 @@ const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
             top: draggedItemPosition.y - draggedItemOffset!.y,
             zIndex: 1000,
             opacity: 0.8,
-            pointerEvents: 'none', // Allow events to pass through
-            width: '150px', // Assuming a fixed width for app blocks
-            height: '150px', // Assuming a fixed height for app blocks
+            pointerEvents: 'none',
+            width: '150px',
+            height: '150px',
           }}
         >
           <div className="card">
@@ -393,46 +246,18 @@ const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
           </div>
         </div>
       )}
-
-      <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{isEditMode ? 'Edit' : 'Add New'}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form onSubmit={isEditMode ? handleEditWebsite : handleAddWebsite}>
-            <div className="mb-3">
-              <label htmlFor="siteName" className="form-label">
-                Site Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="siteName"
-                value={newSiteName}
-                onChange={(e) => setNewSiteName(e.target.value)}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="siteUrl" className="form-label">
-                Site URL
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="siteUrl"
-                value={newSiteUrl}
-                onChange={(e) => setNewSiteUrl(e.target.value)}
-                required
-              />
-            </div>
-            <Button variant="primary" type="submit">
-              {isEditMode ? 'Save Changes' : 'Add'}
-            </Button>
-          </form>
-        </Modal.Body>
-      </Modal>
-      
+      {/* Support Us Section */}
+      <div style={{ width: '100%', textAlign: 'center', marginTop: 40, marginBottom: 20 }}>
+        <div style={{ display: 'inline-block', background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+          <h4 style={{ marginBottom: 10 }}>Support Us on Ko-fi!</h4>
+          <p style={{ marginBottom: 10 }}>Scan this QR code with your phone to donate:</p>
+          <img src={process.env.PUBLIC_URL + '/ko_fi_teslahub_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
+          <br />
+          <a href="https://ko-fi.com/teslahub" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
+            Open Ko-fi Directly
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

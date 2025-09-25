@@ -84,11 +84,23 @@ function App() {
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
   });
-  // Detect fullscreen mode from URL param or session storage
+  // Detect fullscreen mode from URL param, session storage, or YouTube referrer
   const [isFullscreen, setIsFullscreen] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     const urlFullscreen = params.get('fullscreen') === '1';
     const sessionFullscreen = sessionStorage.getItem('fullscreenLaunched') === 'true';
+    const fromYouTube = document.referrer.includes('youtube.com');
+    
+    // If coming from YouTube and we have session data, enter fullscreen mode
+    if (fromYouTube && sessionFullscreen) {
+      // Set URL parameter for clean state management
+      if (!urlFullscreen) {
+        const newUrl = `${window.location.origin}${window.location.pathname}?fullscreen=1`;
+        window.history.replaceState({}, '', newUrl);
+      }
+      return true;
+    }
+    
     return urlFullscreen || sessionFullscreen;
   });
   const [isAppEditMode, setIsAppEditMode] = useState(false);
@@ -187,26 +199,45 @@ function App() {
 
   const toggleFullscreen = () => {
     const appsJson = JSON.stringify(appItems);
-    let encoded = '';
-    try {
-      encoded = btoa(unescape(encodeURIComponent(appsJson)));
-    } catch (e) {
-      console.error('Failed to encode apps to base64', e);
-    }
-    const url = `${window.location.origin}${window.location.pathname}?apps=${encoded}&fullscreen=1`;
     
-    // Store state in session storage so we know fullscreen was launched
+    // Store state in session storage for when we return from YouTube
     sessionStorage.setItem('fullscreenLaunched', 'true');
+    sessionStorage.setItem('teslahub_fullscreen_apps', appsJson);
     
-    // Navigate to fullscreen URL (works better with Tesla Theater mode than window.open)
-    window.location.href = url;
+    // For Tesla Theater mode, we need to go to YouTube first
+    // Then user clicks "Go to site" in YouTube player to return in fullscreen
+    // Using a short, relevant video about Tesla or apps
+    const youtubeUrl = "https://www.youtube.com/watch?v=jn7fXDy3EzQ"; // Tesla-related video
+    
+    // Navigate to YouTube - user will then use "Go to site" to return in fullscreen
+    window.location.href = youtubeUrl;
   };
   // On mount, check for ?apps= param and use it if present (fullscreen mode)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const appsParam = params.get('apps');
     const fullscreenParam = params.get('fullscreen');
+    const fromYouTube = document.referrer.includes('youtube.com');
     
+    // Handle return from YouTube via "Go to site" 
+    if (fromYouTube && sessionStorage.getItem('fullscreenLaunched') === 'true') {
+      const storedApps = sessionStorage.getItem('teslahub_fullscreen_apps');
+      if (storedApps) {
+        try {
+          setAppItems(JSON.parse(storedApps));
+        } catch (e) {
+          console.error('Failed to parse stored fullscreen apps', e);
+        }
+      }
+      setIsFullscreen(true);
+      // Ensure URL shows fullscreen state
+      if (!fullscreenParam) {
+        const cleanUrl = `${window.location.origin}${window.location.pathname}?fullscreen=1`;
+        window.history.replaceState({}, '', cleanUrl);
+      }
+      return;
+    }
+
     if (appsParam && fullscreenParam === '1') {
       try {
         const decoded = decodeURIComponent(escape(atob(appsParam)));
@@ -241,7 +272,7 @@ function App() {
     }
     
     // Handle Tesla Theater mode - clear session storage when not in fullscreen URL mode
-    if (!fullscreenParam) {
+    if (!fullscreenParam && !fromYouTube) {
       sessionStorage.removeItem('fullscreenLaunched');
       sessionStorage.removeItem('teslahub_fullscreen_apps');
       setIsFullscreen(false);

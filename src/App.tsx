@@ -84,10 +84,12 @@ function App() {
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
   });
-  // Detect fullscreen mode from URL param
+  // Detect fullscreen mode from URL param or session storage
   const [isFullscreen, setIsFullscreen] = useState(() => {
     const params = new URLSearchParams(window.location.search);
-    return params.get('fullscreen') === '1';
+    const urlFullscreen = params.get('fullscreen') === '1';
+    const sessionFullscreen = sessionStorage.getItem('fullscreenLaunched') === 'true';
+    return urlFullscreen || sessionFullscreen;
   });
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
@@ -192,7 +194,12 @@ function App() {
       console.error('Failed to encode apps to base64', e);
     }
     const url = `${window.location.origin}${window.location.pathname}?apps=${encoded}&fullscreen=1`;
-    window.open(url, '_blank');
+    
+    // Store state in session storage so we know fullscreen was launched
+    sessionStorage.setItem('fullscreenLaunched', 'true');
+    
+    // Navigate to fullscreen URL (works better with Tesla Theater mode than window.open)
+    window.location.href = url;
   };
   // On mount, check for ?apps= param and use it if present (fullscreen mode)
   useEffect(() => {
@@ -208,7 +215,25 @@ function App() {
       setIsFullscreen(params.get('fullscreen') === '1');
       return;
     }
-    // ...existing code for localStorage/default-apps.json...
+    
+    // Handle Tesla Theater mode - clear session storage when not in fullscreen URL mode
+    if (!params.get('fullscreen')) {
+      sessionStorage.removeItem('fullscreenLaunched');
+      setIsFullscreen(false);
+    }
+  }, []);
+
+  // Handle pageshow event for Tesla Theater mode behavior
+  useEffect(() => {
+    const handlePageShow = () => {
+      const params = new URLSearchParams(window.location.search);
+      if (!params.get('fullscreen') && !sessionStorage.getItem('fullscreenLaunched')) {
+        setIsFullscreen(false);
+      }
+    };
+
+    window.addEventListener('pageshow', handlePageShow);
+    return () => window.removeEventListener('pageshow', handlePageShow);
   }, []);
 
   const toggleTheme = () => {

@@ -295,8 +295,8 @@ const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
     };
   } catch (error) {
     return {
-      primary: 'default-icon.svg',
-      fallback: 'default-icon.svg'
+      primary: 'favicon.svg',
+      fallback: 'favicon.svg'
     };
   }
 };

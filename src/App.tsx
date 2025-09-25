@@ -85,7 +85,11 @@ function App() {
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
   });
-  const isFullscreen = false;
+  // Detect fullscreen mode from URL param
+  const [isFullscreen, setIsFullscreen] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('fullscreen') === '1';
+  });
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
@@ -197,6 +201,7 @@ function App() {
       } catch (e) {
         // fallback to localStorage or default
       }
+      setIsFullscreen(params.get('fullscreen') === '1');
       return;
     }
     // ...existing code for localStorage/default-apps.json...

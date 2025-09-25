@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Button } from 'react-bootstrap';
 import AppItemComponent from './components/AppItem';
 import imageNames from './image-manifest';
+import { getUserRegion } from './utils/location';
 
 
 interface AppItem {
@@ -13,19 +15,60 @@ interface AppItem {
 }
 
 function App() {
+  // Add modal state for custom app
+  const [showAppModal, setShowAppModal] = useState(false);
+  const [modalMode, setModalMode] = useState<'add' | 'edit'>('add');
+  const [editIndex, setEditIndex] = useState<number | null>(null);
+  const [appNameInput, setAppNameInput] = useState('');
+  const [appUrlInput, setAppUrlInput] = useState('');
   // Handler to show modal for editing/adding
+  // Show add modal when clicking +
+  // Show modal for add or edit
   const handleShow = (itemToEdit?: AppItem, indexToEdit?: number) => {
-  // Removed setShowModal
-    if (itemToEdit) {
-      // Removed setEditingItem, setNewSiteName, setNewSiteUrl, setIsEditMode
+    if (itemToEdit && typeof indexToEdit === 'number') {
+      setModalMode('edit');
+      setEditIndex(indexToEdit);
+      setAppNameInput(itemToEdit.name);
+      setAppUrlInput(itemToEdit.url);
     } else {
-      // Removed setEditingItem, setNewSiteName, setNewSiteUrl, setIsEditMode
+      setModalMode('add');
+      setEditIndex(null);
+      setAppNameInput('');
+      setAppUrlInput('');
     }
+    setShowAppModal(true);
+  };
+
+  // Add or edit app
+  const handleAppModalSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!appNameInput.trim() || !appUrlInput.trim()) return;
+    let urlToSave = appUrlInput.trim();
+    // If user enters only a domain, prepend https://
+    if (!/^https?:\/\//i.test(urlToSave)) {
+      urlToSave = `https://${urlToSave}`;
+    }
+    let updatedApps;
+    if (modalMode === 'add') {
+      updatedApps = [...appItems, { id: `${appNameInput}-${Date.now()}`, name: appNameInput, url: urlToSave }];
+    } else if (modalMode === 'edit' && editIndex !== null) {
+      updatedApps = [...appItems];
+      updatedApps[editIndex] = { ...updatedApps[editIndex], name: appNameInput, url: urlToSave };
+    }
+    if (updatedApps) {
+      setAppItems(updatedApps);
+      localStorage.setItem('teslahub_apps', JSON.stringify(updatedApps));
+    }
+    setShowAppModal(false);
+    setAppNameInput('');
+    setAppUrlInput('');
+    setEditIndex(null);
   };
 
 
   // Touch handlers (assign after function definitions)
   const [appItems, setAppItems] = useState<AppItem[]>([]);
+  const [showKoFi, setShowKoFi] = useState(false);
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('teslahub_theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -53,6 +96,8 @@ function App() {
     setAppItems((prevAppItems) => prevAppItems.filter((item) => item.id !== id));
   } // <-- Properly close the function here
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
+    if (!isAppEditMode) return;
+    setDraggedItemIndex(index);
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/html', e.currentTarget.outerHTML);
   };
@@ -63,14 +108,14 @@ function App() {
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>, dropIndex: number) => {
-    if (draggedItemIndex === null) return;
-
+    if (!isAppEditMode || draggedItemIndex === null) return;
     const newAppItems = [...appItems];
     const [draggedItem] = newAppItems.splice(draggedItemIndex, 1);
     newAppItems.splice(dropIndex, 0, draggedItem);
-
     setAppItems(newAppItems);
     setDraggedItemIndex(null);
+    // Save to localStorage
+    localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>, index: number) => {
@@ -171,9 +216,25 @@ function App() {
     }
   };
 
+  // Load default apps based on region on first mount
+  useEffect(() => {
+    const saved = localStorage.getItem('teslahub_apps');
+    if (saved) {
+      setAppItems(JSON.parse(saved));
+    } else {
+      fetch(process.env.PUBLIC_URL + '/default-apps.json')
+        .then(res => res.json())
+        .then((apps) => {
+          const region = getUserRegion();
+          const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
+          setAppItems(regionApps.map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url })));
+        });
+    }
+  }, []);
+
   return (
     <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
-  <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
+      <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <h1 className="text-center mt-5 mb-4">TeslaHub</h1>
         <div className="d-flex justify-content-center mb-4">
@@ -207,13 +268,71 @@ function App() {
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
-              handleShowEdit={handleShow}
+              handleShowEdit={isAppEditMode ? handleShow : () => {}}
               getFaviconUrl={getFaviconUrl}
             />
           ))}
           {isAppEditMode && (
             <div className="col-md-2 mb-3 app-block-wrapper">
               <div className="card add-app-block" onClick={() => handleShow()}>+</div>
+            </div>
+          )}
+          {/* Add/Edit App Modal */}
+          {showAppModal && (
+            <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowAppModal(false)}>
+              <form
+                style={{
+                  background: theme === 'dark' ? '#343a40' : '#fff',
+                  color: theme === 'dark' ? '#f8f9fa' : '#212529',
+                  padding: 24,
+                  borderRadius: 16,
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+                  textAlign: 'center',
+                  minWidth: 320,
+                  maxWidth: 400,
+                  width: '90%',
+                  fontSize: 16,
+                }}
+                onClick={e => e.stopPropagation()}
+                onSubmit={handleAppModalSubmit}
+              >
+                <h4 style={{ marginBottom: 18 }}>{modalMode === 'add' ? 'Add Custom App' : 'Edit App'}</h4>
+                <input
+                  type="text"
+                  placeholder="App Name"
+                  value={appNameInput}
+                  onChange={e => setAppNameInput(e.target.value)}
+                  style={{
+                    width: '90%',
+                    marginBottom: 14,
+                    padding: 10,
+                    borderRadius: 8,
+                    border: '1px solid #bbb',
+                    background: theme === 'dark' ? '#495057' : '#fff',
+                    color: theme === 'dark' ? '#f8f9fa' : '#212529',
+                  }}
+                  autoFocus
+                />
+                <input
+                  type="url"
+                  placeholder="App URL (https://...)"
+                  value={appUrlInput}
+                  onChange={e => setAppUrlInput(e.target.value)}
+                  style={{
+                    width: '90%',
+                    marginBottom: 14,
+                    padding: 10,
+                    borderRadius: 8,
+                    border: '1px solid #bbb',
+                    background: theme === 'dark' ? '#495057' : '#fff',
+                    color: theme === 'dark' ? '#f8f9fa' : '#212529',
+                  }}
+                />
+                <div style={{ marginTop: 18, display: 'flex', justifyContent: 'center', gap: 12 }}>
+                  <Button variant="primary" type="submit">{modalMode === 'add' ? 'Add' : 'Save'}</Button>
+                  <Button variant="secondary" onClick={() => setShowAppModal(false)}>Cancel</Button>
+                </div>
+              </form>
             </div>
           )}
         </div>
@@ -246,17 +365,30 @@ function App() {
           </div>
         </div>
       )}
-      {/* Support Us Section */}
+      {/* Ko-fi Support Link */}
       <div style={{ width: '100%', textAlign: 'center', marginTop: 40, marginBottom: 20 }}>
-        <div style={{ display: 'inline-block', background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-          <h4 style={{ marginBottom: 10 }}>Support Us on Ko-fi!</h4>
-          <p style={{ marginBottom: 10 }}>Scan this QR code with your phone to donate:</p>
-          <img src={process.env.PUBLIC_URL + '/ko_fi_teslahub_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
-          <br />
-          <a href="https://ko-fi.com/teslahub" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
-            Open Ko-fi Directly
-          </a>
-        </div>
+        <button
+          type="button"
+          style={{ fontSize: 14, color: '#ff5f5f', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+          onClick={() => setShowKoFi(true)}
+        >
+          Support Us on Ko-fi
+        </button>
+        {showKoFi && (
+          <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
+            <div style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)', textAlign: 'center' }} onClick={e => e.stopPropagation()}>
+              {/* Removed extra text for cleaner modal */}
+              <img src={process.env.PUBLIC_URL + '/ko_fi_teslahub_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
+              <br />
+              <a href="https://ko-fi.com/teslahub" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
+                Open Ko-fi Directly
+              </a>
+              <div style={{ marginTop: 10 }}>
+                <Button variant="secondary" onClick={() => setShowKoFi(false)}>Close</Button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

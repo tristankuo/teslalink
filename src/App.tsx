@@ -84,8 +84,11 @@ function App() {
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);
     return fullImagePaths[randomIndex];
   });
-  // Detect fullscreen mode - manual control only (Gemini approach)
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  // Detect fullscreen mode from URL parameters (restore working approach)
+  const [isFullscreen, setIsFullscreen] = useState(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.has('apps') || urlParams.get('fullscreen') === '1' || window.self !== window.top;
+  });
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
@@ -186,35 +189,36 @@ function App() {
     sessionStorage.setItem('fullscreenLaunched', 'true');
     sessionStorage.setItem('teslahub_fullscreen_apps', appsJson);
     
-    // Use Gemini's approach: open YouTube in new tab/window
-    // This doesn't rely on Tesla auto-adding URL parameters
-    const youtubeWindow = window.open("https://www.youtube.com", '_blank');
-    
-    if (!youtubeWindow) {
-      // Fallback if popup blocked
-      window.location.href = "https://www.youtube.com";
+    // Use the working YouTube redirect approach from September 18th
+    const url = new URL(window.location.href);
+    try {
+      url.searchParams.set('apps', btoa(appsJson));
+      url.searchParams.set('fullscreen', '1');
+    } catch (e) {
+      console.error('Failed to encode apps to base64', e);
     }
-  };
-  // Handle fullscreen mode with automatic detection when returning from YouTube
-  useEffect(() => {
-    // Check if user returned from YouTube (has session data but not in fullscreen yet)
-    const hasYouTubeSession = sessionStorage.getItem('fullscreenLaunched') === 'true';
     
-    if (hasYouTubeSession && !isFullscreen) {
-      // Automatically enter fullscreen mode
-      setIsFullscreen(true);
-      
-      // Load saved apps
-      const storedApps = sessionStorage.getItem('teslahub_fullscreen_apps');
-      if (storedApps) {
-        try {
-          setAppItems(JSON.parse(storedApps));
-        } catch (e) {
-          console.error('Failed to parse stored fullscreen apps', e);
-        }
+    // YouTube redirect approach - this was working before!
+    window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
+  };
+  // Handle URL parameters and fullscreen detection (restore working approach)
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const appsParam = urlParams.get('apps');
+    const isFullscreenFromUrl = urlParams.has('apps') || urlParams.get('fullscreen') === '1';
+    
+    if (appsParam) {
+      try {
+        const decoded = atob(appsParam);
+        const apps = JSON.parse(decoded);
+        setAppItems(apps);
+      } catch (e) {
+        console.error('Failed to decode apps from URL', e);
       }
     }
-  }, [isFullscreen]); // Include isFullscreen dependency
+    
+    setIsFullscreen(isFullscreenFromUrl || window.self !== window.top);
+  }, [isFullscreen]);
 
   // Simple pageshow handler - no URL parameter detection
   useEffect(() => {

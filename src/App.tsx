@@ -97,7 +97,11 @@ function App() {
   const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
 
   const handleDeleteWebsite = (id: string) => {
-    setAppItems((prevAppItems) => prevAppItems.filter((item) => item.id !== id));
+    setAppItems((prevAppItems) => {
+      const updated = prevAppItems.filter((item) => item.id !== id);
+      localStorage.setItem('teslahub_apps', JSON.stringify(updated));
+      return updated;
+    });
   } // <-- Properly close the function here
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
     if (!isAppEditMode) return;
@@ -173,6 +177,7 @@ function App() {
     newAppItems.splice(dropIndex, 0, draggedItem);
 
     setAppItems(newAppItems);
+    localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
     setDraggedItemIndex(null);
     setDraggedItemOffset(null);
     setDraggedItemPosition(null);

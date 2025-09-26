@@ -1,41 +1,74 @@
-# TeslaHub - Your Personalized Tesla Companion
+# 🚗 TeslaHub - The Ultimate Tesla Companion
 
-TeslaHub is a web application designed to enhance your in-car browsing experience in Tesla vehicles. It provides a customizable dashboard where you can quickly access your favorite websites, manage them with ease, and optimize your view for the Tesla's large screen.
+**Your favorite websites, beautifully organized for Tesla!**
 
-## Features
+TeslaHub is the perfect companion app for Tesla owners who want quick, easy access to their favorite websites while driving. Designed specifically for Tesla's touchscreen, it provides a beautiful, customizable collection of web apps that makes your in-car browsing experience seamless and enjoyable.
 
--   **Personalized App Dashboard:** Add, edit, and delete your favorite websites as "App Blocks" on a clean, customizable dashboard.
--   **Intuitive Management:**
-    -   **Drag-and-Drop Repositioning:** Easily reorder your App Blocks by long-pressing and dragging them to your desired position.
-    -   **Edit Functionality:** Long-press any App Block and then click it to open an intuitive edit window, allowing you to update the name or URL.
-    -   **Effortless Deletion:** While in edit mode, simply click the 'x' icon on an App Block to remove it.
--   **Optimized for Tesla:**
-    -   **Fullscreen Toggle:** Seamlessly switch between the standard browser view and a YouTube-powered fullscreen mode for an immersive experience.
-    -   **Adaptive Layout:** App Blocks are designed to fit comfortably, with up to 8 blocks per row, ensuring a clean and organized display on your Tesla screen.
--   **Theme Customization:** Toggle between light and dark modes to match your preference or the car's interior.
--   **Simplified User Interface:** Clean and straightforward modals for adding and editing apps, focusing on essential information.
+## ✨ Why TeslaHub?
 
-## Live Demo
+🎯 **Built for Tesla** - Optimized specifically for your Tesla's large touchscreen  
+🚀 **Tesla Theater Ready** - Full-screen mode that works perfectly with Tesla Theater  
+📱 **Simple & Clean** - Organize your favorite apps with ease  
+🎨 **Beautiful Design** - Clean, modern interface that matches Tesla's aesthetic  
+🌍 **Regional Defaults** - Pre-loaded with popular apps for your region  
 
-Experience TeslaHub directly in your browser or Tesla:
-[https://tristankuo.github.io/teslahub](https://tristankuo.github.io/teslahub)
+## 🔥 Key Features
 
-## Getting Started
+### 📋 **Personal App Collection**
+- Add unlimited custom apps to your collection
+- Drag and drop to reorder your apps
+- Clean, grid-based layout perfect for touchscreens
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🎭 **Tesla Theater Mode**
+- **One-tap fullscreen** - Perfect for Tesla's Theater mode
+- Seamless transition between browser and fullscreen
+- All your apps stay synchronized
 
-### Available Scripts
+### ⚡ **Easy Management**
+- **Long-press to edit** any app
+- **One-tap deletion** when editing
+- **Reset to defaults** anytime
+- Dark/light theme toggle
 
-In the project directory, you can run:
+### 🗺️ **Smart Defaults**
+Pre-loaded with popular streaming apps based on your region:
+- **Global**: YouTube, Netflix, Disney+, Twitch, Apple TV+
+- **Taiwan**: KKTV, HamiVideo, LINE TV, friDay, CATCHPLAY+, MyVideo, and more
+- **China**: bilibili, iQIYI, WeTV, Ani-Gamer, Gimy
+- **Japan**: U-NEXT, AbemaTV, TVer
+- **United States**: Hulu, Max, Peacock TV (plus Global apps)
 
--   `npm start`: Runs the app in the development mode.
--   `npm run build`: Builds the app for production to the `build` folder.
--   `npm run deploy`: Deploys the built app to GitHub Pages.
+## 🚀 Get Started in Seconds
 
-## Contributing
+**Just visit:** [**tristankuo.github.io/teslahub**](https://tristankuo.github.io/teslahub)
 
-Feel free to fork this repository and contribute!
+1. **Open in Tesla Browser** - Navigate to the URL above
+2. **Customize Your Apps** - Add your favorites or use regional defaults
+3. **Go Fullscreen** - Tap "Enter Fullscreen" for Tesla Theater mode
+4. **Enjoy!** - Quick access to all your favorite apps while driving
 
-## License
+## 💡 Pro Tips
 
-[MIT License](LICENSE)
+- **Bookmark it** in your Tesla for instant access
+- **Use fullscreen mode** for the best Tesla Theater experience  
+- **Long-press apps** to edit names and URLs
+- **Reset anytime** if you want to start fresh
+
+## 🛠️ For Developers
+
+Built with React and TypeScript, deployed on GitHub Pages.
+
+```bash
+npm install
+npm start      # Development
+npm run build  # Production build
+npm run deploy # Deploy to GitHub Pages
+```
+
+## 📝 License
+
+MIT License - Feel free to fork and customize for your needs!
+
+---
+
+**Made with ❤️ for the Tesla community**

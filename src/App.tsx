@@ -336,7 +336,72 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    // Sync bridge: apply incoming state and close
+    const handleApplied = (apps: AppItem[]) => {
+      commitToStorage(apps, 'Sync Bridge');
+      setAppItems(apps);
+      setShowSyncToast(true);
+      setTimeout(() => setShowSyncToast(false), 2500);
+    };
+
+    // Hash-based sync bridge (survives more redirectors): #sync=1&apps=<b64>
+    const hash = window.location.hash || '';
+    if (hash.startsWith('#')) {
+      try {
+        const hashParams = new URLSearchParams(hash.slice(1));
+        if (hashParams.get('sync') === '1') {
+          const hp = hashParams.get('apps');
+          if (hp) {
+            try {
+              const decoded = atob(hp);
+              const apps = JSON.parse(decoded);
+              if (Array.isArray(apps)) {
+                console.log(`[SYNC-BRIDGE#] Applying ${apps.length} apps from hash`);
+                handleApplied(apps);
+              }
+            } catch (e) {
+              console.error('[SYNC-BRIDGE#] Failed to decode/apply apps', e);
+            }
+          }
+          // Clean hash to avoid long URLs
+          try {
+            const cleanUrl = `${window.location.origin}${window.location.pathname}`;
+            window.history.replaceState({}, '', cleanUrl);
+          } catch {}
+          setTimeout(() => { try { window.close(); } catch {} }, 250);
+          setUrlLoadingComplete(true);
+          return;
+        }
+      } catch (e) {
+        // ignore malformed hash
+      }
+    }
+
+    // Path-based fallback: /s/<b64>
+    try {
+      const path = window.location.pathname || '';
+      const match = path.match(/\/s\/([A-Za-z0-9+/=\-_]+)/);
+      if (match && match[1]) {
+        try {
+          const decoded = atob(match[1]);
+          const apps = JSON.parse(decoded);
+          if (Array.isArray(apps)) {
+            console.log(`[SYNC-BRIDGE/PATH] Applying ${apps.length} apps from path`);
+            handleApplied(apps);
+          }
+        } catch (e) {
+          console.error('[SYNC-BRIDGE/PATH] Failed to decode/apply apps', e);
+        }
+        // Clean URL to root after applying
+        try {
+          const cleanUrl = `${window.location.origin}${window.location.pathname.replace(/\/s\/.*/, '')}`;
+          window.history.replaceState({}, '', cleanUrl);
+        } catch {}
+        setTimeout(() => { try { window.close(); } catch {} }, 250);
+        setUrlLoadingComplete(true);
+        return;
+      }
+    } catch {}
+    // Query-based sync bridge: apply incoming state and close
     if (urlParams.get('sync') === '1') {
       const syncAppsParam = urlParams.get('apps');
       if (syncAppsParam) {
@@ -345,11 +410,7 @@ function App() {
           const apps = JSON.parse(decoded);
           if (Array.isArray(apps)) {
             console.log(`[SYNC-BRIDGE] Applying ${apps.length} apps`);
-            commitToStorage(apps, 'Sync Bridge');
-            setAppItems(apps);
-            // Show a short-lived toast confirming sync applied
-            setShowSyncToast(true);
-            setTimeout(() => setShowSyncToast(false), 2500);
+            handleApplied(apps);
           }
         } catch (e) {
           console.error('[SYNC-BRIDGE] Failed to decode/apply apps', e);
@@ -511,23 +572,34 @@ function App() {
     if (isFullscreen) {
       setIsAppEditMode(false);
       try {
-        const baseUrl = `${window.location.origin}${window.location.pathname}`;
-        const payload = btoa(JSON.stringify(appItems));
-        const bridgeUrl = new URL(baseUrl);
-        bridgeUrl.searchParams.set('sync', '1');
-        bridgeUrl.searchParams.set('apps', payload);
-        const metaRaw = localStorage.getItem('teslahub_apps_meta');
-        if (metaRaw) {
-          try {
-            const m = JSON.parse(metaRaw) as { version?: number };
-            if (m?.version) bridgeUrl.searchParams.set('v', String(m.version));
-          } catch {}
-        }
-        const redirect = `https://www.youtube.com/redirect?q=${encodeURIComponent(bridgeUrl.toString())}`;
-        window.location.href = redirect;
-        console.log('[SYNC-RETURN] Redirected via YouTube to regular browser for commit');
+  const baseUrl = `${window.location.origin}${window.location.pathname}`.replace(/#.*$/, '');
+  const payload = btoa(JSON.stringify(appItems));
+  const hashUrl = `${baseUrl}#sync=1&apps=${payload}`;
+        const tryOpen = (host: 'm.youtube.com' | 'www.youtube.com') => {
+          const target = `https://${host}/redirect?q=` + encodeURIComponent(hashUrl);
+          const win = window.open(target, '_blank');
+          if (!win) {
+            const a = document.createElement('a');
+            a.href = target;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            requestAnimationFrame(() => {
+              try { document.body.removeChild(a); } catch {}
+            });
+          }
+        };
+        // Prefer mobile domain first
+        tryOpen('m.youtube.com');
+        // Schedule a quick fallback to www if nothing happened
+        setTimeout(() => {
+          tryOpen('www.youtube.com');
+        }, 250);
+        console.log('[SYNC-RETURN] Attempted window.open to YouTube redirect (hash primary, path fallback server-side)');
       } catch (e) {
-        console.warn('[SYNC-RETURN] Failed to redirect to browser sync', e);
+        console.warn('[SYNC-RETURN] Failed to trigger Browser handoff', e);
       }
       return;
     }
@@ -566,14 +638,28 @@ function App() {
           setAppItems(defaultApps);
           setIsAppEditMode(false);
           try {
-            const baseUrl = `${window.location.origin}${window.location.pathname}`;
+            const baseUrl = `${window.location.origin}${window.location.pathname}`.replace(/#.*$/, '');
             const payload = btoa(JSON.stringify(defaultApps));
-            const bridgeUrl = new URL(baseUrl);
-            bridgeUrl.searchParams.set('sync', '1');
-            bridgeUrl.searchParams.set('apps', payload);
-            const redirect = `https://www.youtube.com/redirect?q=${encodeURIComponent(bridgeUrl.toString())}`;
-            window.location.href = redirect;
-            console.log('[RESET] (Fullscreen) Redirected to Browser to apply defaults');
+            const hashUrl = `${baseUrl}#sync=1&apps=${payload}`;
+            const tryOpen = (host: 'm.youtube.com' | 'www.youtube.com') => {
+              const target = `https://${host}/redirect?q=` + encodeURIComponent(hashUrl);
+              const win = window.open(target, '_blank');
+              if (!win) {
+                const a = document.createElement('a');
+                a.href = target;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                requestAnimationFrame(() => {
+                  try { document.body.removeChild(a); } catch {}
+                });
+              }
+            };
+            tryOpen('m.youtube.com');
+            setTimeout(() => tryOpen('www.youtube.com'), 250);
+            console.log('[RESET] (Fullscreen) Attempted YouTube redirect for Browser apply');
           } catch (err) {
             console.warn('[RESET] (Fullscreen) Failed to redirect for sync', err);
           }
@@ -686,7 +772,6 @@ function App() {
               {!isFullscreen && (
                 <Button variant="info" onClick={toggleFullscreen} className="ms-2">Enter Fullscreen</Button>
               )}
-              {/* Remove manual fullscreen button - will be automated */}
               <Button variant="secondary" onClick={toggleTheme} className="ms-2">Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})</Button>
               <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">Edit</Button>
             </>

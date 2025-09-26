@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import './App.css';
 import { Button } from 'react-bootstrap';
 import AppItemComponent from './components/AppItem';
@@ -13,11 +13,109 @@ interface AppItem {
   index?: number;
 }
 
+interface AppsMeta {
+  version: number; // monotonically increasing version
+  updatedAt: number; // epoch ms
+  sourceId: string; // author tab id
+}
+
 function App() {
   // Add modal state for custom app
   const [showAppModal, setShowAppModal] = useState(false);
   const [modalMode, setModalMode] = useState<'add' | 'edit'>('add');
   const [editIndex, setEditIndex] = useState<number | null>(null);
+
+  // CLEAN SYNC ALGORITHM: localStorage is the SINGLE source of truth
+  // React state = working memory, localStorage = committed state
+  // Cross-tab sync: BroadcastChannel + storage event with versioned commits
+
+  // Create a stable client id for this tab
+  const clientId = useMemo(() => {
+    const rnd = Math.random().toString(36).slice(2);
+    // Prefer crypto.randomUUID if available
+    // @ts-ignore
+    const uuid = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${rnd}`;
+    return uuid as string;
+  }, []);
+
+  // Track the latest version we know
+  const [appsVersion, setAppsVersion] = useState<number>(0);
+
+  // Broadcast channel for same-origin tabs (fallback to storage event)
+  const bcRef = useRef<BroadcastChannel | null>(null);
+  
+  const readMeta = (): AppsMeta | null => {
+    try {
+      const raw = localStorage.getItem('teslahub_apps_meta');
+      return raw ? (JSON.parse(raw) as AppsMeta) : null;
+    } catch (e) {
+      console.error('[META] Failed to read meta', e);
+      return null;
+    }
+  };
+
+  const writeMeta = (meta: AppsMeta) => {
+    try {
+      localStorage.setItem('teslahub_apps_meta', JSON.stringify(meta));
+    } catch (e) {
+      console.error('[META] Failed to write meta', e);
+    }
+  };
+
+  const broadcastUpdate = (payload: { version: number; apps: AppItem[]; sourceId: string; updatedAt: number }) => {
+    try {
+      if (bcRef.current) {
+        bcRef.current.postMessage({ type: 'apps-update', ...payload });
+        console.log(`[SYNC] Broadcasted update v${payload.version} to channel`);
+      }
+    } catch (e) {
+      console.error('[SYNC] Broadcast failed', e);
+    }
+  };
+
+  const commitToStorage = (apps: AppItem[], source: string) => {
+    console.log(`[COMMIT] ${source}: Committing ${apps.length} apps to localStorage`);
+    try {
+      // Compute next version
+      const currentMeta = readMeta();
+      const nextVersion = (currentMeta?.version ?? 0) + 1;
+      const updatedAt = Date.now();
+      const meta: AppsMeta = { version: nextVersion, updatedAt, sourceId: clientId };
+
+      // Persist state and meta
+      localStorage.setItem('teslahub_apps', JSON.stringify(apps));
+      writeMeta(meta);
+
+      // Update local version and broadcast to peers
+      setAppsVersion(nextVersion);
+      broadcastUpdate({ version: nextVersion, apps, sourceId: clientId, updatedAt });
+
+      console.log(`[COMMIT] ${source}: Success v${nextVersion}`);
+      return true;
+    } catch (error) {
+      console.error(`[COMMIT] ${source}: Failed`, error);
+      return false;
+    }
+  };
+  
+  const loadFromStorage = (source: string): AppItem[] | null => {
+    console.log(`[LOAD] ${source}: Loading from localStorage`);
+    try {
+      const stored = localStorage.getItem('teslahub_apps');
+      if (stored) {
+        const apps = JSON.parse(stored);
+        console.log(`[LOAD] ${source}: Loaded ${apps.length} apps`);
+        return apps;
+      }
+      console.log(`[LOAD] ${source}: No stored apps found`);
+      return null;
+    } catch (error) {
+      console.error(`[LOAD] ${source}: Failed`, error);
+      return null;
+    }
+  };
+
+  // Add or edit app
   const [appNameInput, setAppNameInput] = useState('');
   const [appUrlInput, setAppUrlInput] = useState('');
   // Handler to show modal for editing/adding
@@ -73,16 +171,9 @@ function App() {
     }
     
     if (updatedApps) {
-      try {
-        setAppItems(updatedApps);
-        // Update both localStorage and sessionStorage for cross-tab sync
-        localStorage.setItem('teslahub_apps', JSON.stringify(updatedApps));
-        sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(updatedApps));
-      } catch (error) {
-        console.error('Failed to save app data:', error);
-        alert('Failed to save app. Please try again.');
-        return;
-      }
+      // During editing: ONLY update React state, no storage writes
+      setAppItems(updatedApps);
+      console.log(`[EDIT] App modified, React state updated to ${updatedApps.length} apps`);
     }
     
     setShowAppModal(false);
@@ -120,7 +211,11 @@ function App() {
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [draggedItemOffset, setDraggedItemOffset] = useState<{ x: number; y: number } | null>(null);
   const [draggedItemPosition, setDraggedItemPosition] = useState<{ x: number; y: number } | null>(null);
+  const [urlLoadingComplete, setUrlLoadingComplete] = useState(false);
+  const [appsLoadedFromUrl, setAppsLoadedFromUrl] = useState(false);
   const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
+  // Show a small confirmation toast when Browser applies sync from Theater
+  const [showSyncToast, setShowSyncToast] = useState(false);
 
   const handleDeleteWebsite = (id: string) => {
     if (!id) {
@@ -128,20 +223,10 @@ function App() {
       return;
     }
     
-    setAppItems((prevAppItems) => {
-      const updated = prevAppItems.filter((item) => item.id !== id);
-      
-      try {
-        // Update both localStorage and sessionStorage for cross-tab sync
-        localStorage.setItem('teslahub_apps', JSON.stringify(updated));
-        sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(updated));
-      } catch (error) {
-        console.error('Failed to save after deletion:', error);
-        // Even if save fails, still update the UI
-      }
-      
-      return updated;
-    });
+    // During editing: ONLY update React state, no storage writes
+    const updatedApps = appItems.filter((item) => item.id !== id);
+    setAppItems(updatedApps);
+    console.log(`[DELETE] App deleted, React state updated to ${updatedApps.length} apps`);
   };
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, index: number) => {
     if (!isAppEditMode) return;
@@ -160,16 +245,11 @@ function App() {
     const newAppItems = [...appItems];
     const [draggedItem] = newAppItems.splice(draggedItemIndex, 1);
     newAppItems.splice(dropIndex, 0, draggedItem);
+    
+    // During editing: ONLY update React state, no storage writes
     setAppItems(newAppItems);
     setDraggedItemIndex(null);
-    
-    try {
-      // Save to both localStorage and sessionStorage for cross-tab sync
-      localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
-      sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(newAppItems));
-    } catch (error) {
-      console.error('Failed to save reordered apps:', error);
-    }
+    console.log(`[REORDER] Apps reordered, React state updated to ${newAppItems.length} apps`);
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>, index: number) => {
@@ -222,15 +302,8 @@ function App() {
     
     newAppItems.splice(dropIndex, 0, draggedItem);
 
+    // During editing: ONLY update React state, no storage writes
     setAppItems(newAppItems);
-    
-    try {
-      // Update both localStorage and sessionStorage for cross-tab sync
-      localStorage.setItem('teslahub_apps', JSON.stringify(newAppItems));
-      sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(newAppItems));
-    } catch (error) {
-      console.error('Failed to save reordered apps:', error);
-    }
     
     setDraggedItemIndex(null);
     setDraggedItemOffset(null);
@@ -239,60 +312,184 @@ function App() {
   };
 
   const toggleFullscreen = () => {
-    // Store current app state
-    const appsJson = JSON.stringify(appItems);
-    sessionStorage.setItem('fullscreenLaunched', 'true');
-    sessionStorage.setItem('teslahub_fullscreen_apps', appsJson);
+    // Load COMMITTED state from localStorage (not React state)
+    const committedApps = loadFromStorage('Enter Fullscreen');
+    const appsToSend = committedApps || appItems; // Fallback to React state if no committed state
     
-    // Use the working YouTube redirect approach from September 18th
+    console.log(`[FULLSCREEN] Sending ${appsToSend.length} apps via URL`);
+    
+    // Encode the committed app state in URL for Tesla Theater mode
     const url = new URL(window.location.href);
     try {
-      url.searchParams.set('apps', btoa(appsJson));
+      url.searchParams.set('apps', btoa(JSON.stringify(appsToSend)));
       url.searchParams.set('fullscreen', '1');
     } catch (e) {
       console.error('Failed to encode apps to base64', e);
+      alert('Failed to prepare fullscreen mode. Please try again.');
+      return;
     }
     
-    // YouTube redirect approach - this was working before!
+    // Launch YouTube redirect
     window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
   };
-  // Handle URL parameters and fullscreen detection with URL cleanup
+  // Handle URL parameters (sync bridge + fullscreen) and detection with URL cleanup
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
+    // Sync bridge: apply incoming state and close
+    if (urlParams.get('sync') === '1') {
+      const syncAppsParam = urlParams.get('apps');
+      if (syncAppsParam) {
+        try {
+          const decoded = atob(syncAppsParam);
+          const apps = JSON.parse(decoded);
+          if (Array.isArray(apps)) {
+            console.log(`[SYNC-BRIDGE] Applying ${apps.length} apps`);
+            commitToStorage(apps, 'Sync Bridge');
+            setAppItems(apps);
+            // Show a short-lived toast confirming sync applied
+            setShowSyncToast(true);
+            setTimeout(() => setShowSyncToast(false), 2500);
+          }
+        } catch (e) {
+          console.error('[SYNC-BRIDGE] Failed to decode/apply apps', e);
+        }
+      }
+      // Clean URL to avoid leaving long parameters in history
+      try {
+        const cleanUrl = `${window.location.origin}${window.location.pathname}`;
+        window.history.replaceState({}, '', cleanUrl);
+      } catch {}
+      setTimeout(() => { try { window.close(); } catch {} }, 250);
+      setUrlLoadingComplete(true);
+      return;
+    }
+
     const appsParam = urlParams.get('apps');
     const fullscreenParam = urlParams.get('fullscreen') === '1';
     
+    console.log('[URL LOADING] Starting...', { appsParam: !!appsParam, fullscreenParam });
+    
     if (appsParam) {
+      // Fresh fullscreen launch with apps in URL
       try {
         const decoded = atob(appsParam);
         const apps = JSON.parse(decoded);
+        
+        // Validate apps array
+        if (!Array.isArray(apps) || apps.length === 0) {
+          throw new Error('Invalid apps data from URL');
+        }
+        
+        console.log(`[URL LOADING] Loaded ${apps.length} apps from URL parameters`);
         setAppItems(apps);
+        setAppsLoadedFromUrl(true);
         
-        // Store apps in sessionStorage for future use
-        sessionStorage.setItem('teslahub_fullscreen_apps', JSON.stringify(apps));
-        
-        // Clean up the URL to avoid long URLs in browser history
-        const cleanUrl = `${window.location.origin}${window.location.pathname}?fullscreen=1`;
-        window.history.replaceState({}, '', cleanUrl);
+  // Clean up the URL to avoid long URLs in browser history
+  const cleanUrl = `${window.location.origin}${window.location.pathname}?fullscreen=1`;
+  window.history.replaceState({}, '', cleanUrl);
       } catch (e) {
         console.error('Failed to decode apps from URL', e);
+        setAppsLoadedFromUrl(false);
       }
     } else if (fullscreenParam) {
-      // If we have fullscreen param but no apps, try to load from sessionStorage
-      const storedApps = sessionStorage.getItem('teslahub_fullscreen_apps');
-      if (storedApps) {
-        try {
-          const apps = JSON.parse(storedApps);
-          setAppItems(apps);
-        } catch (e) {
-          console.error('Failed to parse stored apps', e);
-        }
+      // Fullscreen mode refresh (URL cleaned) - load from localStorage
+      console.log('[URL LOADING] Fullscreen refresh detected, loading from localStorage');
+      const storedApps = loadFromStorage('Fullscreen Refresh');
+      if (storedApps && storedApps.length > 0) {
+        setAppItems(storedApps);
+        setAppsLoadedFromUrl(true);
+        console.log(`[URL LOADING] Restored ${storedApps.length} apps from localStorage`);
+      } else {
+        // No committed data found, load defaults
+        console.log('[URL LOADING] No committed apps found, loading defaults for fullscreen');
+        fetch(process.env.PUBLIC_URL + '/default-apps.json')
+          .then(res => res.json())
+          .then((apps) => {
+            const region = getUserRegion();
+            const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
+            const defaultApps = regionApps.map((a: any, idx: number) => ({ 
+              id: `${a.name}-${idx}`, 
+              name: a.name, 
+              url: a.url 
+            }));
+            console.log(`[URL LOADING] Loaded ${defaultApps.length} default apps`);
+            setAppItems(defaultApps);
+            setAppsLoadedFromUrl(true);
+          })
+          .catch(e => {
+            console.error('[URL LOADING] Failed to load defaults:', e);
+            setAppsLoadedFromUrl(false);
+          });
       }
+    } else {
+      // Regular mode - not loaded from URL
+      console.log('[URL LOADING] Regular mode detected');
+      setAppsLoadedFromUrl(false);
     }
     
     const isFullscreenFromUrl = !!appsParam || fullscreenParam;
     setIsFullscreen(isFullscreenFromUrl || window.self !== window.top);
+    
+    // Mark URL loading as complete
+    setUrlLoadingComplete(true);
   }, [isFullscreen]);
+
+  // Cross-tab synchronization: BroadcastChannel + storage event listener
+  useEffect(() => {
+    // Initialize BroadcastChannel if available
+    if ('BroadcastChannel' in window) {
+      try {
+        bcRef.current = new BroadcastChannel('teslahub_sync');
+        bcRef.current.onmessage = (event: MessageEvent) => {
+          const data = event.data;
+          if (!data || data.type !== 'apps-update') return;
+          const { version, apps, sourceId } = data as { version: number; apps: AppItem[]; sourceId: string };
+          if (sourceId === clientId) return; // ignore own broadcasts
+          if (version > appsVersion) {
+            console.log(`[SYNC] Received broadcast v${version}, applying`);
+            setAppItems(apps);
+            setAppsVersion(version);
+          } else {
+            console.log(`[SYNC] Broadcast v${version} ignored (current v${appsVersion})`);
+          }
+        };
+      } catch (e) {
+        console.warn('[SYNC] BroadcastChannel init failed, relying on storage events', e);
+      }
+    }
+
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== 'teslahub_apps_meta') return;
+      try {
+        const meta = e.newValue ? (JSON.parse(e.newValue) as AppsMeta) : null;
+        if (meta && meta.version > appsVersion && meta.sourceId !== clientId) {
+          const stored = localStorage.getItem('teslahub_apps');
+          if (stored) {
+            const apps = JSON.parse(stored) as AppItem[];
+            console.log(`[SYNC] Storage event v${meta.version}, applying`);
+            setAppItems(apps);
+            setAppsVersion(meta.version);
+          }
+        }
+      } catch (err) {
+        console.error('[SYNC] Failed to process storage event', err);
+      }
+    };
+    window.addEventListener('storage', onStorage);
+
+    // Seed local version from meta on mount
+    const meta = readMeta();
+    if (meta) setAppsVersion(meta.version);
+
+    return () => {
+      window.removeEventListener('storage', onStorage);
+      if (bcRef.current) {
+        bcRef.current.close();
+        bcRef.current = null;
+      }
+    };
+  }, [appsVersion, clientId]);
 
   // Simple pageshow handler - no URL parameter detection
   useEffect(() => {
@@ -309,16 +506,116 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  const handleEditDone = () => {
+    // In Theater/fullscreen, DO NOT commit locally. Redirect to Browser with payload instead.
+    if (isFullscreen) {
+      setIsAppEditMode(false);
+      try {
+        const baseUrl = `${window.location.origin}${window.location.pathname}`;
+        const payload = btoa(JSON.stringify(appItems));
+        const bridgeUrl = new URL(baseUrl);
+        bridgeUrl.searchParams.set('sync', '1');
+        bridgeUrl.searchParams.set('apps', payload);
+        const metaRaw = localStorage.getItem('teslahub_apps_meta');
+        if (metaRaw) {
+          try {
+            const m = JSON.parse(metaRaw) as { version?: number };
+            if (m?.version) bridgeUrl.searchParams.set('v', String(m.version));
+          } catch {}
+        }
+        const redirect = `https://www.youtube.com/redirect?q=${encodeURIComponent(bridgeUrl.toString())}`;
+        window.location.href = redirect;
+        console.log('[SYNC-RETURN] Redirected via YouTube to regular browser for commit');
+      } catch (e) {
+        console.warn('[SYNC-RETURN] Failed to redirect to browser sync', e);
+      }
+      return;
+    }
+
+    // Regular Browser: commit changes immediately
+    console.log(`[DONE] Committing ${appItems.length} apps from React state to localStorage`);
+    const success = commitToStorage(appItems, 'Done Button');
+    if (!success) {
+      alert('Failed to save changes. Please try again.');
+      return;
+    }
+    console.log('[DONE] Successfully committed to localStorage');
+    setIsAppEditMode(false);
+  };
+
   const onLongPress = () => {
     setIsAppEditMode(true);
   };
 
   const handleResetToDefaults = () => {
-    // Clear both localStorage and sessionStorage for complete reset
-    localStorage.removeItem('teslahub_apps');
-    sessionStorage.removeItem('teslahub_fullscreen_apps');
-    sessionStorage.removeItem('fullscreenLaunched');
-    window.location.reload();
+    console.log('[RESET] Starting complete reset to defaults');
+    
+    // Fullscreen/Theater: do NOT commit locally; instead, redirect via sync bridge with defaults
+    if (isFullscreen) {
+      fetch(process.env.PUBLIC_URL + '/default-apps.json')
+        .then(res => res.json())
+        .then((apps) => {
+          const region = getUserRegion();
+          const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
+          const defaultApps = regionApps.map((a: any, idx: number) => ({ 
+            id: `${a.name}-${idx}`, 
+            name: a.name, 
+            url: a.url 
+          }));
+          console.log(`[RESET] (Fullscreen) Prepared ${defaultApps.length} default apps for region: ${region}`);
+          setAppItems(defaultApps);
+          setIsAppEditMode(false);
+          try {
+            const baseUrl = `${window.location.origin}${window.location.pathname}`;
+            const payload = btoa(JSON.stringify(defaultApps));
+            const bridgeUrl = new URL(baseUrl);
+            bridgeUrl.searchParams.set('sync', '1');
+            bridgeUrl.searchParams.set('apps', payload);
+            const redirect = `https://www.youtube.com/redirect?q=${encodeURIComponent(bridgeUrl.toString())}`;
+            window.location.href = redirect;
+            console.log('[RESET] (Fullscreen) Redirected to Browser to apply defaults');
+          } catch (err) {
+            console.warn('[RESET] (Fullscreen) Failed to redirect for sync', err);
+          }
+        })
+        .catch(e => {
+          console.error('[RESET] (Fullscreen) Failed to load defaults:', e);
+          alert('Failed to load default apps. Please try again.');
+        });
+      return;
+    }
+
+    // Regular Browser: clear storage and commit defaults immediately
+    try {
+      localStorage.removeItem('teslahub_apps');
+      localStorage.removeItem('teslahub_apps_meta');
+      sessionStorage.removeItem('teslahub_fullscreen_apps');
+      sessionStorage.removeItem('fullscreenLaunched');
+      console.log('[RESET] Cleared all storage');
+      setAppsVersion(0);
+    } catch (error) {
+      console.error('[RESET] Error clearing storage:', error);
+    }
+    
+    fetch(process.env.PUBLIC_URL + '/default-apps.json')
+      .then(res => res.json())
+      .then((apps) => {
+        const region = getUserRegion();
+        const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
+        const defaultApps = regionApps.map((a: any, idx: number) => ({ 
+          id: `${a.name}-${idx}`, 
+          name: a.name, 
+          url: a.url 
+        }));
+        console.log(`[RESET] Loaded ${defaultApps.length} default apps for region: ${region}`);
+        setAppItems(defaultApps);
+        commitToStorage(defaultApps, 'Reset to Defaults');
+        console.log('[RESET] Complete - defaults loaded and committed');
+      })
+      .catch(e => {
+        console.error('[RESET] Failed to load defaults:', e);
+        alert('Failed to load default apps. Please refresh the page.');
+      });
   };
 
   const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
@@ -338,21 +635,40 @@ function App() {
     }
   };
 
-  // Load default apps based on region on first mount
+  // Load default apps for regular mode only
   useEffect(() => {
-    const saved = localStorage.getItem('teslahub_apps');
-    if (saved) {
-      setAppItems(JSON.parse(saved));
+    // Wait for URL loading to complete
+    if (!urlLoadingComplete) return;
+    
+    // Only run for regular browser mode (not fullscreen)
+    if (appsLoadedFromUrl) return;
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('fullscreen') === '1') return; // Skip for fullscreen mode
+    
+    console.log('[INIT] Regular mode - loading from localStorage or defaults');
+    
+    // Try to load from localStorage first
+    const storedApps = loadFromStorage('Regular Mode Init');
+    if (storedApps && storedApps.length > 0) {
+      setAppItems(storedApps);
+      console.log(`[INIT] Loaded ${storedApps.length} apps from localStorage`);
     } else {
+      // No stored apps, load defaults
       fetch(process.env.PUBLIC_URL + '/default-apps.json')
         .then(res => res.json())
         .then((apps) => {
           const region = getUserRegion();
           const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
-          setAppItems(regionApps.map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url })));
+          const defaultApps = regionApps.map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url }));
+          setAppItems(defaultApps);
+          console.log(`[INIT] Loaded ${defaultApps.length} default apps for region: ${region}`);
+        })
+        .catch(e => {
+          console.error('[INIT] Error loading default apps:', e);
         });
     }
-  }, []);
+  }, [urlLoadingComplete, appsLoadedFromUrl]);
 
   return (
   <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
@@ -362,7 +678,7 @@ function App() {
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode ? (
             <>
-              <Button variant="danger" onClick={() => setIsAppEditMode(false)}>Done</Button>
+              <Button variant="danger" onClick={handleEditDone}>Done</Button>
               <Button variant="warning" onClick={handleResetToDefaults} className="ms-2">Reset to Defaults</Button>
             </>
           ) : (
@@ -488,6 +804,7 @@ function App() {
           </div>
         </div>
       )}
+      
       {/* Ko-fi Support Link */}
       <div style={{ width: '100%', textAlign: 'center', marginTop: 40, marginBottom: 20 }}>
         <button
@@ -513,6 +830,26 @@ function App() {
           </div>
         )}
       </div>
+      {/* Sync confirmation toast */}
+      {showSyncToast && (
+        <div
+          style={{
+            position: 'fixed',
+            left: '50%',
+            bottom: 24,
+            transform: 'translateX(-50%)',
+            background: 'rgba(0,0,0,0.8)',
+            color: '#fff',
+            padding: '10px 16px',
+            borderRadius: 12,
+            fontSize: 14,
+            zIndex: 9999,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.25)'
+          }}
+        >
+          Changes applied
+        </div>
+      )}
     </div>
   );
 }

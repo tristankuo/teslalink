@@ -428,70 +428,8 @@ function App() {
 
     const appsParam = urlParams.get('apps');
     const fullscreenParam = urlParams.get('fullscreen') === '1';
-    
-    console.log('[URL LOADING] Starting...', { appsParam: !!appsParam, fullscreenParam });
-    
-    if (appsParam) {
-      // Fresh fullscreen launch with apps in URL
-      try {
-        const decoded = atob(appsParam);
-        const apps = JSON.parse(decoded);
-        
-        // Validate apps array
-        if (!Array.isArray(apps) || apps.length === 0) {
-          throw new Error('Invalid apps data from URL');
-        }
-        
-        console.log(`[URL LOADING] Loaded ${apps.length} apps from URL parameters`);
-        setAppItems(apps);
-        setAppsLoadedFromUrl(true);
-        
-  // Clean up the URL to avoid long URLs in browser history
-  const cleanUrl = `${window.location.origin}${window.location.pathname}?fullscreen=1`;
-  window.history.replaceState({}, '', cleanUrl);
-      } catch (e) {
-        console.error('Failed to decode apps from URL', e);
-        setAppsLoadedFromUrl(false);
-      }
-    } else if (fullscreenParam) {
-      // Fullscreen mode refresh (URL cleaned) - load from localStorage
-      console.log('[URL LOADING] Fullscreen refresh detected, loading from localStorage');
-      const storedApps = loadFromStorage('Fullscreen Refresh');
-      if (storedApps && storedApps.length > 0) {
-        setAppItems(storedApps);
-        setAppsLoadedFromUrl(true);
-        console.log(`[URL LOADING] Restored ${storedApps.length} apps from localStorage`);
-      } else {
-        // No committed data found, load defaults
-        console.log('[URL LOADING] No committed apps found, loading defaults for fullscreen');
-        fetch(process.env.PUBLIC_URL + '/default-apps.json')
-          .then(res => res.json())
-          .then((apps) => {
-            const region = getUserRegion();
-            const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
-            const defaultApps = regionApps.map((a: any, idx: number) => ({ 
-              id: `${a.name}-${idx}`, 
-              name: a.name, 
-              url: a.url 
-            }));
-            console.log(`[URL LOADING] Loaded ${defaultApps.length} default apps`);
-            setAppItems(defaultApps);
-            setAppsLoadedFromUrl(true);
-          })
-          .catch(e => {
-            console.error('[URL LOADING] Failed to load defaults:', e);
-            setAppsLoadedFromUrl(false);
-          });
-      }
-    } else {
-      // Regular mode - not loaded from URL
-      console.log('[URL LOADING] Regular mode detected');
-      setAppsLoadedFromUrl(false);
-    }
-    
-    const isFullscreenFromUrl = !!appsParam || fullscreenParam;
-    setIsFullscreen(isFullscreenFromUrl || window.self !== window.top);
-    
+    // Removed sync bridge handlers for a simpler flow
+    // No path/hash sync bridge handlers (reverted to simple flow)
     // Mark URL loading as complete
     setUrlLoadingComplete(true);
   }, [isFullscreen]);
@@ -568,50 +506,7 @@ function App() {
   };
 
   const handleEditDone = () => {
-    // In Theater/fullscreen, DO NOT commit locally. Redirect to Browser with payload instead.
-    if (isFullscreen) {
-      setIsAppEditMode(false);
-      try {
-  const baseUrl = `${window.location.origin}${window.location.pathname}`.replace(/#.*$/, '');
-  const payload = btoa(JSON.stringify(appItems));
-  const hashUrl = `${baseUrl}#sync=1&apps=${payload}`;
-        const tryOpen = (host: 'm.youtube.com' | 'www.youtube.com') => {
-          const target = `https://${host}/redirect?q=` + encodeURIComponent(hashUrl);
-          const win = window.open(target, '_blank');
-          if (!win) {
-            const a = document.createElement('a');
-            a.href = target;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-            requestAnimationFrame(() => {
-              try { document.body.removeChild(a); } catch {}
-            });
-          }
-        };
-        // Prefer mobile domain first
-        tryOpen('m.youtube.com');
-        // Schedule a quick fallback to www if nothing happened
-        setTimeout(() => {
-          tryOpen('www.youtube.com');
-        }, 250);
-        console.log('[SYNC-RETURN] Attempted window.open to YouTube redirect (hash primary, path fallback server-side)');
-      } catch (e) {
-        console.warn('[SYNC-RETURN] Failed to trigger Browser handoff', e);
-      }
-      return;
-    }
-
-    // Regular Browser: commit changes immediately
-    console.log(`[DONE] Committing ${appItems.length} apps from React state to localStorage`);
-    const success = commitToStorage(appItems, 'Done Button');
-    if (!success) {
-      alert('Failed to save changes. Please try again.');
-      return;
-    }
-    console.log('[DONE] Successfully committed to localStorage');
+    // Simple flow: just exit edit mode; autosave handles persistence
     setIsAppEditMode(false);
   };
 
@@ -622,56 +517,7 @@ function App() {
   const handleResetToDefaults = () => {
     console.log('[RESET] Starting complete reset to defaults');
     
-    // Fullscreen/Theater: do NOT commit locally; instead, redirect via sync bridge with defaults
-    if (isFullscreen) {
-      fetch(process.env.PUBLIC_URL + '/default-apps.json')
-        .then(res => res.json())
-        .then((apps) => {
-          const region = getUserRegion();
-          const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
-          const defaultApps = regionApps.map((a: any, idx: number) => ({ 
-            id: `${a.name}-${idx}`, 
-            name: a.name, 
-            url: a.url 
-          }));
-          console.log(`[RESET] (Fullscreen) Prepared ${defaultApps.length} default apps for region: ${region}`);
-          setAppItems(defaultApps);
-          setIsAppEditMode(false);
-          try {
-            const baseUrl = `${window.location.origin}${window.location.pathname}`.replace(/#.*$/, '');
-            const payload = btoa(JSON.stringify(defaultApps));
-            const hashUrl = `${baseUrl}#sync=1&apps=${payload}`;
-            const tryOpen = (host: 'm.youtube.com' | 'www.youtube.com') => {
-              const target = `https://${host}/redirect?q=` + encodeURIComponent(hashUrl);
-              const win = window.open(target, '_blank');
-              if (!win) {
-                const a = document.createElement('a');
-                a.href = target;
-                a.target = '_blank';
-                a.rel = 'noopener noreferrer';
-                a.style.display = 'none';
-                document.body.appendChild(a);
-                a.click();
-                requestAnimationFrame(() => {
-                  try { document.body.removeChild(a); } catch {}
-                });
-              }
-            };
-            tryOpen('m.youtube.com');
-            setTimeout(() => tryOpen('www.youtube.com'), 250);
-            console.log('[RESET] (Fullscreen) Attempted YouTube redirect for Browser apply');
-          } catch (err) {
-            console.warn('[RESET] (Fullscreen) Failed to redirect for sync', err);
-          }
-        })
-        .catch(e => {
-          console.error('[RESET] (Fullscreen) Failed to load defaults:', e);
-          alert('Failed to load default apps. Please try again.');
-        });
-      return;
-    }
-
-    // Regular Browser: clear storage and commit defaults immediately
+    // Clear storage and commit defaults immediately (simple behavior)
     try {
       localStorage.removeItem('teslahub_apps');
       localStorage.removeItem('teslahub_apps_meta');
@@ -755,6 +601,17 @@ function App() {
         });
     }
   }, [urlLoadingComplete, appsLoadedFromUrl]);
+
+  // Autosave: persist on every change (simple, last-week behavior)
+  useEffect(() => {
+    try {
+      if (appItems && appItems.length) {
+        commitToStorage(appItems, 'Autosave');
+      }
+    } catch (e) {
+      console.warn('[AUTOSAVE] Failed to commit', e);
+    }
+  }, [appItems]);
 
   return (
   <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>

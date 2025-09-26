@@ -335,7 +335,36 @@ function App() {
   // Handle URL parameters (sync bridge + fullscreen) and detection with URL cleanup
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
+      const urlParams = new URLSearchParams(window.location.search);
+
+      // Query-based sync bridge: apply incoming state and close/clean
+      if (urlParams.get('sync') === '1') {
+        const syncAppsParam = urlParams.get('apps');
+        if (syncAppsParam) {
+          try {
+            const decoded = atob(syncAppsParam);
+            const apps = JSON.parse(decoded);
+            if (Array.isArray(apps)) {
+              console.log(`[SYNC-BRIDGE] Applying ${apps.length} apps (query)`);
+              commitToStorage(apps, 'Sync Bridge');
+              setAppItems(apps);
+              // Show toast and auto-hide
+              setShowSyncToast(true);
+              setTimeout(() => setShowSyncToast(false), 2500);
+            }
+          } catch (e) {
+            console.error('[SYNC-BRIDGE] Failed to decode/apply apps', e);
+          }
+        }
+        // Clean URL to avoid leaving long parameters in history
+        try {
+          const cleanUrl = `${window.location.origin}${window.location.pathname}`;
+          window.history.replaceState({}, '', cleanUrl);
+        } catch {}
+        setTimeout(() => { try { window.close(); } catch {} }, 250);
+        setUrlLoadingComplete(true);
+        return;
+      }
     const handleApplied = (apps: AppItem[]) => {
       commitToStorage(apps, 'Sync Bridge');
       setAppItems(apps);
@@ -506,7 +535,21 @@ function App() {
   };
 
   const handleEditDone = () => {
-    // Simple flow: just exit edit mode; autosave handles persistence
+    // Bidirectional via query params for Theater return
+    if (isFullscreen) {
+      setIsAppEditMode(false);
+      try {
+        const baseUrl = `${window.location.origin}${window.location.pathname}`;
+        const payload = btoa(JSON.stringify(appItems));
+        const bridgeUrl = new URL(baseUrl);
+        bridgeUrl.searchParams.set('sync', '1');
+        bridgeUrl.searchParams.set('apps', payload);
+        window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(bridgeUrl.toString())}`, '_blank');
+      } catch (e) {
+        console.warn('[SYNC-RETURN] Failed to open YouTube redirect', e);
+      }
+      return;
+    }
     setIsAppEditMode(false);
   };
 
@@ -543,6 +586,19 @@ function App() {
         setAppItems(defaultApps);
         commitToStorage(defaultApps, 'Reset to Defaults');
         console.log('[RESET] Complete - defaults loaded and committed');
+        // If in fullscreen, also open a return link to Browser with query payload
+        if (isFullscreen) {
+          try {
+            const baseUrl = `${window.location.origin}${window.location.pathname}`;
+            const payload = btoa(JSON.stringify(defaultApps));
+            const bridgeUrl = new URL(baseUrl);
+            bridgeUrl.searchParams.set('sync', '1');
+            bridgeUrl.searchParams.set('apps', payload);
+            window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(bridgeUrl.toString())}`, '_blank');
+          } catch (e) {
+            console.warn('[RESET] Fullscreen return open failed', e);
+          }
+        }
       })
       .catch(e => {
         console.error('[RESET] Failed to load defaults:', e);

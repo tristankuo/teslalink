@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import useLongPress from '../useLongPress';
 
 interface AppItemProps {
   item: {
@@ -23,7 +22,7 @@ interface AppItemProps {
 }
 
 const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActive, handleDeleteWebsite, onLongPress, handleDragStart, handleDragOver, handleDrop, onTouchStart, onTouchMove, onTouchEnd, handleShowEdit, getFaviconUrl }) => {
-  const onClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
     const deleteButton = e.currentTarget.querySelector('.delete-btn');
       if (e.target === deleteButton || (deleteButton && deleteButton.contains(e.target as Node))) {
         return;
@@ -36,8 +35,6 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
     }
   };
 
-  const longPressProps = useLongPress(onLongPress, onClick, { delay: 500 });
-
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
@@ -47,7 +44,11 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
   return (
     <div
       className="col-md-2 mb-3 app-block-wrapper"
-      {...longPressProps}
+      onClick={handleClick}
+      onContextMenu={(e) => {
+        e.preventDefault();
+        onLongPress();
+      }}
       draggable={deleteModeActive}
       onDragStart={(e) => handleDragStart(e, index)}
       onDragOver={handleDragOver}

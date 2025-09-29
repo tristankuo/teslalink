@@ -26,30 +26,12 @@
             --nav-link-bg-dark: #2980b9;
             --nav-link-hover-light: #2980b9;
             --nav-link-hover-dark: #3498db;
-            --tip-bg-light: #f8f9fa;
-            --tip-bg-dark: rgba(73, 80, 87, 0.3);
-            --tip-item-bg-light: white;
-            --tip-item-bg-dark: rgba(52, 58, 64, 0.5);
-            --warning-bg-light: #fff3cd;
-            --warning-bg-dark: rgba(255, 193, 7, 0.1);
-            --warning-border-light: #ffeaa7;
-            --warning-border-dark: rgba(255, 193, 7, 0.3);
-            --warning-text-light: #856404;
-            --warning-text-dark: #ffc107;
-            --success-bg-light: #d4edda;
-            --success-bg-dark: rgba(40, 167, 69, 0.1);
-            --success-border-light: #c3e6cb;
-            --success-border-dark: rgba(40, 167, 69, 0.3);
-            --success-text-light: #155724;
-            --success-text-dark: #28a745;
-            --step-bg-light: #e8f8ff;
-            --step-bg-dark: rgba(13, 110, 253, 0.1);
-            --step-item-bg-light: white;
-            --step-item-bg-dark: rgba(52, 58, 64, 0.5);
-            --step-border-light: #3498db;
-            --step-border-dark: #0d6efd;
+            --feature-bg-light: #f8f9fa;
+            --feature-bg-dark: rgba(73, 80, 87, 0.3);
+            --highlight-bg-light: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            --highlight-bg-dark: linear-gradient(120deg, #2c3e50 0%, #34495e 100%);
         }
-
+        
         [data-theme="light"] {
             --bg-gradient: var(--bg-gradient-light);
             --container-bg: var(--container-bg-light);
@@ -59,19 +41,10 @@
             --link-color: var(--link-color-light);
             --nav-link-bg: var(--nav-link-bg-light);
             --nav-link-hover: var(--nav-link-hover-light);
-            --tip-bg: var(--tip-bg-light);
-            --tip-item-bg: var(--tip-item-bg-light);
-            --warning-bg: var(--warning-bg-light);
-            --warning-border: var(--warning-border-light);
-            --warning-text: var(--warning-text-light);
-            --success-bg: var(--success-bg-light);
-            --success-border: var(--success-border-light);
-            --success-text: var(--success-text-light);
-            --step-bg: var(--step-bg-light);
-            --step-item-bg: var(--step-item-bg-light);
-            --step-border: var(--step-border-light);
+            --feature-bg: var(--feature-bg-light);
+            --highlight-bg: var(--highlight-bg-light);
         }
-
+        
         [data-theme="dark"] {
             --bg-gradient: var(--bg-gradient-dark);
             --container-bg: var(--container-bg-dark);
@@ -81,48 +54,15 @@
             --link-color: var(--link-color-dark);
             --nav-link-bg: var(--nav-link-bg-dark);
             --nav-link-hover: var(--nav-link-hover-dark);
-            --tip-bg: var(--tip-bg-dark);
-            --tip-item-bg: var(--tip-item-bg-dark);
-            --warning-bg: var(--warning-bg-dark);
-            --warning-border: var(--warning-border-dark);
-            --warning-text: var(--warning-text-dark);
-            --success-bg: var(--success-bg-dark);
-            --success-border: var(--success-border-dark);
-            --success-text: var(--success-text-dark);
-            --step-bg: var(--step-bg-dark);
-            --step-item-bg: var(--step-item-bg-dark);
-            --step-border: var(--step-border-dark);
+            --feature-bg: var(--feature-bg-dark);
+            --highlight-bg: var(--highlight-bg-dark);
         }
-
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--link-color);
-            color: var(--container-bg);
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .theme-toggle:hover {
-            background: var(--link-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-        }
-
+        
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             background: var(--bg-gradient);
             min-height: 100vh;
             margin: 0;
-            line-height: 1.6;
             transition: background 0.3s ease;
         }
         .container {
@@ -136,18 +76,19 @@
         }
         h1 { color: var(--text-primary); margin-bottom: 30px; transition: color 0.3s ease; }
         h2 { color: var(--text-secondary); margin-top: 30px; margin-bottom: 20px; transition: color 0.3s ease; }
-        h3 { color: var(--text-primary); margin-top: 30px; margin-bottom: 15px; transition: color 0.3s ease; }
+        h3 { color: var(--text-primary); margin-bottom: 10px; transition: color 0.3s ease; }
         p, li { color: var(--text-secondary); transition: color 0.3s ease; }
-        .tip-section { background: var(--tip-bg); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #27ae60; transition: background 0.3s ease; }
-        .tip-item { background: var(--tip-item-bg); padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: background 0.3s ease; }
-        .tip-item h4 { color: var(--text-primary); margin-bottom: 12px; display: flex; align-items: center; transition: color 0.3s ease; }
-        .tip-item .icon { font-size: 1.5em; margin-right: 10px; }
-        .warning { background: var(--warning-bg); border: 1px solid var(--warning-border); padding: 20px; border-radius: 10px; margin: 20px 0; transition: background 0.3s ease; }
-        .warning h4 { color: var(--warning-text); transition: color 0.3s ease; }
-        .success { background: var(--success-bg); border: 1px solid var(--success-border); padding: 20px; border-radius: 10px; margin: 20px 0; transition: background 0.3s ease; }
-        .success h4 { color: var(--success-text); transition: color 0.3s ease; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0; }
+        .feature-card { 
+            background: var(--feature-bg); 
+            padding: 20px; 
+            border-radius: 10px; 
+            border-left: 4px solid var(--link-color);
+            transition: background 0.3s ease;
+        }
+        .feature-card h3 { color: var(--text-primary); margin-bottom: 10px; }
         a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
-        a:hover { text-decoration: underline; color: var(--nav-link-hover); }
+        a:hover { text-decoration: underline; }
         .nav-link { 
             display: inline-block; 
             margin: 10px 5px; 
@@ -158,176 +99,178 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        .nav-link:hover { background: var(--nav-link-hover); color: white; }
-        .breadcrumb { background: transparent; padding: 0; margin-bottom: 20px; }
-        .breadcrumb-item + .breadcrumb-item::before { content: "→"; }
-        .step-by-step { background: var(--step-bg); padding: 20px; border-radius: 10px; margin: 20px 0; transition: background 0.3s ease; }
-        .step { background: var(--step-item-bg); padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid var(--step-border); transition: background 0.3s ease; }
+        .nav-link:hover { 
+            background: var(--nav-link-hover); 
+            color: white; 
+            text-decoration: none;
+        }
+        .highlight { 
+            background: var(--highlight-bg); 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin: 20px 0;
+            transition: background 0.3s ease;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: var(--nav-link-bg);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 12px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover {
+            background: var(--nav-link-hover);
+        }
     </style>
     <script>
-        // Theme management system
+        // Theme management
         function getStoredTheme() {
             return localStorage.getItem('teslacenter_theme') || 
-                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         }
-
+        
         function setTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('teslacenter_theme', theme);
             updateThemeToggle(theme);
         }
-
+        
         function updateThemeToggle(theme) {
             const toggle = document.getElementById('theme-toggle');
             if (toggle) {
                 toggle.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
             }
         }
-
+        
         function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const currentTheme = getStoredTheme();
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             setTheme(newTheme);
         }
-
-        // Initialize theme and listen for storage changes
+        
+        // Initialize theme on load
         document.addEventListener('DOMContentLoaded', function() {
-            const theme = getStoredTheme();
-            setTheme(theme);
-            
-            // Sync with other tabs
-            window.addEventListener('storage', function(e) {
-                if (e.key === 'teslacenter_theme') {
-                    const newTheme = e.newValue || 'light';
-                    document.documentElement.setAttribute('data-theme', newTheme);
-                    updateThemeToggle(newTheme);
-                }
-            });
+            setTheme(getStoredTheme());
         });
     </script>
 </head>
 <body>
     <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">TeslaCenter</a></li>
-                <li class="breadcrumb-item active">Tesla Browser Tips</li>
-            </ol>
-        </nav>
+        <a href="/" class="nav-link">← Back to TeslaCenter</a>
         
         <h1>🔧 Tesla Browser Tips & Tricks</h1>
         <p class="lead">Unlock the full potential of your Tesla's browser with these expert tips, hidden features, and optimization techniques. Whether you're a new Tesla owner or a seasoned veteran, these tricks will enhance your in-vehicle web experience.</p>
         
-        <div class="success">
+        <div class="highlight">
             <h4>🎯 Why Master Your Tesla Browser?</h4>
             <p>Your Tesla's browser is more powerful than you might think. With the right knowledge, you can transform it into a productivity powerhouse, entertainment center, and utility hub that rivals any tablet or laptop experience.</p>
         </div>
         
-        <div class="tip-section">
-            <h2>🚀 Performance & Speed Tips</h2>
-            
-            <div class="tip-item">
-                <h4><span class="icon">⚡</span>Clear Cache Regularly</h4>
-                <p>Your Tesla browser's cache can become bloated over time, slowing down performance. Clear it regularly for optimal speed.</p>
-                <div class="step-by-step">
-                    <div class="step"><strong>Step 1:</strong> Tap the menu button (three horizontal lines)</div>
-                    <div class="step"><strong>Step 2:</strong> Select "Settings" from the dropdown</div>
-                    <div class="step"><strong>Step 3:</strong> Find "Clear Browsing Data" or "Privacy & Security"</div>
-                    <div class="step"><strong>Step 4:</strong> Select cache, cookies, and browsing history</div>
-                    <div class="step"><strong>Step 5:</strong> Confirm and restart browser if needed</div>
-                </div>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">📶</span>Optimize Your Connection</h4>
-                <p>Use Wi-Fi whenever possible instead of cellular data. Tesla's Premium Connectivity provides unlimited data, but Wi-Fi is often faster and more stable.</p>
-                <ul>
-                    <li><strong>Home:</strong> Connect to your home Wi-Fi before departure</li>
-                    <li><strong>Superchargers:</strong> Many locations offer free Wi-Fi</li>
-                    <li><strong>Hotels:</strong> Connect to hotel Wi-Fi for better streaming</li>
-                    <li><strong>Public Places:</strong> Use trusted public Wi-Fi networks</li>
-                </ul>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">🔄</span>Use Multiple Tabs Wisely</h4>
-                <p>Tesla browser supports multiple tabs, but too many can slow things down. Keep only essential tabs open and close unused ones.</p>
-                <ul>
-                    <li><strong>Entertainment Tab:</strong> Keep one for YouTube/Netflix</li>
-                    <li><strong>Utility Tab:</strong> Weather, maps, or tools</li>
-                    <li><strong>TeslaCenter Tab:</strong> Quick access to your app collection</li>
-                    <li><strong>Close Others:</strong> Regularly close tabs you're not using</li>
-                </ul>
-            </div>
+        <h2>🚀 Performance & Speed Tips</h2>
+        <div class="feature-card">
+            <h3><span class="icon">⚡</span>Clear Cache Regularly</h3>
+            <p>Your Tesla browser's cache can become bloated over time, slowing down performance. Clear it regularly for optimal speed.</p>
+            <ol>
+                <li>Tap the menu button (three horizontal lines)</li>
+                <li>Select "Settings" from the dropdown</li>
+                <li>Find "Clear Browsing Data" or "Privacy & Security"</li>
+                <li>Select cache, cookies, and browsing history</li>
+                <li>Confirm and restart browser if needed</li>
+            </ol>
         </div>
         
-        <div class="tip-section">
-            <h2>🎮 Navigation & Interface Tips</h2>
-            
-            <div class="tip-item">
-                <h4><span class="icon">👆</span>Master Touch Gestures</h4>
-                <p>Tesla's touchscreen supports various gestures that can improve your browsing experience.</p>
-                <ul>
-                    <li><strong>Pinch to Zoom:</strong> Two fingers pinch in/out to zoom pages</li>
-                    <li><strong>Two-Finger Scroll:</strong> Use two fingers for smooth scrolling</li>
-                    <li><strong>Long Press:</strong> Hold for context menus and options</li>
-                    <li><strong>Swipe Back:</strong> Swipe from left edge to go back</li>
-                </ul>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">🎯</span>Bookmark Management</h4>
-                <p>Organize your bookmarks effectively for quick access to frequently used sites.</p>
-                <div class="step-by-step">
-                    <div class="step"><strong>Create Folders:</strong> Group similar bookmarks (Games, Tools, Entertainment)</div>
-                    <div class="step"><strong>Use Descriptive Names:</strong> "YouTube Music" instead of just "YouTube"</div>
-                    <div class="step"><strong>Pin Favorites:</strong> Keep most-used bookmarks at the top</div>
-                    <div class="step"><strong>Regular Cleanup:</strong> Remove outdated or unused bookmarks</div>
-                </div>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">🗣️</span>Voice Commands</h4>
-                <p>Use Tesla's voice commands to navigate without taking your hands off the wheel (when safe and legal).</p>
-                <ul>
-                    <li><strong>"Navigate to [website]"</strong> - Go to a specific site</li>
-                    <li><strong>"Search for [term]"</strong> - Perform web searches</li>
-                    <li><strong>"Go back"</strong> - Navigate to previous page</li>
-                    <li><strong>"Reload page"</strong> - Refresh current page</li>
-                </ul>
-            </div>
+        <div class="feature-card">
+            <h3><span class="icon">📶</span>Optimize Your Connection</h3>
+            <p>Use Wi-Fi whenever possible instead of cellular data. Tesla's Premium Connectivity provides unlimited data, but Wi-Fi is often faster and more stable.</p>
+            <ul>
+                <li><strong>Home:</strong> Connect to your home Wi-Fi before departure</li>
+                <li><strong>Superchargers:</strong> Many locations offer free Wi-Fi</li>
+                <li><strong>Hotels:</strong> Connect to hotel Wi-Fi for better streaming</li>
+                <li><strong>Public Places:</strong> Use trusted public Wi-Fi networks</li>
+            </ul>
         </div>
         
-        <div class="tip-section">
-            <h2>🛡️ Privacy & Security Tips</h2>
-            
-            <div class="tip-item">
-                <h4><span class="icon">🔒</span>Private Browsing Mode</h4>
-                <p>Use private/incognito mode when browsing sensitive sites or when others will use your Tesla.</p>
-                <ul>
-                    <li><strong>Banking:</strong> Always use private mode for financial sites</li>
-                    <li><strong>Shared Vehicle:</strong> Use when others might drive your Tesla</li>
-                    <li><strong>Personal Content:</strong> Keep personal browsing private</li>
-                    <li><strong>Testing:</strong> Use for testing websites without affecting bookmarks</li>
-                </ul>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">🚫</span>Block Pop-ups and Ads</h4>
-                <p>Enable pop-up blocking and ad blocking features in your Tesla browser settings for a cleaner experience.</p>
-                <div class="step-by-step">
-                    <div class="step">Go to browser Settings menu</div>
-                    <div class="step">Find "Privacy & Security" or "Content Settings"</div>
-                    <div class="step">Enable "Block Pop-ups"</div>
-                    <div class="step">Enable any available ad-blocking features</div>
-                </div>
-            </div>
+        <div class="feature-card">
+            <h3><span class="icon">🔄</span>Use Multiple Tabs Wisely</h3>
+            <p>Tesla browser supports multiple tabs, but too many can slow things down. Keep only essential tabs open and close unused ones.</p>
+            <ul>
+                <li><strong>Entertainment Tab:</strong> Keep one for YouTube/Netflix</li>
+                <li><strong>Utility Tab:</strong> Weather, maps, or tools</li>
+                <li><strong>TeslaCenter Tab:</strong> Quick access to your app collection</li>
+                <li><strong>Close Others:</strong> Regularly close tabs you're not using</li>
+            </ul>
         </div>
         
-        <div class="warning">
-            <h4>⚠️ Safety First</h4>
-            <p><strong>Important:</strong> Always prioritize safety when using your Tesla browser. Use browser features only when:</p>
+        <h2>🎮 Navigation & Interface Tips</h2>
+        
+        <div class="feature-card">
+            <h3><span class="icon">👆</span>Master Touch Gestures</h3>
+            <p>Tesla's touchscreen supports various gestures that can improve your browsing experience.</p>
+            <ul>
+                <li><strong>Pinch to Zoom:</strong> Two fingers pinch in/out to zoom pages</li>
+                <li><strong>Two-Finger Scroll:</strong> Use two fingers for smooth scrolling</li>
+                <li><strong>Long Press:</strong> Hold for context menus and options</li>
+                <li><strong>Swipe Back:</strong> Swipe from left edge to go back</li>
+            </ul>
+        </div>
+        
+        <div class="feature-card">
+            <h3><span class="icon">🎯</span>Bookmark Management</h3>
+            <p>Organize your bookmarks effectively for quick access to frequently used sites.</p>
+            <ol>
+                <li><strong>Create Folders:</strong> Group similar bookmarks (Games, Tools, Entertainment)</li>
+                <li><strong>Use Descriptive Names:</strong> "YouTube Music" instead of just "YouTube"</li>
+                <li><strong>Pin Favorites:</strong> Keep most-used bookmarks at the top</li>
+                <li><strong>Regular Cleanup:</strong> Remove outdated or unused bookmarks</li>
+            </ol>
+        </div>
+        
+        <div class="feature-card">
+            <h3><span class="icon">🗣️</span>Voice Commands</h3>
+            <p>Use Tesla's voice commands to navigate without taking your hands off the wheel (when safe and legal).</p>
+            <ul>
+                <li><strong>"Navigate to [website]"</strong> - Go to a specific site</li>
+                <li><strong>"Search for [term]"</strong> - Perform web searches</li>
+                <li><strong>"Go back"</strong> - Navigate to previous page</li>
+                <li><strong>"Reload page"</strong> - Refresh current page</li>
+            </ul>
+        </div>
+        
+        <h2>🛡️ Privacy & Security Tips</h2>
+        
+        <div class="feature-card">
+            <h3><span class="icon">🔒</span>Private Browsing Mode</h3>
+            <p>Use private/incognito mode when browsing sensitive sites or when others will use your Tesla.</p>
+            <ul>
+                <li><strong>Banking:</strong> Always use private mode for financial sites</li>
+                <li><strong>Shared Vehicle:</strong> Use when others might drive your Tesla</li>
+                <li><strong>Personal Content:</strong> Keep personal browsing private</li>
+                <li><strong>Testing:</strong> Use for testing websites without affecting bookmarks</li>
+            </ul>
+        </div>
+        
+        <div class="feature-card">
+            <h3><span class="icon">🚫</span>Block Pop-ups and Ads</h3>
+            <p>Enable pop-up blocking and ad blocking features in your Tesla browser settings for a cleaner experience.</p>
+            <ol>
+                <li>Go to browser Settings menu</li>
+                <li>Find "Privacy & Security" or "Content Settings"</li>
+                <li>Enable "Block Pop-ups"</li>
+                <li>Enable any available ad-blocking features</li>
+            </ol>
+        </div>
+        
+        <div class="highlight" style="background: var(--warning-bg-light); border: 1px solid var(--warning-border-light);">
+            <h4 style="color: var(--warning-text-light);">⚠️ Safety First</h4>
+            <p style="color: var(--warning-text-light);"><strong>Important:</strong> Always prioritize safety when using your Tesla browser. Use browser features only when:</p>
             <ul>
                 <li>Vehicle is in Park</li>
                 <li>You're not driving</li>
@@ -336,96 +279,70 @@
             </ul>
         </div>
         
-        <div class="tip-section">
-            <h2>🎵 Entertainment Optimization</h2>
-            
-            <div class="tip-item">
-                <h4><span class="icon">📺</span>Video Streaming Tips</h4>
-                <p>Get the best video experience while parked or charging.</p>
-                <ul>
-                    <li><strong>Full Screen Mode:</strong> Use full screen for immersive viewing</li>
-                    <li><strong>Audio Settings:</strong> Adjust Tesla audio settings for better sound</li>
-                    <li><strong>Data Management:</strong> Monitor data usage on cellular</li>
-                    <li><strong>Temperature Control:</strong> Manage cabin temperature for comfort</li>
-                </ul>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">🎮</span>Gaming Experience</h4>
-                <p>Optimize your Tesla for web-based gaming.</p>
-                <ul>
-                    <li><strong>Screen Cleaning:</strong> Clean screen for better touch response</li>
-                    <li><strong>Lighting:</strong> Adjust interior lighting to reduce glare</li>
-                    <li><strong>Seating Position:</strong> Adjust seat for comfortable gaming</li>
-                    <li><strong>Game Selection:</strong> Choose touch-optimized games</li>
-                </ul>
-            </div>
+        <h2>🎵 Entertainment Optimization</h2>
+        
+        <div class="feature-card">
+            <h3><span class="icon">📺</span>Video Streaming Tips</h3>
+            <p>Get the best video experience while parked or charging.</p>
+            <ul>
+                <li><strong>Full Screen Mode:</strong> Use full screen for immersive viewing</li>
+                <li><strong>Audio Settings:</strong> Adjust Tesla audio settings for better sound</li>
+                <li><strong>Data Management:</strong> Monitor data usage on cellular</li>
+                <li><strong>Temperature Control:</strong> Manage cabin temperature for comfort</li>
+            </ul>
         </div>
         
-        <div class="tip-section">
-            <h2>🔧 Advanced Browser Features</h2>
-            
-            <div class="tip-item">
-                <h4><span class="icon">💾</span>Offline Capabilities</h4>
-                <p>Some websites work offline once loaded. Take advantage of this for areas with poor connectivity.</p>
-                <ul>
-                    <li><strong>Pre-load Content:</strong> Load articles, maps, or tools before traveling</li>
-                    <li><strong>Download Features:</strong> Use apps that support offline downloads</li>
-                    <li><strong>Cache Strategy:</strong> Visit frequently-used sites to cache them</li>
-                </ul>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">🔄</span>Auto-Refresh and Timers</h4>
-                <p>Some websites offer auto-refresh features useful for real-time information.</p>
-                <ul>
-                    <li><strong>Weather Updates:</strong> Set weather sites to auto-refresh</li>
-                    <li><strong>Traffic Information:</strong> Keep traffic apps updating</li>
-                    <li><strong>Stock Prices:</strong> Monitor investments with auto-refresh</li>
-                    <li><strong>News Feeds:</strong> Stay updated with current events</li>
-                </ul>
-            </div>
+        <div class="feature-card">
+            <h3><span class="icon">🎮</span>Gaming Experience</h3>
+            <p>Optimize your Tesla for web-based gaming.</p>
+            <ul>
+                <li><strong>Screen Cleaning:</strong> Clean screen for better touch response</li>
+                <li><strong>Lighting:</strong> Adjust interior lighting to reduce glare</li>
+                <li><strong>Seating Position:</strong> Adjust seat for comfortable gaming</li>
+                <li><strong>Game Selection:</strong> Choose touch-optimized games</li>
+            </ul>
         </div>
         
-        <div class="tip-section">
-            <h2>🏆 Pro Tesla Browser Hacks</h2>
-            
-            <div class="tip-item">
-                <h4><span class="icon">⚙️</span>Custom Home Page</h4>
-                <p>Set TeslaCenter or another useful page as your home page for quick access.</p>
-                <div class="step-by-step">
-                    <div class="step">Go to browser Settings</div>
-                    <div class="step">Find "Home Page" or "Startup" settings</div>
-                    <div class="step">Set to "https://teslacenter.web.app"</div>
-                    <div class="step">Enable "Show Home Button" if available</div>
-                </div>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">📱</span>Mobile Site vs Desktop</h4>
-                <p>Some sites work better in mobile mode, others in desktop mode. Experiment to find the best experience.</p>
-                <ul>
-                    <li><strong>Request Desktop Site:</strong> For full-featured websites</li>
-                    <li><strong>Use Mobile Version:</strong> For touch-optimized experience</li>
-                    <li><strong>Switch as Needed:</strong> Change based on specific tasks</li>
-                </ul>
-            </div>
-            
-            <div class="tip-item">
-                <h4><span class="icon">🔗</span>URL Shortcuts</h4>
-                <p>Learn common URL patterns to type sites faster.</p>
-                <ul>
-                    <li><strong>m.site.com:</strong> Often the mobile version</li>
-                    <li><strong>site.com/mobile:</strong> Another mobile variant</li>
-                    <li><strong>web.site.com:</strong> Web app versions</li>
-                    <li><strong>app.site.com:</strong> Application interfaces</li>
-                </ul>
-            </div>
+        <h2>🔧 Advanced Browser Features</h2>
+        
+        <div class="feature-card">
+            <h3><span class="icon">💾</span>Offline Capabilities</h3>
+            <p>Some websites work offline once loaded. Take advantage of this for areas with poor connectivity.</p>
+            <ul>
+                <li><strong>Pre-load Content:</strong> Load articles, maps, or tools before traveling</li>
+                <li><strong>Download Features:</strong> Use apps that support offline downloads</li>
+                <li><strong>Cache Strategy:</strong> Visit frequently-used sites to cache them</li>
+            </ul>
         </div>
         
-        <div class="success">
+        <div class="feature-card">
+            <h3><span class="icon">🔄</span>Auto-Refresh and Timers</h3>
+            <p>Some websites offer auto-refresh features useful for real-time information.</p>
+            <ul>
+                <li><strong>Weather Updates:</strong> Set weather sites to auto-refresh</li>
+                <li><strong>Traffic Information:</strong> Keep traffic apps updating</li>
+                <li><strong>Stock Prices:</strong> Monitor investments with auto-refresh</li>
+                <li><strong>News Feeds:</strong> Stay updated with current events</li>
+            </ul>
+        </div>
+        
+        <h2>🏆 Pro Tesla Browser Hacks</h2>
+        
+                <div class="feature-card">
+            <h3><span class="icon">⚙️</span>Custom Home Page</h3>
+            <p>Set TeslaCenter or another useful page as your home page for quick access.</p>
+            <ol>
+                <li>Go to browser Settings</li>
+                <li>Find "Home Page" or "Startup" settings</li>
+                <li>Set to "https://teslacenter.web.app"</li>
+                <li>Enable "Show Home Button" if available</li>
+            </ol>
+        </div>
+        
+        <div class="highlight">
+        
+        <div class="highlight">
             <h4>🎯 Quick Start Checklist</h4>
-            <p>New to Tesla browsing? Start with these essential steps:</p>
             <ol>
                 <li>✅ Set TeslaCenter as your homepage</li>
                 <li>✅ Bookmark your most-used sites</li>

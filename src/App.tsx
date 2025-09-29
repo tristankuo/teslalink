@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import './App.css';
 import { Button } from 'react-bootstrap';
+import { Routes, Route } from 'react-router-dom';
 import AppItemComponent from './components/AppItem';
 import AdSenseAd from './components/AdSenseAd';
+import AddAppQR from './components/AddAppQR';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
 import { initGA, trackPageView, trackAdEvent } from './utils/analytics';
+import { database } from './utils/firebase';
+import { ref, set, onValue, remove, get } from 'firebase/database';
+import { QRCodeSVG as QRCode } from 'qrcode.react';
 
 
 interface AppItem {
@@ -22,10 +27,20 @@ interface AppsMeta {
 }
 
 function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainApp />} />
+      <Route path="/add-app/:sessionId" element={<AddAppQR />} />
+    </Routes>
+  );
+}
+
+function MainApp() {
   const [showAppModal, setShowAppModal] = useState(false);
   const [modalMode, setModalMode] = useState<'add' | 'edit'>('add');
   const [editIndex, setEditIndex] = useState<number | null>(null);
   const [showAd, setShowAd] = useState(true);
+  const [qrSessionId, setQrSessionId] = useState<string | null>(null);
 
   const clientId = useMemo(() => {
     const rnd = Math.random().toString(36).slice(2);
@@ -167,6 +182,48 @@ function App() {
     setAppUrlInput('');
     setEditIndex(null);
   };
+
+  useEffect(() => {
+    if (modalMode === 'add' && showAppModal) {
+      const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      setQrSessionId(newSessionId);
+      const sessionRef = ref(database, `qr_sessions/${newSessionId}`);
+      
+      // Set an expiration time for the session (e.g., 5 minutes)
+      const sessionTimeoutDuration = 5 * 60 * 1000; 
+      const createdAt = Date.now();
+
+      set(sessionRef, { status: 'pending', createdAt });
+
+      const sessionTimeout = setTimeout(() => {
+        console.log(`[SESSION] QR session ${newSessionId} expired. Cleaning up.`);
+        remove(sessionRef);
+      }, sessionTimeoutDuration);
+
+      const unsubscribe = onValue(sessionRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data && data.status === 'completed') {
+          clearTimeout(sessionTimeout); // Clear the expiration timer
+          setAppNameInput(data.name);
+          setAppUrlInput(data.url);
+          remove(sessionRef); // Clean up the session
+          setQrSessionId(null);
+        }
+      });
+
+      // Cleanup listener when modal closes
+      return () => {
+        clearTimeout(sessionTimeout); // Clear the expiration timer
+        unsubscribe();
+        // Check if the session still exists before trying to remove it
+        get(sessionRef).then((snapshot) => {
+          if (snapshot.exists()) {
+            remove(sessionRef);
+          }
+        });
+      };
+    }
+  }, [modalMode, showAppModal]);
 
 
   const [appItems, setAppItems] = useState<AppItem[]>([]);
@@ -583,37 +640,51 @@ function App() {
                 onSubmit={handleAppModalSubmit}
               >
                 <h4 style={{ marginBottom: 18 }}>{modalMode === 'add' ? 'Add Custom App' : 'Edit App'}</h4>
-                <input
-                  type="text"
-                  placeholder="App Name"
-                  value={appNameInput}
-                  onChange={e => setAppNameInput(e.target.value)}
-                  style={{
-                    width: '90%',
-                    marginBottom: 14,
-                    padding: 10,
-                    borderRadius: 8,
-                    border: '1px solid #bbb',
-                    background: theme === 'dark' ? '#495057' : '#fff',
-                    color: theme === 'dark' ? '#f8f9fa' : '#212529',
-                  }}
-                  autoFocus
-                />
-                <input
-                  type="text"
-                  placeholder="App URL (e.g. example.com or https://...)"
-                  value={appUrlInput}
-                  onChange={e => setAppUrlInput(e.target.value)}
-                  style={{
-                    width: '90%',
-                    marginBottom: 14,
-                    padding: 10,
-                    borderRadius: 8,
-                    border: '1px solid #bbb',
-                    background: theme === 'dark' ? '#495057' : '#fff',
-                    color: theme === 'dark' ? '#f8f9fa' : '#212529',
-                  }}
-                />
+                
+                <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+                    <input
+                      type="text"
+                      placeholder="App Name"
+                      value={appNameInput}
+                      onChange={e => setAppNameInput(e.target.value)}
+                      style={{
+                        width: '100%',
+                        padding: 10,
+                        borderRadius: 8,
+                        border: '1px solid #bbb',
+                        background: theme === 'dark' ? '#495057' : '#fff',
+                        color: theme === 'dark' ? '#f8f9fa' : '#212529',
+                      }}
+                      autoFocus
+                    />
+                    <input
+                      type="text"
+                      placeholder="App URL (e.g. example.com)"
+                      value={appUrlInput}
+                      onChange={e => setAppUrlInput(e.target.value)}
+                      style={{
+                        width: '100%',
+                        marginTop: 14,
+                        padding: 10,
+                        borderRadius: 8,
+                        border: '1px solid #bbb',
+                        background: theme === 'dark' ? '#495057' : '#fff',
+                        color: theme === 'dark' ? '#f8f9fa' : '#212529',
+                      }}
+                    />
+                  </div>
+
+                  {modalMode === 'add' && qrSessionId && (
+                    <div style={{ textAlign: 'center' }}>
+                      <p style={{ fontSize: 12, color: theme === 'dark' ? '#ccc' : '#555', marginBottom: 5 }}>Scan to add</p>
+                      <div style={{ background: 'white', padding: 10, display: 'inline-block', borderRadius: 8 }}>
+                        <QRCode value={`${window.location.origin}/add-app/${qrSessionId}`} size={100} />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
                 <div style={{ marginTop: 18, display: 'flex', justifyContent: 'center', gap: 12 }}>
                   <Button variant="primary" type="submit">{modalMode === 'add' ? 'Add' : 'Save'}</Button>
                   <Button variant="secondary" onClick={() => setShowAppModal(false)}>Cancel</Button>
@@ -623,13 +694,13 @@ function App() {
           )}
         </div>
       </div>
-      {ghostItem && draggedItemPosition && (
+      {ghostItem && draggedItemPosition && draggedItemOffset && (
         <div
           className="app-block-wrapper ghost-item"
           style={{
             position: 'absolute',
-            left: draggedItemPosition.x - draggedItemOffset!.x,
-            top: draggedItemPosition.y - draggedItemOffset!.y,
+            left: draggedItemPosition.x - draggedItemOffset.x,
+            top: draggedItemPosition.y - draggedItemOffset.y,
             zIndex: 1000,
             opacity: 0.8,
             pointerEvents: 'none',
@@ -652,74 +723,74 @@ function App() {
         </div>
       )}
       
-      {/* Ko-fi Support Link */}
-      <div style={{ width: '100%', textAlign: 'center', marginTop: 40, marginBottom: 20 }}>
-        <button
-          type="button"
-          style={{ fontSize: 14, color: '#ff5f5f', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-          onClick={() => setShowKoFi(true)}
-        >
-          Support Us on Ko-fi
-        </button>
-        {showKoFi && (
-          <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
-            <div style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)', textAlign: 'center' }} onClick={e => e.stopPropagation()}>
-              <img src={process.env.PUBLIC_URL + '/ko_fi_teslacenter_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
-              <br />
-              <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
-                Open Ko-fi Directly
-              </a>
-              <div style={{ marginTop: 10 }}>
-                <Button variant="secondary" onClick={() => setShowKoFi(false)}>Close</Button>
+      {/* Navigation Footer */}
+      {!isFullscreen && (
+        <div style={{ marginTop: 'auto', padding: '30px 20px', background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
+          {/* Ko-fi Support Link */}
+          <div style={{ textAlign: 'center', marginBottom: 20 }}>
+            <button
+              type="button"
+              style={{ fontSize: 14, color: '#ff5f5f', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+              onClick={() => setShowKoFi(true)}
+            >
+              Support Us on Ko-fi
+            </button>
+            {showKoFi && (
+              <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
+                <div style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)', textAlign: 'center' }} onClick={e => e.stopPropagation()}>
+                  <img src={process.env.PUBLIC_URL + '/ko_fi_teslacenter_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
+                  <br />
+                  <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
+                    Open Ko-fi Directly
+                  </a>
+                  <div style={{ marginTop: 10 }}>
+                    <Button variant="secondary" onClick={() => setShowKoFi(false)}>Close</Button>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
-        )}
 
-        {/* AdSense Ad */}
-        {showAd && !isFullscreen && (
-          <AdSenseAd 
-            onClose={() => {
-              setShowAd(false);
-              trackAdEvent('close');
-            }}
-            adClient={process.env.REACT_APP_ADSENSE_CLIENT_ID}
-            adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
-            theme={theme as 'light' | 'dark'}
-          />
-        )}
+          {/* AdSense Ad */}
+          {showAd && (
+            <AdSenseAd 
+              onClose={() => {
+                setShowAd(false);
+                trackAdEvent('close');
+              }}
+              adClient={process.env.REACT_APP_ADSENSE_CLIENT_ID}
+              adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
+              theme={theme as 'light' | 'dark'}
+            />
+          )}
 
-        {/* Navigation Footer */}
-        {!isFullscreen && (
-          <div style={{ marginTop: 'auto', padding: '30px 20px', background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
-              <a href="/about.html" style={{ color: theme === 'dark' ? '#85c1e9' : '#2980b9', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
-                📖 About
-              </a>
-              <a href="/tesla-apps-guide.html" style={{ color: theme === 'dark' ? '#85c1e9' : '#2980b9', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
-                🚗 Guide
-              </a>
-              <a href="/tesla-browser-tips.html" style={{ color: theme === 'dark' ? '#85c1e9' : '#2980b9', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
-                💡 Tips
-              </a>
-              <a href="/contact.html" style={{ color: theme === 'dark' ? '#85c1e9' : '#2980b9', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
-                💬 Contact
-              </a>
-            </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
-              <a href="/privacy-policy.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
-                Privacy Policy
-              </a>
-              <span>•</span>
-              <a href="/terms-of-service.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
-                Terms of Service
-              </a>
-              <span>•</span>
-              <span>© 2025 TeslaCenter</span>
-            </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
+            <a href="/about.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              📖 About
+            </a>
+            <a href="/tesla-apps-guide.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              🚗 Guide
+            </a>
+            <a href="/tesla-browser-tips.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              💡 Tips
+            </a>
+            <a href="/contact.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              💬 Contact
+            </a>
           </div>
-        )}
-      </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
+            <a href="/privacy-policy.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              Privacy Policy
+            </a>
+            <span>•</span>
+            <a href="/terms-of-service.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              Terms of Service
+            </a>
+            <span>•</span>
+            <span>© 2025 TeslaCenter</span>
+          </div>
+        </div>
+      )}
     </div>
     </div>
   );

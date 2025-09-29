@@ -40,7 +40,7 @@ function App() {
   
   const readMeta = (): AppsMeta | null => {
     try {
-      const raw = localStorage.getItem('teslahub_apps_meta');
+      const raw = localStorage.getItem('teslacenter_apps_meta');
       return raw ? (JSON.parse(raw) as AppsMeta) : null;
     } catch (e) {
       console.error('[META] Failed to read meta', e);
@@ -50,7 +50,7 @@ function App() {
 
   const writeMeta = (meta: AppsMeta) => {
     try {
-      localStorage.setItem('teslahub_apps_meta', JSON.stringify(meta));
+      localStorage.setItem('teslacenter_apps_meta', JSON.stringify(meta));
     } catch (e) {
       console.error('[META] Failed to write meta', e);
     }
@@ -77,7 +77,7 @@ function App() {
       const meta: AppsMeta = { version: nextVersion, updatedAt, sourceId: clientId };
 
       // Persist state and meta
-      localStorage.setItem('teslahub_apps', JSON.stringify(apps));
+      localStorage.setItem('teslacenter_apps', JSON.stringify(apps));
       writeMeta(meta);
 
       // Update local version and broadcast to peers
@@ -95,7 +95,7 @@ function App() {
   const loadFromStorage = (source: string): AppItem[] | null => {
     console.log(`[LOAD] ${source}: Loading from localStorage`);
     try {
-      const stored = localStorage.getItem('teslahub_apps');
+      const stored = localStorage.getItem('teslacenter_apps');
       if (stored) {
         const apps = JSON.parse(stored);
         console.log(`[LOAD] ${source}: Loaded ${apps.length} apps`);
@@ -172,7 +172,7 @@ function App() {
   const [appItems, setAppItems] = useState<AppItem[]>([]);
   const [showKoFi, setShowKoFi] = useState(false);
   const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('teslahub_theme');
+    const savedTheme = localStorage.getItem('teslacenter_theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedTheme) {
       return savedTheme;
@@ -347,7 +347,7 @@ function App() {
   useEffect(() => {
     if ('BroadcastChannel' in window) {
       try {
-        bcRef.current = new BroadcastChannel('teslahub_sync');
+        bcRef.current = new BroadcastChannel('teslacenter_sync');
         bcRef.current.onmessage = (event: MessageEvent) => {
           const data = event.data;
           if (!data || data.type !== 'apps-update') return;
@@ -367,11 +367,11 @@ function App() {
     }
 
     const onStorage = (e: StorageEvent) => {
-      if (e.key !== 'teslahub_apps_meta') return;
+      if (e.key !== 'teslacenter_apps_meta') return;
       try {
         const meta = e.newValue ? (JSON.parse(e.newValue) as AppsMeta) : null;
         if (meta && meta.version > appsVersion && meta.sourceId !== clientId) {
-          const stored = localStorage.getItem('teslahub_apps');
+          const stored = localStorage.getItem('teslacenter_apps');
           if (stored) {
             const apps = JSON.parse(stored) as AppItem[];
             console.log(`[SYNC] Storage event v${meta.version}, applying`);
@@ -406,7 +406,9 @@ function App() {
   }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('teslacenter_theme', newTheme);
   };
 
   const handleEditDone = () => {
@@ -423,8 +425,8 @@ function App() {
     console.log('[RESET] Starting complete reset to defaults');
     
     try {
-      localStorage.removeItem('teslahub_apps');
-      localStorage.removeItem('teslahub_apps_meta');
+      localStorage.removeItem('teslacenter_apps');
+      localStorage.removeItem('teslacenter_apps_meta');
       console.log('[RESET] Cleared all storage');
       setAppsVersion(0);
     } catch (error) {

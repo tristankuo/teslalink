@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "teslahub",
+    "teslacenter",
+    "TeslaCenter",
+    "TeslaHub", 
+    "ADSENSE",
+    "AdSense",
+    "gtag",
+    "adsbygoogle",
+    "Firebase",
+    "VSCODE"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "build/**",
+    "*.min.js",
+    "package-lock.json"
+  ]
+}

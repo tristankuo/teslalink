@@ -18,6 +18,7 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
   const [countdown, setCountdown] = useState(5);
   const [canClose, setCanClose] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
     if (countdown > 0) {
@@ -33,21 +34,47 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
   useEffect(() => {
     // Load AdSense script if not already loaded
     if (!window.adsbygoogle) {
+      console.log('Loading AdSense script...');
       const script = document.createElement('script');
       script.async = true;
       script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + adClient;
       script.crossOrigin = 'anonymous';
+      script.onload = () => console.log('AdSense script loaded successfully');
+      script.onerror = () => console.error('Failed to load AdSense script');
       document.head.appendChild(script);
+    } else {
+      console.log('AdSense script already loaded');
     }
 
     // Push ad after component mounts
     const timer = setTimeout(() => {
       try {
+        console.log('Attempting to push ad to AdSense...');
         if (window.adsbygoogle) {
           (window.adsbygoogle = window.adsbygoogle || []).push({});
+          console.log('Ad pushed to AdSense queue');
+          
+          // Show fallback if no ad loads after 3 seconds
+          setTimeout(() => {
+            const adElements = document.querySelectorAll('.adsbygoogle[data-ad-slot="' + adSlot + '"]');
+            let hasAd = false;
+            adElements.forEach((el: any) => {
+              if (el.innerHTML.trim() !== '' || el.getAttribute('data-ad-status') === 'filled') {
+                hasAd = true;
+              }
+            });
+            if (!hasAd) {
+              console.log('No ad loaded, showing debug info');
+              setShowFallback(true);
+            }
+          }, 3000);
+        } else {
+          console.warn('AdSense not available yet');
+          setShowFallback(true);
         }
       } catch (error) {
-        console.log('AdSense error:', error);
+        console.error('AdSense error:', error);
+        setShowFallback(true);
       }
     }, 100);
 
@@ -144,6 +171,34 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
+          
+          {/* Debug/Fallback Info */}
+          {showFallback && (
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: theme === 'dark' ? '#495057' : '#f8f9fa',
+              color: theme === 'dark' ? '#f8f9fa' : '#6c757d',
+              fontSize: '12px',
+              flexDirection: 'column',
+              gap: '5px',
+              padding: '10px',
+              borderRadius: '4px'
+            }}>
+              <div>📢 AdSense Status</div>
+              <div>Client: {adClient}</div>
+              <div>Slot: {adSlot}</div>
+              <div style={{ fontSize: '10px', opacity: 0.7 }}>
+                {process.env.NODE_ENV === 'development' ? 'Dev Mode - Ads may not show' : 'Waiting for ad approval/fill'}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

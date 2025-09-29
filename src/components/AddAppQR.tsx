@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { database } from '../utils/firebase';
-import { ref, set, get, onValue } from 'firebase/database';
+import { ref, set, onValue } from 'firebase/database';
 import { Button } from 'react-bootstrap';
 
 function AddAppQR() {
@@ -19,46 +19,35 @@ function AddAppQR() {
     }
 
     const sessionRef = ref(database, `qr_sessions/${sessionId}`);
-    let handled = false;
 
-    const handleSession = (snapshot: any) => {
-        if (handled) return;
-        if (snapshot.exists()) {
-            const sessionData = snapshot.val();
-            if (sessionData.status === 'pending') {
-                setStatus('ready');
-                handled = true;
-            } else {
-                setStatus('expired');
-                setError('This QR code has already been used or has expired.');
-                handled = true;
-            }
+    // Use onValue for real-time listening. It will fire immediately with the
+    // current state and then update on any changes.
+    const unsubscribe = onValue(sessionRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const sessionData = snapshot.val();
+        if (sessionData.status === 'pending') {
+          setStatus('ready');
         } else {
-            // This might be a temporary state if the session is still being created.
-            // A timeout will handle the case where it never appears.
+          // If status is not 'pending' (e.g., 'completed' or expired), treat it as expired.
+          setStatus('expired');
+          setError('This QR code has already been used or has expired.');
         }
-    };
-
-    // Try to get the value once.
-    get(sessionRef).then(handleSession).catch(() => {
-        // This might fail if offline, so we also rely on the onValue listener.
+      } else {
+        // Session does not exist in the database.
+        // It might have expired and been deleted, or was never valid.
+        setStatus('error');
+        setError('This QR session is invalid or has expired.');
+      }
+    }, (error) => {
+        // Handle potential database read errors (e.g., permissions)
+        setStatus('error');
+        setError('Failed to verify the session due to a database error.');
+        console.error("Firebase onValue error:", error);
     });
 
-    // Also, listen for changes. This is robust against timing issues.
-    const unsubscribe = onValue(sessionRef, handleSession);
-
-    // Set a timeout to prevent getting stuck in 'loading'
-    const verificationTimeout = setTimeout(() => {
-        if (!handled) {
-            setStatus('error');
-            setError('This QR session is invalid or has expired.');
-            handled = true;
-        }
-    }, 10000); // 10 seconds
-
+    // Cleanup the listener when the component unmounts
     return () => {
-        unsubscribe();
-        clearTimeout(verificationTimeout);
+      unsubscribe();
     };
   }, [sessionId]);
 

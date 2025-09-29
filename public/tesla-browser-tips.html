@@ -9,42 +9,190 @@
     <title>Tesla Browser Tips & Tricks - Master Your Tesla Web Experience | TeslaCenter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            --bg-gradient-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --container-bg-light: rgba(255, 255, 255, 0.95);
+            --container-bg-dark: rgba(44, 62, 80, 0.95);
+            --text-primary-light: #2c3e50;
+            --text-primary-dark: #ecf0f1;
+            --text-secondary-light: #34495e;
+            --text-secondary-dark: #bdc3c7;
+            --border-color-light: #3498db;
+            --border-color-dark: #3498db;
+            --tip-bg-light: #f8f9fa;
+            --tip-bg-dark: #34495e;
+            --tip-item-bg-light: white;
+            --tip-item-bg-dark: #2c3e50;
+            --warning-bg-light: #fff3cd;
+            --warning-bg-dark: #856404;
+            --warning-border-light: #ffeaa7;
+            --warning-border-dark: #d4b106;
+            --warning-text-light: #856404;
+            --warning-text-dark: #fff3cd;
+            --success-bg-light: #d4edda;
+            --success-bg-dark: #27ae60;
+            --success-border-light: #c3e6cb;
+            --success-border-dark: #2ecc71;
+            --success-text-light: #155724;
+            --success-text-dark: #d4edda;
+            --link-color-light: #3498db;
+            --link-color-dark: #85c1e9;
+            --link-hover-light: #2980b9;
+            --link-hover-dark: #5dade2;
+            --step-bg-light: #e8f8ff;
+            --step-bg-dark: #2c3e50;
+            --step-item-bg-light: white;
+            --step-item-bg-dark: #34495e;
+            --step-border-light: #3498db;
+            --step-border-dark: #3498db;
+        }
+
+        [data-theme="light"] {
+            --bg-gradient: var(--bg-gradient-light);
+            --container-bg: var(--container-bg-light);
+            --text-primary: var(--text-primary-light);
+            --text-secondary: var(--text-secondary-light);
+            --border-color: var(--border-color-light);
+            --tip-bg: var(--tip-bg-light);
+            --tip-item-bg: var(--tip-item-bg-light);
+            --warning-bg: var(--warning-bg-light);
+            --warning-border: var(--warning-border-light);
+            --warning-text: var(--warning-text-light);
+            --success-bg: var(--success-bg-light);
+            --success-border: var(--success-border-light);
+            --success-text: var(--success-text-light);
+            --link-color: var(--link-color-light);
+            --link-hover: var(--link-hover-light);
+            --step-bg: var(--step-bg-light);
+            --step-item-bg: var(--step-item-bg-light);
+            --step-border: var(--step-border-light);
+        }
+
+        [data-theme="dark"] {
+            --bg-gradient: var(--bg-gradient-dark);
+            --container-bg: var(--container-bg-dark);
+            --text-primary: var(--text-primary-dark);
+            --text-secondary: var(--text-secondary-dark);
+            --border-color: var(--border-color-dark);
+            --tip-bg: var(--tip-bg-dark);
+            --tip-item-bg: var(--tip-item-bg-dark);
+            --warning-bg: var(--warning-bg-dark);
+            --warning-border: var(--warning-border-dark);
+            --warning-text: var(--warning-text-dark);
+            --success-bg: var(--success-bg-dark);
+            --success-border: var(--success-border-dark);
+            --success-text: var(--success-text-dark);
+            --link-color: var(--link-color-dark);
+            --link-hover: var(--link-hover-dark);
+            --step-bg: var(--step-bg-dark);
+            --step-item-bg: var(--step-item-bg-dark);
+            --step-border: var(--step-border-dark);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--link-color);
+            color: var(--container-bg);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .theme-toggle:hover {
+            background: var(--link-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--bg-gradient);
             min-height: 100vh;
             line-height: 1.6;
+            transition: all 0.3s ease;
         }
         .container {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--container-bg);
             border-radius: 20px;
             padding: 40px;
             margin-top: 40px;
             margin-bottom: 40px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
-        h1 { color: #2c3e50; margin-bottom: 30px; }
-        h2 { color: #34495e; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        h3 { color: #2c3e50; margin-top: 30px; margin-bottom: 15px; }
-        .tip-section { background: #f8f9fa; padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #27ae60; }
-        .tip-item { background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .tip-item h4 { color: #2c3e50; margin-bottom: 12px; display: flex; align-items: center; }
+        h1 { color: var(--text-primary); margin-bottom: 30px; }
+        h2 { color: var(--text-secondary); margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+        h3 { color: var(--text-primary); margin-top: 30px; margin-bottom: 15px; }
+        .tip-section { background: var(--tip-bg); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #27ae60; }
+        .tip-item { background: var(--tip-item-bg); padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .tip-item h4 { color: var(--text-primary); margin-bottom: 12px; display: flex; align-items: center; }
         .tip-item .icon { font-size: 1.5em; margin-right: 10px; }
-        .warning { background: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .warning h4 { color: #856404; }
-        .success { background: #d4edda; border: 1px solid #c3e6cb; padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .success h4 { color: #155724; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .nav-link { display: inline-block; margin: 10px 5px; padding: 12px 24px; background: #3498db; color: white; border-radius: 8px; }
-        .nav-link:hover { background: #2980b9; color: white; }
+        .warning { background: var(--warning-bg); border: 1px solid var(--warning-border); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning h4 { color: var(--warning-text); }
+        .success { background: var(--success-bg); border: 1px solid var(--success-border); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .success h4 { color: var(--success-text); }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { text-decoration: underline; color: var(--link-hover); }
+        .nav-link { display: inline-block; margin: 10px 5px; padding: 12px 24px; background: var(--link-color); color: var(--container-bg); border-radius: 8px; }
+        .nav-link:hover { background: var(--link-hover); color: var(--container-bg); }
         .breadcrumb { background: transparent; padding: 0; margin-bottom: 20px; }
         .breadcrumb-item + .breadcrumb-item::before { content: "→"; }
-        .step-by-step { background: #e8f8ff; padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .step { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #3498db; }
+        .step-by-step { background: var(--step-bg); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .step { background: var(--step-item-bg); padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid var(--step-border); }
     </style>
+    <script>
+        // Theme management system
+        function getStoredTheme() {
+            return localStorage.getItem('teslacenter_theme') || 
+                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('teslacenter_theme', theme);
+            updateThemeToggle(theme);
+        }
+
+        function updateThemeToggle(theme) {
+            const toggle = document.getElementById('theme-toggle');
+            if (toggle) {
+                toggle.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+
+        // Initialize theme and listen for storage changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const theme = getStoredTheme();
+            setTheme(theme);
+            
+            // Sync with other tabs
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'teslacenter_theme') {
+                    const newTheme = e.newValue || 'light';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    updateThemeToggle(newTheme);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
+    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">

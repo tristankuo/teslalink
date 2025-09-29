@@ -5,6 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donate via Ko-fi</title>
   <style>
+    /* CSS Custom Properties for theming */
+    [data-theme="light"] {
+      --bg-color: #f7f7f7;
+      --container-bg: #fff;
+      --text-color: #333;
+      --button-bg: #ff5f5f;
+      --button-hover: #ff4040;
+      --button-text: white;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #2c3e50;
+      --container-bg: #34495e;
+      --text-color: #ecf0f1;
+      --button-bg: #e74c3c;
+      --button-hover: #c0392b;
+      --button-text: white;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--button-bg);
+      color: var(--button-text);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .theme-toggle:hover {
+      background: var(--button-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
     body {
       display: flex;
       flex-direction: column;
@@ -13,15 +55,17 @@
       height: 100vh;
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       text-align: center;
+      transition: all 0.3s ease;
     }
     .container {
-      background: #fff;
+      background: var(--container-bg);
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
     img {
       max-width: 200px;
@@ -32,17 +76,55 @@
       margin-top: 10px;
       padding: 10px 20px;
       text-decoration: none;
-      background: #ff5f5f;
-      color: white;
+      background: var(--button-bg);
+      color: var(--button-text);
       border-radius: 6px;
       font-weight: bold;
+      transition: all 0.3s ease;
     }
     a:hover {
-      background: #ff4040;
+      background: var(--button-hover);
     }
   </style>
+  <script>
+    // Theme management system
+    function initTheme() {
+      const savedTheme = localStorage.getItem('teslacenter_theme') || 
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeButton(savedTheme);
+      
+      // Sync with main app theme changes
+      window.addEventListener('storage', function(e) {
+          if (e.key === 'teslacenter_theme') {
+              const newTheme = e.newValue || 'light';
+              document.documentElement.setAttribute('data-theme', newTheme);
+              updateThemeButton(newTheme);
+          }
+      });
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('teslacenter_theme', newTheme);
+      updateThemeButton(newTheme);
+    }
+
+    function updateThemeButton(theme) {
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+          button.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
+      }
+    }
+
+    // Initialize theme on page load
+    document.addEventListener('DOMContentLoaded', initTheme);
+  </script>
 </head>
 <body>
+  <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
   <div class="container">
     <img src="ko_fi_teslacenter_qr.png" alt="Ko-fi QR Code">
     <br>

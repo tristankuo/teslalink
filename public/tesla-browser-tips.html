@@ -28,6 +28,8 @@
             --nav-link-hover-dark: #3498db;
             --feature-bg-light: #f8f9fa;
             --feature-bg-dark: rgba(73, 80, 87, 0.3);
+            --faq-bg-light: #f8f9fa;
+            --faq-bg-dark: rgba(73, 80, 87, 0.3);
             --highlight-bg-light: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
             --highlight-bg-dark: linear-gradient(120deg, #2c3e50 0%, #34495e 100%);
         }
@@ -42,6 +44,7 @@
             --nav-link-bg: var(--nav-link-bg-light);
             --nav-link-hover: var(--nav-link-hover-light);
             --feature-bg: var(--feature-bg-light);
+            --faq-bg: var(--faq-bg-light);
             --highlight-bg: var(--highlight-bg-light);
         }
         
@@ -55,6 +58,7 @@
             --nav-link-bg: var(--nav-link-bg-dark);
             --nav-link-hover: var(--nav-link-hover-dark);
             --feature-bg: var(--feature-bg-dark);
+            --faq-bg: var(--faq-bg-dark);
             --highlight-bg: var(--highlight-bg-dark);
         }
         
@@ -86,6 +90,14 @@
             border-left: 4px solid var(--link-color);
             transition: background 0.3s ease;
         }
+        .faq-item { 
+            background: var(--faq-bg); 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 15px;
+            transition: background 0.3s ease;
+        }
+        .faq-item h4 { color: var(--text-primary); margin-bottom: 10px; }
         .feature-card h3 { color: var(--text-primary); margin-bottom: 10px; }
         a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
         a:hover { text-decoration: underline; }
@@ -215,6 +227,42 @@
             <p><strong>Important:</strong> Always prioritize safety. Only use the browser when your vehicle is in Park and it is safe and legal to do so. Never let the browser distract you from driving.</p>
         </div>
         
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>How do I add TeslaCenter to my Tesla?</h4>
+            <p>Simply open your Tesla's browser and navigate to <strong>teslacenter.web.app</strong>. You can bookmark it for easy access later. No installation required!</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Why aren't my apps syncing between devices?</h4>
+            <p>App syncing uses your browser's localStorage. Make sure you're using the same browser and that you haven't cleared your browser data. The sync happens automatically when you make changes.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Can I suggest new apps to add?</h4>
+            <p>Absolutely! We're always looking for new Tesla-compatible apps. Contact us through Ko-fi with your suggestions. We prioritize apps that work well on touchscreens and load quickly.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Is TeslaCenter officially affiliated with Tesla?</h4>
+            <p>No, TeslaCenter is an independent project created by Tesla owners for Tesla owners. We are not affiliated with Tesla, Inc.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Why do I see ads on TeslaCenter?</h4>
+            <p>Ads help us keep TeslaCenter free for everyone while supporting ongoing development and hosting costs. We carefully select non-intrusive ads that won't interfere with your Tesla experience.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Is my data secure?</h4>
+            <p>Yes! Your app preferences and custom apps are stored locally in your browser. We don't collect or store your personal app data on our servers. Check our <a href="/privacy-policy.html">Privacy Policy</a> for full details.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>What Tesla models are supported?</h4>
+            <p>TeslaCenter works on all Tesla models with web browser capability, including Model S, Model 3, Model X, Model Y, and Cybertruck. The interface automatically adapts to different screen sizes.</p>
+        </div>
+
         <hr style="margin: 40px 0;">
         
         <div style="text-align: center;">

@@ -184,7 +184,7 @@ function MainApp() {
   };
 
   useEffect(() => {
-    if (modalMode === 'add' && showAppModal) {
+    if (showAppModal) {
       const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
       setQrSessionId(newSessionId);
       const sessionRef = ref(database, `qr_sessions/${newSessionId}`);
@@ -223,7 +223,7 @@ function MainApp() {
         });
       };
     }
-  }, [modalMode, showAppModal]);
+  }, [showAppModal]);
 
 
   const [appItems, setAppItems] = useState<AppItem[]>([]);
@@ -704,12 +704,12 @@ function MainApp() {
                     />
                   </div>
 
-                  {modalMode === 'add' && qrSessionId && (
+                  {qrSessionId && (
                     <div style={{ textAlign: 'center' }}>
-                      <p style={{ fontSize: 12, color: theme === 'dark' ? '#ccc' : '#555', marginBottom: 5 }}>Scan to add</p>
-                      <div style={{ background: 'white', padding: 10, display: 'inline-block', borderRadius: 8 }}>
+                      <div style={{ background: 'white', padding: 10, display: 'inline-block', borderRadius: 8, marginBottom: 8 }}>
                         <QRCode value={`${window.location.origin}/add-app/${qrSessionId}?theme=${theme}`} size={100} />
                       </div>
+                      <p style={{ fontSize: 12, color: theme === 'dark' ? '#ccc' : '#555', margin: 0 }}>Scan to add</p>
                     </div>
                   )}
                 </div>
@@ -752,6 +752,22 @@ function MainApp() {
         </div>
       )}
       
+      {showKoFi && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.6)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
+          <div style={{ background: theme === 'dark' ? '#343a40' : '#fff', color: theme === 'dark' ? '#f8f9fa' : '#212529', padding: '30px 25px', borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,0.2)', textAlign: 'center', maxWidth: '90%', width: 320 }} onClick={e => e.stopPropagation()}>
+            <h5 style={{ marginBottom: 15 }}>Support TeslaCenter</h5>
+            <p style={{ fontSize: 14, opacity: 0.8, marginBottom: 20 }}>Scan the QR code or click the button to help keep this project running.</p>
+            <img src={process.env.PUBLIC_URL + '/ko_fi_teslacenter_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: '80%', height: 'auto', margin: '0 auto 20px', display: 'block', borderRadius: 8 }} />
+            <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', width: '100%', padding: '12px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 8, fontWeight: 'bold', boxSizing: 'border-box' }}>
+              Open Ko-fi
+            </a>
+            <div style={{ marginTop: 15 }}>
+              <Button variant="secondary" onClick={() => setShowKoFi(false)}>Close</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navigation Footer */}
       <div style={{ marginTop: 'auto', padding: '30px 20px', background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
         {/* Ko-fi Support Link */}
@@ -763,20 +779,6 @@ function MainApp() {
           >
             Support Us on Ko-fi
           </button>
-          {showKoFi && (
-            <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
-              <div style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)', textAlign: 'center' }} onClick={e => e.stopPropagation()}>
-                <img src={process.env.PUBLIC_URL + '/ko_fi_teslacenter_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
-                <br />
-                <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
-                  Open Ko-fi Directly
-                </a>
-                <div style={{ marginTop: 10 }}>
-                  <Button variant="secondary" onClick={() => setShowKoFi(false)}>Close</Button>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* AdSense Ad */}
@@ -790,35 +792,33 @@ function MainApp() {
             adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
             theme={theme as 'light' | 'dark'}
           />
-        )}
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
-            <a href="/about.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              📖 About
+        )}        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
+              <a href="/about.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                📖 About
+              </a>
+              <a href="/tesla-apps-guide.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                🚗 Guide
+              </a>
+              <a href="/tesla-browser-tips.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                💡 Tips
+              </a>
+              <a href="/contact.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                💬 Contact
+              </a>
+            </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
+            <a href="/privacy-policy.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              Privacy Policy
             </a>
-            <a href="/tesla-apps-guide.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              🚗 Guide
+            <span>•</span>
+            <a href="/terms-of-service.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              Terms of Service
             </a>
-            <a href="/tesla-browser-tips.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              💡 Tips
-            </a>
-            <a href="/contact.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              💬 Contact
-            </a>
+            <span>•</span>
+            <span>© 2025 TeslaCenter</span>
           </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
-          <a href="/privacy-policy.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-            Privacy Policy
-          </a>
-          <span>•</span>
-          <a href="/terms-of-service.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-            Terms of Service
-          </a>
-          <span>•</span>
-          <span>© 2025 TeslaCenter</span>
         </div>
       </div>
-    </div>
     </div>
   );
 }

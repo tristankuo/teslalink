@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { database } from '../utils/firebase';
 import { ref, set, onValue } from 'firebase/database';
 import { Button } from 'react-bootstrap';
 
 function AddAppQR() {
   const { sessionId } = useParams<{ sessionId: string }>();
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const theme = queryParams.get('theme') || 'light';
+
   const [appName, setAppName] = useState('');
   const [appUrl, setAppUrl] = useState('');
   const [status, setStatus] = useState<'loading' | 'ready' | 'success' | 'error' | 'expired'>('loading');
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    // Apply theme to the body to control background color
+    document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
+  }, [theme]);
+
 
   useEffect(() => {
     if (!sessionId) {
@@ -79,57 +89,94 @@ function AddAppQR() {
     }
   };
 
+  const containerStyle: React.CSSProperties = {
+    color: theme === 'dark' ? '#f8f9fa' : '#212529',
+    minHeight: '100vh',
+    padding: 20,
+    boxSizing: 'border-box',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
+  const formStyle: React.CSSProperties = {
+    background: theme === 'dark' ? '#343a40' : '#fff',
+    color: theme === 'dark' ? '#f8f9fa' : '#212529',
+    padding: 24,
+    borderRadius: 16,
+    boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+    width: '100%',
+    maxWidth: 400,
+    margin: 'auto',
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: 12,
+    borderRadius: 8,
+    border: `1px solid ${theme === 'dark' ? '#555' : '#bbb'}`,
+    background: theme === 'dark' ? '#495057' : '#fff',
+    color: theme === 'dark' ? '#f8f9fa' : '#212529',
+    fontSize: 16,
+  };
+
   if (status === 'loading') {
-    return <div>Verifying session...</div>;
+    return <div style={containerStyle}><div style={{ ...formStyle, textAlign: 'center' }}>Verifying session...</div></div>;
   }
 
   if (status === 'error' || status === 'expired') {
     return (
-        <div style={{ padding: 20, textAlign: 'center' }}>
-            <h4>Error</h4>
-            <p>{error}</p>
+        <div style={containerStyle}>
+            <div style={{ ...formStyle, textAlign: 'center' }}>
+                <h4 style={{ color: '#dc3545' }}>Error</h4>
+                <p>{error}</p>
+            </div>
         </div>
     );
   }
   
   if (status === 'success') {
     return (
-        <div style={{ padding: 20, textAlign: 'center' }}>
-            <h4>Success!</h4>
-            <p>You can now close this window.</p>
+        <div style={containerStyle}>
+            <div style={{ ...formStyle, textAlign: 'center' }}>
+                <h4 style={{ color: '#28a745' }}>Success!</h4>
+                <p>You can now close this window.</p>
+            </div>
         </div>
     );
   }
 
   return (
-    <div style={{ padding: 20 }}>
-      <h3 className="text-center mb-4">Add App to TeslaCenter</h3>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="App Name"
-            value={appName}
-            onChange={(e) => setAppName(e.target.value)}
-            required
-            autoFocus
-          />
-        </div>
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="App URL (e.g. example.com)"
-            value={appUrl}
-            onChange={(e) => setAppUrl(e.target.value)}
-            required
-          />
-        </div>
-        <div className="d-grid">
-            <Button variant="primary" type="submit">Done</Button>
-        </div>
-      </form>
+    <div style={containerStyle}>
+      <div style={formStyle}>
+        <h3 style={{ textAlign: 'center', marginBottom: 24 }}>Add App to TeslaCenter</h3>
+        <form onSubmit={handleSubmit}>
+          <div style={{ marginBottom: 16 }}>
+            <input
+              type="text"
+              style={inputStyle}
+              placeholder="App Name"
+              value={appName}
+              onChange={(e) => setAppName(e.target.value)}
+              required
+              autoFocus
+            />
+          </div>
+          <div style={{ marginBottom: 24 }}>
+            <input
+              type="text"
+              style={inputStyle}
+              placeholder="App URL (e.g. example.com)"
+              value={appUrl}
+              onChange={(e) => setAppUrl(e.target.value)}
+              required
+            />
+          </div>
+          <div className="d-grid">
+              <Button variant={theme === 'dark' ? 'outline-light' : 'primary'} type="submit">Done</Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

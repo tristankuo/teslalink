@@ -708,7 +708,7 @@ function MainApp() {
                     <div style={{ textAlign: 'center' }}>
                       <p style={{ fontSize: 12, color: theme === 'dark' ? '#ccc' : '#555', marginBottom: 5 }}>Scan to add</p>
                       <div style={{ background: 'white', padding: 10, display: 'inline-block', borderRadius: 8 }}>
-                        <QRCode value={`${window.location.origin}/add-app/${qrSessionId}`} size={100} />
+                        <QRCode value={`${window.location.origin}/add-app/${qrSessionId}?theme=${theme}`} size={100} />
                       </div>
                     </div>
                   )}

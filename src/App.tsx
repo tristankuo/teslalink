@@ -9,7 +9,7 @@ import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
 import { initGA, trackPageView, trackAdEvent } from './utils/analytics';
 import { database } from './utils/firebase';
-import { ref, set, onValue, remove, get } from 'firebase/database';
+import { ref, set, onValue, remove, get, query, orderByChild, endAt, update } from 'firebase/database';
 import { QRCodeSVG as QRCode } from 'qrcode.react';
 
 
@@ -258,6 +258,35 @@ function MainApp() {
   const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
   const hasPendingChanges = useRef(false);
 
+  const cleanupStaleSessions = useCallback(async () => {
+    console.log('[CLEANUP] Running stale session cleanup...');
+    const sessionsRef = ref(database, 'qr_sessions');
+    const oneHourAgo = Date.now() - 60 * 60 * 1000;
+
+    try {
+      const snapshot = await get(query(sessionsRef, orderByChild('createdAt'), endAt(oneHourAgo)));
+      if (snapshot.exists()) {
+        const updates: { [key: string]: null } = {};
+        let count = 0;
+        snapshot.forEach((child) => {
+          updates[child.key!] = null;
+          count++;
+        });
+
+        if (count > 0) {
+          await update(sessionsRef, updates);
+          console.log(`[CLEANUP] Removed ${count} stale sessions.`);
+        } else {
+          console.log('[CLEANUP] No stale sessions found.');
+        }
+      } else {
+        console.log('[CLEANUP] No stale sessions found.');
+      }
+    } catch (error) {
+      console.error('[CLEANUP] Error cleaning up stale sessions:', error);
+    }
+  }, []);
+
   const adIdleTimer = useRef<NodeJS.Timeout | null>(null);
 
   const resetAdIdleTimer = useCallback(() => {
@@ -291,7 +320,8 @@ function MainApp() {
   useEffect(() => {
     initGA();
     trackPageView('/');
-  }, []);
+    cleanupStaleSessions();
+  }, [cleanupStaleSessions]);
 
   useEffect(() => {
     if (isAppEditMode) {

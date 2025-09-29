@@ -13,39 +13,41 @@
             --bg-gradient-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             --container-bg-light: rgba(255, 255, 255, 0.95);
-            --container-bg-dark: rgba(44, 62, 80, 0.95);
+            --container-bg-dark: rgba(42, 42, 42, 0.95);
             --text-primary-light: #2c3e50;
             --text-primary-dark: #ecf0f1;
             --text-secondary-light: #34495e;
             --text-secondary-dark: #bdc3c7;
-            --border-color-light: #3498db;
-            --border-color-dark: #3498db;
-            --tip-bg-light: #f8f9fa;
-            --tip-bg-dark: #34495e;
-            --tip-item-bg-light: white;
-            --tip-item-bg-dark: #2c3e50;
-            --warning-bg-light: #fff3cd;
-            --warning-bg-dark: #856404;
-            --warning-border-light: #ffeaa7;
-            --warning-border-dark: #d4b106;
-            --warning-text-light: #856404;
-            --warning-text-dark: #fff3cd;
-            --success-bg-light: #d4edda;
-            --success-bg-dark: #27ae60;
-            --success-border-light: #c3e6cb;
-            --success-border-dark: #2ecc71;
-            --success-text-light: #155724;
-            --success-text-dark: #d4edda;
+            --text-muted-light: #7f8c8d;
+            --text-muted-dark: #95a5a6;
             --link-color-light: #3498db;
             --link-color-dark: #85c1e9;
-            --link-hover-light: #2980b9;
-            --link-hover-dark: #5dade2;
+            --nav-link-bg-light: #3498db;
+            --nav-link-bg-dark: #2980b9;
+            --nav-link-hover-light: #2980b9;
+            --nav-link-hover-dark: #3498db;
+            --tip-bg-light: #f8f9fa;
+            --tip-bg-dark: rgba(73, 80, 87, 0.3);
+            --tip-item-bg-light: white;
+            --tip-item-bg-dark: rgba(52, 58, 64, 0.5);
+            --warning-bg-light: #fff3cd;
+            --warning-bg-dark: rgba(255, 193, 7, 0.1);
+            --warning-border-light: #ffeaa7;
+            --warning-border-dark: rgba(255, 193, 7, 0.3);
+            --warning-text-light: #856404;
+            --warning-text-dark: #ffc107;
+            --success-bg-light: #d4edda;
+            --success-bg-dark: rgba(40, 167, 69, 0.1);
+            --success-border-light: #c3e6cb;
+            --success-border-dark: rgba(40, 167, 69, 0.3);
+            --success-text-light: #155724;
+            --success-text-dark: #28a745;
             --step-bg-light: #e8f8ff;
-            --step-bg-dark: #2c3e50;
+            --step-bg-dark: rgba(13, 110, 253, 0.1);
             --step-item-bg-light: white;
-            --step-item-bg-dark: #34495e;
+            --step-item-bg-dark: rgba(52, 58, 64, 0.5);
             --step-border-light: #3498db;
-            --step-border-dark: #3498db;
+            --step-border-dark: #0d6efd;
         }
 
         [data-theme="light"] {
@@ -53,7 +55,10 @@
             --container-bg: var(--container-bg-light);
             --text-primary: var(--text-primary-light);
             --text-secondary: var(--text-secondary-light);
-            --border-color: var(--border-color-light);
+            --text-muted: var(--text-muted-light);
+            --link-color: var(--link-color-light);
+            --nav-link-bg: var(--nav-link-bg-light);
+            --nav-link-hover: var(--nav-link-hover-light);
             --tip-bg: var(--tip-bg-light);
             --tip-item-bg: var(--tip-item-bg-light);
             --warning-bg: var(--warning-bg-light);
@@ -62,8 +67,6 @@
             --success-bg: var(--success-bg-light);
             --success-border: var(--success-border-light);
             --success-text: var(--success-text-light);
-            --link-color: var(--link-color-light);
-            --link-hover: var(--link-hover-light);
             --step-bg: var(--step-bg-light);
             --step-item-bg: var(--step-item-bg-light);
             --step-border: var(--step-border-light);
@@ -74,7 +77,10 @@
             --container-bg: var(--container-bg-dark);
             --text-primary: var(--text-primary-dark);
             --text-secondary: var(--text-secondary-dark);
-            --border-color: var(--border-color-dark);
+            --text-muted: var(--text-muted-dark);
+            --link-color: var(--link-color-dark);
+            --nav-link-bg: var(--nav-link-bg-dark);
+            --nav-link-hover: var(--nav-link-hover-dark);
             --tip-bg: var(--tip-bg-dark);
             --tip-item-bg: var(--tip-item-bg-dark);
             --warning-bg: var(--warning-bg-dark);
@@ -83,8 +89,6 @@
             --success-bg: var(--success-bg-dark);
             --success-border: var(--success-border-dark);
             --success-text: var(--success-text-dark);
-            --link-color: var(--link-color-dark);
-            --link-hover: var(--link-hover-dark);
             --step-bg: var(--step-bg-dark);
             --step-item-bg: var(--step-item-bg-dark);
             --step-border: var(--step-border-dark);
@@ -117,37 +121,48 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             background: var(--bg-gradient);
             min-height: 100vh;
+            margin: 0;
             line-height: 1.6;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
         }
         .container {
             background: var(--container-bg);
             border-radius: 20px;
             padding: 40px;
-            margin-top: 40px;
-            margin-bottom: 40px;
+            margin: 40px auto;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            transition: background 0.3s ease;
+        }
+        h1 { color: var(--text-primary); margin-bottom: 30px; transition: color 0.3s ease; }
+        h2 { color: var(--text-secondary); margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid var(--link-color); padding-bottom: 10px; transition: color 0.3s ease; }
+        h3 { color: var(--text-primary); margin-top: 30px; margin-bottom: 15px; transition: color 0.3s ease; }
+        p, li { color: var(--text-secondary); transition: color 0.3s ease; }
+        .tip-section { background: var(--tip-bg); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #27ae60; transition: background 0.3s ease; }
+        .tip-item { background: var(--tip-item-bg); padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: background 0.3s ease; }
+        .tip-item h4 { color: var(--text-primary); margin-bottom: 12px; display: flex; align-items: center; transition: color 0.3s ease; }
+        .tip-item .icon { font-size: 1.5em; margin-right: 10px; }
+        .warning { background: var(--warning-bg); border: 1px solid var(--warning-border); padding: 20px; border-radius: 10px; margin: 20px 0; transition: background 0.3s ease; }
+        .warning h4 { color: var(--warning-text); transition: color 0.3s ease; }
+        .success { background: var(--success-bg); border: 1px solid var(--success-border); padding: 20px; border-radius: 10px; margin: 20px 0; transition: background 0.3s ease; }
+        .success h4 { color: var(--success-text); transition: color 0.3s ease; }
+        a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { text-decoration: underline; color: var(--nav-link-hover); }
+        .nav-link { 
+            display: inline-block; 
+            margin: 10px 5px; 
+            padding: 12px 24px; 
+            background: var(--nav-link-bg); 
+            color: white; 
+            border-radius: 8px; 
+            text-decoration: none;
             transition: all 0.3s ease;
         }
-        h1 { color: var(--text-primary); margin-bottom: 30px; }
-        h2 { color: var(--text-secondary); margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
-        h3 { color: var(--text-primary); margin-top: 30px; margin-bottom: 15px; }
-        .tip-section { background: var(--tip-bg); padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #27ae60; }
-        .tip-item { background: var(--tip-item-bg); padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .tip-item h4 { color: var(--text-primary); margin-bottom: 12px; display: flex; align-items: center; }
-        .tip-item .icon { font-size: 1.5em; margin-right: 10px; }
-        .warning { background: var(--warning-bg); border: 1px solid var(--warning-border); padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .warning h4 { color: var(--warning-text); }
-        .success { background: var(--success-bg); border: 1px solid var(--success-border); padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .success h4 { color: var(--success-text); }
-        a { color: var(--link-color); text-decoration: none; }
-        a:hover { text-decoration: underline; color: var(--link-hover); }
-        .nav-link { display: inline-block; margin: 10px 5px; padding: 12px 24px; background: var(--link-color); color: var(--container-bg); border-radius: 8px; }
-        .nav-link:hover { background: var(--link-hover); color: var(--container-bg); }
+        .nav-link:hover { background: var(--nav-link-hover); color: white; }
         .breadcrumb { background: transparent; padding: 0; margin-bottom: 20px; }
         .breadcrumb-item + .breadcrumb-item::before { content: "→"; }
-        .step-by-step { background: var(--step-bg); padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .step { background: var(--step-item-bg); padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid var(--step-border); }
+        .step-by-step { background: var(--step-bg); padding: 20px; border-radius: 10px; margin: 20px 0; transition: background 0.3s ease; }
+        .step { background: var(--step-item-bg); padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid var(--step-border); transition: background 0.3s ease; }
     </style>
     <script>
         // Theme management system

@@ -509,7 +509,7 @@ function App() {
   <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
       <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
   <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        <h1 className="text-center mt-5 mb-4">TeslaHub</h1>
+        <h1 className="text-center mt-5 mb-4">TeslaCenter</h1>
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode && !isFullscreen ? (
             <>
@@ -652,9 +652,9 @@ function App() {
         {showKoFi && (
           <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
             <div style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)', textAlign: 'center' }} onClick={e => e.stopPropagation()}>
-              <img src={process.env.PUBLIC_URL + '/ko_fi_teslahub_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
+              <img src={process.env.PUBLIC_URL + '/ko_fi_teslacenter_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
               <br />
-              <a href="https://ko-fi.com/teslahub" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
+              <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
                 Open Ko-fi Directly
               </a>
               <div style={{ marginTop: 10 }}>

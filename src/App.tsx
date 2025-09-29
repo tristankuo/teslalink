@@ -2,8 +2,10 @@ import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import './App.css';
 import { Button } from 'react-bootstrap';
 import AppItemComponent from './components/AppItem';
+import AdSenseAd from './components/AdSenseAd';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
+import { initGA, trackPageView, trackAdEvent } from './utils/analytics';
 
 
 interface AppItem {
@@ -23,6 +25,7 @@ function App() {
   const [showAppModal, setShowAppModal] = useState(false);
   const [modalMode, setModalMode] = useState<'add' | 'edit'>('add');
   const [editIndex, setEditIndex] = useState<number | null>(null);
+  const [showAd, setShowAd] = useState(true);
 
   const clientId = useMemo(() => {
     const rnd = Math.random().toString(36).slice(2);
@@ -197,6 +200,12 @@ function App() {
   const [appsLoadedFromUrl, setAppsLoadedFromUrl] = useState(false);
   const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
   const hasPendingChanges = useRef(false);
+
+  // Initialize Google Analytics
+  useEffect(() => {
+    initGA();
+    trackPageView('/');
+  }, []);
 
   useEffect(() => {
     if (isAppEditMode) {
@@ -662,6 +671,18 @@ function App() {
               </div>
             </div>
           </div>
+        )}
+
+        {/* AdSense Ad */}
+        {showAd && !isFullscreen && (
+          <AdSenseAd 
+            onClose={() => {
+              setShowAd(false);
+              trackAdEvent('close');
+            }}
+            adClient={process.env.REACT_APP_ADSENSE_CLIENT_ID}
+            adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
+          />
         )}
       </div>
     </div>

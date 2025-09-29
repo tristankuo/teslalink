@@ -12,9 +12,11 @@
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "bootstrap": "^5.3.8",
+    "gtag": "^1.0.1",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.1",
+    "react-gtag": "^0.0.0",
     "typescript": "^5.9.2",
     "web-vitals": "^5.1.0"
   },

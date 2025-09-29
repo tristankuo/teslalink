@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { database } from '../utils/firebase';
-import { ref, set, get } from 'firebase/database';
+import { ref, set, get, onValue } from 'firebase/database';
 import { Button } from 'react-bootstrap';
 
 function AddAppQR() {
@@ -19,23 +19,47 @@ function AddAppQR() {
     }
 
     const sessionRef = ref(database, `qr_sessions/${sessionId}`);
-    get(sessionRef).then((snapshot) => {
-      if (snapshot.exists()) {
-        const sessionData = snapshot.val();
-        if (sessionData.status === 'pending') {
-          setStatus('ready');
+    let handled = false;
+
+    const handleSession = (snapshot: any) => {
+        if (handled) return;
+        if (snapshot.exists()) {
+            const sessionData = snapshot.val();
+            if (sessionData.status === 'pending') {
+                setStatus('ready');
+                handled = true;
+            } else {
+                setStatus('expired');
+                setError('This QR code has already been used or has expired.');
+                handled = true;
+            }
         } else {
-          setStatus('expired');
-          setError('This QR code has already been used or has expired.');
+            // This might be a temporary state if the session is still being created.
+            // A timeout will handle the case where it never appears.
         }
-      } else {
-        setStatus('error');
-        setError('This QR session is invalid or has expired.');
-      }
-    }).catch(() => {
-        setStatus('error');
-        setError('Failed to verify the session.');
+    };
+
+    // Try to get the value once.
+    get(sessionRef).then(handleSession).catch(() => {
+        // This might fail if offline, so we also rely on the onValue listener.
     });
+
+    // Also, listen for changes. This is robust against timing issues.
+    const unsubscribe = onValue(sessionRef, handleSession);
+
+    // Set a timeout to prevent getting stuck in 'loading'
+    const verificationTimeout = setTimeout(() => {
+        if (!handled) {
+            setStatus('error');
+            setError('This QR session is invalid or has expired.');
+            handled = true;
+        }
+    }, 10000); // 10 seconds
+
+    return () => {
+        unsubscribe();
+        clearTimeout(verificationTimeout);
+    };
   }, [sessionId]);
 
   const handleSubmit = (e: React.FormEvent) => {

@@ -258,6 +258,35 @@ function MainApp() {
   const [ghostItem, setGhostItem] = useState<AppItem | null>(null);
   const hasPendingChanges = useRef(false);
 
+  const adIdleTimer = useRef<NodeJS.Timeout | null>(null);
+
+  const resetAdIdleTimer = useCallback(() => {
+    if (adIdleTimer.current) {
+      clearTimeout(adIdleTimer.current);
+    }
+    adIdleTimer.current = setTimeout(() => {
+      if (!isFullscreen) {
+        setShowAd(true);
+        trackAdEvent('show_idle');
+      }
+    }, 3600 * 1000); // 1 hour
+  }, [isFullscreen]);
+
+  useEffect(() => {
+    const events = ['mousemove', 'keydown', 'touchstart', 'scroll'];
+    const resetTimer = () => resetAdIdleTimer();
+
+    events.forEach(event => window.addEventListener(event, resetTimer));
+    resetAdIdleTimer(); // Initial setup
+
+    return () => {
+      events.forEach(event => window.removeEventListener(event, resetTimer));
+      if (adIdleTimer.current) {
+        clearTimeout(adIdleTimer.current);
+      }
+    };
+  }, [resetAdIdleTimer]);
+
   // Initialize Google Analytics
   useEffect(() => {
     initGA();
@@ -724,73 +753,75 @@ function MainApp() {
       )}
       
       {/* Navigation Footer */}
-      {!isFullscreen && (
-        <div style={{ marginTop: 'auto', padding: '30px 20px', background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
-          {/* Ko-fi Support Link */}
-          <div style={{ textAlign: 'center', marginBottom: 20 }}>
-            <button
-              type="button"
-              style={{ fontSize: 14, color: '#ff5f5f', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-              onClick={() => setShowKoFi(true)}
-            >
-              Support Us on Ko-fi
-            </button>
-            {showKoFi && (
-              <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
-                <div style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)', textAlign: 'center' }} onClick={e => e.stopPropagation()}>
-                  <img src={process.env.PUBLIC_URL + '/ko_fi_teslacenter_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
-                  <br />
-                  <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
-                    Open Ko-fi Directly
-                  </a>
-                  <div style={{ marginTop: 10 }}>
-                    <Button variant="secondary" onClick={() => setShowKoFi(false)}>Close</Button>
-                  </div>
+      <div style={{ marginTop: 'auto', padding: '30px 20px', background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
+        {/* Ko-fi Support Link */}
+        <div style={{ textAlign: 'center', marginBottom: 20 }}>
+          <button
+            type="button"
+            style={{ fontSize: 14, color: '#ff5f5f', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+            onClick={() => setShowKoFi(true)}
+          >
+            Support Us on Ko-fi
+          </button>
+          {showKoFi && (
+            <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
+              <div style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 4px 10px rgba(0,0,0,0.1)', textAlign: 'center' }} onClick={e => e.stopPropagation()}>
+                <img src={process.env.PUBLIC_URL + '/ko_fi_teslacenter_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: 200, margin: '20px 0' }} />
+                <br />
+                <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, padding: '10px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 6, fontWeight: 'bold' }}>
+                  Open Ko-fi Directly
+                </a>
+                <div style={{ marginTop: 10 }}>
+                  <Button variant="secondary" onClick={() => setShowKoFi(false)}>Close</Button>
                 </div>
               </div>
-            )}
-          </div>
-
-          {/* AdSense Ad */}
-          {showAd && (
-            <AdSenseAd 
-              onClose={() => {
-                setShowAd(false);
-                trackAdEvent('close');
-              }}
-              adClient={process.env.REACT_APP_ADSENSE_CLIENT_ID}
-              adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
-              theme={theme as 'light' | 'dark'}
-            />
+            </div>
           )}
-
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
-            <a href="/about.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              📖 About
-            </a>
-            <a href="/tesla-apps-guide.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              🚗 Guide
-            </a>
-            <a href="/tesla-browser-tips.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              💡 Tips
-            </a>
-            <a href="/contact.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              💬 Contact
-            </a>
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
-            <a href="/privacy-policy.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              Privacy Policy
-            </a>
-            <span>•</span>
-            <a href="/terms-of-service.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              Terms of Service
-            </a>
-            <span>•</span>
-            <span>© 2025 TeslaCenter</span>
-          </div>
         </div>
-      )}
+
+        {/* AdSense Ad */}
+        {showAd && (
+          <AdSenseAd 
+            onClose={() => {
+              setShowAd(false);
+              trackAdEvent('close');
+            }}
+            adClient={process.env.REACT_APP_ADSENSE_CLIENT_ID}
+            adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
+            theme={theme as 'light' | 'dark'}
+          />
+        )}
+
+        {!isFullscreen && (
+          <>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
+              <a href="/about.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                📖 About
+              </a>
+              <a href="/tesla-apps-guide.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                🚗 Guide
+              </a>
+              <a href="/tesla-browser-tips.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                💡 Tips
+              </a>
+              <a href="/contact.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                💬 Contact
+              </a>
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
+              <a href="/privacy-policy.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                Privacy Policy
+              </a>
+              <span>•</span>
+              <a href="/terms-of-service.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                Terms of Service
+              </a>
+              <span>•</span>
+              <span>© 2025 TeslaCenter</span>
+            </div>
+          </>
+        )}
+      </div>
     </div>
     </div>
   );

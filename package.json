@@ -1,8 +1,8 @@
 {
-  "name": "teslahub",
+  "name": "teslacenter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tristankuo.github.io/teslahub",
+  "homepage": "https://tristankuo.github.io/teslacenter",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -26,9 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "eslint . --fix",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "lint": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -60,5 +58,9 @@
     "nth-check": "2.1.1",
     "postcss": "8.4.38",
     "webpack-dev-server": "4.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tristankuo/teslacenter.git"
   }
 }

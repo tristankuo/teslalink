@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  // If you install Prettier, feel free to set default formatter to esbenp.prettier-vscode
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.eol": "\n",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}

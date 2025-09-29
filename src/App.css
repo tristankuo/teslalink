@@ -68,6 +68,22 @@
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
 .background-image {
   position: fixed;
   top: 0;

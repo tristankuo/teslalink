@@ -11,7 +11,7 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
   onClose,
   showCloseButton = true,
   adSlot = '1234567890', // Replace with your actual ad slot
-  adClient = 'ca-pub-1234567890123456' // Replace with your actual AdSense client ID
+  adClient = 'ca-pub-7161979735172843' // Your actual AdSense client ID
 }) => {
   const [countdown, setCountdown] = useState(5);
   const [canClose, setCanClose] = useState(false);

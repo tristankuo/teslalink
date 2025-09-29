@@ -1,9 +1,9 @@
 // Google Analytics 4 Configuration
-export const GA_TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID || 'G-XXXXXXXXXX'; // Replace with your actual GA4 tracking ID
+export const GA_TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID || 'G-61TG8XGM1P'; // Your actual GA4 tracking ID
 
 // Initialize Google Analytics
 export const initGA = () => {
-  if (typeof window !== 'undefined' && GA_TRACKING_ID && GA_TRACKING_ID !== 'G-XXXXXXXXXX') {
+  if (typeof window !== 'undefined' && GA_TRACKING_ID) {
     // Load gtag script
     const script1 = document.createElement('script');
     script1.async = true;
@@ -27,7 +27,7 @@ export const initGA = () => {
 
 // Track page views
 export const trackPageView = (path: string, title?: string) => {
-  if (typeof window !== 'undefined' && window.gtag && GA_TRACKING_ID !== 'G-XXXXXXXXXX') {
+  if (typeof window !== 'undefined' && window.gtag && GA_TRACKING_ID) {
     window.gtag('config', GA_TRACKING_ID, {
       page_path: path,
       page_title: title || document.title,
@@ -37,7 +37,7 @@ export const trackPageView = (path: string, title?: string) => {
 
 // Track custom events
 export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
-  if (typeof window !== 'undefined' && window.gtag && GA_TRACKING_ID !== 'G-XXXXXXXXXX') {
+  if (typeof window !== 'undefined' && window.gtag && GA_TRACKING_ID) {
     window.gtag('event', action, {
       event_category: category,
       event_label: label,

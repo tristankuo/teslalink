@@ -79,7 +79,7 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [adClient]);
+  }, [adClient, adSlot]);
 
   const handleClose = () => {
     setIsVisible(false);

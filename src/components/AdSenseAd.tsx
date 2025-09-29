@@ -10,7 +10,7 @@ interface AdSenseAdProps {
 const AdSenseAd: React.FC<AdSenseAdProps> = ({
   onClose,
   showCloseButton = true,
-  adSlot = '1234567890', // Replace with your actual ad slot
+  adSlot = '6565169344', // Your actual ad slot ID
   adClient = 'ca-pub-7161979735172843' // Your actual AdSense client ID
 }) => {
   const [countdown, setCountdown] = useState(5);
@@ -134,7 +134,7 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
             }}
             data-ad-client={adClient}
             data-ad-slot={adSlot}
-            data-ad-format="horizontal"
+            data-ad-format="auto"
             data-full-width-responsive="true"
           />
         </div>

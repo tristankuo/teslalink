@@ -5,13 +5,15 @@ interface AdSenseAdProps {
   showCloseButton?: boolean;
   adSlot?: string;
   adClient?: string;
+  theme?: 'light' | 'dark';
 }
 
 const AdSenseAd: React.FC<AdSenseAdProps> = ({
   onClose,
   showCloseButton = true,
   adSlot = '6565169344', // Your actual ad slot ID
-  adClient = 'ca-pub-7161979735172843' // Your actual AdSense client ID
+  adClient = 'ca-pub-7161979735172843', // Your actual AdSense client ID
+  theme = 'light'
 }) => {
   const [countdown, setCountdown] = useState(5);
   const [canClose, setCanClose] = useState(false);
@@ -63,20 +65,41 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
     return null;
   }
 
+  // Theme-aware styles
+  const containerStyle = {
+    position: 'fixed' as const,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: theme === 'dark' ? '#343a40' : '#fff',
+    boxShadow: theme === 'dark' 
+      ? '0 -2px 10px rgba(255,255,255,0.1)' 
+      : '0 -2px 10px rgba(0,0,0,0.1)',
+    padding: '10px',
+    zIndex: 1000,
+    borderTop: `1px solid ${theme === 'dark' ? '#495057' : '#ddd'}`
+  };
+
+  const closeButtonStyle = {
+    position: 'absolute' as const,
+    top: '5px',
+    right: '5px',
+    background: theme === 'dark' ? '#495057' : '#666',
+    color: theme === 'dark' ? '#f8f9fa' : 'white',
+    border: 'none',
+    borderRadius: '50%',
+    width: '25px',
+    height: '25px',
+    fontSize: '14px',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1001
+  };
+
   return (
-    <div 
-      style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: '#fff',
-        boxShadow: '0 -2px 10px rgba(0,0,0,0.1)',
-        padding: '10px',
-        zIndex: 1000,
-        borderTop: '1px solid #ddd'
-      }}
-    >
+    <div style={containerStyle}>
       <div style={{ position: 'relative' }}>
         {/* Countdown Timer */}
         {!canClose && (
@@ -101,23 +124,7 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
         {canClose && showCloseButton && (
           <button
             onClick={handleClose}
-            style={{
-              position: 'absolute',
-              top: '5px',
-              right: '5px',
-              background: '#666',
-              color: 'white',
-              border: 'none',
-              borderRadius: '50%',
-              width: '25px',
-              height: '25px',
-              fontSize: '14px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 1001
-            }}
+            style={closeButtonStyle}
             title="Close Ad"
           >
             ×

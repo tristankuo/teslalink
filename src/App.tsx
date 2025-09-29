@@ -682,6 +682,7 @@ function App() {
             }}
             adClient={process.env.REACT_APP_ADSENSE_CLIENT_ID}
             adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
+            theme={theme as 'light' | 'dark'}
           />
         )}
       </div>

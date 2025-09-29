@@ -5,40 +5,127 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/tesla-192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>TeslaCenter</title>
+    <meta name="description" content="TeslaCenter - The ultimate Tesla app collection platform. Discover, organize, and access Tesla-optimized web applications designed for your Tesla's browser. Free, fast, and built by Tesla owners." />
+    <meta name="keywords" content="Tesla apps, Tesla browser, Tesla games, Tesla entertainment, Tesla utilities, Model S, Model 3, Model X, Model Y, Cybertruck, Tesla web apps, Tesla platform, Tesla ecosystem" />
+    <meta name="author" content="TeslaCenter Team" />
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teslacenter.web.app/" />
+    <meta property="og:title" content="TeslaCenter - Tesla App Collection Platform" />
+    <meta property="og:description" content="The ultimate collection of Tesla-optimized web applications. Entertainment, games, utilities, and more - all designed for your Tesla's touchscreen." />
+    <meta property="og:image" content="%PUBLIC_URL%/tesla-512.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://teslacenter.web.app/" />
+    <meta property="twitter:title" content="TeslaCenter - Tesla App Collection Platform" />
+    <meta property="twitter:description" content="The ultimate collection of Tesla-optimized web applications. Entertainment, games, utilities, and more - all designed for your Tesla's touchscreen." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/tesla-512.png" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "TeslaCenter",
+      "description": "The ultimate Tesla app collection platform for discovering and accessing Tesla-optimized web applications",
+      "url": "https://teslacenter.web.app",
+      "applicationCategory": "Utility",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "TeslaCenter Team"
+      }
+    }
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7161979735172843"
+         crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-61TG8XGM1P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-61TG8XGM1P');
+    </script>
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/tesla-192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="canonical" href="https://teslacenter.web.app/" />
+    
+    <title>TeslaCenter - Tesla App Collection Platform | Tesla Browser Apps</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Fallback content for crawlers and users without JavaScript -->
+    <noscript>
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 1200px; margin: 0 auto; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
+        <div style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+          <h1 style="color: #2c3e50; text-align: center; margin-bottom: 30px;">🚗 TeslaCenter</h1>
+          <p style="font-size: 18px; text-align: center; color: #34495e; margin-bottom: 30px;"><strong>The Ultimate Tesla App Collection Platform</strong></p>
+          
+          <h2 style="color: #2c3e50;">What is TeslaCenter?</h2>
+          <p>TeslaCenter is a comprehensive web platform designed specifically for Tesla owners who want to maximize their in-vehicle experience. Our curated collection of Tesla-optimized web applications transforms your Tesla's browser into a powerful entertainment and utility hub.</p>
+          
+          <h2 style="color: #2c3e50;">⚡ Key Features</h2>
+          <ul style="line-height: 1.6;">
+            <li><strong>Tesla-Optimized Apps:</strong> Handpicked applications designed for Tesla's touchscreen interface</li>
+            <li><strong>Entertainment Hub:</strong> Games, videos, music, and streaming services</li>
+            <li><strong>Productivity Tools:</strong> Calendars, note-taking, email, and utilities</li>
+            <li><strong>Travel Companion:</strong> Weather, maps, charging stations, and trip planning</li>
+            <li><strong>Custom App Support:</strong> Add your own favorite websites and applications</li>
+            <li><strong>Cross-Device Sync:</strong> Your preferences sync across all devices</li>
+            <li><strong>Dark/Light Themes:</strong> Match your Tesla's interior lighting</li>
+          </ul>
+          
+          <h2 style="color: #2c3e50;">🎯 Perfect For</h2>
+          <ul style="line-height: 1.6;">
+            <li>Tesla Model S, 3, X, Y, and Cybertruck owners</li>
+            <li>Families looking for passenger entertainment</li>
+            <li>Road trippers and long-distance travelers</li>
+            <li>Tesla enthusiasts exploring their vehicle's capabilities</li>
+            <li>Anyone wanting a better Tesla browser experience</li>
+          </ul>
+          
+          <h2 style="color: #2c3e50;">🚀 Getting Started</h2>
+          <p><strong>To use TeslaCenter, you need JavaScript enabled in your browser.</strong> Once enabled, you'll have access to:</p>
+          <ol style="line-height: 1.6;">
+            <li>Curated collection of Tesla-compatible apps</li>
+            <li>Drag-and-drop app organization</li>
+            <li>Fullscreen mode for distraction-free use</li>
+            <li>Real-time synchronization across devices</li>
+            <li>Personalized app recommendations</li>
+          </ol>
+          
+          <div style="text-align: center; margin: 40px 0; padding: 30px; background: #e8f8f5; border-radius: 10px;">
+            <p style="font-size: 18px; margin-bottom: 20px;"><strong>Enable JavaScript to Launch TeslaCenter</strong></p>
+            <p>Please enable JavaScript in your browser settings and refresh this page to access the full TeslaCenter experience.</p>
+          </div>
+          
+          <h2 style="color: #2c3e50;">📋 Important Links</h2>
+          <ul style="line-height: 1.8;">
+            <li><a href="/about.html" style="color: #3498db;">About TeslaCenter</a> - Learn more about our platform</li>
+            <li><a href="/privacy-policy.html" style="color: #3498db;">Privacy Policy</a> - How we handle your data</li>
+            <li><a href="/terms-of-service.html" style="color: #3498db;">Terms of Service</a> - Usage terms and conditions</li>
+            <li><a href="/contact.html" style="color: #3498db;">Contact & Support</a> - Get help or provide feedback</li>
+          </ul>
+          
+          <hr style="margin: 40px 0;">
+          <p style="text-align: center; color: #7f8c8d;"><em>TeslaCenter is an independent project created by Tesla owners for Tesla owners. We are not affiliated with Tesla, Inc.</em></p>
+        </div>
+      </div>
+    </noscript>
+    
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+  </body>
+</html>
   </body>
 </html>

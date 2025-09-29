@@ -687,6 +687,37 @@ function App() {
             theme={theme as 'light' | 'dark'}
           />
         )}
+
+        {/* Navigation Footer */}
+        {!isFullscreen && (
+          <div style={{ marginTop: 40, padding: '30px 20px', background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
+              <a href="/about.html" style={{ color: theme === 'dark' ? '#85c1e9' : '#2980b9', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
+                📖 About TeslaCenter
+              </a>
+              <a href="/tesla-apps-guide.html" style={{ color: theme === 'dark' ? '#85c1e9' : '#2980b9', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
+                🚗 Tesla Apps Guide
+              </a>
+              <a href="/tesla-browser-tips.html" style={{ color: theme === 'dark' ? '#85c1e9' : '#2980b9', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
+                💡 Browser Tips & Tricks
+              </a>
+              <a href="/contact.html" style={{ color: theme === 'dark' ? '#85c1e9' : '#2980b9', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
+                💬 Contact & Support
+              </a>
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
+              <a href="/privacy-policy.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
+                Privacy Policy
+              </a>
+              <span>•</span>
+              <a href="/terms-of-service.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => (e.target as HTMLAnchorElement).style.textDecoration = 'underline'} onMouseOut={e => (e.target as HTMLAnchorElement).style.textDecoration = 'none'}>
+                Terms of Service
+              </a>
+              <span>•</span>
+              <span>© 2025 TeslaCenter</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,25 @@
+{
+  "rules": {
+    "qr_sessions": {
+      "$sessionId": {
+        ".read": true,
+        ".write": "(!data.exists() && newData.child('status').val() === 'pending') || (data.exists() && newData.child('status').val() === 'completed')",
+        "status": {
+          ".validate": "(newData.val() === 'pending' && !data.exists()) || (newData.val() === 'completed' && data.exists())"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber() && (!data.exists() || newData.val() === data.val())"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "url": {
+          ".validate": "newData.isString() && newData.val().matches(/^(https?):\\/\\/[^\\s\\/$.?#].[^\\s]*$/i)"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}

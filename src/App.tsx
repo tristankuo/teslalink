@@ -750,9 +750,9 @@ function MainApp() {
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode && !isFullscreen ? (
             <>
-              <Button variant="primary" onClick={handleEditDone}>Done</Button>
-              <Button variant="success" onClick={() => handleShow()} className="ms-2">Add</Button>
+              <Button variant="success" onClick={() => handleShow()}>Add</Button>
               <Button variant="danger" onClick={handleResetToDefaults} className="ms-2">Reset</Button>
+              <Button variant="primary" onClick={handleEditDone} className="ms-2">Done</Button>
             </>
           ) : (
             <>

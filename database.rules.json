@@ -20,6 +20,11 @@
           ".validate": false
         }
       }
+    },
+    "fullscreen_sessions": {
+      ".read": "auth == null",
+      ".write": "auth == null",
+      ".indexOn": "createdAt"
     }
   }
 }

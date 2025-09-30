@@ -189,4 +189,71 @@ h1{
   }
 }
 
+.top-right-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.control-button {
+  background: rgba(128, 128, 128, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.control-button:hover {
+  background: rgba(128, 128, 128, 0.4);
+}
+
+.region-selector {
+  position: relative;
+}
+
+.region-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--dark-card-bg);
+  border: 1px solid #495057;
+  border-radius: 8px;
+  padding: 0.5rem;
+  min-width: 150px;
+  z-index: 20;
+  margin-top: 0.5rem;
+}
+
+.light-mode .region-dropdown {
+  background-color: var(--light-card-bg);
+  border-color: #dee2e6;
+}
+
+.region-option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.region-option:hover {
+  background-color: #495057;
+}
+
+.light-mode .region-option:hover {
+  background-color: #f1f3f5;
+}
+
 

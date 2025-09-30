@@ -12,6 +12,12 @@ import { database } from './utils/firebase';
 import { ref, set, onValue, remove, get, query, orderByChild, endAt, update } from 'firebase/database';
 import { QRCodeSVG as QRCode } from 'qrcode.react';
 
+// Define available regions and their flags
+const REGIONS = {
+  'Global': '🌐', 'US': '🇺🇸', 'EU': '🇪🇺', 'AU': '🇦🇺', 'CN': '🇨🇳', 
+  'JP': '🇯🇵', 'KR': '🇰🇷', 'TW': '🇹🇼'
+};
+type Region = keyof typeof REGIONS;
 
 interface AppItem {
   id: string;
@@ -41,6 +47,15 @@ function MainApp() {
   const [editIndex, setEditIndex] = useState<number | null>(null);
   const [showAd, setShowAd] = useState(true);
   const [qrSessionId, setQrSessionId] = useState<string | null>(null);
+  const [userRegion, setUserRegion] = useState<Region>(() => {
+    const savedRegion = localStorage.getItem('teslacenter_user_region') as Region;
+    if (savedRegion && REGIONS[savedRegion]) {
+      return savedRegion;
+    }
+    const detectedRegion = getUserRegion();
+    return (REGIONS[detectedRegion as Region]) ? detectedRegion as Region : 'Global';
+  });
+  const [showRegionSelector, setShowRegionSelector] = useState(false);
 
   const clientId = useMemo(() => {
     const rnd = Math.random().toString(36).slice(2);
@@ -183,6 +198,31 @@ function MainApp() {
     setEditIndex(null);
   };
 
+  const handleRegionChange = (region: Region) => {
+    setUserRegion(region);
+    localStorage.setItem('teslacenter_user_region', region);
+    setShowRegionSelector(false);
+    // Re-trigger app loading
+    loadApps(region);
+  };
+
+  const loadApps = useCallback((region: Region) => {
+    // We don't use stored apps when region changes, always fetch defaults for the new region
+    fetch(process.env.PUBLIC_URL + '/default-apps.json')
+      .then(res => res.json())
+      .then((apps) => {
+        const localApps = apps.filter((a: any) => a.region === region);
+        const globalApps = region !== 'Global' ? apps.filter((a: any) => a.region === 'Global') : [];
+        const defaultApps = [...localApps, ...globalApps].map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url }));
+        
+        // Clear existing apps and set new ones
+        setAppItems(defaultApps);
+        // Commit these new default apps to storage, overwriting old ones
+        commitToStorage(defaultApps, `RegionChange: ${region}`);
+      })
+      .catch(e => console.error(`[LOAD] Failed to load default apps for region ${region}:`, e));
+  }, [commitToStorage]);
+
   useEffect(() => {
     if (showAppModal) {
       const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -247,7 +287,7 @@ function MainApp() {
 
   const [isFullscreen] = useState(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.has('apps') || urlParams.get('fullscreen') === '1' || window.self !== window.top;
+    return urlParams.has('apps') || urlParams.has('fullscreen_session') || urlParams.get('fullscreen') === '1' || window.self !== window.top;
   });
   const [isAppEditMode, setIsAppEditMode] = useState(false);
   const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
@@ -422,25 +462,71 @@ function MainApp() {
 
   const toggleFullscreen = () => {
     const committedApps = loadFromStorage('Enter Fullscreen');
-    const appsToSend = committedApps || appItems;
-    
-    console.log(`[FULLSCREEN] Sending ${appsToSend.length} apps via URL`);
-    
-    const url = new URL(window.location.href);
-    try {
-      url.searchParams.set('apps', btoa(JSON.stringify(appsToSend)));
-      url.searchParams.set('fullscreen', '1');
-    } catch (e) {
-      console.error('Failed to encode apps to base64', e);
-      alert('Failed to prepare fullscreen mode. Please try again.');
+    const appsToSync = committedApps || appItems;
+  
+    if (appsToSync.length === 0) {
+      alert('There are no apps to show in fullscreen.');
       return;
     }
+  
+    const sessionId = `fs-session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const sessionRef = ref(database, `fullscreen_sessions/${sessionId}`);
     
-    window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
+    const sessionData = {
+      apps: appsToSync,
+      createdAt: Date.now(),
+    };
+  
+    set(sessionRef, sessionData)
+      .then(() => {
+        const url = new URL(window.location.href);
+        url.searchParams.set('fullscreen_session', sessionId);
+        url.searchParams.delete('apps'); // Remove old param
+        window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
+      })
+      .catch((error) => {
+        console.error('Failed to create fullscreen session in Firebase:', error);
+        alert('Failed to prepare fullscreen mode. Please try again.');
+      });
   };
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
+    const fullscreenSessionId = urlParams.get('fullscreen_session');
+
+    const cleanupUrl = () => {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('fullscreen_session');
+      url.searchParams.delete('apps');
+      // A small delay ensures React has processed state changes before URL cleanup
+      setTimeout(() => {
+        window.history.replaceState({}, document.title, url.pathname + url.hash);
+      }, 100);
+    };
+
+    if (fullscreenSessionId) {
+      const sessionRef = ref(database, `fullscreen_sessions/${fullscreenSessionId}`);
+      get(sessionRef).then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          if (data.apps) {
+            setAppItems(data.apps);
+            // Clean up the session after reading it
+            remove(sessionRef);
+          }
+        } else {
+          console.error('Fullscreen session not found.');
+        }
+        setUrlLoadingComplete(true);
+        cleanupUrl();
+      }).catch(e => {
+        console.error('[INIT-FS] Failed to load from session', e);
+        setUrlLoadingComplete(true);
+        cleanupUrl();
+      });
+      setAppsLoadedFromUrl(true); // Mark as loaded from URL context
+      return;
+    }
 
     const appsParam = urlParams.get('apps');
     if (appsParam) {
@@ -455,8 +541,11 @@ function MainApp() {
         console.error('[INIT-FS] Failed to decode/apply apps from URL', e);
       }
       setAppsLoadedFromUrl(true);
+      setUrlLoadingComplete(true);
+      cleanupUrl();
+      return;
     }
-    
+
     setUrlLoadingComplete(true);
   }, []);
 
@@ -594,7 +683,7 @@ function MainApp() {
     if (appsLoadedFromUrl) return;
     
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('fullscreen') === '1') return;
+    if (urlParams.get('fullscreen') === '1' || urlParams.get('fullscreen_session')) return;
     
     console.log('[INIT] Regular mode - loading from localStorage or defaults');
     
@@ -606,9 +695,10 @@ function MainApp() {
       fetch(process.env.PUBLIC_URL + '/default-apps.json')
         .then(res => res.json())
         .then((apps) => {
-          const region = getUserRegion();
-          const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
-          const defaultApps = regionApps.map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url }));
+          const region = userRegion;
+          const localApps = apps.filter((a: any) => a.region === region);
+          const globalApps = region !== 'Global' ? apps.filter((a: any) => a.region === 'Global') : [];
+          const defaultApps = [...localApps, ...globalApps].map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url }));
           setAppItems(defaultApps);
           console.log(`[INIT] Loaded ${defaultApps.length} default apps for region: ${region}`);
         })
@@ -616,7 +706,7 @@ function MainApp() {
           console.error('[INIT] Error loading default apps:', e);
         });
     }
-  }, [urlLoadingComplete, appsLoadedFromUrl]);
+  }, [urlLoadingComplete, appsLoadedFromUrl, userRegion]);
 
   useEffect(() => {
     if (isFullscreen) return;
@@ -636,6 +726,25 @@ function MainApp() {
   <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
       <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
       <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <div className="top-right-controls">
+          <button onClick={toggleTheme} className="control-button">
+            {theme === 'light' ? '🌞' : '🌜'}
+          </button>
+          <div className="region-selector">
+            <button onClick={() => setShowRegionSelector(!showRegionSelector)} className="control-button">
+              {REGIONS[userRegion]}
+            </button>
+            {showRegionSelector && (
+              <div className="region-dropdown">
+                {Object.keys(REGIONS).map((r) => (
+                  <div key={r} className="region-option" onClick={() => handleRegionChange(r as Region)}>
+                    {REGIONS[r as Region]} {r}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       <div className="main-content" style={{ flex: 1 }}>
         <h1 className="text-center mt-5 mb-4">TeslaCenter</h1>
         <div className="d-flex justify-content-center mb-4">
@@ -649,7 +758,7 @@ function MainApp() {
               {!isFullscreen && (
                 <Button variant="info" onClick={toggleFullscreen} className="ms-2">Enter Fullscreen</Button>
               )}
-              <Button variant="secondary" onClick={toggleTheme} className="ms-2">Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})</Button>
+              <Button variant="secondary" onClick={toggleTheme} className="ms-2 d-none">Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})</Button>
               {!isFullscreen && (
                 <Button variant="primary" onClick={() => setIsAppEditMode(true)} className="ms-2">Edit</Button>
               )}

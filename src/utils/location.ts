@@ -1,4 +1,4 @@
-export const getUserRegion = (): 'TW' | 'CN' | 'JP' | 'US' | 'Other' => {
+export const getUserRegion = (): 'TW' | 'CN' | 'JP' | 'US' | 'EU' | 'AU' | 'KR' | 'Other' => {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   if (timeZone.startsWith('Asia/Taipei')) {
@@ -12,6 +12,15 @@ export const getUserRegion = (): 'TW' | 'CN' | 'JP' | 'US' | 'Other' => {
   }
   if (timeZone.startsWith('America/')) {
     return 'US';
+  }
+  if (timeZone.startsWith('Europe/')) {
+    return 'EU';
+  }
+  if (timeZone.startsWith('Australia/')) {
+    return 'AU';
+  }
+  if (timeZone.startsWith('Asia/Seoul')) {
+    return 'KR';
   }
 
   return 'Other';

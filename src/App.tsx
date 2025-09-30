@@ -751,6 +751,7 @@ function MainApp() {
           {isAppEditMode && !isFullscreen ? (
             <>
               <Button variant="danger" onClick={handleEditDone}>Done</Button>
+              <Button variant="success" onClick={() => handleShow()} className="ms-2">Add</Button>
               <Button variant="warning" onClick={handleResetToDefaults} className="ms-2">Reset to Defaults</Button>
             </>
           ) : (
@@ -784,11 +785,6 @@ function MainApp() {
               getFaviconUrl={getFaviconUrl}
             />
           ))}
-          {isAppEditMode && !isFullscreen && (
-            <div className="col-md-2 mb-3 app-block-wrapper">
-              <div className="card add-app-block" onClick={() => handleShow()}>+</div>
-            </div>
-          )}
           {showAppModal && (
             <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowAppModal(false)}>
               <form
@@ -807,7 +803,7 @@ function MainApp() {
                 onClick={e => e.stopPropagation()}
                 onSubmit={handleAppModalSubmit}
               >
-                <h4 style={{ marginBottom: 18 }}>{modalMode === 'add' ? 'Add Custom App' : 'Edit App'}</h4>
+                <h4 style={{ marginBottom: 18 }}>{modalMode === 'add' ? 'New App' : 'Edit App'}</h4>
                 
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                   <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>

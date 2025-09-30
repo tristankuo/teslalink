@@ -627,38 +627,38 @@ function MainApp() {
   };
 
   const handleResetToDefaults = () => {
-    console.log('[RESET] Starting complete reset to defaults');
-    
-    try {
-      localStorage.removeItem('teslacenter_apps');
-      localStorage.removeItem('teslacenter_apps_meta');
-      console.log('[RESET] Cleared all storage');
-      setAppsVersion(0);
-    } catch (error) {
-      console.error('[RESET] Error clearing storage:', error);
+    if (window.confirm('Are you sure you want to reset? This will clear all your customized apps and settings.')) {
+      console.log('[RESET] Starting complete reset to defaults');
+      
+      try {
+        localStorage.removeItem('teslacenter_apps');
+        localStorage.removeItem('teslacenter_apps_meta');
+        console.log('[RESET] Cleared all storage');
+        setAppsVersion(0);
+      } catch (error) {
+        console.error('[RESET] Error clearing storage:', error);
+      }
+      
+      fetch(process.env.PUBLIC_URL + '/default-apps.json')
+        .then(res => res.json())
+        .then((apps) => {
+          const localApps = apps.filter((a: any) => a.region === userRegion);
+          const globalApps = userRegion !== 'Global' ? apps.filter((a: any) => a.region === 'Global') : [];
+          const defaultApps = [...localApps, ...globalApps].map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url }));
+          
+          console.log(`[RESET] Loaded ${defaultApps.length} default apps for region: ${userRegion}`);
+          
+          setAppItems(defaultApps);
+          commitToStorage(defaultApps, 'Reset to Defaults');
+          
+          console.log('[RESET] Complete - defaults loaded.');
+          alert('Your apps have been reset to the defaults.');
+        })
+        .catch(e => {
+          console.error('[RESET] Failed to load defaults:', e);
+          alert('Failed to load default apps. Please refresh the page.');
+        });
     }
-    
-    fetch(process.env.PUBLIC_URL + '/default-apps.json')
-      .then(res => res.json())
-      .then((apps) => {
-        const region = getUserRegion();
-        const regionApps = apps.filter((a: any) => a.region === region || a.region === 'Global');
-        const defaultApps = regionApps.map((a: any, idx: number) => ({ 
-          id: `${a.name}-${idx}`, 
-          name: a.name, 
-          url: a.url 
-        }));
-        console.log(`[RESET] Loaded ${defaultApps.length} default apps for region: ${region}`);
-        
-        setAppItems(defaultApps);
-        commitToStorage(defaultApps, 'Reset to Defaults');
-        
-        console.log('[RESET] Complete - defaults loaded.');
-      })
-      .catch(e => {
-        console.error('[RESET] Failed to load defaults:', e);
-        alert('Failed to load default apps. Please refresh the page.');
-      });
   };
 
   const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
@@ -750,9 +750,9 @@ function MainApp() {
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode && !isFullscreen ? (
             <>
-              <Button variant="danger" onClick={handleEditDone}>Done</Button>
+              <Button variant="primary" onClick={handleEditDone}>Done</Button>
               <Button variant="success" onClick={() => handleShow()} className="ms-2">Add</Button>
-              <Button variant="warning" onClick={handleResetToDefaults} className="ms-2">Reset to Defaults</Button>
+              <Button variant="danger" onClick={handleResetToDefaults} className="ms-2">Reset</Button>
             </>
           ) : (
             <>

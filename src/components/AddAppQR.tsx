@@ -178,7 +178,7 @@ function AddAppQR() {
             />
           </div>
           <div className="d-grid">
-              <Button variant={theme === 'dark' ? 'outline-light' : 'primary'} type="submit">Done</Button>
+              <Button variant="primary" type="submit">Done</Button>
           </div>
         </form>
       </div>

@@ -803,7 +803,7 @@ function MainApp() {
                 onClick={e => e.stopPropagation()}
                 onSubmit={handleAppModalSubmit}
               >
-                <h4 style={{ marginBottom: 18 }}>{modalMode === 'add' ? 'New App' : 'Edit App'}</h4>
+                <h4 style={{ marginBottom: 18 }}>{modalMode === 'add' ? 'Add App' : 'Edit App'}</h4>
                 
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                   <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
@@ -850,7 +850,7 @@ function MainApp() {
                 </div>
 
                 <div style={{ marginTop: 18, display: 'flex', justifyContent: 'center', gap: 12 }}>
-                  <Button variant="primary" type="submit">{modalMode === 'add' ? 'Add' : 'Save'}</Button>
+                  <Button variant="primary" type="submit">Done</Button>
                   <Button variant="secondary" onClick={() => setShowAppModal(false)}>Cancel</Button>
                 </div>
               </form>

@@ -611,6 +611,12 @@ function MainApp() {
     return () => window.removeEventListener('pageshow', handlePageShow);
   }, []);
 
+  const handleBookmark = () => {
+    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+    const shortcut = isMac ? 'Command + D' : 'Ctrl + D';
+    alert(`To bookmark this page, press ${shortcut}.`);
+  };
+
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
@@ -730,6 +736,9 @@ function MainApp() {
       <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
       <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="top-right-controls">
+          <button onClick={handleBookmark} className="control-button">
+            ⭐
+          </button>
           <button onClick={toggleTheme} className="control-button">
             {theme === 'light' ? '🌞' : '🌜'}
           </button>

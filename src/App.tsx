@@ -234,7 +234,13 @@ function MainApp() {
       const sessionTimeoutDuration = 5 * 60 * 1000; 
       const createdAt = Date.now();
 
-      set(sessionRef, { status: 'pending', createdAt });
+      const sessionData: { [key: string]: any } = { status: 'pending', createdAt };
+      if (modalMode === 'edit') {
+        sessionData.name = appNameInput;
+        sessionData.url = appUrlInput;
+      }
+
+      set(sessionRef, sessionData);
 
       const sessionTimeout = setTimeout(() => {
         console.log(`[SESSION] QR session ${newSessionId} expired. Cleaning up.`);
@@ -611,12 +617,6 @@ function MainApp() {
     return () => window.removeEventListener('pageshow', handlePageShow);
   }, []);
 
-  const handleBookmark = () => {
-    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-    const shortcut = isMac ? 'Command + D' : 'Ctrl + D';
-    alert(`To bookmark this page, press ${shortcut}.`);
-  };
-
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
@@ -736,9 +736,6 @@ function MainApp() {
       <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
       <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="top-right-controls">
-          <button onClick={handleBookmark} className="control-button">
-            ⭐
-          </button>
           <button onClick={toggleTheme} className="control-button">
             {theme === 'light' ? '🌞' : '🌜'}
           </button>

@@ -69,7 +69,7 @@ const AppItemComponent: React.FC<AppItemProps> = ({ item, index, deleteModeActiv
             alt="Favicon"
             className="favicon mb-2"
             onError={(e) => (e.currentTarget.src = getFaviconUrl(item.url).fallback)}
-            style={{ width: '42px', height: '42px' }}
+            style={{ width: '84px', height: '84px' }}
             draggable="false"
           />
           <h5 className="card-title">{item.name}</h5>

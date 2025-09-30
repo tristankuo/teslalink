@@ -37,6 +37,12 @@ function AddAppQR() {
         const sessionData = snapshot.val();
         if (sessionData.status === 'pending') {
           setStatus('ready');
+          if (sessionData.name) {
+            setAppName(sessionData.name);
+          }
+          if (sessionData.url) {
+            setAppUrl(sessionData.url);
+          }
         } else {
           // If status is not 'pending' (e.g., 'completed' or expired), treat it as expired.
           setStatus('expired');

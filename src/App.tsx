@@ -657,7 +657,6 @@ function MainApp() {
         commitToStorage(defaultApps, 'Reset to Defaults');
         
         console.log('[RESET] Complete - defaults loaded.');
-        alert('Your apps have been reset to the defaults.');
       })
       .catch(e => {
         console.error('[RESET] Failed to load defaults:', e);

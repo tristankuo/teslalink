@@ -45,6 +45,7 @@ function MainApp() {
   const [showAppModal, setShowAppModal] = useState(false);
   const [modalMode, setModalMode] = useState<'add' | 'edit'>('add');
   const [editIndex, setEditIndex] = useState<number | null>(null);
+  const [showResetConfirmModal, setShowResetConfirmModal] = useState(false);
   const [showAd, setShowAd] = useState(true);
   const [qrSessionId, setQrSessionId] = useState<string | null>(null);
   const [userRegion, setUserRegion] = useState<Region>(() => {
@@ -627,38 +628,41 @@ function MainApp() {
   };
 
   const handleResetToDefaults = () => {
-    if (window.confirm('Are you sure you want to reset? This will clear all your customized apps and settings.')) {
-      console.log('[RESET] Starting complete reset to defaults');
-      
-      try {
-        localStorage.removeItem('teslacenter_apps');
-        localStorage.removeItem('teslacenter_apps_meta');
-        console.log('[RESET] Cleared all storage');
-        setAppsVersion(0);
-      } catch (error) {
-        console.error('[RESET] Error clearing storage:', error);
-      }
-      
-      fetch(process.env.PUBLIC_URL + '/default-apps.json')
-        .then(res => res.json())
-        .then((apps) => {
-          const localApps = apps.filter((a: any) => a.region === userRegion);
-          const globalApps = userRegion !== 'Global' ? apps.filter((a: any) => a.region === 'Global') : [];
-          const defaultApps = [...localApps, ...globalApps].map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url }));
-          
-          console.log(`[RESET] Loaded ${defaultApps.length} default apps for region: ${userRegion}`);
-          
-          setAppItems(defaultApps);
-          commitToStorage(defaultApps, 'Reset to Defaults');
-          
-          console.log('[RESET] Complete - defaults loaded.');
-          alert('Your apps have been reset to the defaults.');
-        })
-        .catch(e => {
-          console.error('[RESET] Failed to load defaults:', e);
-          alert('Failed to load default apps. Please refresh the page.');
-        });
+    setShowResetConfirmModal(true);
+  };
+
+  const handleConfirmReset = () => {
+    setShowResetConfirmModal(false);
+    console.log('[RESET] Starting complete reset to defaults');
+    
+    try {
+      localStorage.removeItem('teslacenter_apps');
+      localStorage.removeItem('teslacenter_apps_meta');
+      console.log('[RESET] Cleared all storage');
+      setAppsVersion(0);
+    } catch (error) {
+      console.error('[RESET] Error clearing storage:', error);
     }
+    
+    fetch(process.env.PUBLIC_URL + '/default-apps.json')
+      .then(res => res.json())
+      .then((apps) => {
+        const localApps = apps.filter((a: any) => a.region === userRegion);
+        const globalApps = userRegion !== 'Global' ? apps.filter((a: any) => a.region === 'Global') : [];
+        const defaultApps = [...localApps, ...globalApps].map((a: any, idx: number) => ({ id: `${a.name}-${idx}`, name: a.name, url: a.url }));
+        
+        console.log(`[RESET] Loaded ${defaultApps.length} default apps for region: ${userRegion}`);
+        
+        setAppItems(defaultApps);
+        commitToStorage(defaultApps, 'Reset to Defaults');
+        
+        console.log('[RESET] Complete - defaults loaded.');
+        alert('Your apps have been reset to the defaults.');
+      })
+      .catch(e => {
+        console.error('[RESET] Failed to load defaults:', e);
+        alert('Failed to load default apps. Please refresh the page.');
+      });
   };
 
   const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
@@ -785,6 +789,32 @@ function MainApp() {
               getFaviconUrl={getFaviconUrl}
             />
           ))}
+          {showResetConfirmModal && (
+            <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowResetConfirmModal(false)}>
+              <div
+                style={{
+                  background: theme === 'dark' ? '#343a40' : '#fff',
+                  color: theme === 'dark' ? '#f8f9fa' : '#212529',
+                  padding: 24,
+                  borderRadius: 16,
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+                  textAlign: 'center',
+                  minWidth: 320,
+                  maxWidth: 400,
+                  width: '90%',
+                  fontSize: 16,
+                }}
+                onClick={e => e.stopPropagation()}
+              >
+                <h4 style={{ marginBottom: 18 }}>Confirm Reset</h4>
+                <p style={{ marginBottom: 24 }}>Are you sure you want to reset? This will clear all your customized apps and settings.</p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>
+                  <Button variant="danger" onClick={handleConfirmReset}>Reset</Button>
+                  <Button variant="secondary" onClick={() => setShowResetConfirmModal(false)}>Cancel</Button>
+                </div>
+              </div>
+            </div>
+          )}
           {showAppModal && (
             <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowAppModal(false)}>
               <form

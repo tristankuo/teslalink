@@ -18,7 +18,14 @@ function AddAppQR() {
   useEffect(() => {
     // Apply theme to the body to control background color
     document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
-  }, [theme]);
+    
+    // Add mobile debugging
+    console.log('[QR] AddAppQR component loaded');
+    console.log('[QR] Current URL:', window.location.href);
+    console.log('[QR] User Agent:', navigator.userAgent);
+    console.log('[QR] Session ID from params:', sessionId);
+    console.log('[QR] Theme from query:', theme);
+  }, [theme, sessionId]);
 
 
   useEffect(() => {

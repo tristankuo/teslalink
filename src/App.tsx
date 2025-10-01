@@ -56,6 +56,13 @@ function MainApp() {
   });
   const [showRegionSelector, setShowRegionSelector] = useState(false);
 
+  // Helper function to generate the correct QR URL based on environment
+  const getQRUrl = (sessionId: string, theme: string) => {
+    const origin = window.location.origin;
+    const basePath = window.location.hostname === 'tristankuo.github.io' ? '/teslalink' : '';
+    return `${origin}${basePath}/add-app/${sessionId}?theme=${theme}`;
+  };
+
   const clientId = useMemo(() => {
     const rnd = Math.random().toString(36).slice(2);
     // @ts-ignore
@@ -254,7 +261,7 @@ function MainApp() {
         .then(() => {
           console.log(`[SESSION] QR session ${newSessionId} created successfully in Firebase`);
           console.log(`[SESSION] Session data:`, sessionData);
-          console.log(`[SESSION] QR URL will be: ${window.location.origin}/add-app/${newSessionId}?theme=${theme}`);
+          console.log(`[SESSION] QR URL will be: ${getQRUrl(newSessionId, theme)}`);
         })
         .catch((error) => {
           console.error(`[SESSION] Failed to create QR session ${newSessionId}:`, error);
@@ -869,7 +876,7 @@ function MainApp() {
                   {qrSessionId && (
                     <div style={{ textAlign: 'center' }}>
                       <div style={{ background: 'white', padding: 10, display: 'inline-block', borderRadius: 8, marginBottom: 8 }}>
-                        <QRCode value={`${window.location.origin}/add-app/${qrSessionId}?theme=${theme}`} size={100} />
+                        <QRCode value={getQRUrl(qrSessionId, theme)} size={100} />
                       </div>
                       <p style={{ fontSize: 12, color: theme === 'dark' ? '#ccc' : '#555', margin: 0 }}>Scan to add</p>
                     </div>

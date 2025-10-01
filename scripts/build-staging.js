@@ -5,20 +5,26 @@ const { execSync } = require('child_process');
 
 console.log('🚀 Building for STAGING (GitHub Pages)...');
 
-// Backup current configs
-const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+const packageJsonPath = 'package.json';
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+const originalHomepage = packageJson.homepage;
 
-// Set staging configuration
-packageJson.homepage = 'https://tristankuo.github.io/teslalink';
-fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
+try {
+  // Set staging configuration
+  packageJson.homepage = 'https://tristankuo.github.io/teslalink';
+  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  console.log(`✅ Temporarily set homepage to "${packageJson.homepage}" for staging build.`);
 
-// Note: We no longer modify index.tsx since we're using dynamic basename detection
+  console.log('📦 Building...');
+  execSync('npm run build', { stdio: 'inherit' });
+  console.log('🎉 Staging build complete!');
 
-console.log('✅ Configuration set for staging');
-console.log('📦 Building...');
-
-// Build
-execSync('npm run build', { stdio: 'inherit' });
-
-console.log('🎉 Staging build complete!');
-console.log('📍 Deploy with: npm run deploy');
+} catch (error) {
+  console.error('� Staging build failed:', error);
+  process.exit(1); // Exit with an error code
+} finally {
+  // Revert homepage to its original value
+  packageJson.homepage = originalHomepage;
+  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  console.log(`✅ Restored homepage to "${originalHomepage}".`);
+}

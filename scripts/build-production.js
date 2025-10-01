@@ -5,20 +5,27 @@ const { execSync } = require('child_process');
 
 console.log('🏭 Building for PRODUCTION (Firebase Hosting)...');
 
-// Backup current configs
-const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+const packageJsonPath = 'package.json';
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+const originalHomepage = packageJson.homepage;
 
-// Set production configuration
-packageJson.homepage = '.';
-fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
+try {
+  // Set production configuration
+  packageJson.homepage = '/';
+  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  console.log(`✅ Temporarily set homepage to "${packageJson.homepage}" for production build.`);
 
-// Note: We no longer modify index.tsx since we're using dynamic basename detection
+  console.log('📦 Building...');
+  // The `build` script in package.json is "react-scripts build"
+  execSync('npm run build', { stdio: 'inherit' });
+  console.log('🎉 Production build complete!');
 
-console.log('✅ Configuration set for production');
-console.log('📦 Building...');
-
-// Build
-execSync('npm run build', { stdio: 'inherit' });
-
-console.log('🎉 Production build complete!');
-console.log('📍 Deploy with: firebase deploy --only hosting');
+} catch (error) {
+  console.error('� Production build failed:', error);
+  process.exit(1); // Exit with an error code
+} finally {
+  // Revert homepage to its original value
+  packageJson.homepage = originalHomepage;
+  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  console.log(`✅ Restored homepage to "${originalHomepage}".`);
+}

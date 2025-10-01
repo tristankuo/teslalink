@@ -34,7 +34,7 @@
     "build": "react-scripts build",
     "build:staging": "node scripts/build-staging.js",
     "build:production": "node scripts/build-production.js",
-    "deploy:staging": "npm run build:staging && npm run deploy",
+    "deploy:staging": "npm run build:staging && gh-pages -d build",
     "deploy:production": "npm run build:production && firebase deploy --only hosting",
     "build:firebase": "npm run prebuild && GENERATE_SOURCEMAP=false PUBLIC_URL='' react-scripts build",
     "deploy:firebase": "npm run build:firebase && firebase deploy",

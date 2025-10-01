@@ -1,26 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import { database } from '../utils/firebase';
 import { ref, set, onValue } from 'firebase/database';
-import { Button } from 'react-bootstrap';
 
-function AddAppQR() {
+const AddAppQR: React.FC = () => {
   const { sessionId } = useParams<{ sessionId: string }>();
-  const { search } = useLocation();
-  const queryParams = new URLSearchParams(search);
-  const theme = queryParams.get('theme') || 'light';
-
+  const [searchParams] = useSearchParams();
+  const theme = searchParams.get('theme') || 'light';
+  
   const [appName, setAppName] = useState('');
   const [appUrl, setAppUrl] = useState('');
   const [status, setStatus] = useState<'loading' | 'ready' | 'success' | 'error' | 'expired'>('loading');
   const [error, setError] = useState('');
 
+  // Add production debugging and error catching
+  useEffect(() => {
+    if (window.location.hostname === 'myteslalink.web.app') {
+      console.log('[PROD-DEBUG] AddAppQR component mounted');
+      console.log('[PROD-DEBUG] sessionId:', sessionId);
+      console.log('[PROD-DEBUG] theme:', theme);
+      console.log('[PROD-DEBUG] URL:', window.location.href);
+    }
+  }, [sessionId, theme]);
+
   useEffect(() => {
     // Apply theme to the body to control background color
-    document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
+    try {
+      document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
+      
+      if (window.location.hostname === 'myteslalink.web.app') {
+        console.log('[PROD-DEBUG] AddAppQR loaded with sessionId:', sessionId);
+        console.log('[PROD-DEBUG] URL:', window.location.href);
+      }
+    } catch (err) {
+      if (window.location.hostname === 'myteslalink.web.app') {
+        console.error('[PROD-DEBUG] Error in theme effect:', err);
+      }
+    }
   }, [theme, sessionId]);
-
-
   useEffect(() => {
     if (!sessionId) {
       console.error('[QR] No session ID provided in URL');
@@ -34,6 +52,9 @@ function AddAppQR() {
     // Use onValue for real-time listening. It will fire immediately with the
     // current state and then update on any changes.
     const unsubscribe = onValue(sessionRef, (snapshot) => {
+      if (window.location.hostname === 'myteslalink.web.app') {
+        console.log('[PROD-DEBUG] AddAppQR listener triggered:', snapshot.exists(), snapshot.val());
+      }
       if (snapshot.exists()) {
         const sessionData = snapshot.val();
         if (sessionData.status === 'pending') {
@@ -83,14 +104,23 @@ function AddAppQR() {
 
     if (sessionId) {
       const sessionRef = ref(database, `qr_sessions/${sessionId}`);
+      if (window.location.hostname === 'myteslalink.web.app') {
+        console.log('[PROD-DEBUG] Submitting form:', { name: appName.trim(), url: urlToSave });
+      }
       set(sessionRef, {
         status: 'completed',
         name: appName.trim(),
         url: urlToSave,
       }).then(() => {
+        if (window.location.hostname === 'myteslalink.web.app') {
+          console.log('[PROD-DEBUG] Form submission successful');
+        }
         setStatus('success');
         setTimeout(() => window.close(), 1500);
-      }).catch(() => {
+      }).catch((error) => {
+        if (window.location.hostname === 'myteslalink.web.app') {
+          console.error('[PROD-DEBUG] Form submission failed:', error);
+        }
         setStatus('error');
         setError('Failed to send data. Please try again.');
       });

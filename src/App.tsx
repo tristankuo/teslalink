@@ -3,11 +3,10 @@ import './App.css';
 import { Button } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import AppItemComponent from './components/AppItem';
-import AdsterraAd from './components/AdsterraAd';
 import AddAppQR from './components/AddAppQR';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
-import { initGA, trackPageView, trackAdEvent } from './utils/analytics';
+import { initGA, trackPageView } from './utils/analytics';
 import { database } from './utils/firebase';
 import { ref, set, onValue, remove, get, query, orderByChild, endAt, update } from 'firebase/database';
 import { QRCodeSVG as QRCode } from 'qrcode.react';
@@ -46,7 +45,6 @@ function MainApp() {
   const [modalMode, setModalMode] = useState<'add' | 'edit'>('add');
   const [editIndex, setEditIndex] = useState<number | null>(null);
   const [showResetConfirmModal, setShowResetConfirmModal] = useState(false);
-  const [showAd, setShowAd] = useState(true);
   const [qrSessionId, setQrSessionId] = useState<string | null>(null);
   const [userRegion, setUserRegion] = useState<Region>(() => {
     const savedRegion = localStorage.getItem('teslacenter_user_region') as Region;
@@ -333,33 +331,6 @@ function MainApp() {
       console.error('[CLEANUP] Error cleaning up stale sessions:', error);
     }
   }, []);
-
-  const adIdleTimer = useRef<NodeJS.Timeout | null>(null);
-
-  const resetAdIdleTimer = useCallback(() => {
-    if (adIdleTimer.current) {
-      clearTimeout(adIdleTimer.current);
-    }
-    adIdleTimer.current = setTimeout(() => {
-      setShowAd(true);
-      trackAdEvent('show_idle');
-    }, 3600 * 1000); // 1 hour
-  }, []);
-
-  useEffect(() => {
-    const events = ['mousemove', 'keydown', 'touchstart', 'scroll'];
-    const resetTimer = () => resetAdIdleTimer();
-
-    events.forEach(event => window.addEventListener(event, resetTimer));
-    resetAdIdleTimer(); // Initial setup
-
-    return () => {
-      events.forEach(event => window.removeEventListener(event, resetTimer));
-      if (adIdleTimer.current) {
-        clearTimeout(adIdleTimer.current);
-      }
-    };
-  }, [resetAdIdleTimer]);
 
   // Initialize Google Analytics
   useEffect(() => {
@@ -949,16 +920,6 @@ function MainApp() {
           </button>
         </div>
 
-        {/* Adsterra Ad */}
-        {showAd && (
-          <AdsterraAd 
-            onClose={() => {
-              setShowAd(false);
-              trackAdEvent('close');
-            }}
-            theme={theme as 'light' | 'dark'}
-          />
-        )}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
               <a href="/about.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
                 📖 About

@@ -45,8 +45,3 @@ export const trackEvent = (action: string, category: string, label?: string, val
     });
   }
 };
-
-// Track ad interactions
-export const trackAdEvent = (action: 'view' | 'close' | 'click' | 'show_idle', adType: string = 'banner') => {
-  trackEvent(action, 'advertisement', adType);
-};

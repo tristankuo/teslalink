@@ -223,7 +223,17 @@ function MainApp() {
   }, [commitToStorage]);
 
   useEffect(() => {
+    // Test Firebase connectivity on app load
+    const testRef = ref(database, '.info/connected');
+    onValue(testRef, (snapshot) => {
+      const connected = snapshot.val();
+      console.log(`[FIREBASE] Connection status: ${connected ? 'Connected' : 'Disconnected'}`);
+    });
+  }, []);
+
+  useEffect(() => {
     if (showAppModal) {
+      console.log(`[QR] Modal opened in ${modalMode} mode, generating QR session...`);
       const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
       setQrSessionId(newSessionId);
       const sessionRef = ref(database, `qr_sessions/${newSessionId}`);
@@ -238,7 +248,20 @@ function MainApp() {
         sessionData.url = appUrlInput;
       }
 
-      set(sessionRef, sessionData);
+      console.log(`[QR] Attempting to create session with data:`, sessionData);
+
+      set(sessionRef, sessionData)
+        .then(() => {
+          console.log(`[SESSION] QR session ${newSessionId} created successfully in Firebase`);
+          console.log(`[SESSION] Session data:`, sessionData);
+          console.log(`[SESSION] QR URL will be: ${window.location.origin}/add-app/${newSessionId}?theme=${theme}`);
+        })
+        .catch((error) => {
+          console.error(`[SESSION] Failed to create QR session ${newSessionId}:`, error);
+          console.error(`[SESSION] Error code:`, error.code);
+          console.error(`[SESSION] Error message:`, error.message);
+          setQrSessionId(null); // Clear the session ID on error
+        });
 
       const sessionTimeout = setTimeout(() => {
         console.log(`[SESSION] QR session ${newSessionId} expired. Cleaning up.`);

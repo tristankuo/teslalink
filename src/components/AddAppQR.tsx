@@ -23,18 +23,22 @@ function AddAppQR() {
 
   useEffect(() => {
     if (!sessionId) {
+      console.error('[QR] No session ID provided in URL');
       setStatus('error');
       setError('No session ID provided.');
       return;
     }
 
+    console.log(`[QR] Checking session: ${sessionId}`);
     const sessionRef = ref(database, `qr_sessions/${sessionId}`);
 
     // Use onValue for real-time listening. It will fire immediately with the
     // current state and then update on any changes.
     const unsubscribe = onValue(sessionRef, (snapshot) => {
+      console.log(`[QR] Session snapshot exists: ${snapshot.exists()}`);
       if (snapshot.exists()) {
         const sessionData = snapshot.val();
+        console.log(`[QR] Session data:`, sessionData);
         if (sessionData.status === 'pending') {
           setStatus('ready');
           if (sessionData.name) {
@@ -45,17 +49,20 @@ function AddAppQR() {
           }
         } else {
           // If status is not 'pending' (e.g., 'completed' or expired), treat it as expired.
+          console.log(`[QR] Session status is not pending: ${sessionData.status}`);
           setStatus('expired');
           setError('This QR code has already been used or has expired.');
         }
       } else {
         // Session does not exist in the database.
         // It might have expired and been deleted, or was never valid.
+        console.error(`[QR] Session ${sessionId} does not exist in database`);
         setStatus('error');
         setError('This QR session is invalid or has expired.');
       }
     }, (error) => {
         // Handle potential database read errors (e.g., permissions)
+        console.error(`[QR] Firebase onValue error for session ${sessionId}:`, error);
         setStatus('error');
         setError('Failed to verify the session due to a database error.');
         console.error("Firebase onValue error:", error);

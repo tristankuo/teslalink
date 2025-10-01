@@ -93,22 +93,22 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
   }
 
   // Theme-aware styles
-  const containerStyle = {
-    position: 'fixed' as const,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: theme === 'dark' ? '#343a40' : '#fff',
-    boxShadow: theme === 'dark' 
-      ? '0 -2px 10px rgba(255,255,255,0.1)' 
-      : '0 -2px 10px rgba(0,0,0,0.1)',
+  const containerStyle: React.CSSProperties = {
+    position: 'relative',
+    textAlign: 'center',
+    minHeight: '90px',
+    width: '100%',
+    backgroundColor: theme === 'dark' ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)',
     padding: '10px',
-    zIndex: 1000,
-    borderTop: `1px solid ${theme === 'dark' ? '#495057' : '#ddd'}`
+    borderRadius: '12px',
+    marginBottom: '20px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   };
 
-  const closeButtonStyle = {
-    position: 'absolute' as const,
+  const closeButtonStyle: React.CSSProperties = {
+    position: 'absolute',
     top: '5px',
     right: '5px',
     background: theme === 'dark' ? '#495057' : '#666',
@@ -127,79 +127,77 @@ const AdSenseAd: React.FC<AdSenseAdProps> = ({
 
   return (
     <div style={containerStyle}>
-      <div style={{ position: 'relative' }}>
-        {/* Countdown Timer */}
-        {!canClose && (
-          <div 
-            style={{
-              position: 'absolute',
-              top: '5px',
-              right: '5px',
-              backgroundColor: 'rgba(0,0,0,0.7)',
-              color: 'white',
-              padding: '5px 10px',
-              borderRadius: '15px',
-              fontSize: '12px',
-              zIndex: 1001
-            }}
-          >
-            Wait {countdown}s
+      {/* Countdown Timer */}
+      {!canClose && (
+        <div 
+          style={{
+            position: 'absolute',
+            top: '5px',
+            right: '5px',
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            color: 'white',
+            padding: '5px 10px',
+            borderRadius: '15px',
+            fontSize: '12px',
+            zIndex: 1001
+          }}
+        >
+          Wait {countdown}s
+        </div>
+      )}
+
+      {/* Close Button */}
+      {canClose && showCloseButton && (
+        <button
+          onClick={handleClose}
+          style={closeButtonStyle}
+          title="Close Ad"
+        >
+          ×
+        </button>
+      )}
+
+      {/* AdSense Ad Container */}
+      <div style={{ width: '100%', minHeight: '90px', position: 'relative' }}>
+        <ins 
+          className="adsbygoogle"
+          style={{ 
+            display: 'block',
+            minHeight: '90px'
+          }}
+          data-ad-client={adClient}
+          data-ad-slot={adSlot}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+        
+        {/* Debug/Fallback Info */}
+        {showFallback && (
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: theme === 'dark' ? '#495057' : '#f8f9fa',
+            color: theme === 'dark' ? '#f8f9fa' : '#6c757d',
+            fontSize: '12px',
+            flexDirection: 'column',
+            gap: '5px',
+            padding: '10px',
+            borderRadius: '4px'
+          }}>
+            <div>📢 AdSense Status</div>
+            <div>Client: {adClient}</div>
+            <div>Slot: {adSlot}</div>
+            <div style={{ fontSize: '10px', opacity: 0.7 }}>
+              {process.env.NODE_ENV === 'development' ? 'Dev Mode - Ads may not show' : 'Waiting for ad approval/fill'}
+            </div>
           </div>
         )}
-
-        {/* Close Button */}
-        {canClose && showCloseButton && (
-          <button
-            onClick={handleClose}
-            style={closeButtonStyle}
-            title="Close Ad"
-          >
-            ×
-          </button>
-        )}
-
-        {/* AdSense Ad Container */}
-        <div style={{ textAlign: 'center', minHeight: '90px', position: 'relative' }}>
-          <ins 
-            className="adsbygoogle"
-            style={{ 
-              display: 'block',
-              minHeight: '90px'
-            }}
-            data-ad-client={adClient}
-            data-ad-slot={adSlot}
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
-          
-          {/* Debug/Fallback Info */}
-          {showFallback && (
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: theme === 'dark' ? '#495057' : '#f8f9fa',
-              color: theme === 'dark' ? '#f8f9fa' : '#6c757d',
-              fontSize: '12px',
-              flexDirection: 'column',
-              gap: '5px',
-              padding: '10px',
-              borderRadius: '4px'
-            }}>
-              <div>📢 AdSense Status</div>
-              <div>Client: {adClient}</div>
-              <div>Slot: {adSlot}</div>
-              <div style={{ fontSize: '10px', opacity: 0.7 }}>
-                {process.env.NODE_ENV === 'development' ? 'Dev Mode - Ads may not show' : 'Waiting for ad approval/fill'}
-              </div>
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );

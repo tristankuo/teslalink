@@ -341,12 +341,10 @@ function MainApp() {
       clearTimeout(adIdleTimer.current);
     }
     adIdleTimer.current = setTimeout(() => {
-      if (!isFullscreen) {
-        setShowAd(true);
-        trackAdEvent('show_idle');
-      }
+      setShowAd(true);
+      trackAdEvent('show_idle');
     }, 3600 * 1000); // 1 hour
-  }, [isFullscreen]);
+  }, []);
 
   useEffect(() => {
     const events = ['mousemove', 'keydown', 'touchstart', 'scroll'];
@@ -734,7 +732,7 @@ function MainApp() {
   return (
   <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
       <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
-      <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
       <div className="top-right-controls">
           <button onClick={toggleTheme} className="control-button">
             {theme === 'light' ? '🌞' : '🌜'}
@@ -754,7 +752,7 @@ function MainApp() {
             )}
           </div>
         </div>
-      <div className="main-content" style={{ flex: 1 }}>
+      <div className="main-content">
         <h1 className="text-center mt-5 mb-4">TeslaCenter</h1>
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode && !isFullscreen ? (
@@ -939,7 +937,7 @@ function MainApp() {
       )}
 
       {/* Navigation Footer */}
-      <div style={{ marginTop: 'auto', padding: '30px 20px', background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
+      <div className="footer-container" style={{ background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
         {/* Ko-fi Support Link */}
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
           <button
@@ -962,7 +960,8 @@ function MainApp() {
             adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
             theme={theme as 'light' | 'dark'}
           />
-        )}        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
+        )}
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
               <a href="/about.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
                 📖 About
               </a>
@@ -988,8 +987,8 @@ function MainApp() {
             <span>© 2025 TeslaCenter</span>
           </div>
         </div>
-      </div>
     </div>
+  </div>
   );
 }
 

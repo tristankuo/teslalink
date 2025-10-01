@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import AppItemComponent from './components/AppItem';
 import AddAppQR from './components/AddAppQR';
+import FirebaseTest from './components/FirebaseTest';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
 import { initGA, trackPageView } from './utils/analytics';
@@ -36,6 +37,7 @@ function App() {
     <Routes>
       <Route path="/" element={<MainApp />} />
       <Route path="/add-app/:sessionId" element={<AddAppQR />} />
+      <Route path="/firebase-test" element={<FirebaseTest />} />
     </Routes>
   );
 }

@@ -171,6 +171,30 @@
         document.addEventListener('DOMContentLoaded', function() {
             setTheme(getStoredTheme());
         });
+
+        // Environment-aware navigation
+        function getBaseUrl() {
+            // Check if we're on GitHub Pages
+            if (window.location.hostname === 'tristankuo.github.io' && window.location.pathname.startsWith('/teslalink')) {
+                return '/teslalink/';
+            }
+            // Default to root for Firebase hosting or local development
+            return '/';
+        }
+
+        // Set correct back links
+        function setBackLinks() {
+            const baseUrl = getBaseUrl();
+            const backLinks = document.querySelectorAll('a[href="/"]');
+            backLinks.forEach(link => {
+                link.href = baseUrl;
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            setBackLinks();
+        });
     </script>
 </head>
 <body>

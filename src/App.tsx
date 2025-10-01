@@ -63,6 +63,31 @@ function MainApp() {
     return `${origin}${basePath}/add-app/${sessionId}?theme=${theme}`;
   };
 
+  // Test function to manually test Firebase session creation
+  const testFirebaseConnection = async () => {
+    console.log('[TEST] Testing Firebase connection...');
+    try {
+      const testSessionId = `test-${Date.now()}`;
+      const testRef = ref(database, `qr_sessions/${testSessionId}`);
+      const testData = { status: 'pending', createdAt: Date.now() };
+      
+      await set(testRef, testData);
+      console.log('[TEST] Test session created successfully:', testSessionId);
+      
+      // Clean up test session after 10 seconds
+      setTimeout(() => {
+        remove(testRef).then(() => {
+          console.log('[TEST] Test session cleaned up');
+        });
+      }, 10000);
+      
+      return testSessionId;
+    } catch (error) {
+      console.error('[TEST] Firebase test failed:', error);
+      throw error;
+    }
+  };
+
   const clientId = useMemo(() => {
     const rnd = Math.random().toString(36).slice(2);
     // @ts-ignore
@@ -245,8 +270,8 @@ function MainApp() {
       setQrSessionId(newSessionId);
       const sessionRef = ref(database, `qr_sessions/${newSessionId}`);
       
-      // Set an expiration time for the session (e.g., 5 minutes)
-      const sessionTimeoutDuration = 5 * 60 * 1000; 
+      // Set an expiration time for the session (e.g., 15 minutes - longer for testing)
+      const sessionTimeoutDuration = 15 * 60 * 1000; 
       const createdAt = Date.now();
 
       const sessionData: { [key: string]: any } = { status: 'pending', createdAt };
@@ -256,6 +281,7 @@ function MainApp() {
       }
 
       console.log(`[QR] Attempting to create session with data:`, sessionData);
+      console.log(`[QR] Session timeout will be ${sessionTimeoutDuration / 1000 / 60} minutes`);
 
       set(sessionRef, sessionData)
         .then(() => {

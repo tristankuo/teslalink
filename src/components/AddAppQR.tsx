@@ -18,15 +18,6 @@ function AddAppQR() {
   useEffect(() => {
     // Apply theme to the body to control background color
     document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
-    
-    // Add mobile debugging
-    console.log('[QR] AddAppQR component loaded');
-    console.log('[QR] Current URL:', window.location.href);
-    console.log('[QR] Hostname:', window.location.hostname);
-    console.log('[QR] Environment detection:', window.location.hostname === 'myteslalink.web.app' ? 'Production' : window.location.hostname === 'tristankuo.github.io' ? 'Staging' : 'Development');
-    console.log('[QR] User Agent:', navigator.userAgent);
-    console.log('[QR] Session ID from params:', sessionId);
-    console.log('[QR] Theme from query:', theme);
   }, [theme, sessionId]);
 
 
@@ -38,16 +29,13 @@ function AddAppQR() {
       return;
     }
 
-    console.log(`[QR] Checking session: ${sessionId}`);
     const sessionRef = ref(database, `qr_sessions/${sessionId}`);
 
     // Use onValue for real-time listening. It will fire immediately with the
     // current state and then update on any changes.
     const unsubscribe = onValue(sessionRef, (snapshot) => {
-      console.log(`[QR] Session snapshot exists: ${snapshot.exists()}`);
       if (snapshot.exists()) {
         const sessionData = snapshot.val();
-        console.log(`[QR] Session data:`, sessionData);
         if (sessionData.status === 'pending') {
           setStatus('ready');
           if (sessionData.name) {
@@ -57,8 +45,6 @@ function AddAppQR() {
             setAppUrl(sessionData.url);
           }
         } else {
-          // If status is not 'pending' (e.g., 'completed' or expired), treat it as expired.
-          console.log(`[QR] Session status is not pending: ${sessionData.status}`);
           setStatus('expired');
           setError('This QR code has already been used or has expired.');
         }

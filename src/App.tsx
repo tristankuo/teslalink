@@ -4,7 +4,6 @@ import { Button } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import AppItemComponent from './components/AppItem';
 import AddAppQR from './components/AddAppQR';
-import FirebaseTest from './components/FirebaseTest';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
 import { initGA, trackPageView } from './utils/analytics';
@@ -37,7 +36,6 @@ function App() {
     <Routes>
       <Route path="/" element={<MainApp />} />
       <Route path="/add-app/:sessionId" element={<AddAppQR />} />
-      <Route path="/firebase-test" element={<FirebaseTest />} />
     </Routes>
   );
 }
@@ -63,31 +61,6 @@ function MainApp() {
     const origin = window.location.origin;
     const basePath = window.location.hostname === 'tristankuo.github.io' ? '/teslalink' : '';
     return `${origin}${basePath}/add-app/${sessionId}?theme=${theme}`;
-  };
-
-  // Test function to manually test Firebase session creation
-  const testFirebaseConnection = async () => {
-    console.log('[TEST] Testing Firebase connection...');
-    try {
-      const testSessionId = `test-${Date.now()}`;
-      const testRef = ref(database, `qr_sessions/${testSessionId}`);
-      const testData = { status: 'pending', createdAt: Date.now() };
-      
-      await set(testRef, testData);
-      console.log('[TEST] Test session created successfully:', testSessionId);
-      
-      // Clean up test session after 10 seconds
-      setTimeout(() => {
-        remove(testRef).then(() => {
-          console.log('[TEST] Test session cleaned up');
-        });
-      }, 10000);
-      
-      return testSessionId;
-    } catch (error) {
-      console.error('[TEST] Firebase test failed:', error);
-      throw error;
-    }
   };
 
   const clientId = useMemo(() => {
@@ -123,7 +96,6 @@ function MainApp() {
     try {
       if (bcRef.current) {
         bcRef.current.postMessage({ type: 'apps-update', ...payload });
-        console.log(`[SYNC] Broadcasted update v${payload.version} to channel`);
       }
     } catch (e) {
       console.error('[SYNC] Broadcast failed', e);
@@ -131,7 +103,6 @@ function MainApp() {
   };
 
   const commitToStorage = useCallback((apps: AppItem[], source: string) => {
-    console.log(`[COMMIT] ${source}: Committing ${apps.length} apps to localStorage`);
     try {
       // Compute next version
       const currentMeta = readMeta();
@@ -147,7 +118,6 @@ function MainApp() {
       setAppsVersion(nextVersion);
       broadcastUpdate({ version: nextVersion, apps, sourceId: clientId, updatedAt });
 
-      console.log(`[COMMIT] ${source}: Success v${nextVersion}`);
       return true;
     } catch (error) {
       console.error(`[COMMIT] ${source}: Failed`, error);
@@ -156,15 +126,12 @@ function MainApp() {
   }, [clientId]);
   
   const loadFromStorage = (source: string): AppItem[] | null => {
-    console.log(`[LOAD] ${source}: Loading from localStorage`);
     try {
       const stored = localStorage.getItem('teslalink_apps');
       if (stored) {
         const apps = JSON.parse(stored);
-        console.log(`[LOAD] ${source}: Loaded ${apps.length} apps`);
         return apps;
       }
-      console.log(`[LOAD] ${source}: No stored apps found`);
       return null;
     } catch (error) {
       console.error(`[LOAD] ${source}: Failed`, error);
@@ -257,22 +224,20 @@ function MainApp() {
   }, [commitToStorage]);
 
   useEffect(() => {
-    // Test Firebase connectivity on app load
+    // Monitor Firebase connectivity
     const testRef = ref(database, '.info/connected');
     onValue(testRef, (snapshot) => {
-      const connected = snapshot.val();
-      console.log(`[FIREBASE] Connection status: ${connected ? 'Connected' : 'Disconnected'}`);
+      // Firebase connection status available for debugging if needed
     });
   }, []);
 
   useEffect(() => {
     if (showAppModal) {
-      console.log(`[QR] Modal opened in ${modalMode} mode, generating QR session...`);
       const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
       setQrSessionId(newSessionId);
       const sessionRef = ref(database, `qr_sessions/${newSessionId}`);
       
-      // Set an expiration time for the session (e.g., 15 minutes - longer for testing)
+      // Set an expiration time for the session (e.g., 15 minutes)
       const sessionTimeoutDuration = 15 * 60 * 1000; 
       const createdAt = Date.now();
 
@@ -282,24 +247,16 @@ function MainApp() {
         sessionData.url = appUrlInput;
       }
 
-      console.log(`[QR] Attempting to create session with data:`, sessionData);
-      console.log(`[QR] Session timeout will be ${sessionTimeoutDuration / 1000 / 60} minutes`);
-
       set(sessionRef, sessionData)
         .then(() => {
-          console.log(`[SESSION] QR session ${newSessionId} created successfully in Firebase`);
-          console.log(`[SESSION] Session data:`, sessionData);
-          console.log(`[SESSION] QR URL will be: ${getQRUrl(newSessionId, theme)}`);
+          // Session created successfully
         })
         .catch((error) => {
           console.error(`[SESSION] Failed to create QR session ${newSessionId}:`, error);
-          console.error(`[SESSION] Error code:`, error.code);
-          console.error(`[SESSION] Error message:`, error.message);
           setQrSessionId(null); // Clear the session ID on error
         });
 
       const sessionTimeout = setTimeout(() => {
-        console.log(`[SESSION] QR session ${newSessionId} expired. Cleaning up.`);
         remove(sessionRef);
       }, sessionTimeoutDuration);
 

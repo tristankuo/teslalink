@@ -724,7 +724,7 @@ function MainApp() {
           </div>
         </div>
       <div className="main-content">
-        <h1 className="text-center mt-5 mb-4">TeslaCenter</h1>
+        <h1 className="text-center mt-5 mb-4">TeslaLink</h1>
         <div className="d-flex justify-content-center mb-4">
           {isAppEditMode && !isFullscreen ? (
             <>
@@ -894,10 +894,10 @@ function MainApp() {
       {showKoFi && (
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.6)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowKoFi(false)}>
           <div style={{ background: theme === 'dark' ? '#343a40' : '#fff', color: theme === 'dark' ? '#f8f9fa' : '#212529', padding: '30px 25px', borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,0.2)', textAlign: 'center', maxWidth: '90%', width: 320 }} onClick={e => e.stopPropagation()}>
-            <h5 style={{ marginBottom: 15 }}>Support TeslaCenter</h5>
+            <h5 style={{ marginBottom: 15 }}>Support TeslaLink</h5>
             <p style={{ fontSize: 14, opacity: 0.8, marginBottom: 20 }}>Scan the QR code or click the button to help keep this project running.</p>
             <img src={process.env.PUBLIC_URL + '/ko_fi_teslalink_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: '80%', height: 'auto', margin: '0 auto 20px', display: 'block', borderRadius: 8 }} />
-            <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', width: '100%', padding: '12px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 8, fontWeight: 'bold', boxSizing: 'border-box' }}>
+            <a href="https://ko-fi.com/teslalink" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', width: '100%', padding: '12px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 8, fontWeight: 'bold', boxSizing: 'border-box' }}>
               Open Ko-fi
             </a>
             <div style={{ marginTop: 15 }}>
@@ -943,7 +943,7 @@ function MainApp() {
               Terms of Service
             </a>
             <span>•</span>
-            <span>© 2025 TeslaCenter</span>
+            <span>© 2025 TeslaLink</span>
           </div>
         </div>
     </div>

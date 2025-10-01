@@ -268,7 +268,7 @@ function MainApp() {
         });
       };
     }
-  }, [showAppModal]);
+  }, [showAppModal, modalMode, appNameInput, appUrlInput]);
 
 
   const [appItems, setAppItems] = useState<AppItem[]>([]);

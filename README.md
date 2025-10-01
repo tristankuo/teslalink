@@ -1,10 +1,10 @@
-# 🚗 TeslaCenter - The Ultimate Tesla Companion
+# 🚗 TeslaLink - The Ultimate Tesla Companion
 
 **Your favorite websites, beautifully organized for Tesla!**
 
-TeslaCenter is the perfect companion app for Tesla owners who want quick, easy access to their favorite websites while driving. Designed specifically for Tesla's touchscreen, it provides a beautiful, customizable collection of web apps that makes your in-car browsing experience seamless and enjoyable.
+TeslaLink is the perfect companion app for Tesla owners who want quick, easy access to their favorite websites while driving. Designed specifically for Tesla's touchscreen, it provides a beautiful, customizable collection of web apps that makes your in-car browsing experience seamless and enjoyable.
 
-## ✨ Why TeslaCenter?
+## ✨ Why TeslaLink?
 
 🎯 **Built for Tesla** - Optimized specifically for your Tesla's large touchscreen  
 🚀 **Tesla Theater Ready** - Full-screen mode that works perfectly with Tesla Theater  
@@ -40,7 +40,7 @@ Pre-loaded with popular streaming apps based on your region:
 
 ## 🚀 Get Started in Seconds
 
-**Just visit:** [**tristankuo.github.io/teslacenter**](https://tristankuo.github.io/teslacenter)
+**Just visit:** [**tristankuo.github.io/teslalink**](https://tristankuo.github.io/teslalink)
 
 1. **Open in Tesla Browser** - Navigate to the URL above
 2. **Customize Your Apps** - Add your favorites or use regional defaults

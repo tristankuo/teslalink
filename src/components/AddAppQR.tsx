@@ -160,7 +160,7 @@ function AddAppQR() {
   return (
     <div style={containerStyle}>
       <div style={formStyle}>
-        <h3 style={{ textAlign: 'center', marginBottom: 24 }}>Add App to TeslaCenter</h3>
+        <h3 style={{ textAlign: 'center', marginBottom: 24 }}>Add App to TeslaLink</h3>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: 16 }}>
             <input

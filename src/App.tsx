@@ -47,7 +47,7 @@ function MainApp() {
   const [showResetConfirmModal, setShowResetConfirmModal] = useState(false);
   const [qrSessionId, setQrSessionId] = useState<string | null>(null);
   const [userRegion, setUserRegion] = useState<Region>(() => {
-    const savedRegion = localStorage.getItem('teslacenter_user_region') as Region;
+    const savedRegion = localStorage.getItem('teslalink_user_region') as Region;
     if (savedRegion && REGIONS[savedRegion]) {
       return savedRegion;
     }
@@ -69,7 +69,7 @@ function MainApp() {
   
   const readMeta = (): AppsMeta | null => {
     try {
-      const raw = localStorage.getItem('teslacenter_apps_meta');
+      const raw = localStorage.getItem('teslalink_apps_meta');
       return raw ? (JSON.parse(raw) as AppsMeta) : null;
     } catch (e) {
       console.error('[META] Failed to read meta', e);
@@ -79,7 +79,7 @@ function MainApp() {
 
   const writeMeta = (meta: AppsMeta) => {
     try {
-      localStorage.setItem('teslacenter_apps_meta', JSON.stringify(meta));
+      localStorage.setItem('teslalink_apps_meta', JSON.stringify(meta));
     } catch (e) {
       console.error('[META] Failed to write meta', e);
     }
@@ -106,7 +106,7 @@ function MainApp() {
       const meta: AppsMeta = { version: nextVersion, updatedAt, sourceId: clientId };
 
       // Persist state and meta
-      localStorage.setItem('teslacenter_apps', JSON.stringify(apps));
+      localStorage.setItem('teslalink_apps', JSON.stringify(apps));
       writeMeta(meta);
 
       // Update local version and broadcast to peers
@@ -124,7 +124,7 @@ function MainApp() {
   const loadFromStorage = (source: string): AppItem[] | null => {
     console.log(`[LOAD] ${source}: Loading from localStorage`);
     try {
-      const stored = localStorage.getItem('teslacenter_apps');
+      const stored = localStorage.getItem('teslalink_apps');
       if (stored) {
         const apps = JSON.parse(stored);
         console.log(`[LOAD] ${source}: Loaded ${apps.length} apps`);
@@ -199,7 +199,7 @@ function MainApp() {
 
   const handleRegionChange = (region: Region) => {
     setUserRegion(region);
-    localStorage.setItem('teslacenter_user_region', region);
+    localStorage.setItem('teslalink_user_region', region);
     setShowRegionSelector(false);
     // Re-trigger app loading
     loadApps(region);
@@ -274,7 +274,7 @@ function MainApp() {
   const [appItems, setAppItems] = useState<AppItem[]>([]);
   const [showKoFi, setShowKoFi] = useState(false);
   const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('teslacenter_theme');
+    const savedTheme = localStorage.getItem('teslalink_theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedTheme) {
       return savedTheme;
@@ -528,7 +528,7 @@ function MainApp() {
   useEffect(() => {
     if ('BroadcastChannel' in window) {
       try {
-        bcRef.current = new BroadcastChannel('teslacenter_sync');
+        bcRef.current = new BroadcastChannel('teslalink_sync');
         bcRef.current.onmessage = (event: MessageEvent) => {
           const data = event.data;
           if (!data || data.type !== 'apps-update') return;
@@ -548,11 +548,11 @@ function MainApp() {
     }
 
     const onStorage = (e: StorageEvent) => {
-      if (e.key !== 'teslacenter_apps_meta') return;
+      if (e.key !== 'teslalink_apps_meta') return;
       try {
         const meta = e.newValue ? (JSON.parse(e.newValue) as AppsMeta) : null;
         if (meta && meta.version > appsVersion && meta.sourceId !== clientId) {
-          const stored = localStorage.getItem('teslacenter_apps');
+          const stored = localStorage.getItem('teslalink_apps');
           if (stored) {
             const apps = JSON.parse(stored) as AppItem[];
             console.log(`[SYNC] Storage event v${meta.version}, applying`);
@@ -589,7 +589,7 @@ function MainApp() {
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    localStorage.setItem('teslacenter_theme', newTheme);
+    localStorage.setItem('teslalink_theme', newTheme);
   };
 
   const handleEditDone = () => {
@@ -611,8 +611,8 @@ function MainApp() {
     console.log('[RESET] Starting complete reset to defaults');
     
     try {
-      localStorage.removeItem('teslacenter_apps');
-      localStorage.removeItem('teslacenter_apps_meta');
+      localStorage.removeItem('teslalink_apps');
+      localStorage.removeItem('teslalink_apps_meta');
       console.log('[RESET] Cleared all storage');
       setAppsVersion(0);
     } catch (error) {
@@ -896,7 +896,7 @@ function MainApp() {
           <div style={{ background: theme === 'dark' ? '#343a40' : '#fff', color: theme === 'dark' ? '#f8f9fa' : '#212529', padding: '30px 25px', borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,0.2)', textAlign: 'center', maxWidth: '90%', width: 320 }} onClick={e => e.stopPropagation()}>
             <h5 style={{ marginBottom: 15 }}>Support TeslaCenter</h5>
             <p style={{ fontSize: 14, opacity: 0.8, marginBottom: 20 }}>Scan the QR code or click the button to help keep this project running.</p>
-            <img src={process.env.PUBLIC_URL + '/ko_fi_teslacenter_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: '80%', height: 'auto', margin: '0 auto 20px', display: 'block', borderRadius: 8 }} />
+            <img src={process.env.PUBLIC_URL + '/ko_fi_teslalink_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: '80%', height: 'auto', margin: '0 auto 20px', display: 'block', borderRadius: 8 }} />
             <a href="https://ko-fi.com/teslacenter" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', width: '100%', padding: '12px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 8, fontWeight: 'bold', boxSizing: 'border-box' }}>
               Open Ko-fi
             </a>

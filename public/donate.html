@@ -89,14 +89,14 @@
   <script>
     // Theme management system
     function initTheme() {
-      const savedTheme = localStorage.getItem('teslacenter_theme') || 
+      const savedTheme = localStorage.getItem('teslalink_theme') || 
           (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', savedTheme);
       updateThemeButton(savedTheme);
       
       // Sync with main app theme changes
       window.addEventListener('storage', function(e) {
-          if (e.key === 'teslacenter_theme') {
+          if (e.key === 'teslalink_theme') {
               const newTheme = e.newValue || 'light';
               document.documentElement.setAttribute('data-theme', newTheme);
               updateThemeButton(newTheme);
@@ -108,7 +108,7 @@
       const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('teslacenter_theme', newTheme);
+      localStorage.setItem('teslalink_theme', newTheme);
       updateThemeButton(newTheme);
     }
 

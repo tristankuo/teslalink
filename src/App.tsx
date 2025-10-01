@@ -916,34 +916,34 @@ function MainApp() {
             style={{ fontSize: 14, color: '#ff5f5f', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
             onClick={() => setShowKoFi(true)}
           >
-            Support Us on Ko-fi
+            ❤️ Support TeslaLink Development
           </button>
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
-              <a href="/about.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-                📖 About
+              <a href={`${process.env.PUBLIC_URL}/about.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                📖 About TeslaLink
               </a>
-              <a href="/tesla-apps-guide.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-                🚗 Guide
+              <a href={`${process.env.PUBLIC_URL}/tesla-apps-guide.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                🚗 Tesla Apps Guide
               </a>
-              <a href="/tesla-browser-tips.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-                💡 Tips
+              <a href={`${process.env.PUBLIC_URL}/tesla-browser-tips.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                💡 Browser Tips
               </a>
-              <a href="/contact.html" style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-                💬 Contact
+              <a href={`${process.env.PUBLIC_URL}/contact.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                💬 Contact Us
               </a>
             </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
-            <a href="/privacy-policy.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+            <a href={`${process.env.PUBLIC_URL}/privacy-policy.html`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
               Privacy Policy
             </a>
             <span>•</span>
-            <a href="/terms-of-service.html" style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+            <a href={`${process.env.PUBLIC_URL}/terms-of-service.html`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
               Terms of Service
             </a>
             <span>•</span>
-            <span>© 2025 TeslaLink</span>
+            <span>© 2025 TeslaLink - Tesla App Hub</span>
           </div>
         </div>
     </div>

@@ -1,0 +1,61 @@
+{
+  "rules": {
+    "qr_sessions": {
+      "$sessionId": {
+        ".read": true,
+        ".write": true,
+        ".validate": "newData.hasChildren(['status', 'createdAt'])",
+        "status": {
+          ".validate": "newData.isString() && (newData.val() === 'pending' || newData.val() === 'completed')"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100"
+        },
+        "url": {
+          ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 500"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "fullscreen_sessions": {
+      "$sessionId": {
+        ".read": true,
+        ".write": true,
+        ".validate": "newData.hasChildren(['apps', 'createdAt'])",
+        "apps": {
+          ".validate": "newData.hasChildren()",
+          "$appIndex": {
+            ".validate": "newData.hasChildren(['id', 'name', 'url'])",
+            "id": {
+              ".validate": "newData.isString() && newData.val().length > 0"
+            },
+            "name": {
+              ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100"
+            },
+            "url": {
+              ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 500"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "$other": {
+      ".read": false,
+      ".write": false
+    }
+  }
+}

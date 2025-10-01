@@ -3,7 +3,7 @@ import './App.css';
 import { Button } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import AppItemComponent from './components/AppItem';
-import AdSenseAd from './components/AdSenseAd';
+import AdsterraAd from './components/AdsterraAd';
 import AddAppQR from './components/AddAppQR';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
@@ -949,15 +949,13 @@ function MainApp() {
           </button>
         </div>
 
-        {/* AdSense Ad */}
+        {/* Adsterra Ad */}
         {showAd && (
-          <AdSenseAd 
+          <AdsterraAd 
             onClose={() => {
               setShowAd(false);
               trackAdEvent('close');
             }}
-            adClient={process.env.REACT_APP_ADSENSE_CLIENT_ID}
-            adSlot={process.env.REACT_APP_ADSENSE_SLOT_ID}
             theme={theme as 'light' | 'dark'}
           />
         )}

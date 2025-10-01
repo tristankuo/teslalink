@@ -7,21 +7,12 @@ console.log('🏭 Building for PRODUCTION (Firebase Hosting)...');
 
 // Backup current configs
 const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-const indexTsx = fs.readFileSync('src/index.tsx', 'utf8');
 
 // Set production configuration
 packageJson.homepage = '.';
 fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
 
-// Update router basename for production
-const productionIndexTsx = indexTsx.replace(
-  'basename="/teslalink"',
-  'basename="/"'
-).replace(
-  'basename={process.env.NODE_ENV === "production" ? "/" : "/teslalink"}',
-  'basename="/"'
-);
-fs.writeFileSync('src/index.tsx', productionIndexTsx);
+// Note: We no longer modify index.tsx since we're using dynamic basename detection
 
 console.log('✅ Configuration set for production');
 console.log('📦 Building...');

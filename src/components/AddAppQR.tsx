@@ -22,6 +22,8 @@ function AddAppQR() {
     // Add mobile debugging
     console.log('[QR] AddAppQR component loaded');
     console.log('[QR] Current URL:', window.location.href);
+    console.log('[QR] Hostname:', window.location.hostname);
+    console.log('[QR] Environment detection:', window.location.hostname === 'myteslalink.web.app' ? 'Production' : window.location.hostname === 'tristankuo.github.io' ? 'Staging' : 'Development');
     console.log('[QR] User Agent:', navigator.userAgent);
     console.log('[QR] Session ID from params:', sessionId);
     console.log('[QR] Theme from query:', theme);

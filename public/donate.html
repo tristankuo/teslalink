@@ -86,49 +86,16 @@
       background: var(--button-hover);
     }
   </style>
-  <script>
-    // Theme management system
-    function initTheme() {
-      const savedTheme = localStorage.getItem('teslalink_theme') || 
-          (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeButton(savedTheme);
-      
-      // Sync with main app theme changes
-      window.addEventListener('storage', function(e) {
-          if (e.key === 'teslalink_theme') {
-              const newTheme = e.newValue || 'light';
-              document.documentElement.setAttribute('data-theme', newTheme);
-              updateThemeButton(newTheme);
-          }
-      });
-    }
-
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('teslalink_theme', newTheme);
-      updateThemeButton(newTheme);
-    }
-
-    function updateThemeButton(theme) {
-      const button = document.getElementById('theme-toggle');
-      if (button) {
-          button.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
-      }
-    }
-
-    // Initialize theme on page load
-    document.addEventListener('DOMContentLoaded', initTheme);
-  </script>
+  <script src="js/main.js"></script>
 </head>
 <body>
   <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
   <div class="container">
-    <img src="ko_fi_teslacenter_qr.png" alt="Ko-fi QR Code">
+    <img src="ko_fi_teslalink_qr.png" alt="Ko-fi QR Code">
     <br>
-    <a href="https://ko-fi.com/teslacenter" target="_blank">Open Ko-fi Directly</a>
+    <a href="https://ko-fi.com/teslalink" target="_blank">Open Ko-fi Directly</a>
+    <br>
+    <a href="/" class="nav-link back-link">← Back to TeslaLink</a>
   </div>
 </body>
 </html>

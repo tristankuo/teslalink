@@ -129,68 +129,12 @@
             background: var(--nav-link-hover);
         }
     </style>
-    <script>
-        // Theme management
-        function getStoredTheme() {
-            return localStorage.getItem('teslalink_theme') || 
-                   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        }
-        
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('teslalink_theme', theme);
-            updateThemeToggle(theme);
-        }
-        
-        function updateThemeToggle(theme) {
-            const toggle = document.getElementById('theme-toggle');
-            if (toggle) {
-                toggle.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
-            }
-        }
-        
-        function toggleTheme() {
-            const currentTheme = getStoredTheme();
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-        }
-        
-        // Initialize theme on load
-        document.addEventListener('DOMContentLoaded', function() {
-            setTheme(getStoredTheme());
-        });
-
-        // Environment-aware navigation
-        function getBaseUrl() {
-            // Check if we're on GitHub Pages
-            if (window.location.hostname === 'tristankuo.github.io' && window.location.pathname.startsWith('/teslalink')) {
-                return '/teslalink/';
-            }
-            // Default to root for Firebase hosting or local development
-            return '/';
-        }
-
-        // Set correct back links
-        function setBackLinks() {
-            const baseUrl = getBaseUrl();
-            const backLinks = document.querySelectorAll('a[href="/"]');
-            backLinks.forEach(link => {
-                link.href = baseUrl;
-            });
-        }
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            setBackLinks();
-        });
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-    
     <div class="container">
-        <a href="/" class="nav-link">← Back to TeslaLink</a>
-        
         <h1>About TeslaLink</h1>
         
         <div class="highlight">
@@ -224,21 +168,11 @@
         <p>Getting started is simple. Just open your Tesla's browser and go to <strong>tristankuo.github.io/teslalink</strong>. From there, you can immediately start using the curated apps or customize the dashboard to fit your needs. Everything is saved locally in your browser for your convenience.</p>
         
         <h2>Community & Support</h2>
-        <p>TeslaLink is a community-driven project. We welcome your feedback and suggestions! For support or to suggest a new app, please visit our <a href="/contact.html">Contact Page</a>. You can also support our development through <a href="https://ko-fi.com/teslacenter" target="_blank">Ko-fi</a>.</p>
+        <p>TeslaLink is a community-driven project. We welcome your feedback and suggestions! For support or to suggest a new app, please visit our <a href="contact.html">Contact Page</a>. You can also support our development through <a href="https://ko-fi.com/teslalink" target="_blank">Ko-fi</a>.</p>
         
         <div class="highlight">
-            <p><strong>Ready to upgrade your Tesla browser experience?</strong> <a href="/">Explore TeslaLink now!</a></p>
+            <p><strong>Ready to upgrade your Tesla browser experience?</strong> <a href="/" class="back-link">Explore TeslaLink now!</a></p>
         </div>
-        
-        <hr style="margin: 40px 0;">
-        
-        <div style="text-align: center;">
-            <a href="/" class="nav-link">🏠 Back to TeslaLink</a>
-            <a href="/contact.html" class="nav-link">💬 Contact Us</a>
-            <a href="/privacy-policy.html" class="nav-link">🔒 Privacy Policy</a>
-        </div>
-
-        <p style="text-align: center; color: var(--text-muted); margin-top: 30px;"><em>TeslaLink is an independent project and is not affiliated with Tesla, Inc.</em></p>
     </div>
 </body>
 </html>

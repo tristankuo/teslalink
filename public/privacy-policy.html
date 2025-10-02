@@ -105,68 +105,12 @@
             background: var(--nav-link-hover);
         }
     </style>
-    <script>
-        // Theme management
-        function getStoredTheme() {
-            return localStorage.getItem('teslalink_theme') || 
-                   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        }
-        
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('teslalink_theme', theme);
-            updateThemeToggle(theme);
-        }
-        
-        function updateThemeToggle(theme) {
-            const toggle = document.getElementById('theme-toggle');
-            if (toggle) {
-                toggle.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
-            }
-        }
-        
-        function toggleTheme() {
-            const currentTheme = getStoredTheme();
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-        }
-        
-        // Initialize theme on load
-        document.addEventListener('DOMContentLoaded', function() {
-            setTheme(getStoredTheme());
-        });
-
-        // Environment-aware navigation
-        function getBaseUrl() {
-            // Check if we're on GitHub Pages
-            if (window.location.hostname === 'tristankuo.github.io' && window.location.pathname.startsWith('/teslalink')) {
-                return '/teslalink/';
-            }
-            // Default to root for Firebase hosting or local development
-            return '/';
-        }
-
-        // Set correct back links
-        function setBackLinks() {
-            const baseUrl = getBaseUrl();
-            const backLinks = document.querySelectorAll('a[href="/"]');
-            backLinks.forEach(link => {
-                link.href = baseUrl;
-            });
-        }
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            setBackLinks();
-        });
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 </head>
 <body>
-    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-    
     <div class="container">
-        <a href="/" class="nav-link">← Back to TeslaLink</a>
-        
         <h1>Privacy Policy</h1>
         <p class="last-updated">Last updated: September 29, 2025</p>
         
@@ -233,11 +177,9 @@
         <h2>10. Contact Information</h2>
         <p>If you have questions about this privacy policy, please contact us at:</p>
         <ul>
-            <li>Website: <a href="https://tristankuo.github.io/teslalink">https://tristankuo.github.io/teslalink</a></li>
-            <li>Support: <a href="https://ko-fi.com/teslacenter">https://ko-fi.com/teslacenter</a></li>
+            <li>Website: <a href="https://tristankuo.github.io/teslalink" class="back-link">https://tristankuo.github.io/teslalink</a></li>
+            <li>Support: <a href="https://ko-fi.com/teslalink">https://ko-fi.com/teslalink</a></li>
         </ul>
-        
-        <a href="/" class="nav-link">← Back to TeslaLink</a>
     </div>
 </body>
 </html>

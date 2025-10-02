@@ -33,16 +33,23 @@ function getBaseUrl() {
     return '/';
 }
 
-function setBackLinks() {
+function updateInternalLinks() {
     const baseUrl = getBaseUrl();
-    const backLinks = document.querySelectorAll('a.back-link');
-    backLinks.forEach(link => {
-        link.href = baseUrl;
+    // If we are on the root domain (e.g., Firebase), no changes are needed for root-relative links.
+    if (baseUrl === '/') return;
+
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        // Check if it's a root-relative link (starts with / but not //)
+        if (href && href.startsWith('/') && !href.startsWith('//')) {
+            // Prepend the base URL, removing the leading slash from the original href
+            link.href = baseUrl + href.slice(1);
+        }
     });
 }
 
 // Initialize everything on load
 document.addEventListener('DOMContentLoaded', function() {
     setTheme(getStoredTheme());
-    setBackLinks();
+    updateInternalLinks();
 });

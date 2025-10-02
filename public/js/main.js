@@ -6,21 +6,6 @@ function getStoredTheme() {
 
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('teslalink_theme', theme);
-    updateThemeToggle(theme);
-}
-
-function updateThemeToggle(theme) {
-    const toggle = document.getElementById('theme-toggle');
-    if (toggle) {
-        toggle.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
-    }
-}
-
-function toggleTheme() {
-    const currentTheme = getStoredTheme();
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
 }
 
 // Environment-aware navigation

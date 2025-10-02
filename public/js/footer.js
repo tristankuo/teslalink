@@ -4,9 +4,9 @@ function createFooter() {
         <div class="footer-container" style="background: var(--container-bg); border-radius: 12px; padding: 20px; margin-top: 40px; box-shadow: 0 -10px 30px -15px rgba(0,0,0,0.1);">
             
             <div style="text-align: center; margin-bottom: 20px;">
-                <a href="https://ko-fi.com/teslalink" target="_blank" rel="noopener noreferrer" style="font-size: 14px; color: #ff5f5f; text-decoration: underline; background: none; border: none; cursor: pointer; padding: 0;">
+                <button onclick="showDonateModal()" style="font-size: 14px; color: #ff5f5f; text-decoration: underline; background: none; border: none; cursor: pointer; padding: 0;">
                     ❤️ Support TeslaLink Development
-                </a>
+                </button>
             </div>
 
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px;">

@@ -108,12 +108,34 @@
             background-color: var(--button-hover);
             transform: scale(1.05);
         }
+
+        .main-cta .cta-button {
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .main-cta .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
     </style>
     <script src="js/main.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/donate.js"></script>
 </head>
 <body>
     <div class="container">
+        <div class="main-cta" style="text-align: left; margin-bottom: 20px;">
+            <a href="/" class="cta-button back-link">&larr; Back</a>
+        </div>
         <h1 class="text-center">Get in Touch</h1>
         <p class="lead text-center" style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 30px auto;">We welcome your feedback, suggestions, and questions. As a community-driven project, your input is valuable in helping us improve TeslaLink.</p>
         

@@ -5,31 +5,29 @@
     <link rel="icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="About TeslaLink - The Ultimate Tesla App Collection Platform for Tesla Owners" />
-    <title>About TeslaLink - Tesla App Collection Platform</title>
+    <meta name="description" content="About TeslaLink - The ultimate, customizable app dashboard for your Tesla browser." />
+    <title>About TeslaLink - Your Tesla App Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            --container-bg-light: rgba(255, 255, 255, 0.95);
+            --container-bg-light: rgba(255, 255, 255, 0.98);
             --container-bg-dark: rgba(42, 42, 42, 0.95);
             --text-primary-light: #2c3e50;
             --text-primary-dark: #ecf0f1;
             --text-secondary-light: #34495e;
             --text-secondary-dark: #bdc3c7;
-            --text-muted-light: #7f8c8d;
-            --text-muted-dark: #95a5a6;
-            --link-color-light: #3498db;
+            --link-color-light: #2980b9;
             --link-color-dark: #85c1e9;
-            --nav-link-bg-light: #3498db;
-            --nav-link-bg-dark: #2980b9;
-            --nav-link-hover-light: #2980b9;
-            --nav-link-hover-dark: #3498db;
-            --feature-bg-light: #f8f9fa;
+            --feature-bg-light: #ffffff;
             --feature-bg-dark: rgba(73, 80, 87, 0.3);
-            --highlight-bg-light: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-            --highlight-bg-dark: linear-gradient(120deg, #2c3e50 0%, #34495e 100%);
+            --highlight-bg-light: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            --highlight-bg-dark: linear-gradient(120deg, #2980b9 0%, #2c3e50 100%);
+            --button-bg-light: #3498db;
+            --button-bg-dark: #2980b9;
+            --button-hover-light: #2980b9;
+            --button-hover-dark: #3498db;
         }
         
         [data-theme="light"] {
@@ -37,12 +35,11 @@
             --container-bg: var(--container-bg-light);
             --text-primary: var(--text-primary-light);
             --text-secondary: var(--text-secondary-light);
-            --text-muted: var(--text-muted-light);
             --link-color: var(--link-color-light);
-            --nav-link-bg: var(--nav-link-bg-light);
-            --nav-link-hover: var(--nav-link-hover-light);
             --feature-bg: var(--feature-bg-light);
             --highlight-bg: var(--highlight-bg-light);
+            --button-bg: var(--button-bg-light);
+            --button-hover: var(--button-hover-light);
         }
         
         [data-theme="dark"] {
@@ -50,83 +47,91 @@
             --container-bg: var(--container-bg-dark);
             --text-primary: var(--text-primary-dark);
             --text-secondary: var(--text-secondary-dark);
-            --text-muted: var(--text-muted-dark);
             --link-color: var(--link-color-dark);
-            --nav-link-bg: var(--nav-link-bg-dark);
-            --nav-link-hover: var(--nav-link-hover-dark);
             --feature-bg: var(--feature-bg-dark);
             --highlight-bg: var(--highlight-bg-dark);
+            --button-bg: var(--button-bg-dark);
+            --button-hover: var(--button-hover-dark);
         }
         
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             background: var(--bg-gradient);
+            color: var(--text-secondary);
             min-height: 100vh;
             margin: 0;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, color 0.3s ease;
         }
         .container {
             background: var(--container-bg);
             border-radius: 20px;
             padding: 40px;
             margin: 40px auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            max-width: 1200px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            max-width: 1100px;
             transition: background 0.3s ease;
         }
-        h1 { color: var(--text-primary); margin-bottom: 30px; transition: color 0.3s ease; }
-        h2 { color: var(--text-secondary); margin-top: 30px; margin-bottom: 20px; transition: color 0.3s ease; }
-        h3 { color: var(--text-primary); margin-bottom: 10px; transition: color 0.3s ease; }
-        p, li { color: var(--text-secondary); transition: color 0.3s ease; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0; }
-        .feature-card { 
-            background: var(--feature-bg); 
-            padding: 20px; 
-            border-radius: 10px; 
-            border-left: 4px solid var(--link-color);
-            transition: background 0.3s ease;
-        }
-        .feature-card h3 { color: var(--text-primary); margin-bottom: 10px; }
+        h1, h2, h3 { color: var(--text-primary); transition: color 0.3s ease; }
+        h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; }
+        h2 { margin-top: 40px; margin-bottom: 20px; }
+        p { line-height: 1.7; }
         a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
         a:hover { text-decoration: underline; }
-        .nav-link { 
-            display: inline-block; 
-            margin: 10px 5px; 
-            padding: 12px 24px; 
-            background: var(--nav-link-bg); 
-            color: white; 
-            border-radius: 8px; 
-            text-decoration: none;
-            transition: all 0.3s ease;
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 0; }
+        .feature-card { 
+            background: var(--feature-bg); 
+            padding: 25px; 
+            border-radius: 15px; 
+            border-left: 5px solid var(--link-color);
+            transition: background 0.3s ease, transform 0.2s ease;
         }
-        .nav-link:hover { 
-            background: var(--nav-link-hover); 
-            color: white; 
-            text-decoration: none;
-        }
-        .highlight { 
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-card h3 { margin-bottom: 10px; font-size: 1.3rem; }
+        
+        .highlight-section { 
             background: var(--highlight-bg); 
-            padding: 20px; 
-            border-radius: 10px; 
-            margin: 20px 0;
-            transition: background 0.3s ease;
-        }
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background: var(--nav-link-bg);
             color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 12px;
-            z-index: 1000;
+            padding: 30px; 
+            border-radius: 15px; 
+            margin: 40px 0;
+            text-align: center;
+        }
+        .highlight-section p { color: white; opacity: 0.9; }
+        .highlight-section a.cta-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: white;
+            color: #333;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
-        .theme-toggle:hover {
-            background: var(--nav-link-hover);
+        .highlight-section a.cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .main-cta {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .main-cta .cta-button {
+            padding: 15px 35px;
+            background-color: var(--button-bg);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .main-cta .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
     </style>
     <script src="js/main.js"></script>
@@ -135,43 +140,40 @@
 </head>
 <body>
     <div class="container">
-        <h1>About TeslaLink</h1>
+        <h1 class="text-center">Welcome to TeslaLink</h1>
+        <p class="lead text-center" style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 30px auto;">The ultimate, customizable app dashboard for your Tesla browser. Transform your in-car screen into a powerful, touch-friendly hub for your favorite web apps.</p>
         
-        <div class="highlight">
-            <p><strong>TeslaLink is the ultimate web platform designed for Tesla owners</strong> who want to get the most out of their in-vehicle browser. It's a curated, touch-optimized dashboard for all your favorite web apps.</p>
+        <div class="main-cta">
+            <a href="/" class="cta-button back-link">Launch TeslaLink</a>
         </div>
         
         <h2>What is TeslaLink?</h2>
-        <p>TeslaLink transforms your car's browser into a powerful and easy-to-use app launcher. Whether you're charging, waiting, or have passengers looking for entertainment, TeslaLink provides instant access to the best of the web, perfectly formatted for your Tesla's screen.</p>
+        <p>TeslaLink is a free, web-based platform designed to enhance your Tesla's browser experience. It provides a clean, organized, and visually appealing dashboard to launch web apps, entertainment, and utilities. No installation, no accounts—just a seamless interface for the modern driver.</p>
         
         <h2>Core Features</h2>
         <div class="feature-grid">
             <div class="feature-card">
-                <h3>Optimized for Tesla</h3>
-                <p>A clean, fast interface with large, finger-friendly controls designed for the Tesla touchscreen.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Curated App Collection</h3>
-                <p>We've handpicked the best web apps for entertainment, productivity, and travel that work seamlessly in your car.</p>
-            </div>
-            <div class="feature-card">
                 <h3>Fully Customizable</h3>
-                <p>Add your own favorite websites, arrange your dashboard, and sync your setup across devices.</p>
+                <p>Your dashboard, your rules. Add, remove, and reorder any web app you want. Use the simple QR code scanner to add links directly from your phone.</p>
             </div>
             <div class="feature-card">
-                <h3>Free & Private</h3>
-                <p>TeslaLink is completely free to use and respects your privacy. No installation or account is needed.</p>
+                <h3>Optimized for Tesla</h3>
+                <p>With large, touch-friendly buttons and a clean layout, TeslaLink is designed for easy use on the Tesla touchscreen. Light and dark themes automatically match your system preference.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Region-Specific Content</h3>
+                <p>Get quick access to popular streaming and utility apps for your specific region. Switch regions at any time to explore what's popular worldwide.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Private & Secure</h3>
+                <p>TeslaLink is completely free and respects your privacy. All your app configurations are stored locally in your browser, not on our servers.</p>
             </div>
         </div>
         
-        <h2>How It Works</h2>
-        <p>Getting started is simple. Just open your Tesla's browser and go to <strong>tristankuo.github.io/teslalink</strong>. From there, you can immediately start using the curated apps or customize the dashboard to fit your needs. Everything is saved locally in your browser for your convenience.</p>
-        
-        <h2>Community & Support</h2>
-        <p>TeslaLink is a community-driven project. We welcome your feedback and suggestions! For support or to suggest a new app, please visit our <a href="contact.html">Contact Page</a>. You can also support our development through <a href="https://ko-fi.com/teslalink" target="_blank">Ko-fi</a>.</p>
-        
-        <div class="highlight">
-            <p><strong>Ready to upgrade your Tesla browser experience?</strong> <a href="/" class="back-link">Explore TeslaLink now!</a></p>
+        <div class="highlight-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Learn how to master all of TeslaLink's features, from customizing your dashboard to using advanced tools like fullscreen mode.</p>
+            <a href="guide.html" class="cta-button">Read the Full Guide</a>
         </div>
     </div>
 </body>

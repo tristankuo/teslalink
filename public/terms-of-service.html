@@ -5,27 +5,21 @@
     <link rel="icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Terms of Service for TeslaLink - Your Tesla App Collection Platform" />
+    <meta name="description" content="Terms of Service for TeslaLink - Rules and guidelines for using our application." />
     <title>Terms of Service - TeslaLink</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            --container-bg-light: rgba(255, 255, 255, 0.95);
+            --container-bg-light: rgba(255, 255, 255, 0.98);
             --container-bg-dark: rgba(42, 42, 42, 0.95);
             --text-primary-light: #2c3e50;
             --text-primary-dark: #ecf0f1;
             --text-secondary-light: #34495e;
             --text-secondary-dark: #bdc3c7;
-            --text-muted-light: #7f8c8d;
-            --text-muted-dark: #95a5a6;
-            --link-color-light: #3498db;
+            --link-color-light: #2980b9;
             --link-color-dark: #85c1e9;
-            --nav-link-bg-light: #3498db;
-            --nav-link-bg-dark: #2980b9;
-            --nav-link-hover-light: #2980b9;
-            --nav-link-hover-dark: #3498db;
         }
         
         [data-theme="light"] {
@@ -33,10 +27,7 @@
             --container-bg: var(--container-bg-light);
             --text-primary: var(--text-primary-light);
             --text-secondary: var(--text-secondary-light);
-            --text-muted: var(--text-muted-light);
             --link-color: var(--link-color-light);
-            --nav-link-bg: var(--nav-link-bg-light);
-            --nav-link-hover: var(--nav-link-hover-light);
         }
         
         [data-theme="dark"] {
@@ -44,156 +35,72 @@
             --container-bg: var(--container-bg-dark);
             --text-primary: var(--text-primary-dark);
             --text-secondary: var(--text-secondary-dark);
-            --text-muted: var(--text-muted-dark);
             --link-color: var(--link-color-dark);
-            --nav-link-bg: var(--nav-link-bg-dark);
-            --nav-link-hover: var(--nav-link-hover-dark);
         }
         
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             background: var(--bg-gradient);
+            color: var(--text-secondary);
             min-height: 100vh;
             margin: 0;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, color 0.3s ease;
         }
         .container {
             background: var(--container-bg);
             border-radius: 20px;
             padding: 40px;
             margin: 40px auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            max-width: 1200px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            max-width: 900px;
             transition: background 0.3s ease;
         }
-        h1 { color: var(--text-primary); margin-bottom: 30px; transition: color 0.3s ease; }
-        h2 { color: var(--text-secondary); margin-top: 30px; margin-bottom: 20px; transition: color 0.3s ease; }
-        p, li { color: var(--text-secondary); transition: color 0.3s ease; }
-        .last-updated { color: var(--text-muted); font-style: italic; transition: color 0.3s ease; }
+        h1, h2 { color: var(--text-primary); transition: color 0.3s ease; }
+        h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; }
+        h2 { margin-top: 30px; margin-bottom: 15px; }
+        p, li { line-height: 1.7; }
         a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
         a:hover { text-decoration: underline; }
-        .nav-link { 
-            display: inline-block; 
-            margin: 10px 5px; 
-            padding: 12px 24px; 
-            background: var(--nav-link-bg); 
-            color: white; 
-            border-radius: 8px; 
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .nav-link:hover { 
-            background: var(--nav-link-hover); 
-            color: white; 
-            text-decoration: none;
-        }
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background: var(--nav-link-bg);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 12px;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        .theme-toggle:hover {
-            background: var(--nav-link-hover);
+        .last-updated {
+            font-style: italic;
+            color: var(--text-secondary);
+            opacity: 0.8;
+            margin-bottom: 30px;
         }
     </style>
     <script src="js/main.js"></script>
-    <script src="js/header.js" defer></script>
-    <script src="js/footer.js" defer></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 </head>
 <body>
     <div class="container">
-        
         <h1>Terms of Service</h1>
-        <p class="last-updated">Last updated: September 29, 2025</p>
-        
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing and using TeslaLink ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to these terms, please do not use our service.</p>
-        
-        <h2>2. Description of Service</h2>
-        <p>TeslaLink is a web-based platform designed to help Tesla vehicle owners discover, organize, and access Tesla-compatible web applications. Our service provides:</p>
-        <ul>
-            <li>Curated collection of Tesla-optimized web applications</li>
-            <li>Ability to add and organize custom apps</li>
-            <li>Cross-device synchronization of app preferences</li>
-            <li>Tesla-friendly interface design</li>
-        </ul>
-        
-        <h2>3. User Responsibilities</h2>
-        <p>As a user of TeslaLink, you agree to:</p>
-        <ul>
-            <li>Use the service only for lawful purposes</li>
-            <li>Not attempt to reverse engineer or interfere with the service</li>
-            <li>Not add malicious or inappropriate content</li>
-            <li>Respect the terms of service of external apps you access through our platform</li>
-            <li>Not use automated tools to access or scrape our service</li>
-        </ul>
-        
+        <p class="last-updated">Last updated: October 26, 2023</p>
+
+        <p>Welcome to TeslaLink! These Terms of Service ("Terms") govern your use of the TeslaLink web application (the "Service"). By accessing or using the Service, you agree to be bound by these Terms.</p>
+
+        <h2>1. Use of the Service</h2>
+        <p>TeslaLink is provided as a free tool to enhance your browsing experience in a Tesla vehicle. You agree to use the Service responsibly and in compliance with all applicable laws. You are solely responsible for the third-party websites and applications you choose to access through the Service.</p>
+
+        <h2>2. No Warranty</h2>
+        <p>The Service is provided on an "AS IS" and "AS AVAILABLE" basis, without any warranties of any kind, express or implied. We do not warrant that the Service will be uninterrupted, error-free, or secure. We do not guarantee the availability, accuracy, or reliability of any third-party services accessed through TeslaLink.</p>
+        <p>Use of the Service is at your own risk. We are not affiliated with, endorsed by, or connected to Tesla, Inc.</p>
+
+        <h2>3. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, in no event shall TeslaLink or its creators be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, arising from your use of the Service or any third-party sites accessed through it.</p>
+        <p>This includes, but is not limited to, any damages resulting from your reliance on the Service, or from errors, interruptions, or deletions of information. Our total liability for any claim arising out of these Terms or the Service will not exceed $0 USD.</p>
+
         <h2>4. Intellectual Property</h2>
-        <ul>
-            <li>TeslaLink and its original content are owned by TeslaLink and protected by intellectual property laws</li>
-            <li>External apps and their content remain the property of their respective owners</li>
-            <li>You retain ownership of any custom apps or content you add to your collection</li>
-        </ul>
-        
-        <h2>5. Privacy and Data</h2>
-        <p>Your privacy is important to us. Please review our <a href="/privacy-policy.html">Privacy Policy</a> to understand how we collect, use, and protect your information.</p>
-        
-        <h2>6. Third-Party Content</h2>
-        <ul>
-            <li>TeslaLink provides links to external applications and websites</li>
-            <li>We are not responsible for the content, privacy practices, or terms of service of external apps</li>
-            <li>Use of external apps is at your own risk and subject to their respective terms</li>
-        </ul>
-        
-        <h2>7. Disclaimers</h2>
-        <ul>
-            <li>TeslaLink is provided "as is" without warranties of any kind</li>
-            <li>We do not guarantee continuous, uninterrupted access to the service</li>
-            <li>We are not affiliated with Tesla, Inc. and this is an unofficial third-party service</li>
-            <li>Use while driving may be subject to local laws and Tesla's terms of use</li>
-        </ul>
-        
-        <h2>8. Limitation of Liability</h2>
-        <p>TeslaLink and its operators shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from:</p>
-        <ul>
-            <li>Use or inability to use the service</li>
-            <li>Unauthorized access to your data</li>
-            <li>Content or conduct of third-party applications</li>
-            <li>Any interruption or cessation of service</li>
-        </ul>
-        
-        <h2>9. Service Modifications</h2>
-        <p>We reserve the right to:</p>
-        <ul>
-            <li>Modify or discontinue the service at any time</li>
-            <li>Update these terms of service with reasonable notice</li>
-            <li>Remove or modify content that violates these terms</li>
-        </ul>
-        
-        <h2>10. Termination</h2>
-        <p>We may terminate or suspend access to our service immediately, without prior notice, for conduct that we believe violates these terms or is harmful to other users or us.</p>
-        
-        <h2>11. Governing Law</h2>
-        <p>These terms shall be interpreted and governed in accordance with the laws of the jurisdiction where TeslaLink operates, without regard to conflict of law provisions.</p>
-        
-        <h2>13. Contact Information</h2>
-        <p>If you have questions about these Terms of Service, please contact us at:</p>
-        <ul>
-            <li>Website: <a href="https://tristankuo.github.io/teslalink">https://tristankuo.github.io/teslalink</a></li>
-            <li>Support: <a href="https://ko-fi.com/teslalink">https://ko-fi.com/teslalink</a></li>
-        </ul>
-        
-        <p><em>By continuing to use TeslaLink, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</em></p>
-        
+        <p>The Service and its original content, features, and functionality are and will remain the exclusive property of TeslaLink and its licensors. The Service is protected by copyright, trademark, and other laws. Our trademarks may not be used in connection with any product or service without our prior written consent.</p>
+
+        <h2>5. Changes to These Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. We will notify you of any changes by posting the new Terms on this page. By continuing to use the Service after those revisions become effective, you agree to be bound by the revised Terms.</p>
+
+        <h2>6. Governing Law</h2>
+        <p>These Terms shall be governed by the laws of the jurisdiction in which the creators of TeslaLink reside, without regard to its conflict of law provisions.</p>
+
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions about these Terms, please <a href="contact.html">contact us</a>.</p>
     </div>
 </body>
 </html>

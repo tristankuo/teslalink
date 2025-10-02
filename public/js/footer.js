@@ -7,7 +7,7 @@ function createFooter() {
             <a href="/teslalink/about.html" class="nav-link">ℹ️ About</a>
             <a href="/teslalink/contact.html" class="nav-link">💬 Contact</a>
             <a href="/teslalink/privacy-policy.html" class="nav-link">🔒 Privacy Policy</a>
-            <a href="/teslalink/donate.html" class="nav-link">❤️ Donate</a>
+            <a href="/teslalink/terms-of-service.html" class="nav-link">📜 Terms of Service</a>
         </div>
         <p style="text-align: center; color: var(--text-muted); margin-top: 20px; font-size: 0.9em;">
             <em>TeslaLink is an independent project and is not affiliated with Tesla, Inc.</em>

@@ -5,33 +5,27 @@
     <link rel="icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Master your Tesla browser with expert tips and tricks. Maximize performance, discover hidden features, and optimize your Tesla web experience." />
-    <title>Tesla Browser Tips & Tricks - Master Your Tesla Web Experience | TeslaLink</title>
+    <meta name="description" content="Tips and tricks for getting the most out of your Tesla's web browser with TeslaLink." />
+    <title>Tesla Browser Tips & Tricks</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            --container-bg-light: rgba(255, 255, 255, 0.95);
+            --container-bg-light: rgba(255, 255, 255, 0.98);
             --container-bg-dark: rgba(42, 42, 42, 0.95);
             --text-primary-light: #2c3e50;
             --text-primary-dark: #ecf0f1;
             --text-secondary-light: #34495e;
             --text-secondary-dark: #bdc3c7;
-            --text-muted-light: #7f8c8d;
-            --text-muted-dark: #95a5a6;
-            --link-color-light: #3498db;
+            --link-color-light: #2980b9;
             --link-color-dark: #85c1e9;
-            --nav-link-bg-light: #3498db;
-            --nav-link-bg-dark: #2980b9;
-            --nav-link-hover-light: #2980b9;
-            --nav-link-hover-dark: #3498db;
-            --feature-bg-light: #f8f9fa;
-            --feature-bg-dark: rgba(73, 80, 87, 0.3);
-            --faq-bg-light: #f8f9fa;
-            --faq-bg-dark: rgba(73, 80, 87, 0.3);
-            --highlight-bg-light: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-            --highlight-bg-dark: linear-gradient(120deg, #2c3e50 0%, #34495e 100%);
+            --tip-bg-light: #ffffff;
+            --tip-bg-dark: rgba(73, 80, 87, 0.3);
+            --button-bg-light: #3498db;
+            --button-bg-dark: #2980b9;
+            --button-hover-light: #2980b9;
+            --button-hover-dark: #3498db;
         }
         
         [data-theme="light"] {
@@ -39,13 +33,10 @@
             --container-bg: var(--container-bg-light);
             --text-primary: var(--text-primary-light);
             --text-secondary: var(--text-secondary-light);
-            --text-muted: var(--text-muted-light);
             --link-color: var(--link-color-light);
-            --nav-link-bg: var(--nav-link-bg-light);
-            --nav-link-hover: var(--nav-link-hover-light);
-            --feature-bg: var(--feature-bg-light);
-            --faq-bg: var(--faq-bg-light);
-            --highlight-bg: var(--highlight-bg-light);
+            --tip-bg: var(--tip-bg-light);
+            --button-bg: var(--button-bg-light);
+            --button-hover: var(--button-hover-light);
         }
         
         [data-theme="dark"] {
@@ -53,182 +44,104 @@
             --container-bg: var(--container-bg-dark);
             --text-primary: var(--text-primary-dark);
             --text-secondary: var(--text-secondary-dark);
-            --text-muted: var(--text-muted-dark);
             --link-color: var(--link-color-dark);
-            --nav-link-bg: var(--nav-link-bg-dark);
-            --nav-link-hover: var(--nav-link-hover-dark);
-            --feature-bg: var(--feature-bg-dark);
-            --faq-bg: var(--faq-bg-dark);
-            --highlight-bg: var(--highlight-bg-dark);
+            --tip-bg: var(--tip-bg-dark);
+            --button-bg: var(--button-bg-dark);
+            --button-hover: var(--button-hover-dark);
         }
         
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             background: var(--bg-gradient);
+            color: var(--text-secondary);
             min-height: 100vh;
             margin: 0;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, color 0.3s ease;
         }
         .container {
             background: var(--container-bg);
             border-radius: 20px;
             padding: 40px;
             margin: 40px auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            max-width: 1200px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            max-width: 1100px;
             transition: background 0.3s ease;
         }
-        h1 { color: var(--text-primary); margin-bottom: 30px; transition: color 0.3s ease; }
-        h2 { color: var(--text-secondary); margin-top: 30px; margin-bottom: 20px; transition: color 0.3s ease; }
-        h3 { color: var(--text-primary); margin-bottom: 10px; transition: color 0.3s ease; }
-        p, li { color: var(--text-secondary); transition: color 0.3s ease; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0; }
-        .feature-card { 
-            background: var(--feature-bg); 
-            padding: 20px; 
-            border-radius: 10px; 
-            border-left: 4px solid var(--link-color);
-            transition: background 0.3s ease;
-        }
-        .faq-item { 
-            background: var(--faq-bg); 
-            padding: 20px; 
-            border-radius: 8px; 
-            margin-bottom: 15px;
-            transition: background 0.3s ease;
-        }
-        .faq-item h4 { color: var(--text-primary); margin-bottom: 10px; }
-        .feature-card h3 { color: var(--text-primary); margin-bottom: 10px; }
+        h1, h2 { color: var(--text-primary); transition: color 0.3s ease; }
+        h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; }
+        h2 { margin-top: 40px; margin-bottom: 20px; }
+        p { line-height: 1.7; }
         a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
         a:hover { text-decoration: underline; }
-        .nav-link { 
-            display: inline-block; 
-            margin: 10px 5px; 
-            padding: 12px 24px; 
-            background: var(--nav-link-bg); 
-            color: white; 
-            border-radius: 8px; 
-            text-decoration: none;
-            transition: all 0.3s ease;
+        
+        .tip-card {
+            background: var(--tip-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--link-color);
+            transition: background 0.3s ease, transform 0.2s ease;
         }
-        .nav-link:hover { 
-            background: var(--nav-link-hover); 
-            color: white; 
-            text-decoration: none;
+        .tip-card:hover { transform: translateY(-5px); }
+        .tip-card h3 { margin-top: 0; font-size: 1.5rem; }
+        
+        .main-cta {
+            text-align: center;
+            margin: 40px 0 20px;
         }
-        .highlight { 
-            background: var(--highlight-bg); 
-            padding: 20px; 
-            border-radius: 10px; 
-            margin: 20px 0;
-            transition: background 0.3s ease;
-        }
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background: var(--nav-link-bg);
+        .main-cta .cta-button {
+            padding: 15px 35px;
+            background-color: var(--button-bg);
             color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 12px;
-            z-index: 1000;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
-        .theme-toggle:hover {
-            background: var(--nav-link-hover);
+        .main-cta .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
     </style>
     <script src="js/main.js"></script>
-    <script src="js/header.js" defer></script>
-    <script src="js/footer.js" defer></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 </head>
 <body>
     <div class="container">
-        
-        <h1>🔧 Essential Tesla Browser Tips</h1>
-        <p class="lead">Unlock the full potential of your Tesla's browser. These essential tips will help you enhance performance, streamline navigation, and make your in-car web experience smoother and more enjoyable.</p>
-        
-        <div class="highlight">
-            <h3>🎯 Why Master Your Tesla Browser?</h3>
-            <p>Your Tesla's browser is more powerful than you might think. With the right knowledge, you can transform it into a productivity powerhouse and entertainment center that rivals any tablet experience, especially when using <a href="/">TeslaLink</a>.</p>
-        </div>
-        
-        <h2>🚀 Core Tips for a Smooth Experience</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3>Keep it Fast & Clean</h3>
-                <p>For optimal speed, regularly clear your browser's cache to prevent it from getting bloated. You can do this in the browser's settings. Also, while multiple tabs are useful, try to keep only a few essential ones open to conserve resources.</p>
-            </div>
-            
-            <div class="feature-card">
-                <h3>Master Navigation</h3>
-                <p>Use touch gestures like pinch-to-zoom and two-finger scrolling. Organize your favorite sites with bookmarks for quick access, and use voice commands like "Navigate to..." for hands-free browsing when it's safe to do so.</p>
-            </div>
+        <h1 class="text-center">Tesla Browser Tips & Tricks</h1>
+        <p class="lead text-center" style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 30px auto;">Unlock the full potential of your Tesla's web browser with these helpful tips, designed to work perfectly with TeslaLink.</p>
 
-            <div class="feature-card">
-                <h3>Stay Connected</h3>
-                <p>Whenever possible, connect to a trusted Wi-Fi network (like at home or a Supercharger) instead of relying on cellular data. Wi-Fi is often faster and more stable, providing a better streaming and browsing experience.</p>
-            </div>
-        </div>
-        
-        <h2>🛡️ Safety & Security First</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3>Browse Privately</h3>
-                <p>Use the browser's private or incognito mode when handling sensitive information like banking, or if you're using a shared Tesla. This prevents your history and data from being saved on the vehicle.</p>
-            </div>
-            
-            <div class="feature-card">
-                <h3>Block Annoyances</h3>
-                <p>For a cleaner and safer experience, enable the pop-up blocker in your browser's settings. This helps prevent intrusive ads and malicious pop-ups from interrupting your session.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Set Your Home Base</h3>
-                <p>Set <a href="/">TeslaLink</a> as your browser's homepage. This gives you immediate access to a curated collection of web apps every time you open the browser.</p>
-            </div>
+        <div class="tip-card">
+            <h3>Bookmark for Instant Access</h3>
+            <p>The most important tip: bookmark TeslaLink! When you have the site open, tap the star icon or "Add to Favorites" in the browser's address bar. This makes launching your dashboard as simple as opening the browser and tapping a single button.</p>
         </div>
 
-        <div class="highlight">
-            <h4>⚠️ Safety First!</h4>
-            <p><strong>Important:</strong> Always prioritize safety. Only use the browser when your vehicle is in Park and it is safe and legal to do so. Never let the browser distract you from driving.</p>
-        </div>
-        
-        <h2>❓ Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h4>How do I add TeslaLink to my Tesla?</h4>
-            <p>Simply open your Tesla's browser and navigate to <a href="/">TeslaLink</a>. You can bookmark it for easy access later. No installation required!</p>
-        </div>
-        
-        <div class="faq-item">
-            <h4>Why aren't my apps syncing between devices?</h4>
-            <p>App syncing uses your browser's localStorage. Make sure you're using the same browser and that you haven't cleared your browser data. The sync happens automatically when you make changes.</p>
-        </div>
-        
-        <div class="faq-item">
-            <h4>Can I suggest new apps to add?</h4>
-            <p>Absolutely! We're always looking for new Tesla-compatible apps. Contact us through Ko-fi with your suggestions. We prioritize apps that work well on touchscreens and load quickly.</p>
-        </div>
-        
-        <div class="faq-item">
-            <h4>Is TeslaLink officially affiliated with Tesla?</h4>
-            <p>No, TeslaLink is an independent project created by Tesla owners for Tesla owners. We are not affiliated with Tesla, Inc.</p>
-        </div>
-        
-        <div class="faq-item">
-            <h4>Is my data secure?</h4>
-            <p>Yes! Your app preferences and custom apps are stored locally in your browser. We don't collect or store your personal app data on our servers. Check our <a href="privacy-policy.html">Privacy Policy</a> for full details.</p>
-        </div>
-        
-        <div class="faq-item">
-            <h4>What Tesla models are supported?</h4>
-            <p>TeslaLink works on all Tesla models with web browser capability, including Model S, Model 3, Model X, Model Y, and Cybertruck. The interface automatically adapts to different screen sizes.</p>
+        <div class="tip-card">
+            <h3>Mastering Fullscreen Video</h3>
+            <p>The Tesla browser doesn't have a native fullscreen button, but TeslaLink provides a solution. Use the "Fullscreen" button on the dashboard to create a synchronized, address bar-free viewing window. Launch a video app, and it will play in that clean, immersive view. This is perfect for YouTube, Netflix, and other streaming services.</p>
         </div>
 
-        <p style="text-align: center; color: var(--text-muted); margin-top: 30px;"><em>Tips are based on current Tesla software and may vary slightly by model and version. Last updated: September 29, 2025</em></p>
+        <div class="tip-card">
+            <h3>Use the QR Scanner for Easy App Adding</h3>
+            <p>Typing long URLs in the car is a hassle. Instead, use TeslaLink's "Scan QR" feature. Find the website you want on your phone, use your phone's share feature to create a QR code for the URL, and then scan it with your Tesla's screen. It's the fastest way to build your custom dashboard.</p>
+        </div>
+
+        <div class="tip-card">
+            <h3>Keep Your Driver Profile</h3>
+            <p>Your TeslaLink dashboard is saved in the browser's local storage, which is tied to your Tesla's driver profile. If you share your car, your custom app layout will be there when you return to your profile.</p>
+        </div>
+
+        <div class="tip-card">
+            <h3>Clearing Browser Data</h3>
+            <p>If you ever experience issues with TeslaLink or another website, try clearing your browser's data. You can do this in the car's settings. <strong>Warning:</strong> This will erase all saved data, including your custom TeslaLink dashboard, so use it as a last resort.</p>
+        </div>
+
+        <div class="main-cta">
+            <a href="tesla-apps-guide.html" class="cta-button">View the Full User Guide</a>
+        </div>
     </div>
 </body>
 </html>

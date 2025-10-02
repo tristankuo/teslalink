@@ -56,12 +56,24 @@ function MainApp() {
   });
   const [showRegionSelector, setShowRegionSelector] = useState(false);
 
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('teslalink_theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme) {
+      return savedTheme;
+    } else if (prefersDark) {
+      return 'dark';
+    } else {
+      return 'light';
+    }
+  });
+
   // Helper function to generate the correct QR URL based on environment
-  const getQRUrl = (sessionId: string, theme: string) => {
+  const getQRUrl = useCallback((sessionId: string, theme: string) => {
     const origin = window.location.origin;
     const basePath = window.location.hostname === 'tristankuo.github.io' ? '/teslalink' : '';
     return `${origin}${basePath}/add-app/${sessionId}?theme=${theme}`;
-  };
+  }, []);
 
   const clientId = useMemo(() => {
     const rnd = Math.random().toString(36).slice(2);
@@ -296,22 +308,11 @@ function MainApp() {
         });
       };
     }
-  }, [showAppModal, modalMode, appNameInput, appUrlInput]);
+  }, [showAppModal, modalMode, appNameInput, appUrlInput, getQRUrl, theme]);
 
 
   const [appItems, setAppItems] = useState<AppItem[]>([]);
   const [showKoFi, setShowKoFi] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('teslalink_theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (savedTheme) {
-      return savedTheme;
-    } else if (prefersDark) {
-      return 'dark';
-    } else {
-      return 'light';
-    }
-  });
   const [backgroundUrl] = useState(() => {
     const fullImagePaths = imageNames.map((name: string) => `${process.env.PUBLIC_URL}/images/${name}`);
     const randomIndex = Math.floor(Math.random() * fullImagePaths.length);

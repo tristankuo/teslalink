@@ -6,53 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="About TeslaLink - The ultimate, customizable app dashboard for your Tesla browser." />
-    <title>About TeslaLink - Your Tesla App Hub</title>
+    <title>About - TeslaLink</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            --container-bg-light: rgba(255, 255, 255, 0.98);
-            --container-bg-dark: rgba(42, 42, 42, 0.95);
-            --text-primary-light: #2c3e50;
-            --text-primary-dark: #ecf0f1;
-            --text-secondary-light: #34495e;
-            --text-secondary-dark: #bdc3c7;
-            --link-color-light: #2980b9;
-            --link-color-dark: #85c1e9;
-            --feature-bg-light: #ffffff;
-            --feature-bg-dark: rgba(73, 80, 87, 0.3);
-            --highlight-bg-light: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-            --highlight-bg-dark: linear-gradient(120deg, #2980b9 0%, #2c3e50 100%);
-            --button-bg-light: #3498db;
-            --button-bg-dark: #2980b9;
-            --button-hover-light: #2980b9;
-            --button-hover-dark: #3498db;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --container-bg: rgba(255, 255, 255, 0.98);
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            --link-color: #2980b9;
+            --feature-bg: #ffffff;
+            --highlight-bg: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            --button-bg: #3498db;
+            --button-hover: #2980b9;
         }
         
-        [data-theme="light"] {
-            --bg-gradient: var(--bg-gradient-light);
-            --container-bg: var(--container-bg-light);
-            --text-primary: var(--text-primary-light);
-            --text-secondary: var(--text-secondary-light);
-            --link-color: var(--link-color-light);
-            --feature-bg: var(--feature-bg-light);
-            --highlight-bg: var(--highlight-bg-light);
-            --button-bg: var(--button-bg-light);
-            --button-hover: var(--button-hover-light);
-        }
-        
-        [data-theme="dark"] {
-            --bg-gradient: var(--bg-gradient-dark);
-            --container-bg: var(--container-bg-dark);
-            --text-primary: var(--text-primary-dark);
-            --text-secondary: var(--text-secondary-dark);
-            --link-color: var(--link-color-dark);
-            --feature-bg: var(--feature-bg-dark);
-            --highlight-bg: var(--highlight-bg-dark);
-            --button-bg: var(--button-bg-dark);
-            --button-hover: var(--button-hover-dark);
-        }
         
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -60,7 +28,6 @@
             color: var(--text-secondary);
             min-height: 100vh;
             margin: 0;
-            transition: background 0.3s ease, color 0.3s ease;
         }
         .container {
             background: var(--container-bg);
@@ -69,13 +36,12 @@
             margin: 40px auto;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
             max-width: 1100px;
-            transition: background 0.3s ease;
         }
-        h1, h2, h3 { color: var(--text-primary); transition: color 0.3s ease; }
+        h1, h2, h3 { color: var(--text-primary); }
         h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; }
         h2 { margin-top: 40px; margin-bottom: 20px; }
         p { line-height: 1.7; }
-        a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
+        a { color: var(--link-color); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
         .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 0; }
@@ -84,7 +50,6 @@
             padding: 25px; 
             border-radius: 15px; 
             border-left: 5px solid var(--link-color);
-            transition: background 0.3s ease, transform 0.2s ease;
         }
         .feature-card:hover { transform: translateY(-5px); }
         .feature-card h3 { margin-bottom: 10px; font-size: 1.3rem; }
@@ -134,7 +99,6 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
     </style>
-    <script src="js/main.js"></script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
 </head>
@@ -144,7 +108,7 @@
         <p class="lead text-center" style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 30px auto;">The ultimate, customizable app dashboard for your Tesla browser. Transform your in-car screen into a powerful, touch-friendly hub for your favorite web apps.</p>
         
         <div class="main-cta">
-            <a href="/" class="cta-button back-link">Launch TeslaLink</a>
+            <a href="/" class="cta-button back-link">Back</a>
         </div>
         
         <h2>What is TeslaLink?</h2>

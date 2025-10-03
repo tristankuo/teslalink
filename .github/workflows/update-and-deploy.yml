@@ -76,7 +76,7 @@ jobs:
 
       - name: 📦 Install full deps for build
         run: |
-          npm ci --no-audit --prefer-offline --legacy-peer-deps
+          npm install --legacy-peer-deps
 
       - name: � Write .env for build (Firebase config)
         env:

@@ -8,7 +8,7 @@ import LiveChannelsGrid from './components/LiveChannelsGrid';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
 import { initGA, trackPageView } from './utils/analytics';
-import { database } from './utils/firebase';
+import { database, isFirebaseAvailable } from './utils/firebase';
 import { ref, set, onValue, remove, get, query, orderByChild, endAt, update } from 'firebase/database';
 import { QRCodeSVG as QRCode } from 'qrcode.react';
 
@@ -237,15 +237,20 @@ function MainApp() {
   }, [commitToStorage]);
 
   useEffect(() => {
-    // Monitor Firebase connectivity
+    if (!isFirebaseAvailable || !database) return;
+    // Monitor Firebase connectivity (no-op on GH Pages)
     const testRef = ref(database, '.info/connected');
-    onValue(testRef, (snapshot) => {
-      // Firebase connection status available for debugging if needed
-    });
+    const off = onValue(testRef, () => {});
+    return () => off();
   }, []);
 
   useEffect(() => {
     if (showAppModal) {
+      if (!isFirebaseAvailable || !database) {
+        // On GH Pages we can't create QR sessions; keep modal functional without QR preview
+        setQrSessionId(null);
+        return;
+      }
       const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
       setQrSessionId(newSessionId);
       const sessionRef = ref(database, `qr_sessions/${newSessionId}`);
@@ -335,6 +340,10 @@ function MainApp() {
 
   const cleanupStaleSessions = useCallback(async () => {
     console.log('[CLEANUP] Running stale session cleanup...');
+    if (!isFirebaseAvailable || !database) {
+      // Not available in this environment
+      return;
+    }
     const sessionsRef = ref(database, 'qr_sessions');
     const oneHourAgo = Date.now() - 60 * 60 * 1000;
 
@@ -469,25 +478,36 @@ function MainApp() {
   const toggleFullscreen = () => {
     const committedApps = loadFromStorage('Enter Fullscreen');
     const appsToSync = committedApps || appItems;
-  
+
     if (appsToSync.length === 0) {
       alert('There are no apps to show in fullscreen.');
       return;
     }
-  
+
+    if (!isFirebaseAvailable || !database) {
+      // Fallback: encode apps in URL for fullscreen session when Firebase is unavailable
+      try {
+        const encoded = btoa(JSON.stringify(appsToSync));
+        const url = new URL(window.location.href);
+        url.searchParams.set('apps', encoded);
+        url.searchParams.delete('fullscreen_session');
+        window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
+      } catch (e) {
+        console.error('[FS] Failed to prepare URL-based fullscreen payload', e);
+        alert('Failed to prepare fullscreen mode.');
+      }
+      return;
+    }
+
     const sessionId = `fs-session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
     const sessionRef = ref(database, `fullscreen_sessions/${sessionId}`);
-    
-    const sessionData = {
-      apps: appsToSync,
-      createdAt: Date.now(),
-    };
-  
+    const sessionData = { apps: appsToSync, createdAt: Date.now() };
+
     set(sessionRef, sessionData)
       .then(() => {
         const url = new URL(window.location.href);
         url.searchParams.set('fullscreen_session', sessionId);
-        url.searchParams.delete('apps'); // Remove old param
+        url.searchParams.delete('apps');
         window.open(`https://www.youtube.com/redirect?q=${encodeURIComponent(url.toString())}`, '_blank');
       })
       .catch((error) => {
@@ -511,6 +531,12 @@ function MainApp() {
     };
 
     if (fullscreenSessionId) {
+      if (!isFirebaseAvailable || !database) {
+        console.warn('[INIT-FS] fullscreen_session present but Firebase unavailable; skipping session load');
+        setUrlLoadingComplete(true);
+        cleanupUrl();
+        return;
+      }
       const sessionRef = ref(database, `fullscreen_sessions/${fullscreenSessionId}`);
       get(sessionRef).then((snapshot) => {
         if (snapshot.exists()) {

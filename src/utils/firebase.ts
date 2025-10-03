@@ -1,6 +1,8 @@
-import { initializeApp } from 'firebase/app';
-import { getDatabase } from 'firebase/database';
+import { initializeApp, type FirebaseApp } from 'firebase/app';
+import { getDatabase, type Database } from 'firebase/database';
 
+
+// Read config from env (production) and decide availability
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -11,10 +13,26 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Enable Firebase when minimum config is present (works on GH Pages too)
+export const isFirebaseAvailable: boolean = !!firebaseConfig.projectId && !!firebaseConfig.databaseURL;
 
-// Get a reference to the database service
-const database = getDatabase(app);
+let app: FirebaseApp | null = null;
+let database: Database | null = null;
+
+if (isFirebaseAvailable) {
+  try {
+    app = initializeApp(firebaseConfig);
+    database = getDatabase(app);
+  } catch (err) {
+    // If initialization fails for any reason, keep the app functional without Firebase
+    // eslint-disable-next-line no-console
+    console.error('[Firebase] Initialization failed; continuing without Firebase:', err);
+    app = null;
+    database = null;
+  }
+} else {
+  // eslint-disable-next-line no-console
+  console.info('[Firebase] Disabled in this environment. Running without realtime features.');
+}
 
 export { database };

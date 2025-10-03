@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import { database } from '../utils/firebase';
+import { database, isFirebaseAvailable } from '../utils/firebase';
 import { ref, set, onValue } from 'firebase/database';
 
 const AddAppQR: React.FC = () => {
@@ -47,7 +47,18 @@ const AddAppQR: React.FC = () => {
       return;
     }
 
-    const sessionRef = ref(database, `qr_sessions/${sessionId}`);
+    // If Firebase is not available (e.g., on GitHub Pages), redirect to production host
+    if (!isFirebaseAvailable || !database) {
+      const origin = 'https://myteslalink.web.app';
+      const search = new URLSearchParams(window.location.search);
+      const themeParam = search.get('theme') || 'light';
+      const redirectUrl = `${origin}/add-app/${sessionId}?theme=${encodeURIComponent(themeParam)}`;
+      window.location.replace(redirectUrl);
+      return;
+    }
+
+  // At this point we know database is non-null due to the guard above
+  const sessionRef = ref(database!, `qr_sessions/${sessionId}`);
 
     // Use onValue for real-time listening. It will fire immediately with the
     // current state and then update on any changes.
@@ -103,7 +114,8 @@ const AddAppQR: React.FC = () => {
     }
 
     if (sessionId) {
-      const sessionRef = ref(database, `qr_sessions/${sessionId}`);
+  if (!isFirebaseAvailable || !database) return;
+  const sessionRef = ref(database!, `qr_sessions/${sessionId}`);
       if (window.location.hostname === 'myteslalink.web.app') {
         console.log('[PROD-DEBUG] Submitting form:', { name: appName.trim(), url: urlToSave });
       }

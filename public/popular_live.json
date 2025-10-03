@@ -1,54 +1,6 @@
 {
-  "lastUpdated": "2025-10-03T08:00:14.507Z",
+  "lastUpdated": "2025-10-03T08:07:55.374Z",
   "Global": [
-    {
-      "channel": "Thanthi TV",
-      "title": "🔴LIVE : S.Ve.Shekher Latest Press Meet | நடிகர் எஸ்.வி.சேகர் பரபரப்பு பிரஸ்மீட்",
-      "url": "https://www.youtube.com/watch?v=-FbZi_XPxj8",
-      "type": "news",
-      "publishedAt": "2025-10-03T06:50:58Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/-FbZi_XPxj8/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/-FbZi_XPxj8/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/-FbZi_XPxj8/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "NewsTamil 24X7",
-      "title": "🔴LIVE : TVK Vijay | விஜய் வழக்கில் திடீர் ட்விஸ்ட்  | TVK Karur Issue | Bussy Anand | TVK",
-      "url": "https://www.youtube.com/watch?v=4C1RZ-8eG54",
-      "type": "news",
-      "publishedAt": "2025-10-03T06:31:54Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/4C1RZ-8eG54/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/4C1RZ-8eG54/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/4C1RZ-8eG54/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
     {
       "channel": "Thanthi TV",
       "title": "🔴LIVE: TVK Karur Stampede | TVK Vijay Campaign |&quot;எப்படி அனுமதி அளித்தீர்கள்&quot; - நீதிபதி சரமாரி கேள்வி",
@@ -74,218 +26,48 @@
       }
     },
     {
-      "channel": "NewsTamil 24X7",
-      "title": "🔴LIVE : முதல்வர் மு.க.ஸ்டாலின் உரை | MK Stalin Speech | CM Stalin | CM Stalin Latest Speech | DMK",
-      "url": "https://www.youtube.com/watch?v=2HG8hvrisCY",
+      "channel": "Thanthi TV",
+      "title": "🔴LIVE: TVK Karur Stampede | TVK Vijay Campaign | விஜய் வழக்கில் நீதிபதி அதிரடி உத்தரவு",
+      "url": "https://www.youtube.com/watch?v=J8r79XOAGBI",
       "type": "news",
-      "publishedAt": "2025-10-03T04:28:14Z",
+      "publishedAt": "2025-10-03T01:10:18Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/2HG8hvrisCY/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/J8r79XOAGBI/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/2HG8hvrisCY/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/J8r79XOAGBI/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/2HG8hvrisCY/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/J8r79XOAGBI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "NDTV Profit",
-      "title": "Share Bazaar LIVE | Top Stocks To Buy | NDTV Profit Ask Profit | Stock Market LIVE News",
-      "url": "https://www.youtube.com/watch?v=CjbiSDr85Zo",
+      "channel": "Thanthi TV",
+      "title": "🔴LIVE: Today Headlines | மதியம் 1 மணி தலைப்புச் செய்திகள் (03.10.2025)| 1 PM Headlines | ThanthiTV",
+      "url": "https://www.youtube.com/watch?v=5NOp5GoDygk",
       "type": "news",
-      "publishedAt": "2025-10-03T02:16:37Z",
+      "publishedAt": "2025-10-03T00:03:09Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/CjbiSDr85Zo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/5NOp5GoDygk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/CjbiSDr85Zo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/5NOp5GoDygk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/CjbiSDr85Zo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "NDTV Profit",
-      "title": "Share Market Open LIVE | Top Stocks To Watch In Trade Today | Stock Market LIVE Today",
-      "url": "https://www.youtube.com/watch?v=3vRXAz9rp_8",
-      "type": "news",
-      "publishedAt": "2025-10-03T02:12:20Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/3vRXAz9rp_8/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/3vRXAz9rp_8/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/3vRXAz9rp_8/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "NDTV Profit",
-      "title": "Stock Market LIVE Today | Nifty LIVE | Share Market LIVE News | Stock Market Trading LIVE News",
-      "url": "https://www.youtube.com/watch?v=FZI8raDtVgQ",
-      "type": "news",
-      "publishedAt": "2025-10-03T02:12:01Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/FZI8raDtVgQ/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/FZI8raDtVgQ/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/FZI8raDtVgQ/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TV9 Bharatvarsh",
-      "title": "Top 100 News Live: आज की 100 बड़ी खबरें | Breaking News | PM Modi | Latest News | TV9",
-      "url": "https://www.youtube.com/watch?v=tkr3ZKHIsaA",
-      "type": "news",
-      "publishedAt": "2025-10-03T01:55:06Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/tkr3ZKHIsaA/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/tkr3ZKHIsaA/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/tkr3ZKHIsaA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    }
-  ],
-  "EU": [
-    {
-      "channel": "Hindustan Times",
-      "title": "Live: Massive Fire Breaks Out At Chevron Refinery In California Following A Huge Explosion",
-      "url": "https://www.youtube.com/watch?v=W0N_b2WwWUc",
-      "type": "news",
-      "publishedAt": "2025-10-03T06:59:01Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/W0N_b2WwWUc/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/W0N_b2WwWUc/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/W0N_b2WwWUc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Sky News",
-      "title": "Sky News Breakfast | Friday 3 October 2025",
-      "url": "https://www.youtube.com/watch?v=z2cfvZSLy8c",
-      "type": "news",
-      "publishedAt": "2025-10-02T13:11:18Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/z2cfvZSLy8c/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/z2cfvZSLy8c/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/z2cfvZSLy8c/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Euronews Romania",
-      "title": "LIVE. Euronews România",
-      "url": "https://www.youtube.com/watch?v=EsbQbfvNHQo",
-      "type": "news",
-      "publishedAt": "2025-09-30T17:04:20Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/EsbQbfvNHQo/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/EsbQbfvNHQo/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/EsbQbfvNHQo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Euronews Albania",
-      "title": "Euronews Albania Live",
-      "url": "https://www.youtube.com/watch?v=JpsgYDJ_KgY",
-      "type": "news",
-      "publishedAt": "2025-09-24T12:35:26Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/JpsgYDJ_KgY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/JpsgYDJ_KgY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/JpsgYDJ_KgY/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/5NOp5GoDygk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -310,54 +92,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Citizen TV Kenya",
-      "title": "Citizen TV Live",
-      "url": "https://www.youtube.com/watch?v=YDaBv4FXI9w",
-      "type": "news",
-      "publishedAt": "2025-09-12T06:23:08Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Times Now World",
-      "title": "BREAKING NEWS LIVE | &#39;Russia declares... World war 3 has begun&#39; |West on High Alert |Times Now World",
-      "url": "https://www.youtube.com/watch?v=_8wJCTm2S_Q",
-      "type": "news",
-      "publishedAt": "2025-08-13T14:50:45Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/_8wJCTm2S_Q/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/_8wJCTm2S_Q/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/_8wJCTm2S_Q/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -386,172 +120,124 @@
           "height": 360
         }
       }
+    },
+    {
+      "channel": "TIMES NOW",
+      "title": "LIVE | Obama In Jail? Shocking Arrest In America On Trump Orders, Tulsi Unveils Charges? US News",
+      "url": "https://www.youtube.com/watch?v=xxWHOPJdS-w",
+      "type": "news",
+      "publishedAt": "2025-07-27T08:46:21Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/xxWHOPJdS-w/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/xxWHOPJdS-w/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/xxWHOPJdS-w/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "WION",
+      "title": "WION LIVE News | Latest News Updates From Across The World | English News | Top International News",
+      "url": "https://www.youtube.com/watch?v=JnttcoZFFI8",
+      "type": "news",
+      "publishedAt": "2025-01-01T09:55:41Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/JnttcoZFFI8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/JnttcoZFFI8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/JnttcoZFFI8/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "FRANCE 24 English",
+      "title": "FRANCE 24 English – LIVE – International Breaking News &amp; Top stories - 24/7 stream • FRANCE 24",
+      "url": "https://www.youtube.com/watch?v=Ap-UM1O9RBU",
+      "type": "news",
+      "publishedAt": "2024-06-21T08:37:25Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
     }
   ],
-  "AU": [
+  "EU": [
     {
-      "channel": "All Blacks",
-      "title": "🔴 Last 5 Years of Insane Battles! All Blacks vs Wallabies | All Blacks TV",
-      "url": "https://www.youtube.com/watch?v=1Hp-9h99av4",
+      "channel": "Times Now World",
+      "title": "BREAKING NEWS LIVE | &#39;Russia declares... World war 3 has begun&#39; |West on High Alert |Times Now World",
+      "url": "https://www.youtube.com/watch?v=_8wJCTm2S_Q",
       "type": "news",
-      "publishedAt": "2025-09-26T07:28:17Z",
+      "publishedAt": "2025-08-13T14:50:45Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/1Hp-9h99av4/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/_8wJCTm2S_Q/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/1Hp-9h99av4/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/_8wJCTm2S_Q/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/1Hp-9h99av4/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/_8wJCTm2S_Q/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "LiveNOW from FOX",
-      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
-      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
+      "channel": "WION",
+      "title": "WION LIVE News | Latest News Updates From Across The World | English News | Top International News",
+      "url": "https://www.youtube.com/watch?v=JnttcoZFFI8",
       "type": "news",
-      "publishedAt": "2025-09-20T12:20:56Z",
+      "publishedAt": "2025-01-01T09:55:41Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/JnttcoZFFI8/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/JnttcoZFFI8/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Discovery Australia",
-      "title": "GOLD RUSH TV With Tony Beets &amp; Parker Schnabel!!💰⛏️| 24/7 Livestream",
-      "url": "https://www.youtube.com/watch?v=ux1A3ioxlUk",
-      "type": "news",
-      "publishedAt": "2025-08-04T13:53:25Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/ux1A3ioxlUk/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/ux1A3ioxlUk/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/ux1A3ioxlUk/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "NewsTamil 24X7",
-      "title": "🔴LIVE NEWS TODAY: இன்றைய முக்கிய செய்திகள் | Today Breaking News Tamil | NewsTamil 24X7",
-      "url": "https://www.youtube.com/watch?v=gynWNinqmjw",
-      "type": "news",
-      "publishedAt": "2025-07-12T18:31:12Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/gynWNinqmjw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/gynWNinqmjw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/gynWNinqmjw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ABC News",
-      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
-      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
-      "type": "news",
-      "publishedAt": "2025-05-01T13:51:58Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "DW News",
-      "title": "DW News livestream | Headline news from around the world",
-      "url": "https://www.youtube.com/watch?v=LuKwFajn37U",
-      "type": "news",
-      "publishedAt": "2025-03-31T17:47:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/LuKwFajn37U/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/LuKwFajn37U/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/LuKwFajn37U/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "METRO TV ",
-      "title": "LIVE STREAMING 24 JAM METRO TV",
-      "url": "https://www.youtube.com/watch?v=-CwtcKDaaLA",
-      "type": "news",
-      "publishedAt": "2024-12-24T14:30:06Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/-CwtcKDaaLA/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/-CwtcKDaaLA/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/-CwtcKDaaLA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/JnttcoZFFI8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -580,390 +266,270 @@
           "height": 360
         }
       }
-    }
-  ],
-  "JP": [
+    },
     {
-      "channel": "AKHMON",
-      "title": "Pred NHK or What I  Apex Legends Live India",
-      "url": "https://www.youtube.com/watch?v=EYm0rfOzYVA",
+      "channel": "FRANCE 24 English",
+      "title": "FRANCE 24 English – LIVE – International Breaking News &amp; Top stories - 24/7 stream • FRANCE 24",
+      "url": "https://www.youtube.com/watch?v=Ap-UM1O9RBU",
       "type": "news",
-      "publishedAt": "2025-10-03T06:26:17Z",
+      "publishedAt": "2024-06-21T08:37:25Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/EYm0rfOzYVA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/EYm0rfOzYVA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/EYm0rfOzYVA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "NHK Forex",
-      "title": "NHK Forex&#39;s Live Trading GOLD and BTC",
-      "url": "https://www.youtube.com/watch?v=hXxaAuiz-jA",
+      "channel": "Bloomberg Podcasts",
+      "title": "Bloomberg Live: Business, Finance, Earnings &amp; Investment News | Watch 7AM - 6PM ET Weekdays",
+      "url": "https://www.youtube.com/watch?v=f39oHo6vFLg",
       "type": "news",
-      "publishedAt": "2025-10-03T05:08:43Z",
+      "publishedAt": "2024-01-23T20:59:02Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/hXxaAuiz-jA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/hXxaAuiz-jA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/hXxaAuiz-jA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "butsuguya(京都の祭、観光地をモバイルライブ配信)",
-      "title": "🔴🎥【LIVE】京都ライブカメラ 東本願寺 (KYOTO JAPAN LIVE CAMERA) 森信三郎商舗から生中継 即時影像 livecam　#nhk紅白歌合戦  #Ado #聖地",
-      "url": "https://www.youtube.com/watch?v=Y1XxYLwpJy4",
+      "channel": "euronews",
+      "title": "Euronews English Live",
+      "url": "https://www.youtube.com/watch?v=pykpO5kQJ98",
       "type": "news",
-      "publishedAt": "2025-10-03T04:13:35Z",
+      "publishedAt": "2022-12-12T16:24:46Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/Y1XxYLwpJy4/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/pykpO5kQJ98/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/Y1XxYLwpJy4/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/pykpO5kQJ98/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/Y1XxYLwpJy4/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/pykpO5kQJ98/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "野球JPニュース24 ",
-      "title": "【MLB速報】ドジャース球団一同驚愕！ロバーツ監督が衝撃発言！大谷が新ポジションに！フリーマンの意外な反応！",
-      "url": "https://www.youtube.com/watch?v=CO1Uy8A8lxw",
+      "channel": "euronews (en español)",
+      "title": "euronews en directo",
+      "url": "https://www.youtube.com/watch?v=O9mOtdZ-nSk",
       "type": "news",
-      "publishedAt": "2025-10-01T08:54:15Z",
+      "publishedAt": "2022-11-17T08:40:25Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/CO1Uy8A8lxw/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/O9mOtdZ-nSk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/CO1Uy8A8lxw/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/O9mOtdZ-nSk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/CO1Uy8A8lxw/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/O9mOtdZ-nSk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "野球JPニュース24 ",
-      "title": "大谷翔平選手、劇的サヨナラホームラン！186メートル、7打点！圧巻のパフォーマンス！56号ホームランとなる3ランに世界中が沸き返った！シンシナティ・レッズ戦…",
-      "url": "https://www.youtube.com/watch?v=PgS52JgbVPw",
+      "channel": "CNA",
+      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
+      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
       "type": "news",
-      "publishedAt": "2025-09-30T08:42:28Z",
+      "publishedAt": "2020-04-21T11:15:18Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/PgS52JgbVPw/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/PgS52JgbVPw/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/PgS52JgbVPw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "CONtv",
-      "title": "MXC Most Extreme Elimination Challenge",
-      "url": "https://www.youtube.com/watch?v=XTIQvSiXfUo",
-      "type": "news",
-      "publishedAt": "2025-09-27T19:36:38Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/XTIQvSiXfUo/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/XTIQvSiXfUo/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/XTIQvSiXfUo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "CONtv",
-      "title": "🔴 LIVE MXC: Most Extreme Elimination Challenge. NEW Episodes added!",
-      "url": "https://www.youtube.com/watch?v=6yv0YNJlHsc",
-      "type": "news",
-      "publishedAt": "2025-09-16T08:35:08Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/6yv0YNJlHsc/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/6yv0YNJlHsc/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/6yv0YNJlHsc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Nippon Television News Japan-English",
-      "title": "【LIVE】Tokyo Station　-Terminal for Shinkansen",
-      "url": "https://www.youtube.com/watch?v=-XTt2niAE8A",
-      "type": "news",
-      "publishedAt": "2025-07-20T17:04:29Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/-XTt2niAE8A/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/-XTt2niAE8A/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/-XTt2niAE8A/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     }
   ],
+  "AU": [],
+  "JP": [],
   "TW": [
     {
-      "channel": "民視新聞網 Formosa TV News network",
-      "title": "【直播完整版】1003 「中央強化韌性特別預算案」編製經過 行政院長卓榮泰立院報告備詢 (下午)｜民視快新聞｜",
-      "url": "https://www.youtube.com/watch?v=i0EAh8LQvMA",
+      "channel": "earthTV",
+      "title": "The World Live - Original Version | earthTV®",
+      "url": "https://www.youtube.com/watch?v=HfgIFGbdGJ0",
       "type": "news",
-      "publishedAt": "2025-10-03T05:27:56Z",
+      "publishedAt": "2023-10-12T20:43:35Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/i0EAh8LQvMA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/HfgIFGbdGJ0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/i0EAh8LQvMA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/HfgIFGbdGJ0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/i0EAh8LQvMA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/HfgIFGbdGJ0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "94要客訴",
-      "title": "【#現正直播】94要客訴之立院風雲 災後重建特別條例追加200億 卓榮泰赴立院備詢(下)",
-      "url": "https://www.youtube.com/watch?v=JTHk-9BSAzc",
+      "channel": "東部海岸國家風景區管理處",
+      "title": "【Live Cam】東海岸即時影像 - 三仙台｜Sanxiantai｜三仙台（さんせんたい）風景区 2160p",
+      "url": "https://www.youtube.com/watch?v=dQ7Sd6PGLdA",
       "type": "news",
-      "publishedAt": "2025-10-03T04:49:04Z",
+      "publishedAt": "2023-01-23T00:49:53Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/JTHk-9BSAzc/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/dQ7Sd6PGLdA/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/JTHk-9BSAzc/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/dQ7Sd6PGLdA/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/JTHk-9BSAzc/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/dQ7Sd6PGLdA/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "三立新聞網SETN",
-      "title": "【立院大現場 #直播中LIVE】災後重建特別條例追加200億 卓榮泰赴立院備詢(下)｜三立新聞網 SETN.com",
-      "url": "https://www.youtube.com/watch?v=jdphnHSG5ik",
+      "channel": "Kral Müzik",
+      "title": "Kral Pop TV - Canlı Yayın | Kralmuzik.com |",
+      "url": "https://www.youtube.com/watch?v=GuFTuKoXepw",
       "type": "news",
-      "publishedAt": "2025-10-03T04:48:54Z",
+      "publishedAt": "2022-04-05T16:56:03Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/jdphnHSG5ik/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/GuFTuKoXepw/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/jdphnHSG5ik/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/GuFTuKoXepw/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/jdphnHSG5ik/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/GuFTuKoXepw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Dmax Uncensored Intel",
-      "title": "RED ALERT - Demark Calls Up Troops -China Building Ferry Fleet To Invade Taiwan - Putin Drafts 135k",
-      "url": "https://www.youtube.com/watch?v=srev6BFcwno",
+      "channel": "メ〜テレニュース",
+      "title": "メ～テレ NEWS LIVE 24 ～愛知・岐阜・三重の最新ニュースを24時間配信",
+      "url": "https://www.youtube.com/watch?v=-C6FE2m7kX8",
       "type": "news",
-      "publishedAt": "2025-09-29T19:20:40Z",
+      "publishedAt": "2021-07-21T04:47:07Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/srev6BFcwno/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/-C6FE2m7kX8/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/srev6BFcwno/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-C6FE2m7kX8/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/srev6BFcwno/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-C6FE2m7kX8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "三立電視 SET TV",
-      "title": "🔴【我的極品男友】從鐵血教官到狠勁阿標！黃騰浩極品雙面魅力全開💥｜林佑威 黃騰浩 言明澔 連俞涵 林逸欣 林可彤｜24小時不間斷直播 Better Man 24 Hours Live｜三立電視",
-      "url": "https://www.youtube.com/watch?v=S9PdHlgauwQ",
+      "channel": "Live東森購物台",
+      "title": "CH47",
+      "url": "https://www.youtube.com/watch?v=ViJ3XiN6Q3M",
       "type": "news",
-      "publishedAt": "2025-08-28T03:55:54Z",
+      "publishedAt": "2020-10-16T09:51:46Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/S9PdHlgauwQ/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/ViJ3XiN6Q3M/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/S9PdHlgauwQ/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ViJ3XiN6Q3M/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/S9PdHlgauwQ/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ViJ3XiN6Q3M/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "中視新聞",
-      "title": "中視新聞LIVE直播頻道24小時線上直播｜Taiwan CTV news HD 24h live news |台湾のCTV ニュースHD 대만 24시간 뉴스채널",
-      "url": "https://www.youtube.com/watch?v=baDV1O5EBP0",
+      "channel": "CNA",
+      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
+      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
       "type": "news",
-      "publishedAt": "2025-08-26T10:12:34Z",
+      "publishedAt": "2020-04-21T11:15:18Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/baDV1O5EBP0/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/baDV1O5EBP0/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/baDV1O5EBP0/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TVBS 優選頻道- T觀點",
-      "title": "🔴【LIVE】TVBS 強檔優選節目24小時不斷線直播｜TVBS 24-Hour Non-Stop Live｜24時間連続ライブ配信中｜24시간 논스톱 라이브 #新聞大白話#少康戰情",
-      "url": "https://www.youtube.com/watch?v=k0NEmbEK9DI",
-      "type": "news",
-      "publishedAt": "2025-08-25T08:05:31Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/k0NEmbEK9DI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/k0NEmbEK9DI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/k0NEmbEK9DI/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "金臨天下 x 財經鈔能力",
-      "title": "🔴【金臨天下 x 財經鈔能力】財經新聞 看盤不中斷直播Live｜Taiwan TVBS Financial News Live｜24時間オンラインライブ #黃斐瑜 #趙慶翔",
-      "url": "https://www.youtube.com/watch?v=7t8ZsFxEQx8",
-      "type": "news",
-      "publishedAt": "2025-08-15T02:56:39Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/7t8ZsFxEQx8/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/7t8ZsFxEQx8/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/7t8ZsFxEQx8/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -971,30 +537,6 @@
     }
   ],
   "KR": [
-    {
-      "channel": "MrAstray ",
-      "title": "Valorant Live | NEW: Agent VETO will be INSANE!  #valorant",
-      "url": "https://www.youtube.com/watch?v=L3Og3NLt0Bs",
-      "type": "news",
-      "publishedAt": "2025-10-03T02:58:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/L3Og3NLt0Bs/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/L3Og3NLt0Bs/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/L3Og3NLt0Bs/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
     {
       "channel": "KBS Drama Classic",
       "title": "[🔴LIVE] 🔥KBS 24시간 무한 사극 스트리밍🔥대조영 - 광개토태왕 - 태종이방원 -해신   🔥 #마구니합창단 #사극   #KBS   ㅣ KBS방송",
@@ -1020,342 +562,173 @@
       }
     },
     {
-      "channel": "DONA 도나",
-      "title": "ASMR MUKBANG 직접 만든 대왕 가래떡 떡볶이 불닭볶음면 소세지 핫도그 먹방 &amp; 레시피 FIRE NOODLES AND Tteokbokki EATING SOUND!",
-      "url": "https://www.youtube.com/watch?v=CBM0X-1X9k8",
+      "channel": "YTN 라디오",
+      "title": "[YTN 라디오] 듣는 라디오 / YTN RADIO LIVE",
+      "url": "https://www.youtube.com/watch?v=SMQJyQ0UMvI",
       "type": "news",
-      "publishedAt": "2025-04-28T00:38:21Z",
+      "publishedAt": "2024-09-11T12:12:06Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/CBM0X-1X9k8/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/SMQJyQ0UMvI/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/CBM0X-1X9k8/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/SMQJyQ0UMvI/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/CBM0X-1X9k8/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/SMQJyQ0UMvI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Watchers Club",
-      "title": "Live Bangkok tour 🔴 Walking tour Bangkok Hot places ❤️‍🔥 NIght walks in Thailand 방콕 태국 여행 TV タイライブ",
-      "url": "https://www.youtube.com/watch?v=OkQ0utdxwBY",
+      "channel": "런닝맨 - 스브스 공식 채널",
+      "title": "[🔴LIVE] 🏃‍♂️런닝맨 몰아보기🏃‍♂️ | 📺스브스 런닝맨 실시간 스트리밍📢",
+      "url": "https://www.youtube.com/watch?v=lDcWeklf6DI",
       "type": "news",
-      "publishedAt": "2025-04-18T23:37:12Z",
+      "publishedAt": "2024-05-14T06:16:00Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/OkQ0utdxwBY/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/lDcWeklf6DI/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/OkQ0utdxwBY/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/lDcWeklf6DI/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/OkQ0utdxwBY/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/lDcWeklf6DI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "YTN서울타워",
-      "title": "YTN서울타워 파노라마 LIVE",
-      "url": "https://www.youtube.com/watch?v=J_vNwxaOtTs",
+      "channel": "THE 트롯 보라고",
+      "title": "[🔴24시간 방송] 인기 트로트 쭈욱~ 시청하기",
+      "url": "https://www.youtube.com/watch?v=CMnAakQCEdM",
       "type": "news",
-      "publishedAt": "2025-03-20T06:24:44Z",
+      "publishedAt": "2024-02-19T05:41:42Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/J_vNwxaOtTs/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/CMnAakQCEdM/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/J_vNwxaOtTs/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/CMnAakQCEdM/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/J_vNwxaOtTs/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/CMnAakQCEdM/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "KBS News",
-      "title": "[🔴LIVE] 멈추지 않는다! KBS 뉴스24",
-      "url": "https://www.youtube.com/watch?v=M1WrMEUOBsU",
+      "channel": "SBS Radio 에라오",
+      "title": "[24HR LIVE🔴] 언제 들어도 배꼽 잡는🤣 컬투쇼 웃긴 사연 무한 스트리밍♾",
+      "url": "https://www.youtube.com/watch?v=5GxT0t2gsaU",
       "type": "news",
-      "publishedAt": "2025-02-06T07:18:51Z",
+      "publishedAt": "2024-02-08T02:11:09Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/5GxT0t2gsaU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/5GxT0t2gsaU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/5GxT0t2gsaU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "밀덕스",
-      "title": "[🔴LIVE] 24시간 뉴스테인먼트 채널 YTN2",
-      "url": "https://www.youtube.com/watch?v=PdjA7rB4hSY",
+      "channel": "연합뉴스TV",
+      "title": "[생방송] 24시간 현장을 전합니다 / 연합뉴스TV  (YonhapnewsTV)",
+      "url": "https://www.youtube.com/watch?v=6QZ_qc75ihU",
       "type": "news",
-      "publishedAt": "2025-01-28T01:34:06Z",
+      "publishedAt": "2023-07-28T07:51:42Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/PdjA7rB4hSY/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/PdjA7rB4hSY/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/PdjA7rB4hSY/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "MBCNEWS",
-      "title": "[ON AIR] 1위 뉴스채널, 24시간 최신 MBC뉴스",
-      "url": "https://www.youtube.com/watch?v=q9bM12ucTIY",
+      "channel": "THE K-POP",
+      "title": "🔴THE K-POP :  24/7 𝗟𝗜𝗩𝗘 (K-POP 24시간 실시간 스트리밍 채널)",
+      "url": "https://www.youtube.com/watch?v=JVocS7Yftw8",
       "type": "news",
-      "publishedAt": "2025-01-22T06:56:35Z",
+      "publishedAt": "2023-05-08T05:38:58Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/q9bM12ucTIY/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/JVocS7Yftw8/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/q9bM12ucTIY/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/JVocS7Yftw8/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/q9bM12ucTIY/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/JVocS7Yftw8/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "한국경제TV",
+      "title": "[한국경제TV LIVE]",
+      "url": "https://www.youtube.com/watch?v=NJUjU9ALj4A",
+      "type": "news",
+      "publishedAt": "2023-02-08T15:03:01Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     }
   ],
-  "CN": [
-    {
-      "channel": "TMHK - Truth Media Hong Kong",
-      "title": "20251003 立法會財務委員會會議 | TMHK News Live 新聞直播",
-      "url": "https://www.youtube.com/watch?v=gfCPa4WDC7g",
-      "type": "news",
-      "publishedAt": "2025-10-03T06:31:36Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/gfCPa4WDC7g/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/gfCPa4WDC7g/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/gfCPa4WDC7g/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "民視新聞網 Formosa TV News network",
-      "title": "【直播完整版】1003 「中央強化韌性特別預算案」編製經過 行政院長卓榮泰立院報告備詢 (下午)｜民視快新聞｜",
-      "url": "https://www.youtube.com/watch?v=i0EAh8LQvMA",
-      "type": "news",
-      "publishedAt": "2025-10-03T05:27:56Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/i0EAh8LQvMA/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/i0EAh8LQvMA/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/i0EAh8LQvMA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Yt_ZikChan",
-      "title": "LIVE DRAW HK |【ON AIR】TVBS新聞台 24 小時直播 | 台湾TVBS NEWS世界中のニュースを24時間配信中 | 대만 TVBS뉴스 24시간 생방송 | LIVE HK",
-      "url": "https://www.youtube.com/watch?v=9hKcoo_dmrk",
-      "type": "news",
-      "publishedAt": "2025-10-02T15:46:56Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/9hKcoo_dmrk/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/9hKcoo_dmrk/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/9hKcoo_dmrk/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "YOYOTV",
-      "title": "YOYO金曲✕熱門卡通✨24HR不間斷｜LIVE｜唱跳｜金曲｜兒歌｜MV｜Kids Songs",
-      "url": "https://www.youtube.com/watch?v=Up0p-6KSQeg",
-      "type": "news",
-      "publishedAt": "2025-09-16T07:19:38Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/Up0p-6KSQeg/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/Up0p-6KSQeg/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/Up0p-6KSQeg/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視官方 #24小時直播 】美財長：中美元首韓國會晤在即 貿易談判或迎重大突破｜美國聯邦政府停擺 特朗普或將裁員｜柯文哲好感度勝賴清德 民眾黨指“賴”要檢討｜#鳳凰衛視 #大事發生看鳳凰",
-      "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
-      "type": "news",
-      "publishedAt": "2025-09-03T03:30:33Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TVBS 優選頻道- T觀點",
-      "title": "🔴【LIVE】TVBS 強檔優選節目24小時不斷線直播｜TVBS 24-Hour Non-Stop Live｜24時間連続ライブ配信中｜24시간 논스톱 라이브 #新聞大白話#少康戰情",
-      "url": "https://www.youtube.com/watch?v=k0NEmbEK9DI",
-      "type": "news",
-      "publishedAt": "2025-08-25T08:05:31Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/k0NEmbEK9DI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/k0NEmbEK9DI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/k0NEmbEK9DI/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "94要賺錢",
-      "title": "94要賺錢 X iNEWS新聞LIVE│iNEWS 24小時 CH48新聞直播 ON AIR │SET iNEWS LIVE│SET iNEWS ニュースオンライン生放送",
-      "url": "https://www.youtube.com/watch?v=B5aSYn5HCEQ",
-      "type": "news",
-      "publishedAt": "2025-07-23T08:30:29Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/B5aSYn5HCEQ/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/B5aSYn5HCEQ/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/B5aSYn5HCEQ/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "webcamsdemexico",
-      "title": "⁉️ #CDMX | ¿Por qué tanta gente, qué está pasando? #Zócalo #EnVivo",
-      "url": "https://www.youtube.com/watch?v=dYenY2OBxSY",
-      "type": "news",
-      "publishedAt": "2025-07-07T14:36:03Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/dYenY2OBxSY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/dYenY2OBxSY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/dYenY2OBxSY/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    }
-  ]
+  "CN": []
 }

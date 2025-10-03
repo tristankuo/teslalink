@@ -74,6 +74,12 @@ jobs:
           git commit -m "🎬 Update live channels and deploy"
           git push
 
+      - name: 🧐 Verify committed file content
+        if: steps.changes.outputs.has_changes == 'true' || github.event.inputs.force_update == 'true'
+        run: |
+          echo "Verifying content of popular_live.json after push:"
+          git show HEAD:public/popular_live.json
+
       - name: 📦 Install full deps for build
         run: |
           npm install --legacy-peer-deps

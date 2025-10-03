@@ -34,10 +34,8 @@ jobs:
 
       - name: 📦 Install dependencies
         run: |
-          # Install only what we need for the script in scripts directory
-          cd scripts
-          npm install --no-audit --legacy-peer-deps
-          cd ..
+          # Install dependencies for the script
+          npm install node-fetch@2.7.0 --no-audit --legacy-peer-deps
 
       - name: 🔑 Verify YouTube API Key
         env:

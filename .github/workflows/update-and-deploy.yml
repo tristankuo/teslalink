@@ -34,9 +34,9 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: 📦 Install dependencies
+      - name: 📦 Install minimal deps for updater
         run: |
-          npm ci --no-audit --prefer-offline
+          npm install node-fetch@2.7.0 --no-audit --legacy-peer-deps
 
       - name: 🔑 Verify YouTube API Key (for update step)
         env:
@@ -73,6 +73,10 @@ jobs:
           git add public/popular_live.json
           git commit -m "🎬 Update live channels and deploy"
           git push
+
+      - name: 📦 Install full deps for build
+        run: |
+          npm ci --no-audit --prefer-offline --legacy-peer-deps
 
       - name: 🛠️ Build site
         run: |

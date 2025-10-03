@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import AppItemComponent from './components/AppItem';
 import AddAppQR from './components/AddAppQR';
-import LiveChannels from './components/LiveChannels';
+import LiveChannelsGrid from './components/LiveChannelsGrid';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
 import { initGA, trackPageView } from './utils/analytics';
@@ -56,7 +56,6 @@ function MainApp() {
     return (REGIONS[detectedRegion as Region]) ? detectedRegion as Region : 'Global';
   });
   const [showRegionSelector, setShowRegionSelector] = useState(false);
-  const [showLiveChannels, setShowLiveChannels] = useState(false);
 
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('teslalink_theme');
@@ -732,7 +731,7 @@ function MainApp() {
   }, [appItems, isFullscreen, commitToStorage]);
 
   return (
-  <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
+    <div className={`App ${theme === 'light' ? 'light-mode' : 'dark-mode'}`}>
       <div className="background-image" style={{ backgroundImage: `url(${backgroundUrl})` }}></div>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
       <div className="top-right-controls">
@@ -766,9 +765,6 @@ function MainApp() {
           ) : (
             <>
               {!isFullscreen && (
-                <Button variant="warning" onClick={() => setShowLiveChannels(true)} className="ms-2">📺 Live Channels</Button>
-              )}
-              {!isFullscreen && (
                 <Button variant="info" onClick={toggleFullscreen} className="ms-2">Enter Fullscreen</Button>
               )}
               <Button variant="secondary" onClick={toggleTheme} className="ms-2 d-none">Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})</Button>
@@ -778,26 +774,82 @@ function MainApp() {
             </>
           )}
         </div>
-        <div className="row justify-content-center">
-          {appItems.map((item, index) => (
-            <AppItemComponent
-              key={item.id}
-              item={item}
-              index={index}
-              deleteModeActive={isAppEditMode}
-              handleDeleteWebsite={handleDeleteWebsite}
-              onLongPress={onLongPress}
-              handleDragStart={handleDragStart}
-              handleDragOver={handleDragOver}
-              handleDrop={handleDrop}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-              handleShowEdit={isAppEditMode ? handleShow : () => {}}
-              getFaviconUrl={getFaviconUrl}
-            />
-          ))}
-          {showResetConfirmModal && (
+        
+        {/* My Favorites Section */}
+        <div className="section-container">
+          <h2 className="section-title">My Favorites</h2>
+          <div className="row justify-content-center">
+            {appItems.map((item, index) => (
+              <AppItemComponent
+                key={item.id}
+                item={item}
+                index={index}
+                deleteModeActive={isAppEditMode}
+                handleDeleteWebsite={handleDeleteWebsite}
+                onLongPress={onLongPress}
+                handleDragStart={handleDragStart}
+                handleDragOver={handleDragOver}
+                handleDrop={handleDrop}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                handleShowEdit={isAppEditMode ? handleShow : () => {}}
+                getFaviconUrl={getFaviconUrl}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Live Channels Section - Hidden in Edit Mode */}
+        {!isAppEditMode && (
+          <div className="section-container">
+            <h2 className="section-title">📺 Live Channels</h2>
+            <LiveChannelsGrid userRegion={userRegion} theme={theme} />
+          </div>
+        )}
+
+        {/* Navigation Footer */}
+        <div className="footer-container" style={{ background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
+          {/* Ko-fi Support Link */}
+          <div style={{ textAlign: 'center', marginBottom: 20 }}>
+            <button
+              type="button"
+              style={{ fontSize: 14, color: '#ff5f5f', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+              onClick={() => setShowKoFi(true)}
+            >
+              ❤️ Support TeslaLink Development
+            </button>
+          </div>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
+            <a href={`${process.env.PUBLIC_URL}/about.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              📖 About TeslaLink
+            </a>
+            <a href={`${process.env.PUBLIC_URL}/tesla-apps-guide.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              🚗 Tesla Apps Guide
+            </a>
+            <a href={`${process.env.PUBLIC_URL}/tesla-browser-tips.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              💡 Browser Tips
+            </a>
+            <a href={`${process.env.PUBLIC_URL}/contact.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              💬 Contact Us
+            </a>
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
+            <a href={`${process.env.PUBLIC_URL}/privacy-policy.html`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              Privacy Policy
+            </a>
+            <span>•</span>
+            <a href={`${process.env.PUBLIC_URL}/terms-of-service.html`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+              Terms of Service
+            </a>
+            <span>•</span>
+            <span>© 2025 TeslaLink - Tesla App Hub</span>
+          </div>
+        </div>
+
+        {/* Modals inside container for proper structure */}
+        {showResetConfirmModal && (
             <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setShowResetConfirmModal(false)}>
               <div
                 style={{
@@ -940,57 +992,7 @@ function MainApp() {
           </div>
         </div>
       )}
-
-      {/* Live Channels Modal */}
-      {showLiveChannels && (
-        <LiveChannels
-          userRegion={userRegion}
-          theme={theme}
-          onClose={() => setShowLiveChannels(false)}
-        />
-      )}
-
-      {/* Navigation Footer */}
-      <div className="footer-container" style={{ background: theme === 'dark' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)', borderRadius: 12, backdropFilter: 'blur(10px)' }}>
-        {/* Ko-fi Support Link */}
-        <div style={{ textAlign: 'center', marginBottom: 20 }}>
-          <button
-            type="button"
-            style={{ fontSize: 14, color: '#ff5f5f', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-            onClick={() => setShowKoFi(true)}
-          >
-            ❤️ Support TeslaLink Development
-          </button>
-        </div>
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 15, marginBottom: 20 }}>
-              <a href={`${process.env.PUBLIC_URL}/about.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-                📖 About TeslaLink
-              </a>
-              <a href={`${process.env.PUBLIC_URL}/tesla-apps-guide.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-                🚗 Tesla Apps Guide
-              </a>
-              <a href={`${process.env.PUBLIC_URL}/tesla-browser-tips.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-                💡 Browser Tips
-              </a>
-              <a href={`${process.env.PUBLIC_URL}/contact.html`} style={{ color: theme === 'dark' ? '#FFFFFF' : '#000000', textDecoration: 'none', padding: '8px 16px', background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', borderRadius: 6, fontSize: 14 }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-                💬 Contact Us
-              </a>
-            </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, fontSize: 12, color: theme === 'dark' ? '#bdc3c7' : '#7f8c8d' }}>
-            <a href={`${process.env.PUBLIC_URL}/privacy-policy.html`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              Privacy Policy
-            </a>
-            <span>•</span>
-            <a href={`${process.env.PUBLIC_URL}/terms-of-service.html`} style={{ color: 'inherit', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
-              Terms of Service
-            </a>
-            <span>•</span>
-            <span>© 2025 TeslaLink - Tesla App Hub</span>
-          </div>
-        </div>
     </div>
-  </div>
   );
 }
 

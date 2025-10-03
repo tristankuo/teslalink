@@ -269,4 +269,25 @@ h1{
   background-color: #f1f3f5;
 }
 
+/* Section Styles */
+.section-container {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.light-mode .section-title {
+  color: var(--light-text);
+}
+
+.dark-mode .section-title {
+  color: var(--dark-text);
+}
+
 

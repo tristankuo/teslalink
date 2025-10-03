@@ -85,7 +85,7 @@
   { "name": "LINE TV", "url": "https://www.linetv.tw", "region": "TW" },
   { "name": "KKTV", "url": "https://www.kktv.me", "region": "TW" },
   { "name": "Hami Video", "url": "https://hamivideo.hinet.net", "region": "TW" },
-  { "name": "MOD", "url": "https://mod.cht.com.tw", "region": "TW" },
+  { "name": "PTS+", "url": "https://www.ptsplus.tv", "region": "TW" },
   { "name": "WeTV", "url": "https://wetv.vip", "region": "TW" },
   { "name": "Gimy", "url": "https://gimy.ai", "region": "TW" }
 ]

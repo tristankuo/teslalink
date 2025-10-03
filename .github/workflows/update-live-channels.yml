@@ -29,14 +29,15 @@ jobs:
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: 📦 Install dependencies
         run: |
-          npm ci --legacy-peer-deps
-          # Ensure node-fetch is available for the script
-          npm install node-fetch@3.3.2 --save-dev
+          # Install only what we need for the script in scripts directory
+          cd scripts
+          npm install --no-audit --legacy-peer-deps
+          cd ..
 
       - name: 🔑 Verify YouTube API Key
         env:

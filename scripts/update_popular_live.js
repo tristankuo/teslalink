@@ -187,6 +187,13 @@ async function updatePopularLive() {
   
   const result = {
     lastUpdated: new Date().toISOString(),
+    Global: [],
+    EU: [],
+    AU: [],
+    JP: [],
+    TW: [],
+    KR: [],
+    CN: [],
   };
 
   // Fetch streams for each region

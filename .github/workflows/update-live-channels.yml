@@ -1,0 +1,157 @@
+name: Update Live Channels Daily
+
+on:
+  schedule:
+    # Run daily at 2:00 AM UTC (optimal time for global coverage)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allow manual triggering
+    inputs:
+      force_update:
+        description: 'Force update even if no changes'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write # Need write permission to commit updated JSON
+
+jobs:
+  update-live-channels:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: |
+          npm ci || echo "No package-lock.json found, installing with npm install"
+          npm install node-fetch || echo "node-fetch already available"
+
+      - name: 🔑 Verify YouTube API Key
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          if [ -z "$YOUTUBE_API_KEY" ]; then
+            echo "❌ YOUTUBE_API_KEY secret not configured"
+            echo "Please add your YouTube Data API v3 key to GitHub repository secrets"
+            exit 1
+          else
+            echo "✅ YouTube API key found"
+          fi
+
+      - name: 🎬 Update live channels
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          echo "🚀 Starting live channels update..."
+          node scripts/update_popular_live.js
+          echo "✅ Update completed"
+
+      - name: 📊 Check for changes
+        id: changes
+        run: |
+          if git diff --quiet public/popular_live.json; then
+            echo "No changes detected in popular_live.json"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected in popular_live.json"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            
+            # Show what changed
+            echo "📋 Changes summary:"
+            git diff --stat public/popular_live.json
+          fi
+
+      - name: 🏷️ Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_OUTPUT
+
+      - name: 💾 Commit and push changes
+        if: steps.changes.outputs.has_changes == 'true' || github.event.inputs.force_update == 'true'
+        run: |
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Add and commit changes
+          git add public/popular_live.json
+          git commit -m "🎬 Update live channels (${{ steps.date.outputs.date }})"
+          
+          # Push changes
+          git push
+          
+          echo "✅ Changes committed and pushed successfully"
+
+      - name: 📈 Update summary
+        if: always()
+        run: |
+          echo "## 🎬 Live Channels Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Date:** ${{ steps.date.outputs.date }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Changes detected:** ${{ steps.changes.outputs.has_changes }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **API Key status:** ✅ Available" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.changes.outputs.has_changes }}" == "true" ]; then
+            echo "- **Action:** Updated popular_live.json and committed changes" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- **Action:** No updates needed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📺 Current Live Channels Coverage" >> $GITHUB_STEP_SUMMARY
+          
+          # Count channels per region from the JSON file
+          if [ -f "public/popular_live.json" ]; then
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            node -e "
+              const data = JSON.parse(require('fs').readFileSync('public/popular_live.json', 'utf8'));
+              Object.entries(data).forEach(([region, streams]) => {
+                if (region !== 'lastUpdated') {
+                  console.log(\`\${region}: \${Array.isArray(streams) ? streams.length : 0} channels\`);
+                }
+              });
+            " >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # Optional: Deploy to GitHub Pages if you're using it
+  deploy:
+    needs: update-live-channels
+    runs-on: ubuntu-latest
+    if: needs.update-live-channels.outputs.has_changes == 'true'
+    
+    steps:
+      - name: 📥 Checkout updated repository
+        uses: actions/checkout@v4
+        with:
+          ref: master # Make sure we get the latest changes
+          
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          
+      - name: ✅ Deployment complete
+        run: |
+          echo "🎉 TeslaLink deployed with updated live channels!"
+          echo "🔗 Live at: https://tristankuo.github.io/teslalink/"

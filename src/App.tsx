@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import AppItemComponent from './components/AppItem';
 import AddAppQR from './components/AddAppQR';
+import LiveChannels from './components/LiveChannels';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
 import { initGA, trackPageView } from './utils/analytics';
@@ -55,6 +56,7 @@ function MainApp() {
     return (REGIONS[detectedRegion as Region]) ? detectedRegion as Region : 'Global';
   });
   const [showRegionSelector, setShowRegionSelector] = useState(false);
+  const [showLiveChannels, setShowLiveChannels] = useState(false);
 
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('teslalink_theme');
@@ -764,6 +766,9 @@ function MainApp() {
           ) : (
             <>
               {!isFullscreen && (
+                <Button variant="warning" onClick={() => setShowLiveChannels(true)} className="ms-2">📺 Live Channels</Button>
+              )}
+              {!isFullscreen && (
                 <Button variant="info" onClick={toggleFullscreen} className="ms-2">Enter Fullscreen</Button>
               )}
               <Button variant="secondary" onClick={toggleTheme} className="ms-2 d-none">Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})</Button>
@@ -934,6 +939,15 @@ function MainApp() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Live Channels Modal */}
+      {showLiveChannels && (
+        <LiveChannels
+          userRegion={userRegion}
+          theme={theme}
+          onClose={() => setShowLiveChannels(false)}
+        />
       )}
 
       {/* Navigation Footer */}

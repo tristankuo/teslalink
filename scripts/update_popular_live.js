@@ -22,15 +22,52 @@ const MAX_RESULTS_PER_REGION = 15; // Get more to filter for best quality
 const OUTPUT_FILE = "public/popular_live.json";
 const API_BASE = "https://www.googleapis.com/youtube/v3";
 
-// Search queries optimized for live TV and news content
+// Search queries optimized for trending/popular live TV and news content
 const SEARCH_QUERIES = {
-  "Global": ["live news", "breaking news", "news live stream", "24/7 news", "live tv news"],
-  "EU": ["bbc live", "sky news live", "france 24 live", "dw news live", "euronews live"],
-  "AU": ["abc news australia live", "sky news australia", "7news live", "9news live"],
-  "JP": ["nhk live", "japanese news live", "テレビ ライブ", "ニュース ライブ"],
-  "TW": ["新聞直播", "台灣新聞", "tvbs live", "民視新聞", "中天新聞"],
-  "KR": ["ytn live", "korean news live", "뉴스 라이브", "kbs news live"],
-  "CN": ["cgtn live", "phoenix tv live", "香港新聞", "tvb news live"]
+  "Global": [
+    "trending live news", 
+    "popular live tv", 
+    "hot news live", 
+    "live breaking news trending",
+    "most watched news live"
+  ],
+  "EU": [
+    "trending bbc live", 
+    "popular sky news", 
+    "hot european news", 
+    "trending france 24",
+    "popular euronews live"
+  ],
+  "AU": [
+    "trending abc news australia", 
+    "popular australian live tv", 
+    "hot news australia", 
+    "trending 7news live"
+  ],
+  "JP": [
+    "trending japanese tv", 
+    "popular nhk live", 
+    "hot japanese news", 
+    "人気 ライブ ニュース"
+  ],
+  "TW": [
+    "熱門直播新聞", 
+    "popular taiwan news", 
+    "trending tvbs", 
+    "熱門台灣電視"
+  ],
+  "KR": [
+    "trending korean news", 
+    "popular ytn live", 
+    "hot korean tv", 
+    "인기 라이브 뉴스"
+  ],
+  "CN": [
+    "trending cgtn", 
+    "popular hong kong news", 
+    "hot chinese tv", 
+    "熱門直播電視"
+  ]
 };
 
 async function fetchLiveStreams(regionCode, query) {

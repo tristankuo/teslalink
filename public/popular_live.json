@@ -1,73 +1,10 @@
 {
-  "lastUpdated": "2025-10-03T00:00:00Z",
-  "Global": [
-    {"channel": "NASA Live", "title": "NASA ISS Live Stream", "url": "https://www.youtube.com/watch?v=21X5lGlDOfg", "type": "space"},
-    {"channel": "ABC News", "title": "ABC News Live", "url": "https://www.youtube.com/watch?v=w_Ma8oQLmSM", "type": "news"},
-    {"channel": "NBC News", "title": "NBC News NOW", "url": "https://www.youtube.com/watch?v=eWYix2MnDWc", "type": "news"},
-    {"channel": "CNN", "title": "CNN Live", "url": "https://www.youtube.com/watch?v=5VF_VdqjQpE", "type": "news"},
-    {"channel": "CBC News", "title": "CBC News Live", "url": "https://www.youtube.com/watch?v=3-jbJ1goRxY", "type": "news"},
-    {"channel": "CTV News", "title": "CTV National News", "url": "https://www.youtube.com/watch?v=k8NoF-1e5gE", "type": "news"},
-    {"channel": "Global News", "title": "Global National", "url": "https://www.youtube.com/watch?v=7OFlcaKzjkM", "type": "news"},
-    {"channel": "Bloomberg TV", "title": "Bloomberg Television", "url": "https://www.youtube.com/watch?v=dp8PhLsUcFE", "type": "business"}
-  ],
-  "EU": [
-    {"channel": "BBC News", "title": "BBC News Live", "url": "https://www.youtube.com/watch?v=9Auq9mYxFEE", "type": "news"},
-    {"channel": "Sky News", "title": "Sky News Live", "url": "https://www.youtube.com/watch?v=9Auq9mYxFEE", "type": "news"},
-    {"channel": "France 24", "title": "France 24 English", "url": "https://www.youtube.com/watch?v=h3MuIUNCCzI", "type": "news"},
-    {"channel": "DW News", "title": "Deutsche Welle Live", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"},
-    {"channel": "Euronews", "title": "Euronews Live", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"},
-    {"channel": "ITV News", "title": "ITV News Live", "url": "https://www.youtube.com/watch?v=9Auq9mYxFEE", "type": "news"},
-    {"channel": "Channel 4 News", "title": "Channel 4 News Live", "url": "https://www.youtube.com/watch?v=9Auq9mYxFEE", "type": "news"},
-    {"channel": "GB News", "title": "GB News Live", "url": "https://www.youtube.com/watch?v=9Auq9mYxFEE", "type": "news"}
-  ],
-  "AU": [
-    {"channel": "ABC News Australia", "title": "ABC News Australia Live", "url": "https://www.youtube.com/watch?v=vOTiJkg1voo", "type": "news"},
-    {"channel": "9 News Australia", "title": "9 News Live", "url": "https://www.youtube.com/watch?v=Mu0vvTlhKWA", "type": "news"},
-    {"channel": "7NEWS Australia", "title": "7NEWS Live", "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo", "type": "news"},
-    {"channel": "SBS News", "title": "SBS World News", "url": "https://www.youtube.com/watch?v=vOTiJkg1voo", "type": "news"},
-    {"channel": "Sky News Australia", "title": "Sky News Australia Live", "url": "https://www.youtube.com/watch?v=vOTiJkg1voo", "type": "news"},
-    {"channel": "10 News First", "title": "10 News First Live", "url": "https://www.youtube.com/watch?v=vOTiJkg1voo", "type": "news"},
-    {"channel": "The Project", "title": "The Project Live", "url": "https://www.youtube.com/watch?v=vOTiJkg1voo", "type": "news"},
-    {"channel": "ABC Radio News", "title": "ABC Radio Live", "url": "https://www.youtube.com/watch?v=vOTiJkg1voo", "type": "radio"}
-  ],
-  "JP": [
-    {"channel": "NHK WORLD-JAPAN", "title": "NHK World English Live", "url": "https://www.youtube.com/watch?v=coYw-eVU0Ks", "type": "news"},
-    {"channel": "ANNnewsCH", "title": "TV Asahi News Live", "url": "https://www.youtube.com/watch?v=coYw-eVU0Ks", "type": "news"},
-    {"channel": "TBS NEWS", "title": "TBS News Live", "url": "https://www.youtube.com/watch?v=coYw-eVU0Ks", "type": "news"},
-    {"channel": "Fuji News", "title": "Fuji TV News Live", "url": "https://www.youtube.com/watch?v=coYw-eVU0Ks", "type": "news"},
-    {"channel": "NTV News", "title": "Nippon TV News Live", "url": "https://www.youtube.com/watch?v=coYw-eVU0Ks", "type": "news"},
-    {"channel": "TV Tokyo News", "title": "TV Tokyo Live", "url": "https://www.youtube.com/watch?v=coYw-eVU0Ks", "type": "news"},
-    {"channel": "ABEMA NEWS", "title": "ABEMA News Live", "url": "https://www.youtube.com/watch?v=coYw-eVU0Ks", "type": "news"},
-    {"channel": "MBS NEWS", "title": "MBS News Live", "url": "https://www.youtube.com/watch?v=coYw-eVU0Ks", "type": "news"}
-  ],
-  "TW": [
-    {"channel": "TVBS NEWS", "title": "TVBS News Live", "url": "https://www.youtube.com/watch?v=2mCSYvcfhtc", "type": "news"},
-    {"channel": "FTV News", "title": "民視新聞 FTV Live", "url": "https://www.youtube.com/watch?v=ylYJSBUgaMA", "type": "news"},
-    {"channel": "TTV News", "title": "台視新聞 TTV Live", "url": "https://www.youtube.com/watch?v=xL0ch83RAK8", "type": "news"},
-    {"channel": "CTI News", "title": "中天新聞 CTI Live", "url": "https://www.youtube.com/watch?v=wUPPkSANpyo", "type": "news"},
-    {"channel": "SET News", "title": "三立新聞 SET Live", "url": "https://www.youtube.com/watch?v=4ZVUmEUFwaY", "type": "news"},
-    {"channel": "EBC News", "title": "東森新聞 EBC Live", "url": "https://www.youtube.com/watch?v=XxJKnDLYZz4", "type": "news"},
-    {"channel": "TaiwanPlus News", "title": "TaiwanPlus English Live", "url": "https://www.youtube.com/watch?v=XxJKnDLYZz4", "type": "news"},
-    {"channel": "Mirror News", "title": "鏡新聞 Mirror Live", "url": "https://www.youtube.com/watch?v=XxJKnDLYZz4", "type": "news"}
-  ],
-  "KR": [
-    {"channel": "YTN", "title": "YTN 24시간 뉴스 Live", "url": "https://www.youtube.com/watch?v=FJfwehhzIhw", "type": "news"},
-    {"channel": "KBS News", "title": "KBS 뉴스 Live", "url": "https://www.youtube.com/watch?v=Hed3c7GQZuc", "type": "news"},
-    {"channel": "MBC News", "title": "MBC 뉴스 Live", "url": "https://www.youtube.com/watch?v=Hed3c7GQZuc", "type": "news"},
-    {"channel": "SBS News", "title": "SBS 뉴스 Live", "url": "https://www.youtube.com/watch?v=Hed3c7GQZuc", "type": "news"},
-    {"channel": "JTBC News", "title": "JTBC 뉴스 Live", "url": "https://www.youtube.com/watch?v=Hed3c7GQZuc", "type": "news"},
-    {"channel": "Arirang News", "title": "Arirang News English Live", "url": "https://www.youtube.com/watch?v=Hed3c7GQZuc", "type": "news"},
-    {"channel": "MBN News", "title": "MBN 뉴스 Live", "url": "https://www.youtube.com/watch?v=Hed3c7GQZuc", "type": "news"},
-    {"channel": "TV Chosun", "title": "TV조선 뉴스 Live", "url": "https://www.youtube.com/watch?v=Hed3c7GQZuc", "type": "news"}
-  ],
-  "CN": [
-    {"channel": "CGTN", "title": "CGTN Live English", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"},
-    {"channel": "CGTN Documentary", "title": "CGTN Documentary Live", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "documentary"},
-    {"channel": "Phoenix TV", "title": "Phoenix TV Live", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"},
-    {"channel": "SCMP", "title": "South China Morning Post", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"},
-    {"channel": "TVB News", "title": "TVB 新聞 Live", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"},
-    {"channel": "RTHK News", "title": "RTHK 香港電台 Live", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"},
-    {"channel": "Stand News", "title": "立場新聞 Live", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"},
-    {"channel": "Apple Daily", "title": "蘋果日誌 Live", "url": "https://www.youtube.com/watch?v=pqyeCEIVqvs", "type": "news"}
-  ]
+  "lastUpdated": "2025-10-03T07:48:49.828Z",
+  "Global": [],
+  "EU": [],
+  "AU": [],
+  "JP": [],
+  "TW": [],
+  "KR": [],
+  "CN": []
 }

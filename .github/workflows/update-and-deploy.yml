@@ -119,6 +119,15 @@ jobs:
         run: |
           npm run build
 
+      - name: 📄 Ensure popular_live.json is in build output
+        run: |
+          if [ -f "public/popular_live.json" ]; then
+            cp public/popular_live.json build/popular_live.json
+            echo "✅ Copied popular_live.json to build directory."
+          else
+            echo "⚠️ popular_live.json not found in public, skipping copy."
+          fi
+
       - name: 📦 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

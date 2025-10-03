@@ -52,6 +52,10 @@ jobs:
             exit 1
           else
             echo "✅ YouTube API key found (${#YOUTUBE_API_KEY} characters)"
+            echo "🌐 Running from GitHub Actions environment"
+            echo "📍 If you get 403 errors, check API key restrictions:"
+            echo "   - Allow *.github.com/* and github.com/* domains"
+            echo "   - Or temporarily set 'Application restrictions' to 'None'"
           fi
 
       - name: 🎬 Update live channels data

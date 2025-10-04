@@ -188,23 +188,6 @@ const LiveChannelsGrid: React.FC<LiveChannelsGridProps> = ({ userRegion, theme }
                 draggable="false"
               />
               <h5 className="card-title">{channel.channel}</h5>
-              
-              {/* Live indicator positioned like delete button */}
-              <div style={{
-                position: 'absolute',
-                top: '-10px',
-                right: '-10px',
-                background: '#ff4444',
-                color: 'white',
-                fontSize: '10px',
-                padding: '4px 8px',
-                borderRadius: '12px',
-                fontWeight: 'bold',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                zIndex: 10
-              }}>
-                🔴 LIVE
-              </div>
             </div>
           </div>
         </div>

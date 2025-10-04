@@ -23,48 +23,81 @@ const OUTPUT_FILE = "public/popular_live.json";
 const API_BASE = "https://www.googleapis.com/youtube/v3";
 
 // Optimized search queries targeting major local broadcasters and networks
+// Using specific channel names and stricter geographic terms
 const SEARCH_QUERIES = {
   "Global": [
-    "CNN live news",           // Major US networks
-    "Fox News live", 
-    "ABC News live",
-    "NBC News live"
+    "CNN live",                // US major networks only
+    "Fox News Channel live", 
+    "MSNBC live",
+    "CBS News live"
   ],
   "EU": [
-    "BBC News live",           // Major UK/EU networks
-    "Sky News live", 
-    "ITV News live",
-    "Channel 4 News live"
+    "BBC News UK live",        // UK-specific terms
+    "Sky News UK live", 
+    "ITV News Britain live",
+    "Channel 4 News UK live"
   ],
   "AU": [
-    "ABC News Australia live", // Major Australian networks
-    "Seven News live", 
-    "Nine News live",
+    "ABC News Australia live", // Australia-specific
+    "Channel 7 News Australia", 
+    "Channel 9 News Australia",
     "Sky News Australia live"
   ],
   "JP": [
-    "NHK World live",         // Major Japanese networks
-    "TBS NEWS live", 
-    "Fuji News live",
-    "テレビ朝日 ニュース live"
+    "NHK ニュース live",        // Japanese language terms
+    "日本テレビ ニュース live", 
+    "TBS ニュース live",
+    "フジテレビ ニュース live"
   ],
   "TW": [
-    "TVBS live",              // Major Taiwanese networks
-    "中視新聞 live", 
-    "民視新聞 live",
-    "東森新聞 live"
+    "中視新聞台 live",          // Traditional Chinese terms
+    "TVBS新聞台 live", 
+    "民視新聞台 live",
+    "東森新聞台 live"
   ],
   "KR": [
-    "YTN live",               // Major Korean networks
-    "KBS News live", 
-    "MBC News live",
-    "SBS News live"
+    "KBS 뉴스 live",           // Korean language terms
+    "MBC 뉴스 live", 
+    "SBS 뉴스 live",
+    "YTN 뉴스 live"
   ],
   "CN": [
-    "CGTN live",              // Major Chinese/HK networks
-    "Now News live", 
-    "TVB News live",
-    "鳳凰衛視 live"
+    "CGTN 中文 live",          // Chinese terms for HK/China
+    "鳳凰衛視 live", 
+    "TVB 新聞 live",
+    "Now 新聞台 live"
+  ]
+};
+
+// Known major channel names to prioritize - helps filter out incorrect regions
+const PRIORITY_CHANNELS = {
+  "Global": [
+    "CNN", "Fox News", "MSNBC", "CBS News", "NBC News", "ABC News", 
+    "PBS NewsHour", "C-SPAN", "Bloomberg Television"
+  ],
+  "EU": [
+    "BBC News", "Sky News", "ITV News", "Channel 4 News", "euronews", 
+    "France 24 English", "DW News", "RT UK"
+  ],
+  "AU": [
+    "ABC News (Australia)", "7NEWS Australia", "9 News Australia", 
+    "Sky News Australia", "SBS News", "10 News First"
+  ],
+  "JP": [
+    "NHK World-Japan", "TBS NEWS", "Fuji News Network", "TV Asahi", 
+    "Nippon TV", "テレビ朝日", "日本テレビ", "TBS"
+  ],
+  "TW": [
+    "TVBS NEWS", "中視", "民視", "東森新聞", "華視", "公視", 
+    "三立新聞", "年代新聞"
+  ],
+  "KR": [
+    "KBS News", "MBC News", "SBS", "YTN", "채널A", "JTBC", 
+    "TV조선", "MBN"
+  ],
+  "CN": [
+    "CGTN", "鳳凰衛視", "TVB", "Now TV", "香港電台", "有線新聞", 
+    "無綫新聞", "亞洲電視"
   ]
 };
 
@@ -183,20 +216,74 @@ function removeDuplicates(streams) {
   });
 }
 
-function prioritizeStreams(streams) {
-  // Priority: news > business > sports > others
-  const priority = { 'news': 4, 'business': 3, 'sports': 2, 'space': 1 };
+function prioritizeStreams(streams, regionName) {
+  const priorityChannels = PRIORITY_CHANNELS[regionName] || [];
+  
+  // Priority: known regional channels > news > business > sports > others
+  const typePriority = { 'news': 4, 'business': 3, 'sports': 2, 'space': 1 };
   
   return streams.sort((a, b) => {
-    const priorityA = priority[a.type] || 0;
-    const priorityB = priority[b.type] || 0;
+    // First priority: known regional channels
+    const aIsRegional = priorityChannels.some(channel => 
+      a.channel.toLowerCase().includes(channel.toLowerCase())
+    );
+    const bIsRegional = priorityChannels.some(channel => 
+      b.channel.toLowerCase().includes(channel.toLowerCase())
+    );
+    
+    if (aIsRegional && !bIsRegional) return -1;
+    if (!aIsRegional && bIsRegional) return 1;
+    
+    // Second priority: content type
+    const priorityA = typePriority[a.type] || 0;
+    const priorityB = typePriority[b.type] || 0;
     
     if (priorityA !== priorityB) {
       return priorityB - priorityA; // Higher priority first
     }
     
-    // If same priority, sort by published time (more recent first)
+    // Third priority: more recent content
     return new Date(b.publishedAt) - new Date(a.publishedAt);
+  });
+}
+
+// Filter out channels that are clearly from wrong regions
+function filterByRegion(streams, regionName) {
+  const unwantedPatterns = {
+    "Global": [
+      "arabic", "العربية", "الجزيرة", "العالم", "قناة", "الإخبارية",
+      "hindi", "हिंदी", "भारत", "india tv", "aaj tak", "zee news",
+      "urdu", "اردو", "پاکستان", "dunya news"
+    ],
+    "EU": [
+      "arabic", "العربية", "الجزيرة", "hindi", "हिंदी", "भारत", 
+      "africa", "african", "swahili", "hausa", "amharic",
+      "middle east", "الشرق الأوسط"
+    ],
+    "AU": [
+      "hindi", "हिंदी", "arabic", "العربية", "german", "deutsch",
+      "french", "français", "italian", "español"
+    ],
+    "JP": [
+      "german", "deutsch", "french", "français", "english news",
+      "australia", "british", "american", "中文", "한국"
+    ],
+    "TW": [
+      "korean", "한국", "japanese", "日本", "english", "arabic", "العربية"
+    ],
+    "KR": [
+      "chinese", "中文", "japanese", "日本", "english", "arabic", "العربية"
+    ],
+    "CN": [
+      "korean", "한국", "japanese", "日本", "english news", "arabic", "العربية"
+    ]
+  };
+
+  const patterns = unwantedPatterns[regionName] || [];
+  
+  return streams.filter(stream => {
+    const text = (stream.channel + " " + stream.title).toLowerCase();
+    return !patterns.some(pattern => text.includes(pattern.toLowerCase()));
   });
 }
 
@@ -222,14 +309,18 @@ async function fetchRegionStreams(regionName) {
 
   // Process results
   const uniqueStreams = removeDuplicates(allStreams);
-  console.log(`  🔍 Validating ${uniqueStreams.length} streams...`);
+  console.log(`  🔍 Removing geographic mismatches from ${uniqueStreams.length} streams...`);
+  
+  // Filter out streams from wrong regions
+  const regionFiltered = filterByRegion(uniqueStreams, regionName);
+  console.log(`  🌍 After regional filtering: ${regionFiltered.length} streams`);
   
   // Validate streams to remove private/unavailable content
-  const validStreams = await validateStreams(uniqueStreams);
-  const prioritizedStreams = prioritizeStreams(validStreams);
+  const validStreams = await validateStreams(regionFiltered);
+  const prioritizedStreams = prioritizeStreams(validStreams, regionName);
   const finalStreams = prioritizedStreams.slice(0, 8); // Tesla optimized: max 8 channels
 
-  console.log(`  ✅ Found ${allStreams.length} total, ${uniqueStreams.length} unique, ${validStreams.length} valid, selected top ${finalStreams.length}`);
+  console.log(`  ✅ Found ${allStreams.length} total, ${uniqueStreams.length} unique, ${regionFiltered.length} regional, ${validStreams.length} valid, selected top ${finalStreams.length}`);
   
   return finalStreams;
 }

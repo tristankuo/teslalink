@@ -1,0 +1,91 @@
+name: 📦 Deploy to GitHub Pages (No Data Update)
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-only:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-only
+      cancel-in-progress: false
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: |
+          npm install --legacy-peer-deps
+
+      - name: 🔧 Write .env for build (Firebase config)
+        env:
+          V_FB_API_KEY: ${{ vars.REACT_APP_FIREBASE_API_KEY }}
+          V_FB_AUTH_DOMAIN: ${{ vars.REACT_APP_FIREBASE_AUTH_DOMAIN }}
+          V_FB_PROJECT_ID: ${{ vars.REACT_APP_FIREBASE_PROJECT_ID }}
+          V_FB_STORAGE_BUCKET: ${{ vars.REACT_APP_FIREBASE_STORAGE_BUCKET }}
+          V_FB_MSG_SENDER_ID: ${{ vars.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
+          V_FB_APP_ID: ${{ vars.REACT_APP_FIREBASE_APP_ID }}
+          V_FB_DATABASE_URL: ${{ vars.REACT_APP_FIREBASE_DATABASE_URL }}
+          S_FB_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+          S_FB_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
+          S_FB_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
+          S_FB_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
+          S_FB_MSG_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
+          S_FB_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
+          S_FB_DATABASE_URL: ${{ secrets.REACT_APP_FIREBASE_DATABASE_URL }}
+        run: |
+          set -e
+          API_KEY="${V_FB_API_KEY:-$S_FB_API_KEY}"
+          AUTH_DOMAIN="${V_FB_AUTH_DOMAIN:-$S_FB_AUTH_DOMAIN}"
+          PROJECT_ID="${V_FB_PROJECT_ID:-$S_FB_PROJECT_ID}"
+          STORAGE_BUCKET="${V_FB_STORAGE_BUCKET:-$S_FB_STORAGE_BUCKET}"
+          MESSAGING_SENDER_ID="${V_FB_MSG_SENDER_ID:-$S_FB_MSG_SENDER_ID}"
+          APP_ID="${V_FB_APP_ID:-$S_FB_APP_ID}"
+          DATABASE_URL="${V_FB_DATABASE_URL:-$S_FB_DATABASE_URL}"
+
+          echo "REACT_APP_FIREBASE_API_KEY=$API_KEY" >> .env
+          echo "REACT_APP_FIREBASE_AUTH_DOMAIN=$AUTH_DOMAIN" >> .env
+          echo "REACT_APP_FIREBASE_PROJECT_ID=$PROJECT_ID" >> .env
+          echo "REACT_APP_FIREBASE_STORAGE_BUCKET=$STORAGE_BUCKET" >> .env
+          echo "REACT_APP_FIREBASE_MESSAGING_SENDER_ID=$MESSAGING_SENDER_ID" >> .env
+          echo "REACT_APP_FIREBASE_APP_ID=$APP_ID" >> .env
+          echo "REACT_APP_FIREBASE_DATABASE_URL=$DATABASE_URL" >> .env
+          echo "REACT_APP_GA_TRACKING_ID=G-61TG8XGM1P" >> .env
+          echo "Wrote .env for build:"
+          cat .env | sed 's/=.*/=***hidden***/'
+
+      - name: 🛠️ Build site
+        run: |
+          npm run build
+
+      - name: 📄 Ensure popular_live.json is in build output
+        run: |
+          if [ -f "public/popular_live.json" ]; then
+            cp public/popular_live.json build/popular_live.json
+            echo "✅ Copied popular_live.json to build directory."
+          else
+            echo "⚠️ popular_live.json not found in public, skipping copy."
+          fi
+
+      - name: 📦 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          force_orphan: true

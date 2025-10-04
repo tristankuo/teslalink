@@ -174,40 +174,36 @@ const LiveChannelsGrid: React.FC<LiveChannelsGridProps> = ({ userRegion, theme }
         <div 
           key={`${channel.url}-${index}`}
           className="col-md-2 mb-3 app-block-wrapper"
+          onClick={() => handleChannelClick(channel)}
+          style={{ cursor: 'pointer' }}
         >
-          <div 
-            className="app-block-wrapper"
-            onClick={() => handleChannelClick(channel)}
-            style={{ cursor: 'pointer' }}
-          >
-            <div className="card">
-              <div className="card-body text-center">
-                <img
-                  src={getThumbnailUrl(channel).primary}
-                  alt="Channel Thumbnail"
-                  className="favicon mb-2"
-                  onError={(e) => (e.currentTarget.src = getThumbnailUrl(channel).fallback)}
-                  style={{ width: '84px', height: '84px', objectFit: 'cover', borderRadius: '6px' }}
-                  draggable="false"
-                />
-                <h5 className="card-title">{channel.channel}</h5>
-                
-                {/* Live indicator positioned like delete button */}
-                <div style={{
-                  position: 'absolute',
-                  top: '-10px',
-                  right: '-10px',
-                  background: '#ff4444',
-                  color: 'white',
-                  fontSize: '10px',
-                  padding: '4px 8px',
-                  borderRadius: '12px',
-                  fontWeight: 'bold',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                  zIndex: 10
-                }}>
-                  🔴 LIVE
-                </div>
+          <div className="card">
+            <div className="card-body text-center">
+              <img
+                src={getThumbnailUrl(channel).primary}
+                alt="Channel Thumbnail"
+                className="favicon mb-2"
+                onError={(e) => (e.currentTarget.src = getThumbnailUrl(channel).fallback)}
+                style={{ width: '84px', height: '84px', objectFit: 'cover', borderRadius: '6px' }}
+                draggable="false"
+              />
+              <h5 className="card-title">{channel.channel}</h5>
+              
+              {/* Live indicator positioned like delete button */}
+              <div style={{
+                position: 'absolute',
+                top: '-10px',
+                right: '-10px',
+                background: '#ff4444',
+                color: 'white',
+                fontSize: '10px',
+                padding: '4px 8px',
+                borderRadius: '12px',
+                fontWeight: 'bold',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                zIndex: 10
+              }}>
+                🔴 LIVE
               </div>
             </div>
           </div>

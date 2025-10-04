@@ -83,9 +83,18 @@ const LiveChannelsGrid: React.FC<LiveChannelsGridProps> = ({ userRegion, theme }
     return channelsData[region] || [];
   };
 
-  const getFaviconUrl = (url: string): { primary: string; fallback: string } => {
+  const getThumbnailUrl = (channel: LiveChannel): { primary: string; fallback: string } => {
+    // Use YouTube thumbnail if available, otherwise fall back to favicon
+    if (channel.thumbnails?.medium?.url) {
+      return {
+        primary: channel.thumbnails.medium.url,
+        fallback: channel.thumbnails.default?.url || channel.thumbnails.high?.url || 'favicon.svg'
+      };
+    }
+    
+    // Fallback to domain favicon if no thumbnails
     try {
-      const urlObject = new URL(url);
+      const urlObject = new URL(channel.url);
       const domain = urlObject.hostname;
       return {
         primary: `https://logo.clearbit.com/${domain}`,
@@ -161,7 +170,7 @@ const LiveChannelsGrid: React.FC<LiveChannelsGridProps> = ({ userRegion, theme }
 
   return (
     <div className="row justify-content-center">
-      {channels.map((channel, index) => (
+      {channels.slice(0, 12).map((channel, index) => (
         <div 
           key={`${channel.url}-${index}`}
           className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4"
@@ -172,39 +181,61 @@ const LiveChannelsGrid: React.FC<LiveChannelsGridProps> = ({ userRegion, theme }
             style={{ cursor: 'pointer' }}
           >
             <div className="card">
-              <div className="card-body text-center">
-                <img
-                  src={getFaviconUrl(channel.url).primary}
-                  alt="Channel"
-                  className="favicon mb-2"
-                  onError={(e) => (e.currentTarget.src = getFaviconUrl(channel.url).fallback)}
-                  style={{ width: '42px', height: '42px' }}
-                />
+              <div className="card-body text-center" style={{ position: 'relative', padding: '1rem' }}>
+                {/* Thumbnail with aspect ratio for video content */}
+                <div style={{ 
+                  position: 'relative',
+                  width: '100%', 
+                  paddingBottom: '56.25%', // 16:9 aspect ratio
+                  marginBottom: '12px',
+                  borderRadius: '6px',
+                  overflow: 'hidden'
+                }}>
+                  <img
+                    src={getThumbnailUrl(channel).primary}
+                    alt="Channel Thumbnail"
+                    className="channel-thumbnail"
+                    onError={(e) => (e.currentTarget.src = getThumbnailUrl(channel).fallback)}
+                    style={{ 
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%', 
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                  />
+                  {/* Live indicator overlay */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '6px',
+                    right: '6px',
+                    background: 'rgba(255, 68, 68, 0.9)',
+                    color: 'white',
+                    fontSize: '10px',
+                    padding: '3px 6px',
+                    borderRadius: '4px',
+                    fontWeight: 'bold',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                  }}>
+                    🔴 LIVE
+                  </div>
+                </div>
+                
+                {/* Channel name */}
                 <h5 className="card-title" style={{ 
-                  fontSize: '14px',
-                  lineHeight: '1.2',
+                  fontSize: '13px',
+                  lineHeight: '1.3',
                   height: '34px',
                   overflow: 'hidden',
                   display: '-webkit-box',
                   WebkitLineClamp: 2,
                   WebkitBoxOrient: 'vertical',
-                  marginBottom: '8px'
+                  marginBottom: '0',
+                  fontWeight: '500'
                 }}>
                   {channel.channel}
                 </h5>
-                <div style={{
-                  position: 'absolute',
-                  top: '8px',
-                  right: '8px',
-                  background: '#ff4444',
-                  color: 'white',
-                  fontSize: '10px',
-                  padding: '2px 6px',
-                  borderRadius: '4px',
-                  fontWeight: 'bold'
-                }}>
-                  🔴 LIVE
-                </div>
               </div>
             </div>
           </div>

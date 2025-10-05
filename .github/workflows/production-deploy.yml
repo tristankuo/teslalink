@@ -1,0 +1,124 @@
+name: 🚢 Deploy to Production (Firebase)
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+        - production
+        - preview
+      confirm_production:
+        description: 'Type "CONFIRM" to deploy to production'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  validate-production:
+    if: github.event.inputs.environment == 'production'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛡️ Validate production deployment
+        run: |
+          if [ "${{ github.event.inputs.confirm_production }}" != "CONFIRM" ]; then
+            echo "❌ Production deployment requires confirmation."
+            echo "Please type 'CONFIRM' in the confirm_production input to proceed."
+            exit 1
+          fi
+          echo "✅ Production deployment confirmed"
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: [validate-production]
+    if: always() && (needs.validate-production.result == 'success' || github.event.inputs.environment == 'preview')
+    
+    environment:
+      name: ${{ github.event.inputs.environment }}
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: 🔧 Configure environment for production
+        env:
+          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+          REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
+          REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
+          REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
+          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
+          REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
+          REACT_APP_FIREBASE_DATABASE_URL: ${{ secrets.REACT_APP_FIREBASE_DATABASE_URL }}
+        run: |
+          # Validate all required environment variables are present
+          if [ -z "$REACT_APP_FIREBASE_API_KEY" ]; then
+            echo "❌ REACT_APP_FIREBASE_API_KEY secret is required for production"
+            exit 1
+          fi
+          
+          # Create production .env
+          echo "REACT_APP_FIREBASE_API_KEY=$REACT_APP_FIREBASE_API_KEY" >> .env
+          echo "REACT_APP_FIREBASE_AUTH_DOMAIN=$REACT_APP_FIREBASE_AUTH_DOMAIN" >> .env
+          echo "REACT_APP_FIREBASE_PROJECT_ID=$REACT_APP_FIREBASE_PROJECT_ID" >> .env
+          echo "REACT_APP_FIREBASE_STORAGE_BUCKET=$REACT_APP_FIREBASE_STORAGE_BUCKET" >> .env
+          echo "REACT_APP_FIREBASE_MESSAGING_SENDER_ID=$REACT_APP_FIREBASE_MESSAGING_SENDER_ID" >> .env
+          echo "REACT_APP_FIREBASE_APP_ID=$REACT_APP_FIREBASE_APP_ID" >> .env
+          echo "REACT_APP_FIREBASE_DATABASE_URL=$REACT_APP_FIREBASE_DATABASE_URL" >> .env
+          echo "REACT_APP_GA_TRACKING_ID=G-61TG8XGM1P" >> .env
+          echo "✅ Production environment configured"
+          
+      - name: 🛠️ Build for production
+        run: |
+          echo "🚀 Building application for production..."
+          npm run build
+          echo "✅ Production build completed"
+          
+      - name: 📄 Include latest data
+        run: |
+          if [ -f "public/popular_live.json" ]; then
+            cp public/popular_live.json build/popular_live.json
+            echo "✅ Included latest popular_live.json"
+          else
+            echo "⚠️ popular_live.json not found - production will use empty data"
+          fi
+          
+      - name: 🚢 Deploy to Firebase
+        id: deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TESLACENTER }}
+          projectId: teslacenter
+          channelId: ${{ github.event.inputs.environment == 'production' && 'live' || '' }}
+          
+      - name: 📝 Deployment summary
+        run: |
+          echo "## 🚢 Production Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment:** ${{ github.event.inputs.environment }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ✅ Deployment successful" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ github.event.inputs.environment }}" == "production" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 🎉 Production Deployment Complete!" >> $GITHUB_STEP_SUMMARY
+            echo "Your changes are now live for all users." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 👀 Preview Deployment Ready" >> $GITHUB_STEP_SUMMARY
+            echo "Review your changes before promoting to production." >> $GITHUB_STEP_SUMMARY
+          fi

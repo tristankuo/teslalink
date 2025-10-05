@@ -1,0 +1,92 @@
+name: 🚀 Deploy to Staging (GitHub Pages)
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  pull-requests: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: staging-deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm install --legacy-peer-deps
+        
+      - name: 🔧 Configure environment for staging
+        run: |
+          # Create .env for staging with Firebase config
+          echo "REACT_APP_FIREBASE_API_KEY=${{ vars.REACT_APP_FIREBASE_API_KEY }}" >> .env
+          echo "REACT_APP_FIREBASE_AUTH_DOMAIN=${{ vars.REACT_APP_FIREBASE_AUTH_DOMAIN }}" >> .env
+          echo "REACT_APP_FIREBASE_PROJECT_ID=${{ vars.REACT_APP_FIREBASE_PROJECT_ID }}" >> .env
+          echo "REACT_APP_FIREBASE_STORAGE_BUCKET=${{ vars.REACT_APP_FIREBASE_STORAGE_BUCKET }}" >> .env
+          echo "REACT_APP_FIREBASE_MESSAGING_SENDER_ID=${{ vars.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}" >> .env
+          echo "REACT_APP_FIREBASE_APP_ID=${{ vars.REACT_APP_FIREBASE_APP_ID }}" >> .env
+          echo "REACT_APP_FIREBASE_DATABASE_URL=${{ vars.REACT_APP_FIREBASE_DATABASE_URL }}" >> .env
+          echo "REACT_APP_GA_TRACKING_ID=G-61TG8XGM1P" >> .env
+          echo "✅ Environment configured for staging"
+          
+      - name: 🛠️ Build application
+        run: npm run build
+        
+      - name: 📄 Include existing data files
+        run: |
+          # Copy existing popular_live.json if it exists (preserves existing data)
+          if [ -f "public/popular_live.json" ]; then
+            cp public/popular_live.json build/popular_live.json
+            echo "✅ Included existing popular_live.json"
+          else
+            echo "ℹ️  No popular_live.json found, build will proceed without it"
+          fi
+          
+      - name: 📦 Upload build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    environment:
+      name: staging
+      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
+      - name: 📝 Comment on PR (if applicable)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🚀 **Staging Deployment Ready!**\n\nYour changes have been deployed to staging:\n👀 [Preview on GitHub Pages](${{ steps.deployment.outputs.page_url }})\n\n*Note: Live channel data updates are managed separately and don\'t run on every build.*'
+            });

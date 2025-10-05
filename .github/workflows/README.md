@@ -1,6 +1,6 @@
 # 🚀 TeslaLink CI/CD Workflows
 
-This document describes the reorganized CI/CD workflows for efficient development and deployment.
+This document describes the streamlined CI/CD workflows for efficient development and deployment.
 
 ## 📋 Workflow Overview
 
@@ -77,33 +77,7 @@ Status: Ready for when Firebase is reactivated
 
 ---
 
-## 🔧 Configuration
-
-### Required Secrets:
-```bash
-# For Data Updates
-YOUTUBE_API_KEY                    # YouTube Data API v3 key
-
-# For Production (Firebase)
-FIREBASE_SERVICE_ACCOUNT_TESLACENTER  # Firebase service account
-REACT_APP_FIREBASE_API_KEY           # Firebase config
-REACT_APP_FIREBASE_AUTH_DOMAIN       # Firebase config
-REACT_APP_FIREBASE_PROJECT_ID        # Firebase config
-REACT_APP_FIREBASE_STORAGE_BUCKET    # Firebase config
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID # Firebase config
-REACT_APP_FIREBASE_APP_ID            # Firebase config
-REACT_APP_FIREBASE_DATABASE_URL      # Firebase config
-```
-
-### Required Variables:
-```bash
-# Same Firebase config as above, but as repository variables
-# Used for staging builds
-```
-
----
-
-## 📊 Benefits of New Structure
+## � Benefits of Streamlined Structure
 
 ### ⚡ **Faster Development**
 - Code changes deploy immediately to staging
@@ -140,22 +114,23 @@ REACT_APP_FIREBASE_DATABASE_URL      # Firebase config
 3. Existing data will be preserved automatically
 
 ### When Firebase is reactivated:
-1. Uncomment triggers in `firebase-hosting-*.yml`
+1. Use the "Deploy to Production (Firebase)" workflow
 2. Verify Firebase service account secrets
 3. Test with preview deployment first
 
 ---
 
-## 📝 Migration Notes
+## 📝 Workflow Evolution
 
 ### Removed Workflows:
-- `deploy-only.yml` → Replaced by `staging-deploy.yml`
-- `update-and-deploy.yml` → Split into `data-update.yml` + `staging-deploy.yml`
+- `firebase-hosting-merge.yml` → Replaced by `production-deploy.yml` (better control)
+- `firebase-hosting-pull-request.yml` → Simplified to staging-only PR previews
 
-### Disabled Workflows:
-- `firebase-hosting-merge.yml` → Will reactivate when Firebase is restored
-- `firebase-hosting-pull-request.yml` → Will reactivate when Firebase is restored
+### Current Active Workflows:
+- ✅ `staging-deploy.yml` → GitHub Pages deployment
+- ✅ `data-update.yml` → Independent data refresh
+- ✅ `production-deploy.yml` → Manual Firebase deployment (when reactivated)
 
 ---
 
-*This workflow structure optimizes for daily development productivity while maintaining production safety and data reliability.*
+*This streamlined workflow structure optimizes for daily development productivity while maintaining production safety and data reliability.*

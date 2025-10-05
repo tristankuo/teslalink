@@ -16,7 +16,7 @@ const AddAppQR: React.FC = () => {
 
   // Add production debugging and error catching
   useEffect(() => {
-    if (window.location.hostname === 'myteslalink.web.app') {
+    if (window.location.hostname === 'myteslalink.github.io') {
       console.log('[PROD-DEBUG] AddAppQR component mounted');
       console.log('[PROD-DEBUG] sessionId:', sessionId);
       console.log('[PROD-DEBUG] theme:', theme);
@@ -29,12 +29,12 @@ const AddAppQR: React.FC = () => {
     try {
       document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
       
-      if (window.location.hostname === 'myteslalink.web.app') {
+      if (window.location.hostname === 'myteslalink.github.io') {
         console.log('[PROD-DEBUG] AddAppQR loaded with sessionId:', sessionId);
         console.log('[PROD-DEBUG] URL:', window.location.href);
       }
     } catch (err) {
-      if (window.location.hostname === 'myteslalink.web.app') {
+      if (window.location.hostname === 'myteslalink.github.io') {
         console.error('[PROD-DEBUG] Error in theme effect:', err);
       }
     }
@@ -49,7 +49,7 @@ const AddAppQR: React.FC = () => {
 
     // If Firebase is not available (e.g., on GitHub Pages), redirect to production host
     if (!isFirebaseAvailable || !database) {
-      const origin = 'https://myteslalink.web.app';
+      const origin = 'https://myteslalink.github.io';
       const search = new URLSearchParams(window.location.search);
       const themeParam = search.get('theme') || 'light';
       const redirectUrl = `${origin}/add-app/${sessionId}?theme=${encodeURIComponent(themeParam)}`;
@@ -63,7 +63,7 @@ const AddAppQR: React.FC = () => {
     // Use onValue for real-time listening. It will fire immediately with the
     // current state and then update on any changes.
     const unsubscribe = onValue(sessionRef, (snapshot) => {
-      if (window.location.hostname === 'myteslalink.web.app') {
+      if (window.location.hostname === 'myteslalink.github.io') {
         console.log('[PROD-DEBUG] AddAppQR listener triggered:', snapshot.exists(), snapshot.val());
       }
       if (snapshot.exists()) {
@@ -116,7 +116,7 @@ const AddAppQR: React.FC = () => {
     if (sessionId) {
   if (!isFirebaseAvailable || !database) return;
   const sessionRef = ref(database!, `qr_sessions/${sessionId}`);
-      if (window.location.hostname === 'myteslalink.web.app') {
+      if (window.location.hostname === 'myteslalink.github.io') {
         console.log('[PROD-DEBUG] Submitting form:', { name: appName.trim(), url: urlToSave });
       }
       set(sessionRef, {
@@ -124,13 +124,13 @@ const AddAppQR: React.FC = () => {
         name: appName.trim(),
         url: urlToSave,
       }).then(() => {
-        if (window.location.hostname === 'myteslalink.web.app') {
+        if (window.location.hostname === 'myteslalink.github.io') {
           console.log('[PROD-DEBUG] Form submission successful');
         }
         setStatus('success');
         setTimeout(() => window.close(), 1500);
       }).catch((error) => {
-        if (window.location.hostname === 'myteslalink.web.app') {
+        if (window.location.hostname === 'myteslalink.github.io') {
           console.error('[PROD-DEBUG] Form submission failed:', error);
         }
         setStatus('error');

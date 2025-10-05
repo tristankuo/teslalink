@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       confirm_production:
-        description: 'Type "DEPLOY" to confirm production deployment'
+        description: 'Typ          echo "**Production URL**: https://myteslalink.github.io" >> $GITHUB_STEP_SUMMARY
+          echo "**Deployed At**: $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARYDEPLOY" to confirm production deployment'
         required: true
         type: string
       include_latest_data:
@@ -64,7 +65,7 @@ jobs:
       - name: 📝 Update package.json for production
         run: |
           # Set correct homepage for production
-          npm pkg set homepage="https://myteslalink.github.io/app"
+          npm pkg set homepage="https://myteslalink.github.io"
           echo "✅ Updated homepage for production deployment"
           
       - name: 🛠️ Build for production
@@ -101,9 +102,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PRODUCTION_DEPLOY_TOKEN }}
-          external_repository: myteslalink/app
+          external_repository: myteslalink/myteslalink.github.io
           publish_dir: ./build
-          publish_branch: gh-pages
+          publish_branch: main
           force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: '41898282+github-actions[bot]@users.noreply.github.com'
@@ -117,8 +118,7 @@ jobs:
       - name: 📝 Production deployment summary
         run: |
           echo "## 🚢 Production Deployment Complete!" >> $GITHUB_STEP_SUMMARY
-          echo "**Target**: https://myteslalink.github.io/app" >> $GITHUB_STEP_SUMMARY
-          echo "**Root Redirect**: https://myteslalink.github.io → https://myteslalink.github.io/app" >> $GITHUB_STEP_SUMMARY
+          echo "**Production URL**: https://myteslalink.github.io" >> $GITHUB_STEP_SUMMARY
           echo "**Deployed At**: $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
           echo "**Source Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "**Build Number**: ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY

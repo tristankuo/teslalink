@@ -47,13 +47,11 @@ const AddAppQR: React.FC = () => {
       return;
     }
 
-    // If Firebase is not available (e.g., on GitHub Pages), redirect to production host
+    // If Firebase is not available, show error message instead of redirecting
     if (!isFirebaseAvailable || !database) {
-      const origin = 'https://myteslalink.github.io';
-      const search = new URLSearchParams(window.location.search);
-      const themeParam = search.get('theme') || 'light';
-      const redirectUrl = `${origin}/add-app/${sessionId}?theme=${encodeURIComponent(themeParam)}`;
-      window.location.replace(redirectUrl);
+      console.error('[QR] Firebase not available for QR session');
+      setStatus('error');
+      setError('QR code functionality is temporarily unavailable. Please try again later.');
       return;
     }
 

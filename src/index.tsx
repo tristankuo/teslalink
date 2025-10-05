@@ -11,7 +11,7 @@ const getBasename = () => {
   if (window.location.hostname === 'tristankuo.github.io') {
     return '/teslalink';
   }
-  // For production environments and localhost, use /
+  // For production (myteslalink.github.io) and localhost, use /
   return '/';
 };
 

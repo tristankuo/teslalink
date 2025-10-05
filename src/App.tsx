@@ -72,6 +72,7 @@ function MainApp() {
   // Helper function to generate the correct QR URL based on environment
   const getQRUrl = useCallback((sessionId: string, theme: string) => {
     const origin = window.location.origin;
+    // No base path needed for myteslalink.github.io since it's the root domain
     const basePath = window.location.hostname === 'tristankuo.github.io' ? '/teslalink' : '';
     return `${origin}${basePath}/add-app/${sessionId}?theme=${theme}`;
   }, []);

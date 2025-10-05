@@ -1,4 +1,4 @@
-name: 🚢 Deploy to Production (myteslalink.github.io)
+name: 🚢 Deploy to Production
 
 on:
   workflow_dispatch:
@@ -50,7 +50,7 @@ jobs:
         
       - name: 🔧 Configure environment for production
         run: |
-          # Create production .env with optimized settings
+          # Create production .env with existing Firebase config
           echo "REACT_APP_FIREBASE_API_KEY=${{ secrets.REACT_APP_FIREBASE_API_KEY }}" >> .env
           echo "REACT_APP_FIREBASE_AUTH_DOMAIN=${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}" >> .env
           echo "REACT_APP_FIREBASE_PROJECT_ID=${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}" >> .env
@@ -83,15 +83,8 @@ jobs:
             echo "⚠️ No live channels data found - production will use empty data"
           fi
           
-      - name: � Prepare production files
+      - name: 📋 Create production deployment info
         run: |
-          # Copy redirect index.html to root of build
-          if [ -f "production-setup/index.html" ]; then
-            cp production-setup/index.html build/../index.html
-            echo "✅ Added root redirect page"
-          fi
-          
-          # Create deployment info
           cat > build/deployment-info.json << EOF
           {
             "deployedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
@@ -99,8 +92,7 @@ jobs:
             "sourceRepository": "${{ github.repository }}",
             "deploymentWorkflow": "${{ github.workflow }}",
             "version": "$(npm pkg get version | tr -d '"')",
-            "environment": "production",
-            "targetUrl": "https://myteslalink.github.io/app"
+            "environment": "production"
           }
           EOF
           echo "✅ Created deployment info"
@@ -125,7 +117,7 @@ jobs:
       - name: 📝 Production deployment summary
         run: |
           echo "## 🚢 Production Deployment Complete!" >> $GITHUB_STEP_SUMMARY
-          echo "**Production URL**: https://myteslalink.github.io/app" >> $GITHUB_STEP_SUMMARY
+          echo "**Target**: https://myteslalink.github.io/app" >> $GITHUB_STEP_SUMMARY
           echo "**Root Redirect**: https://myteslalink.github.io → https://myteslalink.github.io/app" >> $GITHUB_STEP_SUMMARY
           echo "**Deployed At**: $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
           echo "**Source Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY

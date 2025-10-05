@@ -14,36 +14,11 @@ const AddAppQR: React.FC = () => {
   const [status, setStatus] = useState<'loading' | 'ready' | 'success' | 'error' | 'expired'>('loading');
   const [error, setError] = useState('');
 
-  // Debug logging
-  console.log('[QR-DEBUG] Component mounted with sessionId:', sessionId);
-  console.log('[QR-DEBUG] Firebase available:', isFirebaseAvailable);
-  console.log('[QR-DEBUG] Database:', !!database);
-
   // Add production debugging and error catching
   useEffect(() => {
-    if (window.location.hostname === 'myteslalink.github.io') {
-      console.log('[PROD-DEBUG] AddAppQR component mounted');
-      console.log('[PROD-DEBUG] sessionId:', sessionId);
-      console.log('[PROD-DEBUG] theme:', theme);
-      console.log('[PROD-DEBUG] URL:', window.location.href);
-    }
-  }, [sessionId, theme]);
-
-  useEffect(() => {
     // Apply theme to the body to control background color
-    try {
-      document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
-      
-      if (window.location.hostname === 'myteslalink.github.io') {
-        console.log('[PROD-DEBUG] AddAppQR loaded with sessionId:', sessionId);
-        console.log('[PROD-DEBUG] URL:', window.location.href);
-      }
-    } catch (err) {
-      if (window.location.hostname === 'myteslalink.github.io') {
-        console.error('[PROD-DEBUG] Error in theme effect:', err);
-      }
-    }
-  }, [theme, sessionId]);
+    document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
+  }, [theme]);
   useEffect(() => {
     if (!sessionId) {
       console.error('[QR] No session ID provided in URL');
@@ -66,9 +41,6 @@ const AddAppQR: React.FC = () => {
     // Use onValue for real-time listening. It will fire immediately with the
     // current state and then update on any changes.
     const unsubscribe = onValue(sessionRef, (snapshot) => {
-      if (window.location.hostname === 'myteslalink.github.io') {
-        console.log('[PROD-DEBUG] AddAppQR listener triggered:', snapshot.exists(), snapshot.val());
-      }
       if (snapshot.exists()) {
         const sessionData = snapshot.val();
         if (sessionData.status === 'pending') {
@@ -85,7 +57,6 @@ const AddAppQR: React.FC = () => {
         }
       } else {
         // Session does not exist in the database.
-        // It might have expired and been deleted, or was never valid.
         console.error(`[QR] Session ${sessionId} does not exist in database`);
         setStatus('error');
         setError('This QR session is invalid or has expired.');
@@ -95,7 +66,6 @@ const AddAppQR: React.FC = () => {
         console.error(`[QR] Firebase onValue error for session ${sessionId}:`, error);
         setStatus('error');
         setError('Failed to verify the session due to a database error.');
-        console.error("Firebase onValue error:", error);
     });
 
     // Cleanup the listener when the component unmounts
@@ -127,15 +97,10 @@ const AddAppQR: React.FC = () => {
         name: appName.trim(),
         url: urlToSave,
       }).then(() => {
-        if (window.location.hostname === 'myteslalink.github.io') {
-          console.log('[PROD-DEBUG] Form submission successful');
-        }
         setStatus('success');
         setTimeout(() => window.close(), 1500);
       }).catch((error) => {
-        if (window.location.hostname === 'myteslalink.github.io') {
-          console.error('[PROD-DEBUG] Form submission failed:', error);
-        }
+        console.error('Failed to send data:', error);
         setStatus('error');
         setError('Failed to send data. Please try again.');
       });
@@ -179,10 +144,6 @@ const AddAppQR: React.FC = () => {
         <div style={{ ...formStyle, textAlign: 'center' }}>
           <h4>Loading...</h4>
           <p>Verifying session...</p>
-          <p style={{ fontSize: '12px', color: '#666' }}>
-            SessionId: {sessionId}<br/>
-            Firebase: {isFirebaseAvailable ? 'Available' : 'Not Available'}
-          </p>
         </div>
       </div>
     );

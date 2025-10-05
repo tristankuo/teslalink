@@ -269,16 +269,9 @@ function MainApp() {
       set(sessionRef, sessionData)
         .then(() => {
           // Session created successfully
-          if (window.location.hostname === 'myteslalink.github.io') {
-            console.log('[PROD-DEBUG] QR session created:', newSessionId);
-            console.log('[PROD-DEBUG] QR URL:', getQRUrl(newSessionId, theme));
-          }
         })
         .catch((error) => {
           console.error(`[SESSION] Failed to create QR session ${newSessionId}:`, error);
-          if (window.location.hostname === 'myteslalink.github.io') {
-            console.error('[PROD-DEBUG] Session creation failed:', error);
-          }
           setQrSessionId(null); // Clear the session ID on error
         });
 
@@ -288,13 +281,7 @@ function MainApp() {
 
       const unsubscribe = onValue(sessionRef, (snapshot) => {
         const data = snapshot.val();
-        if (window.location.hostname === 'myteslalink.github.io') {
-          console.log('[PROD-DEBUG] Session listener triggered:', data);
-        }
         if (data && data.status === 'completed') {
-          if (window.location.hostname === 'myteslalink.github.io') {
-            console.log('[PROD-DEBUG] Session completed successfully:', data);
-          }
           clearTimeout(sessionTimeout); // Clear the expiration timer
           setAppNameInput(data.name);
           setAppUrlInput(data.url);

@@ -10,7 +10,7 @@ This document describes the streamlined CI/CD workflows for efficient developmen
 - **Trigger**: Every push to `master` branch
 - **Workflow**: `staging-deploy.yml`
 
-### 🚢 **Production Environment** - Firebase Hosting (Suspended)
+### 🚢 **Production Environment** - GitHub Pages (myteslalink.github.io)
 - **URL**: https://teslacenter.web.app (when active)
 - **Purpose**: Live production site
 - **Trigger**: Manual deployment only
@@ -123,13 +123,15 @@ Status: Ready for when Firebase is reactivated
 ## 📝 Workflow Evolution
 
 ### Removed Workflows:
-- `firebase-hosting-merge.yml` → Replaced by `production-deploy.yml` (better control)
-- `firebase-hosting-pull-request.yml` → Simplified to staging-only PR previews
+- `firebase-hosting-merge.yml` → Replaced with GitHub Pages deployment
+- `firebase-hosting-pull-request.yml` → Simplified to staging-only deployment
+- `update-and-deploy.yml` → Split into separate workflows for better control
+- `deploy-only.yml` → Consolidated into environment-specific workflows
 
 ### Current Active Workflows:
-- ✅ `staging-deploy.yml` → GitHub Pages deployment
+- ✅ `staging-deploy.yml` → GitHub Pages deployment (tristankuo.github.io/teslalink)
 - ✅ `data-update.yml` → Independent data refresh
-- ✅ `production-deploy.yml` → Manual Firebase deployment (when reactivated)
+- ✅ `production-deploy.yml` → Production deployment (myteslalink.github.io)
 
 ---
 

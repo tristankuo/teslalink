@@ -1,8 +1,0 @@
-{
-  "projects": {
-    "default": "teslacenter",
-    "production": "myteslalink"
-  },
-  "targets": {},
-  "etags": {}
-}

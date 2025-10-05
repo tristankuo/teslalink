@@ -11,7 +11,7 @@ const getBasename = () => {
   if (window.location.hostname === 'tristankuo.github.io') {
     return '/teslalink';
   }
-  // For Firebase hosting (production) and localhost, use /
+  // For production environments and localhost, use /
   return '/';
 };
 

@@ -14,7 +14,7 @@ function getBaseUrl() {
     if (window.location.hostname === 'tristankuo.github.io' && window.location.pathname.startsWith('/teslalink')) {
         return '/teslalink/';
     }
-    // Default to root for Firebase hosting or local development
+    // Default to root for production environments or local development
     return '/';
 }
 

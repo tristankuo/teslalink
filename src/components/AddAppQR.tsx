@@ -14,6 +14,11 @@ const AddAppQR: React.FC = () => {
   const [status, setStatus] = useState<'loading' | 'ready' | 'success' | 'error' | 'expired'>('loading');
   const [error, setError] = useState('');
 
+  // Debug logging
+  console.log('[QR-DEBUG] Component mounted with sessionId:', sessionId);
+  console.log('[QR-DEBUG] Firebase available:', isFirebaseAvailable);
+  console.log('[QR-DEBUG] Database:', !!database);
+
   // Add production debugging and error catching
   useEffect(() => {
     if (window.location.hostname === 'myteslalink.github.io') {
@@ -145,11 +150,6 @@ const AddAppQR: React.FC = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
   };
 
   const formStyle: React.CSSProperties = {
@@ -174,7 +174,18 @@ const AddAppQR: React.FC = () => {
   };
 
   if (status === 'loading') {
-    return <div style={containerStyle}><div style={{ ...formStyle, textAlign: 'center' }}>Verifying session...</div></div>;
+    return (
+      <div style={containerStyle}>
+        <div style={{ ...formStyle, textAlign: 'center' }}>
+          <h4>Loading...</h4>
+          <p>Verifying session...</p>
+          <p style={{ fontSize: '12px', color: '#666' }}>
+            SessionId: {sessionId}<br/>
+            Firebase: {isFirebaseAvailable ? 'Available' : 'Not Available'}
+          </p>
+        </div>
+      </div>
+    );
   }
 
   if (status === 'error' || status === 'expired') {

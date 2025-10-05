@@ -7,6 +7,41 @@ if (!API_KEY) {
   process.exit(1);
 }
 
+const OUTPUT_FILE = 'public/popular_live.json';
+
+// Quota management - Critical protection against exceeding daily limits
+const QUOTA_LIMIT = 9000; // Stay well below 10,000 daily limit  
+let quotaUsed = 0;
+
+// Track API calls for quota monitoring
+function trackQuotaUsage(cost, operation) {
+  quotaUsed += cost;
+  console.log(`   📊 Quota: +${cost} units (${operation}) | Total: ${quotaUsed}/${QUOTA_LIMIT} (${((quotaUsed/QUOTA_LIMIT)*100).toFixed(1)}%)`);
+  
+  if (quotaUsed >= QUOTA_LIMIT) {
+    console.warn(`⚠️  Quota limit reached (${quotaUsed}/${QUOTA_LIMIT}). Stopping to preserve remaining quota.`);
+    return false;
+  }
+  return true;
+}
+
+// Load existing data as fallback when quota is exceeded or API fails
+function loadExistingData() {
+  try {
+    if (fs.existsSync(OUTPUT_FILE)) {
+      const existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
+      console.log('📁 Loaded existing data as fallback');
+      return existingData;
+    }
+  } catch (error) {
+    console.warn('⚠️  Could not load existing data:', error.message);
+  }
+  return {
+    lastUpdated: new Date().toISOString(),
+    Global: [], EU: [], AU: [], JP: [], TW: [], KR: [], CN: []
+  };
+}
+
 // Region mapping for YouTube API - Optimized for quota efficiency
 const REGION_CONFIG = {
   "Global": ["US"], // Focus on US as global representative
@@ -19,7 +54,6 @@ const REGION_CONFIG = {
 };
 
 const MAX_RESULTS_PER_REGION = 12; // Reduced from 15 to save quota
-const OUTPUT_FILE = "public/popular_live.json";
 const API_BASE = "https://www.googleapis.com/youtube/v3";
 
 // Optimized search queries targeting major local broadcasters and networks
@@ -102,6 +136,12 @@ const PRIORITY_CHANNELS = {
 };
 
 async function fetchLiveStreams(regionCode, query) {
+  // Check quota before making API call
+  if (!trackQuotaUsage(100, `Search: ${query} (${regionCode})`)) {
+    console.warn(`⚠️  Skipping search for "${query}" due to quota limit`);
+    return [];
+  }
+
   const searchUrl = `${API_BASE}/search?` + new URLSearchParams({
     part: 'snippet',
     q: query,
@@ -160,6 +200,12 @@ function getLanguageForRegion(regionCode) {
 // Add stream validation to filter out private/unavailable videos
 async function validateStreams(streams) {
   if (streams.length === 0) return [];
+  
+  // Check quota before validation (costs 1 unit per call)
+  if (!trackQuotaUsage(1, 'Video validation')) {
+    console.warn(`⚠️  Skipping validation due to quota limit, returning original streams`);
+    return streams;
+  }
   
   const videoIds = streams.map(s => s.videoId).slice(0, 8); // Only validate top 8
   const videoDetailsUrl = `${API_BASE}/videos?` + new URLSearchParams({
@@ -342,6 +388,9 @@ async function updatePopularLive() {
   console.log(`   Total estimated: ${estimatedQuota} units (${((estimatedQuota/10000)*100).toFixed(1)}% of daily quota)`);
   console.log(`   Safety margin: ${10000 - estimatedQuota} units remaining\n`);
   
+  // Load existing data as fallback
+  const existingData = loadExistingData();
+  
   const result = {
     lastUpdated: new Date().toISOString(),
     Global: [],
@@ -353,13 +402,32 @@ async function updatePopularLive() {
     CN: [],
   };
 
-  // Fetch streams for each region
+  // Fetch streams for each region with quota protection
   for (const regionName of Object.keys(REGION_CONFIG)) {
+    // Check if we should continue processing
+    if (quotaUsed >= QUOTA_LIMIT) {
+      console.warn(`⚠️  Quota limit reached. Using existing data for remaining regions.`);
+      result[regionName] = existingData[regionName] || [];
+      continue;
+    }
+    
     try {
-      result[regionName] = await fetchRegionStreams(regionName);
+      console.log(`\n🌍 Processing ${regionName}...`);
+      const regionStreams = await fetchRegionStreams(regionName);
+      
+      if (regionStreams && regionStreams.length > 0) {
+        result[regionName] = regionStreams;
+        console.log(`   ✅ Updated ${regionName} with ${regionStreams.length} streams`);
+      } else {
+        // Use existing data if no new streams found
+        result[regionName] = existingData[regionName] || [];
+        console.log(`   📁 No new streams found, kept existing ${result[regionName].length} streams for ${regionName}`);
+      }
     } catch (error) {
       console.error(`❌ Error processing ${regionName}:`, error.message);
-      result[regionName] = []; // Empty array as fallback
+      // Fallback to existing data instead of empty array
+      result[regionName] = existingData[regionName] || [];
+      console.log(`   📁 Using existing data for ${regionName}: ${result[regionName].length} streams`);
     }
   }
 
@@ -368,7 +436,10 @@ async function updatePopularLive() {
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2));
     console.log(`\n✅ Successfully updated ${OUTPUT_FILE}`);
     
-    // Log summary
+    // Log summary with quota usage
+    console.log(`\n📊 Final Summary:`);
+    console.log(`   Total quota used: ${quotaUsed}/10000 units (${((quotaUsed/10000)*100).toFixed(1)}%)`);
+    console.log(`   Remaining quota: ${10000 - quotaUsed} units`);
     Object.entries(result).forEach(([region, streams]) => {
       if (region !== 'lastUpdated') {
         console.log(`   ${region}: ${Array.isArray(streams) ? streams.length : 0} live streams`);

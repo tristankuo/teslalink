@@ -85,17 +85,6 @@ jobs:
           git push
           echo "✅ Data committed and pushed successfully"
           
-      - name: 🚀 Deploy updated data to production
-        if: steps.changes.outputs.has_changes == 'true' || github.event.inputs.force_update == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "🚀 Triggering production deployment with updated data..."
-          gh workflow run "🚢 Deploy to Production" \
-            --field confirm_production="DEPLOY" \
-            --field include_latest_data="true"
-          echo "✅ Production deployment triggered"
-          
       - name: 📋 Generate summary
         run: |
           echo "## 📺 Live Channels Update Summary" >> $GITHUB_STEP_SUMMARY
@@ -104,8 +93,7 @@ jobs:
           
           if [ "${{ steps.changes.outputs.has_changes }}" == "true" ] || [ "${{ github.event.inputs.force_update }}" == "true" ]; then
             echo "**Status:** ✅ Data updated and committed" >> $GITHUB_STEP_SUMMARY
-            echo "**Production Deploy:** ✅ Triggered automatically" >> $GITHUB_STEP_SUMMARY
-            echo "**Next Update:** Live at myteslalink.github.io in ~3-5 minutes" >> $GITHUB_STEP_SUMMARY
+            echo "The updated data will be included in the next manual deployment." >> $GITHUB_STEP_SUMMARY
           else
             echo "**Status:** ℹ️ No changes detected, data unchanged" >> $GITHUB_STEP_SUMMARY
           fi

@@ -569,6 +569,8 @@ function MainApp() {
     setUrlLoadingComplete(true);
   }, []);
 
+
+
   useEffect(() => {
     if ('BroadcastChannel' in window) {
       try {

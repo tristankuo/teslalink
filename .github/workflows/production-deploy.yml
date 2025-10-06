@@ -48,19 +48,6 @@ jobs:
       - name: 📦 Install dependencies
         run: npm install --legacy-peer-deps
         
-      - name: 🔧 Configure environment for production
-        run: |
-          # Create production .env with existing Firebase config
-          echo "REACT_APP_FIREBASE_API_KEY=${{ secrets.REACT_APP_FIREBASE_API_KEY }}" >> .env
-          echo "REACT_APP_FIREBASE_AUTH_DOMAIN=${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}" >> .env
-          echo "REACT_APP_FIREBASE_PROJECT_ID=${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}" >> .env
-          echo "REACT_APP_FIREBASE_STORAGE_BUCKET=${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}" >> .env
-          echo "REACT_APP_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}" >> .env
-          echo "REACT_APP_FIREBASE_APP_ID=${{ secrets.REACT_APP_FIREBASE_APP_ID }}" >> .env
-          echo "REACT_APP_FIREBASE_DATABASE_URL=${{ secrets.REACT_APP_FIREBASE_DATABASE_URL }}" >> .env
-          echo "REACT_APP_GA_TRACKING_ID=G-61TG8XGM1P" >> .env
-          echo "✅ Production environment configured"
-          
       - name: 📝 Update package.json for production
         run: |
           # Set correct homepage for production
@@ -68,9 +55,19 @@ jobs:
           echo "✅ Updated homepage for production deployment"
           
       - name: 🛠️ Build for production
+        env:
+          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+          REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
+          REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
+          REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
+          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
+          REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
+          REACT_APP_FIREBASE_DATABASE_URL: ${{ secrets.REACT_APP_FIREBASE_DATABASE_URL }}
+          REACT_APP_GA_TRACKING_ID: G-61TG8XGM1P
+          GENERATE_SOURCEMAP: false
         run: |
           echo "🚀 Building TeslaLink for production..."
-          GENERATE_SOURCEMAP=false npm run build
+          npm run build
           echo "✅ Production build completed"
           
       - name: 📄 Include latest live channels data

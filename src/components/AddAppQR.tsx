@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { database, isFirebaseAvailable } from '../utils/firebase';
-import { ref, set, onValue } from 'firebase/database';
+import { ref, set, get } from 'firebase/database';
 
 const AddAppQR: React.FC = () => {
   const { sessionId } = useParams<{ sessionId: string }>();
@@ -35,12 +35,8 @@ const AddAppQR: React.FC = () => {
       return;
     }
 
-  // At this point we know database is non-null due to the guard above
-  const sessionRef = ref(database!, `qr_sessions/${sessionId}`);
-
-    // Use onValue for real-time listening. It will fire immediately with the
-    // current state and then update on any changes.
-    const unsubscribe = onValue(sessionRef, (snapshot) => {
+    const sessionRef = ref(database!, `qr_sessions/${sessionId}`);
+    get(sessionRef).then((snapshot) => {
       if (snapshot.exists()) {
         const sessionData = snapshot.val();
         if (sessionData.status === 'pending') {
@@ -51,30 +47,19 @@ const AddAppQR: React.FC = () => {
           if (sessionData.url) {
             setAppUrl(sessionData.url);
           }
-        } else if (sessionData.status === 'completed') {
-          setStatus('success');
-          setTimeout(() => window.close(), 1500);
         } else {
           setStatus('expired');
-          setError('This QR code has an invalid status.');
+          setError('This QR code has already been used or has expired.');
         }
       } else {
-        // Session does not exist in the database.
-        console.error(`[QR] Session ${sessionId} does not exist in database`);
         setStatus('error');
         setError('This QR session is invalid or has expired.');
       }
-    }, (error) => {
-        // Handle potential database read errors (e.g., permissions)
-        console.error(`[QR] Firebase onValue error for session ${sessionId}:`, error);
-        setStatus('error');
-        setError('Failed to verify the session due to a database error.');
+    }).catch((error) => {
+      console.error(`[QR] Firebase get error for session ${sessionId}:`, error);
+      setStatus('error');
+      setError('Failed to verify the session due to a database error.');
     });
-
-    // Cleanup the listener when the component unmounts
-    return () => {
-      unsubscribe();
-    };
   }, [sessionId]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -99,6 +84,9 @@ const AddAppQR: React.FC = () => {
         status: 'completed',
         name: appName.trim(),
         url: urlToSave,
+      }).then(() => {
+        setStatus('success');
+        setTimeout(() => window.close(), 1500);
       }).catch((error) => {
         console.error('Failed to send data:', error);
         setStatus('error');

@@ -18,6 +18,8 @@ permissions:
 jobs:
   update-live-data:
     runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.changes.outputs.has_changes }}
     
     steps:
       - name: 📥 Checkout repository
@@ -93,9 +95,10 @@ jobs:
           
           if [ "${{ steps.changes.outputs.has_changes }}" == "true" ] || [ "${{ github.event.inputs.force_update }}" == "true" ]; then
             echo "**Status:** ✅ Data updated and committed" >> $GITHUB_STEP_SUMMARY
-            echo "The updated data will be included in the next manual deployment." >> $GITHUB_STEP_SUMMARY
+            echo "🚀 **Production deployment will start automatically**" >> $GITHUB_STEP_SUMMARY
           else
             echo "**Status:** ℹ️ No changes detected, data unchanged" >> $GITHUB_STEP_SUMMARY
+            echo "**Production:** No deployment needed" >> $GITHUB_STEP_SUMMARY
           fi
           
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -103,3 +106,104 @@ jobs:
           echo "- **Geographic Filtering:** Applied to prevent content mismatches" >> $GITHUB_STEP_SUMMARY
           echo "- **Quota Protection:** Monitored to stay within API limits" >> $GITHUB_STEP_SUMMARY
           echo "- **Fallback System:** Preserves existing data on API failures" >> $GITHUB_STEP_SUMMARY
+
+  auto-deploy-production:
+    runs-on: ubuntu-latest
+    needs: [update-live-data]
+    if: needs.update-live-data.outputs.has_changes == 'true' || github.event.inputs.force_update == 'true'
+    
+    steps:
+      - name: 📥 Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: master  # Ensure we get the latest commit with updated data
+          
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm install --legacy-peer-deps
+        
+      - name: 📝 Update package.json for production
+        env:
+          PRODUCTION_URL: ${{ secrets.PRODUCTION_URL }}
+        run: |
+          # Set homepage for production deployment from environment
+          if [ -z "$PRODUCTION_URL" ]; then
+            PRODUCTION_URL="https://myteslalink.github.io"
+            echo "⚠️  Using default production URL (set PRODUCTION_URL secret to override)"
+          fi
+          npm pkg set homepage="$PRODUCTION_URL"
+          echo "✅ Updated homepage for production deployment: $PRODUCTION_URL"
+          
+      - name: 🛠️ Build for production
+        env:
+          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+          REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
+          REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
+          REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
+          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
+          REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
+          REACT_APP_FIREBASE_DATABASE_URL: ${{ secrets.REACT_APP_FIREBASE_DATABASE_URL }}
+          REACT_APP_GA_TRACKING_ID: G-61TG8XGM1P
+          GENERATE_SOURCEMAP: false
+        run: |
+          echo "🚀 Building TeslaLink with fresh live channels data..."
+          npm run build
+          echo "✅ Production build completed with updated data"
+          
+      - name: 📋 Create auto-deployment info
+        run: |
+          cat > build/deployment-info.json << EOF
+          {
+            "deployedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "sourceCommit": "${{ github.sha }}",
+            "sourceRepository": "${{ github.repository }}",
+            "deploymentTrigger": "automated-data-update",
+            "version": "$(npm pkg get version | tr -d '"')",
+            "environment": "production",
+            "dataUpdate": true
+          }
+          EOF
+          echo "✅ Created auto-deployment info"
+          
+      - name: 🚀 Deploy to production repository
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PRODUCTION_DEPLOY_TOKEN }}
+          external_repository: ${{ secrets.PRODUCTION_REPO }}
+          publish_dir: ./build
+          publish_branch: main
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: '41898282+github-actions[bot]@users.noreply.github.com'
+          commit_message: |
+            🚀 Auto-deploy with Fresh Live Channels Data
+            
+            Source: ${{ github.repository }}@${{ github.sha }}
+            Trigger: Automated data update
+            Deployed: $(date -u '+%Y-%m-%d %H:%M UTC')
+            Data: Fresh live channels included
+            
+      - name: 📝 Auto-deployment summary
+        env:
+          PRODUCTION_URL: ${{ secrets.PRODUCTION_URL }}
+        run: |
+          # Set production URL for summary
+          if [ -z "$PRODUCTION_URL" ]; then
+            PRODUCTION_URL="https://myteslalink.github.io"
+          fi
+          
+          echo "## 🚀 Automatic Production Deployment Complete!" >> $GITHUB_STEP_SUMMARY
+          echo "**Production URL**: $PRODUCTION_URL" >> $GITHUB_STEP_SUMMARY
+          echo "**Deployed At**: $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Source Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger**: Automated data update" >> $GITHUB_STEP_SUMMARY
+          echo "**Fresh Data**: ✅ Latest live channels included" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎉 TeslaLink production updated automatically!" >> $GITHUB_STEP_SUMMARY
+          echo "Users now have access to the latest live channels data." >> $GITHUB_STEP_SUMMARY

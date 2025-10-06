@@ -14,21 +14,11 @@ const AddAppQR: React.FC = () => {
   const [status, setStatus] = useState<'loading' | 'ready' | 'success' | 'error' | 'expired'>('loading');
   const [error, setError] = useState('');
 
-  // Add environment debugging
+  // Apply theme to the body
   useEffect(() => {
     // Apply theme to the body to control background color
     document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
-    
-    // Debug logging for URL generation issues
-    console.log('[QR-DEBUG] Environment Info:', {
-      hostname: window.location.hostname,
-      origin: window.location.origin,
-      pathname: window.location.pathname,
-      href: window.location.href,
-      sessionId: sessionId,
-      theme: theme
-    });
-  }, [theme, sessionId]);
+  }, [theme]);
   useEffect(() => {
     if (!sessionId) {
       console.error('[QR] No session ID provided in URL');
@@ -87,9 +77,6 @@ const AddAppQR: React.FC = () => {
     if (sessionId) {
       if (!isFirebaseAvailable || !database) return;
       const sessionRef = ref(database!, `qr_sessions/${sessionId}`);
-      if (window.location.hostname === 'myteslalink.github.io') {
-        console.log('[PROD-DEBUG] Submitting form:', { name: appName.trim(), url: urlToSave });
-      }
       set(sessionRef, {
         status: 'completed',
         name: appName.trim(),

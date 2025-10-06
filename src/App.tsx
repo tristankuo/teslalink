@@ -938,10 +938,6 @@ function MainApp() {
                         <QRCode value={getQRUrl(qrSessionId, theme)} size={100} />
                       </div>
                       <p style={{ fontSize: 12, color: theme === 'dark' ? '#ccc' : '#555', margin: 0 }}>Scan to add</p>
-                      {/* Debug info for URL generation */}
-                      <p style={{ fontSize: 10, color: '#888', marginTop: 4 }}>
-                        URL: {getQRUrl(qrSessionId, theme)}
-                      </p>
                     </div>
                   )}
                 </div>

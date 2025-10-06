@@ -126,8 +126,23 @@ REACT_APP_FIREBASE_DATABASE_URL
 YOUTUBE_API_KEY
 
 # Production Deployment (for multi-repository deployment)
-PRODUCTION_DEPLOY_TOKEN
+PRODUCTION_DEPLOY_TOKEN     # Personal Access Token with repo permissions
+PRODUCTION_REPO            # Target repository (e.g., username/production-repo)
+PRODUCTION_URL             # Production URL (e.g., https://yourdomain.com)
 ```
+
+**Setting up Production Deployment:**
+
+1. **Create Production Repository**: Set up your production repository (e.g., `username/production-site`)
+2. **Generate Personal Access Token**: 
+   - Go to GitHub Settings → Developer settings → Personal access tokens
+   - Create token with `repo` permissions for your production repository
+3. **Configure Repository Secrets**:
+   - Go to your TeslaLink repository → Settings → Secrets and variables → Actions
+   - Add `PRODUCTION_DEPLOY_TOKEN` with your personal access token
+   - Add `PRODUCTION_REPO` with your production repository name (e.g., `username/production-site`)
+   - Add `PRODUCTION_URL` with your production URL (e.g., `https://yourdomain.com`)
+4. **Deploy**: Use the "🚢 Deploy to Production" workflow in GitHub Actions
 
 > **Note**: Without `YOUTUBE_API_KEY`, Live Channels will display static content. The app remains fully functional for all other features.
 

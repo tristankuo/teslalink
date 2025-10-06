@@ -294,12 +294,6 @@ function MainApp() {
       return () => {
         clearTimeout(sessionTimeout); // Clear the expiration timer
         unsubscribe();
-        // Check if the session still exists before trying to remove it
-        get(sessionRef).then((snapshot) => {
-          if (snapshot.exists()) {
-            remove(sessionRef);
-          }
-        });
       };
     }
   }, [showAppModal, modalMode, appNameInput, appUrlInput, getQRUrl, theme]);

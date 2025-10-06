@@ -985,7 +985,7 @@ function MainApp() {
           <div style={{ background: theme === 'dark' ? '#343a40' : '#fff', color: theme === 'dark' ? '#f8f9fa' : '#212529', padding: '30px 25px', borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,0.2)', textAlign: 'center', maxWidth: '90%', width: 320 }} onClick={e => e.stopPropagation()}>
             <h5 style={{ marginBottom: 15 }}>Support TeslaLink</h5>
             <p style={{ fontSize: 14, opacity: 0.8, marginBottom: 20 }}>Scan the QR code or click the button to help keep this project running.</p>
-            <img src={process.env.PUBLIC_URL + '/ko_fi_teslalink_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: '80%', height: 'auto', margin: '0 auto 20px', display: 'block', borderRadius: 8 }} />
+            <img src={process.env.PUBLIC_URL + '/resources/ko_fi_teslalink_qr.png'} alt="Ko-fi QR Code" style={{ maxWidth: '80%', height: 'auto', margin: '0 auto 20px', display: 'block', borderRadius: 8 }} />
             <a href="https://ko-fi.com/teslalink" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', width: '100%', padding: '12px 20px', textDecoration: 'none', background: '#ff5f5f', color: 'white', borderRadius: 8, fontWeight: 'bold', boxSizing: 'border-box' }}>
               Open Ko-fi
             </a>

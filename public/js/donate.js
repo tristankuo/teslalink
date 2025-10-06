@@ -42,7 +42,7 @@ function showDonateModal() {
         <span id="close-modal" style="position: absolute; top: 15px; right: 20px; color: ${textColor}; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
         <h2 style="color: ${textColor}; font-weight: 700; margin-bottom: 15px;">Support TeslaLink</h2>
         <p style="line-height: 1.7; margin-bottom: 20px;">Scan the QR code with your phone to open the Ko-fi page. Your support is greatly appreciated!</p>
-        <img src="ko_fi_teslalink_qr.png" alt="Ko-fi QR Code" style="max-width: 200px; margin-bottom: 20px; border-radius: 12px;">
+        <img src="resources/ko_fi_teslalink_qr.png" alt="Ko-fi QR Code" style="max-width: 200px; margin-bottom: 20px; border-radius: 12px;">
         <br>
         <a href="https://ko-fi.com/tristankuo" target="_blank" style="display: inline-block; padding: 12px 30px; text-decoration: none; background: #FF5E5B; color: white; border-radius: 50px; font-weight: bold; transition: all 0.3s ease;">Open Ko-fi Page</a>
     `;

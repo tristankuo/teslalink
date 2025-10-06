@@ -83,10 +83,12 @@ npm run build
 
 ### Environment Variables
 
-Create a `.env` file for optional features:
+### Environment Configuration
+
+Copy `.env.example` to `.env` and configure:
 
 ```bash
-# Firebase (for QR Code functionality)
+# Firebase (Required for QR Code functionality)
 REACT_APP_FIREBASE_API_KEY=your_api_key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
 REACT_APP_FIREBASE_PROJECT_ID=your_project_id
@@ -95,12 +97,39 @@ REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 REACT_APP_FIREBASE_APP_ID=your_app_id
 REACT_APP_FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
 
-# YouTube Data API (for Live Channels)
+# YouTube Data API (Optional - for Live Channels auto-updates)
 YOUTUBE_API_KEY=your_youtube_api_key
 
-# Google Analytics (optional)
+# Google Analytics (Optional)
 REACT_APP_GA_TRACKING_ID=your_ga_tracking_id
 ```
+
+### GitHub Secrets (For Repository Owners)
+
+For automated deployments and features, configure these secrets in your GitHub repository:
+
+**Required Secrets:**
+```bash
+# Firebase Configuration (for GitHub Pages deployment)
+REACT_APP_FIREBASE_API_KEY
+REACT_APP_FIREBASE_AUTH_DOMAIN  
+REACT_APP_FIREBASE_PROJECT_ID
+REACT_APP_FIREBASE_STORAGE_BUCKET
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID
+REACT_APP_FIREBASE_APP_ID
+REACT_APP_FIREBASE_DATABASE_URL
+```
+
+**Optional Secrets:**
+```bash
+# YouTube Data API (enables automated Live Channels updates)
+YOUTUBE_API_KEY
+
+# Production Deployment (for multi-repository deployment)
+PRODUCTION_DEPLOY_TOKEN
+```
+
+> **Note**: Without `YOUTUBE_API_KEY`, Live Channels will display static content. The app remains fully functional for all other features.
 
 ### Deployment
 

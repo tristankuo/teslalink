@@ -14,11 +14,21 @@ const AddAppQR: React.FC = () => {
   const [status, setStatus] = useState<'loading' | 'ready' | 'success' | 'error' | 'expired'>('loading');
   const [error, setError] = useState('');
 
-  // Add production debugging and error catching
+  // Add environment debugging
   useEffect(() => {
     // Apply theme to the body to control background color
     document.body.style.background = theme === 'dark' ? '#212529' : '#f8f9fa';
-  }, [theme]);
+    
+    // Debug logging for URL generation issues
+    console.log('[QR-DEBUG] Environment Info:', {
+      hostname: window.location.hostname,
+      origin: window.location.origin,
+      pathname: window.location.pathname,
+      href: window.location.href,
+      sessionId: sessionId,
+      theme: theme
+    });
+  }, [theme, sessionId]);
   useEffect(() => {
     if (!sessionId) {
       console.error('[QR] No session ID provided in URL');

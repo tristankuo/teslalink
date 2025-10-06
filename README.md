@@ -5,6 +5,8 @@
 
 TeslaLink transforms your Tesla's browser into a powerful hub for accessing your favorite websites and discovering trending content. With features like Live Channels, QR code scanning, and fullscreen mode, it's the perfect companion for Tesla owners.
 
+<!-- Updated: 2025-10-06 -->
+
 ## ✨ Features
 
 🎯 **Optimized for Tesla** - Large, touch-friendly interface designed for in-car use  

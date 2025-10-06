@@ -33,20 +33,17 @@ jobs:
       - name: 📦 Install dependencies
         run: npm install --legacy-peer-deps
         
-      - name: 🔧 Configure environment for staging
-        run: |
-          # Create .env for staging with Firebase config
-          echo "REACT_APP_FIREBASE_API_KEY=${{ vars.REACT_APP_FIREBASE_API_KEY }}" >> .env
-          echo "REACT_APP_FIREBASE_AUTH_DOMAIN=${{ vars.REACT_APP_FIREBASE_AUTH_DOMAIN }}" >> .env
-          echo "REACT_APP_FIREBASE_PROJECT_ID=${{ vars.REACT_APP_FIREBASE_PROJECT_ID }}" >> .env
-          echo "REACT_APP_FIREBASE_STORAGE_BUCKET=${{ vars.REACT_APP_FIREBASE_STORAGE_BUCKET }}" >> .env
-          echo "REACT_APP_FIREBASE_MESSAGING_SENDER_ID=${{ vars.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}" >> .env
-          echo "REACT_APP_FIREBASE_APP_ID=${{ vars.REACT_APP_FIREBASE_APP_ID }}" >> .env
-          echo "REACT_APP_FIREBASE_DATABASE_URL=${{ vars.REACT_APP_FIREBASE_DATABASE_URL }}" >> .env
-          echo "REACT_APP_GA_TRACKING_ID=G-61TG8XGM1P" >> .env
-          echo "✅ Environment configured for staging"
-          
       - name: 🛠️ Build application
+        env:
+          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+          REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
+          REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
+          REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
+          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
+          REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
+          REACT_APP_FIREBASE_DATABASE_URL: ${{ secrets.REACT_APP_FIREBASE_DATABASE_URL }}
+          REACT_APP_GA_TRACKING_ID: G-61TG8XGM1P
+          GENERATE_SOURCEMAP: false
         run: npm run build
         
       - name: 📄 Include existing data files

@@ -51,9 +51,12 @@ const AddAppQR: React.FC = () => {
           if (sessionData.url) {
             setAppUrl(sessionData.url);
           }
+        } else if (sessionData.status === 'completed') {
+          setStatus('success');
+          setTimeout(() => window.close(), 1500);
         } else {
           setStatus('expired');
-          setError('This QR code has already been used or has expired.');
+          setError('This QR code has an invalid status.');
         }
       } else {
         // Session does not exist in the database.
@@ -87,8 +90,8 @@ const AddAppQR: React.FC = () => {
     }
 
     if (sessionId) {
-  if (!isFirebaseAvailable || !database) return;
-  const sessionRef = ref(database!, `qr_sessions/${sessionId}`);
+      if (!isFirebaseAvailable || !database) return;
+      const sessionRef = ref(database!, `qr_sessions/${sessionId}`);
       if (window.location.hostname === 'myteslalink.github.io') {
         console.log('[PROD-DEBUG] Submitting form:', { name: appName.trim(), url: urlToSave });
       }
@@ -96,9 +99,6 @@ const AddAppQR: React.FC = () => {
         status: 'completed',
         name: appName.trim(),
         url: urlToSave,
-      }).then(() => {
-        setStatus('success');
-        setTimeout(() => window.close(), 1500);
       }).catch((error) => {
         console.error('Failed to send data:', error);
         setStatus('error');

@@ -4,9 +4,9 @@ const path = require('path');
 // Environment configurations
 const ENVIRONMENTS = {
   staging: {
-    hostname: 'your-username.github.io',
+    hostname: 'tristankuo.github.io',
     basePath: '/teslalink',
-    fullUrl: 'https://your-username.github.io/teslalink'
+    fullUrl: 'https://tristankuo.github.io/teslalink'
   },
   production: {
     hostname: 'your-production-domain.github.io', 
@@ -29,7 +29,7 @@ function generateIndexHtml() {
   const homepage = packageJson.homepage || '';
   
   let environment = 'development';
-  if (homepage.includes('your-username.github.io')) {
+  if (homepage.includes('tristankuo.github.io')) {
     environment = 'staging';
   } else if (homepage.includes('your-production-domain.github.io')) {
     environment = 'production';

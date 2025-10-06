@@ -5,21 +5,21 @@
  */
 const ENVIRONMENTS = {
   staging: {
-    hostname: 'tristankuo.github.io',
+    hostname: 'your-username.github.io',
     basePath: '/teslalink',
-    fullUrl: 'https://tristankuo.github.io/teslalink'
+    fullUrl: 'https://your-username.github.io/teslalink'
   },
   production: {
-    hostname: 'myteslalink.github.io', 
-    basePath: '',
-    fullUrl: 'https://myteslalink.github.io'
+    hostname: 'your-production-domain.github.io', 
+    basePath: '/',
+    fullUrl: 'https://your-production-domain.github.io'
   },
   development: {
     hostname: 'localhost',
-    basePath: '',
+    basePath: '/',
     fullUrl: 'http://localhost:3000'
   }
-} as const;
+};
 
 /**
  * Get current environment type
@@ -27,11 +27,11 @@ const ENVIRONMENTS = {
 export const getCurrentEnvironment = (): 'staging' | 'production' | 'development' => {
   const hostname = window.location.hostname;
   
-  if (hostname === 'tristankuo.github.io') {
+  if (hostname === 'your-username.github.io') {
     return 'staging';
   }
   
-  if (hostname === 'myteslalink.github.io') {
+  if (hostname === 'your-production-domain.github.io') {
     return 'production';
   }
   
@@ -48,9 +48,9 @@ export const getEnvironmentConfig = (env?: 'staging' | 'production' | 'developme
 
 /**
  * Get the base path for the current environment
- * - Staging (tristankuo.github.io): /teslalink
- * - Production (myteslalink.github.io): /
- * - Development (localhost): /
+ * - Staging: /teslalink (for GitHub Pages subdirectory)
+ * - Production: / (for custom domain root)
+ * - Development: / (local development)
  */
 export const getBasePath = (): string => {
   return getEnvironmentConfig().basePath;

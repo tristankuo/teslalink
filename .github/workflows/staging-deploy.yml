@@ -75,5 +75,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '🚀 **Staging Build Complete!**\n\nYour changes have been built successfully. Once merged to master, they will be deployed to:\n👀 [GitHub Pages Staging](https://tristankuo.github.io/teslalink)\n\n*Note: Live channel data updates are managed separately and don\'t run on every build.*'
+              body: '🚀 **Staging Build Complete!**\n\nYour changes have been built successfully. Once merged to master, they will be deployed to staging environment.\n\n*Note: Live channel data updates are managed separately and don\'t run on every build.*'
             });

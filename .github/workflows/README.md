@@ -1,17 +1,17 @@
 # 🚀 TeslaLink CI/CD Workflows
 
-This document describes the streamlined CI/CD workflows for efficient development and deployment.
+This document describes the CI/CD workflows for development and deployment.
 
-## 📋 Workflow Overview
+## 📋 Workflow Overv- ✅ `staging-deploy.yml` → GitHub Pages staging deployment
+- ✅ `data-update.yml` → Daily Live Channels data updates  
+- ✅ `production-deploy.yml` → Manual production deployment
 
 ### 🎯 **Staging Environment** - GitHub Pages
-- **URL**: https://tristankuo.github.io/teslalink
 - **Purpose**: Development testing and staging
 - **Trigger**: Every push to `master` branch
 - **Workflow**: `staging-deploy.yml`
 
-### 🚢 **Production Environment** - GitHub Pages (myteslalink.github.io)
-- **URL**: https://teslacenter.web.app (when active)
+### 🚢 **Production Environment** - External Deployment
 - **Purpose**: Live production site
 - **Trigger**: Manual deployment only
 - **Workflow**: `production-deploy.yml`

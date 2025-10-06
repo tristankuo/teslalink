@@ -21,9 +21,9 @@
     // This way the code will only replace the route part and not the real directory.
 
     // Environment-aware pathSegmentsToKeep:
-    // - Staging (tristankuo.github.io/teslalink): pathSegmentsToKeep = 1
-    // - Production (myteslalink.github.io): pathSegmentsToKeep = 0
-    var pathSegmentsToKeep = window.location.hostname === 'tristankuo.github.io' ? 1 : 0;
+    // - Staging (GitHub Pages subdirectory): pathSegmentsToKeep = 1
+    // - Production (custom domain root): pathSegmentsToKeep = 0
+    var pathSegmentsToKeep = window.location.hostname === 'your-username.github.io' ? 1 : 0;
 
     var l = window.location;
     l.replace(

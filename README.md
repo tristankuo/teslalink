@@ -1,74 +1,153 @@
-# 🚗 TeslaLink - The Ultimate Tesla Companion
+````markdown
+# 🚗 TeslaLink - Tesla Browser Companion
 
-**Your favorite websites, beautifully organized for Tesla!**
+**A beautiful, customizable web app dashboard designed specifically for Tesla touchscreens.**
 
-TeslaLink is the perfect companion app for Tesla owners who want quick, easy access to their favorite websites while driving. Designed specifically for Tesla's touchscreen, it provides a beautiful, customizable collection of web apps that makes your in-car browsing experience seamless and enjoyable.
+TeslaLink transforms your Tesla's browser into a powerful hub for accessing your favorite websites and discovering trending content. With features like Live Channels, QR code scanning, and fullscreen mode, it's the perfect companion for Tesla owners.
 
-## ✨ Why TeslaLink?
+## ✨ Features
 
-🎯 **Built for Tesla** - Optimized specifically for your Tesla's large touchscreen  
-🚀 **Tesla Theater Ready** - Full-screen mode that works perfectly with Tesla Theater  
-📱 **Simple & Clean** - Organize your favorite apps with ease  
-🎨 **Beautiful Design** - Clean, modern interface that matches Tesla's aesthetic  
-🌍 **Regional Defaults** - Pre-loaded with popular apps for your region  
+🎯 **Optimized for Tesla** - Large, touch-friendly interface designed for in-car use  
+� **Live Channels** - Discover trending YouTube content updated daily  
+📱 **QR Code Scanner** - Add apps instantly from your mobile device  
+🖥️ **Fullscreen Mode** - Immersive viewing perfect for Tesla Theater  
+🌍 **Regional Content** - Pre-loaded apps for different regions  
+🎨 **Themes** - Automatic light/dark theme matching your Tesla  
 
-## 🔥 Key Features
+## � Key Features
 
-### 📋 **Personal App Collection**
-- Add unlimited custom apps to your collection
-- Drag and drop to reorder your apps
-- Clean, grid-based layout perfect for touchscreens
+### 📋 **Customizable Dashboard**
+- Add unlimited web apps to your personal collection
+- Drag and drop to reorder apps
+- Clean, grid-based layout optimized for touchscreens
+- Edit or remove apps with simple long-press gestures
 
-### 🎭 **Tesla Theater Mode**
-- **One-tap fullscreen** - Perfect for Tesla's Theater mode
-- Seamless transition between browser and fullscreen
-- All your apps stay synchronized
+### 📺 **Live Channels**
+- Discover trending YouTube channels and live streams
+- Content updated daily with regional preferences
+- Perfect for finding entertainment during charging stops
+- Filter by region to find local content
 
-### ⚡ **Easy Management**
-- **Long-press to edit** any app
-- **One-tap deletion** when editing
-- **Reset to defaults** anytime
-- Dark/light theme toggle
+### 📱 **QR Code Integration**
+- Scan QR codes directly on your Tesla screen
+- Add websites from your mobile device instantly
+- No more typing long URLs in the car
+- Seamless cross-device experience
 
-### 🗺️ **Smart Defaults**
-Pre-loaded with popular streaming apps based on your region:
+### 🖥️ **Fullscreen Experience**
+- One-tap fullscreen mode for immersive viewing
+- Synchronized tabs for seamless transitions
+- Perfect integration with Tesla Theater mode
+- Address bar-free viewing for maximum screen space
+
+### 🌍 **Global Content**
+Pre-loaded with popular apps by region:
 - **Global**: YouTube, Netflix, Disney+, Twitch, Apple TV+
-- **Taiwan**: KKTV, HamiVideo, LINE TV, friDay, CATCHPLAY+, MyVideo, and more
-- **China**: bilibili, iQIYI, WeTV, Ani-Gamer, Gimy
-- **Japan**: U-NEXT, AbemaTV, TVer
-- **United States**: Hulu, Max, Peacock TV (plus Global apps)
+- **US**: Hulu, Max, Peacock, ESPN+, Sling TV
+- **EU**: BBC iPlayer, ITVX, Arte, Viaplay
+- **Asia**: Region-specific streaming and entertainment apps
 
-## 🚀 Get Started in Seconds
+## 🛠️ Development
 
-**Just visit:** [**tristankuo.github.io/teslalink**](https://tristankuo.github.io/teslalink)
+Built with modern web technologies:
+- **React** + **TypeScript** for robust development
+- **Bootstrap** for responsive design
+- **Firebase** for real-time QR code functionality
+- **YouTube API** for Live Channels feature
+- **GitHub Pages** deployment ready
 
-1. **Open in Tesla Browser** - Navigate to the URL above
-2. **Customize Your Apps** - Add your favorites or use regional defaults
-3. **Go Fullscreen** - Tap "Enter Fullscreen" for Tesla Theater mode
-4. **Enjoy!** - Quick access to all your favorite apps while driving
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- Optional: Firebase project for QR functionality
+- Optional: YouTube Data API key for Live Channels
 
-## 💡 Pro Tips
-
-- **Bookmark it** in your Tesla for instant access
-- **Use fullscreen mode** for the best Tesla Theater experience  
-- **Long-press apps** to edit names and URLs
-- **Reset anytime** if you want to start fresh
-
-## 🛠️ For Developers
-
-Built with React and TypeScript, deployed on GitHub Pages.
+### Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/your-username/teslalink.git
+cd teslalink
+
+# Install dependencies
 npm install
-npm start      # Development
-npm run build  # Production build
-npm run deploy # Deploy to GitHub Pages
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
 ```
 
-## 📝 License
+### Environment Variables
 
-MIT License - Feel free to fork and customize for your needs!
+Create a `.env` file for optional features:
+
+```bash
+# Firebase (for QR Code functionality)
+REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+REACT_APP_FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
+
+# YouTube Data API (for Live Channels)
+YOUTUBE_API_KEY=your_youtube_api_key
+
+# Google Analytics (optional)
+REACT_APP_GA_TRACKING_ID=your_ga_tracking_id
+```
+
+### Deployment
+
+TeslaLink is designed to work on any static hosting platform:
+
+- **GitHub Pages**: Automated via workflows
+- **Vercel**: Zero-config deployment
+- **Netlify**: Drag and drop or Git integration
+- **Firebase Hosting**: Built-in Firebase integration
+
+## 🔧 Configuration
+
+### Live Channels
+The Live Channels feature fetches trending YouTube content daily. Configure regions and search terms in `scripts/update_popular_live.js`.
+
+### Default Apps
+Customize the pre-loaded apps for each region in `public/default-apps.json`.
+
+### Environment Detection
+The app automatically detects deployment environment and adjusts URLs accordingly. See `src/utils/environment.ts` for configuration.
+
+## � Usage Tips
+
+- **Bookmark** the site in your Tesla browser for quick access
+- **Use fullscreen mode** for the best Tesla Theater experience
+- **Try QR scanning** to quickly add your favorite sites
+- **Explore Live Channels** to discover new content while charging
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### Development Guidelines
+- Use TypeScript for new features
+- Follow the existing code style
+- Add tests for new functionality
+- Update documentation as needed
+
+## � License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built for the Tesla community
+- Inspired by the need for better in-car web experiences
+- Special thanks to all contributors and beta testers
 
 ---
 
-**Made with ❤️ for the Tesla community**
+**Made with ❤️ for Tesla owners worldwide**
+````

@@ -13,8 +13,8 @@ function getBaseUrl() {
     // Environment-aware base URL detection
     const hostname = window.location.hostname;
     
-    // Staging environment
-    if (hostname === 'tristankuo.github.io') {
+    // Staging environment (GitHub Pages subdirectory)
+    if (hostname === 'your-username.github.io') {
         return '/teslalink/';
     }
     

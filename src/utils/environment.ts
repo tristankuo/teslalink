@@ -1,59 +1,42 @@
 // Environment-specific utilities for URL and path handling
 
 /**
- * Environment configuration object
- */
-const ENVIRONMENTS = {
-  staging: {
-    hostname: 'tristankuo.github.io',
-    basePath: '/teslalink',
-    fullUrl: 'https://tristankuo.github.io/teslalink'
-  },
-  production: {
-    hostname: 'your-production-domain.github.io', 
-    basePath: '/',
-    fullUrl: 'https://your-production-domain.github.io'
-  },
-  development: {
-    hostname: 'localhost',
-    basePath: '/',
-    fullUrl: 'http://localhost:3000'
-  }
-};
-
-/**
- * Get current environment type
+ * Dynamically detect environment based on hostname patterns
+ * This approach works for any GitHub Pages deployment without hardcoding domains
  */
 export const getCurrentEnvironment = (): 'staging' | 'production' | 'development' => {
   const hostname = window.location.hostname;
   
-  if (hostname === 'tristankuo.github.io') {
+  // GitHub Pages pattern: username.github.io
+  if (hostname.endsWith('.github.io')) {
     return 'staging';
   }
   
-  if (hostname === 'your-production-domain.github.io') {
+  // Custom domain (production)
+  if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
     return 'production';
   }
   
+  // Local development
   return 'development';
 };
 
 /**
- * Get environment configuration for current or specified environment
- */
-export const getEnvironmentConfig = (env?: 'staging' | 'production' | 'development') => {
-  const environment = env || getCurrentEnvironment();
-  return ENVIRONMENTS[environment];
-};
-
-/**
- * Get the base path for the current environment
- * - Staging: /teslalink (for GitHub Pages subdirectory)
- * - Production: / (for custom domain root)
- * - Development: / (local development)
+ * Dynamically determine base path based on URL structure
+ * For GitHub Pages: /repository-name
+ * For custom domains: /
+ * For local development: /
  */
 export const getBasePath = (): string => {
-  return getEnvironmentConfig().basePath;
+  const environment = getCurrentEnvironment();
+  
+  if (environment === 'staging') {
+    // Extract repository name from pathname for GitHub Pages
+    const pathParts = window.location.pathname.split('/');
+    return pathParts[1] ? `/${pathParts[1]}` : '/';
+  }
+  
+  return '/';
 };
 
 /**
@@ -71,12 +54,12 @@ export const getBaseUrl = (): string => {
  * Used for meta tags, social sharing, etc.
  */
 export const getCanonicalUrl = (): string => {
-  return getEnvironmentConfig().fullUrl;
+  return getBaseUrl();
 };
 
 /**
  * Generate QR code URL for add-app functionality
- * This ensures the URL works correctly in both staging and production
+ * This ensures the URL works correctly in all environments
  */
 export const getQRUrl = (sessionId: string, theme: string): string => {
   const baseUrl = getBaseUrl();
@@ -100,7 +83,7 @@ export const isProduction = (): boolean => {
 };
 
 /**
- * Check if we're in the staging environment
+ * Check if we're in the staging environment (GitHub Pages)
  */
 export const isStaging = (): boolean => {
   return getCurrentEnvironment() === 'staging';
@@ -111,4 +94,21 @@ export const isStaging = (): boolean => {
  */
 export const isDevelopment = (): boolean => {
   return getCurrentEnvironment() === 'development';
+};
+
+/**
+ * Get environment-specific configuration
+ * This replaces the hardcoded ENVIRONMENTS object with dynamic detection
+ */
+export const getEnvironmentConfig = () => {
+  const environment = getCurrentEnvironment();
+  const basePath = getBasePath();
+  const fullUrl = getCanonicalUrl();
+  
+  return {
+    environment,
+    hostname: window.location.hostname,
+    basePath,
+    fullUrl
+  };
 };

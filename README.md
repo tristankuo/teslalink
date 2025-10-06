@@ -133,23 +133,44 @@ PRODUCTION_DEPLOY_TOKEN
 
 ### Deployment
 
-TeslaLink is designed to work on any static hosting platform:
+TeslaLink works out-of-the-box on any static hosting platform with **zero configuration required**:
 
-- **GitHub Pages**: Automated via workflows
-- **Vercel**: Zero-config deployment
-- **Netlify**: Drag and drop or Git integration
-- **Firebase Hosting**: Built-in Firebase integration
+- **GitHub Pages**: Fork and enable Pages - automatic deployment via GitHub Actions  
+- **Vercel**: Import repository - zero-config deployment  
+- **Netlify**: Connect repository - automatic build detection  
+- **Firebase Hosting**: Standard static site deployment
+
+The app automatically detects the deployment environment and configures URLs appropriately:
+- **GitHub Pages**: `username.github.io/repository-name` 
+- **Custom Domain**: `your-domain.com`
+- **Local Development**: `localhost:3000`
+
+No manual configuration of hostnames or paths required! 🎉
 
 ## 🔧 Configuration
 
-### Live Channels
-The Live Channels feature fetches trending YouTube content daily. Configure regions and search terms in `scripts/update_popular_live.js`.
+**TeslaLink works out-of-the-box with zero configuration required!** 🎉
 
-### Default Apps
-Customize the pre-loaded apps for each region in `public/default-apps.json`.
+The app automatically detects its deployment environment and configures all URLs appropriately:
+- **GitHub Pages**: `username.github.io/repository-name`
+- **Custom Domain**: `your-domain.com` 
+- **Local Development**: `localhost:3000`
 
-### Environment Detection
-The app automatically detects deployment environment and adjusts URLs accordingly. See `src/utils/environment.ts` for configuration.
+### Optional Enhancements
+
+**Firebase (QR Code Functionality)**
+```bash
+# Add to .env for QR code scanning features
+REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+# ... other Firebase config
+```
+
+**YouTube API (Live Channels Auto-Updates)**  
+Add `YOUTUBE_API_KEY` to GitHub repository secrets for daily content updates.
+
+### Customization
 
 ## � Usage Tips
 

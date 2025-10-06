@@ -1,74 +1,74 @@
 const fs = require('fs');
 const path = require('path');
 
-// Environment configurations
-const ENVIRONMENTS = {
-  staging: {
-    hostname: 'tristankuo.github.io',
-    basePath: '/teslalink',
-    fullUrl: 'https://tristankuo.github.io/teslalink'
-  },
-  production: {
-    hostname: 'your-production-domain.github.io', 
-    basePath: '',
-    fullUrl: 'https://your-production-domain.github.io'
-  },
-  development: {
-    hostname: 'localhost',
-    basePath: '',
-    fullUrl: 'http://localhost:3000'
+/**
+ * Dynamically determine environment and URLs from package.json homepage
+ * This approach works for any fork without hardcoding domains
+ */
+function getEnvironmentFromHomepage() {
+  const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'));
+  const homepage = packageJson.homepage || '';
+  
+  if (!homepage) {
+    console.log('[BUILD-ENV] No homepage in package.json, using development defaults');
+    return {
+      environment: 'development',
+      fullUrl: 'http://localhost:3000'
+    };
   }
-};
+  
+  // GitHub Pages detection
+  if (homepage.includes('.github.io')) {
+    console.log('[BUILD-ENV] Detected GitHub Pages deployment');
+    return {
+      environment: 'staging',
+      fullUrl: homepage
+    };
+  }
+  
+  // Custom domain
+  console.log('[BUILD-ENV] Detected custom domain deployment');
+  return {
+    environment: 'production',
+    fullUrl: homepage
+  };
+}
 
 /**
  * Generate environment-specific index.html
  */
 function generateIndexHtml() {
-  // Determine environment based on package.json homepage or NODE_ENV
-  const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'));
-  const homepage = packageJson.homepage || '';
-  
-  let environment = 'development';
-  if (homepage.includes('tristankuo.github.io')) {
-    environment = 'staging';
-  } else if (homepage.includes('your-production-domain.github.io')) {
-    environment = 'production';
-  }
+  const { environment, fullUrl } = getEnvironmentFromHomepage();
   
   console.log(`[BUILD-ENV] Generating index.html for environment: ${environment}`);
-  
-  const config = ENVIRONMENTS[environment];
+  console.log(`[BUILD-ENV] Using canonical URL: ${fullUrl}`);
   
   // Read template
   const templatePath = path.join(__dirname, '../public/index.template.html');
   let template = fs.readFileSync(templatePath, 'utf8');
   
   // Replace placeholders
-  template = template.replace(/\{\{CANONICAL_URL\}\}/g, config.fullUrl);
+  template = template.replace(/\{\{CANONICAL_URL\}\}/g, fullUrl);
   
   // Write environment-specific index.html
   const outputPath = path.join(__dirname, '../public/index.html');
   fs.writeFileSync(outputPath, template);
   
-  console.log(`[BUILD-ENV] Generated index.html with canonical URL: ${config.fullUrl}`);
+  console.log(`[BUILD-ENV] Generated index.html with canonical URL: ${fullUrl}`);
 }
 
 /**
  * Generate environment-specific 404.html
  */
 function generate404Html() {
-  const templatePath = path.join(__dirname, '../public/404.html');
-  let content = fs.readFileSync(templatePath, 'utf8');
-  
-  // The 404.html is already environment-aware with dynamic pathSegmentsToKeep
-  console.log('[BUILD-ENV] 404.html is already environment-aware');
+  console.log('[BUILD-ENV] 404.html uses dynamic path detection - no changes needed');
 }
 
 /**
- * Update staging workflow with dynamic URLs
+ * Update workflow files
  */
 function updateWorkflowFiles() {
-  console.log('[BUILD-ENV] Workflow files use environment utilities - no changes needed');
+  console.log('[BUILD-ENV] Workflow files use dynamic environment detection - no changes needed');
 }
 
 // Run all generators

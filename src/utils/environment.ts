@@ -5,9 +5,9 @@
  */
 const ENVIRONMENTS = {
   staging: {
-    hostname: 'your-username.github.io',
+    hostname: 'tristankuo.github.io',
     basePath: '/teslalink',
-    fullUrl: 'https://your-username.github.io/teslalink'
+    fullUrl: 'https://tristankuo.github.io/teslalink'
   },
   production: {
     hostname: 'your-production-domain.github.io', 
@@ -27,7 +27,7 @@ const ENVIRONMENTS = {
 export const getCurrentEnvironment = (): 'staging' | 'production' | 'development' => {
   const hostname = window.location.hostname;
   
-  if (hostname === 'your-username.github.io') {
+  if (hostname === 'tristankuo.github.io') {
     return 'staging';
   }
   

@@ -50,8 +50,8 @@ jobs:
         
       - name: 📝 Update package.json for production
         run: |
-          # Set homepage for production deployment (update this for your deployment)
-          npm pkg set homepage="https://your-domain.github.io"
+          # Set homepage for production deployment
+          npm pkg set homepage="https://tristankuo.github.io/teslalink"
           echo "✅ Updated homepage for production deployment"
           
       - name: 🛠️ Build for production
@@ -98,7 +98,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PRODUCTION_DEPLOY_TOKEN }}
-          external_repository: your-username/your-production-repo
+          external_repository: tristankuo/teslalink-gh-pages
           publish_dir: ./build
           publish_branch: main
           force_orphan: true
@@ -114,11 +114,11 @@ jobs:
       - name: 📝 Production deployment summary
         run: |
           echo "## 🚢 Production Deployment Complete!" >> $GITHUB_STEP_SUMMARY
-          echo "**Production URL**: https://your-domain.github.io" >> $GITHUB_STEP_SUMMARY
+          echo "**Production URL**: https://tristankuo.github.io/teslalink" >> $GITHUB_STEP_SUMMARY
           echo "**Deployed At**: $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
           echo "**Source Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "**Build Number**: ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
           echo "**Data Included**: ${{ github.event.inputs.include_latest_data }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 🎉 TeslaLink is now live in production!" >> $GITHUB_STEP_SUMMARY
-          echo "Users can access the app at your production URL" >> $GITHUB_STEP_SUMMARY
+          echo "Users can access the app at https://tristankuo.github.io/teslalink" >> $GITHUB_STEP_SUMMARY

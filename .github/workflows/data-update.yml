@@ -31,8 +31,8 @@ jobs:
         with:
           node-version: '20'
           
-      - name: 📦 Install minimal dependencies for data update
-        run: npm install node-fetch@2.7.0 --no-audit
+      - name: 📦 Install dependencies
+        run: npm install --legacy-peer-deps
         
       - name: 🔑 Verify YouTube API access
         env:

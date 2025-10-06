@@ -10,11 +10,15 @@ function setTheme(theme) {
 
 // Environment-aware navigation
 function getBaseUrl() {
-    // Check if we're on GitHub Pages
-    if (window.location.hostname === 'tristankuo.github.io' && window.location.pathname.startsWith('/teslalink')) {
+    // Environment-aware base URL detection
+    const hostname = window.location.hostname;
+    
+    // Staging environment
+    if (hostname === 'tristankuo.github.io') {
         return '/teslalink/';
     }
-    // Default to root for production environments or local development
+    
+    // Production and local development
     return '/';
 }
 

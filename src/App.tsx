@@ -8,6 +8,7 @@ import LiveChannelsGrid from './components/LiveChannelsGrid';
 import imageNames from './image-manifest';
 import { getUserRegion } from './utils/location';
 import { initGA, trackPageView } from './utils/analytics';
+import { getQRUrl } from './utils/environment';
 import { database, isFirebaseAvailable } from './utils/firebase';
 import { ref, set, onValue, remove, get, query, orderByChild, endAt, update } from 'firebase/database';
 import { QRCodeSVG as QRCode } from 'qrcode.react';
@@ -68,14 +69,6 @@ function MainApp() {
       return 'light';
     }
   });
-
-  // Helper function to generate the correct QR URL based on environment
-  const getQRUrl = useCallback((sessionId: string, theme: string) => {
-    const origin = window.location.origin;
-    // No base path needed for myteslalink.github.io since it's the root domain
-    const basePath = window.location.hostname === 'tristankuo.github.io' ? '/teslalink' : '';
-    return `${origin}${basePath}/add-app/${sessionId}?theme=${theme}`;
-  }, []);
 
   const clientId = useMemo(() => {
     const rnd = Math.random().toString(36).slice(2);
@@ -296,7 +289,7 @@ function MainApp() {
         unsubscribe();
       };
     }
-  }, [showAppModal, modalMode, appNameInput, appUrlInput, getQRUrl, theme]);
+  }, [showAppModal, modalMode, appNameInput, appUrlInput, theme]);
 
 
   const [appItems, setAppItems] = useState<AppItem[]>([]);

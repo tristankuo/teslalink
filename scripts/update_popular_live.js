@@ -38,13 +38,14 @@ function loadExistingData() {
   }
   return {
     lastUpdated: new Date().toISOString(),
-    Global: [], EU: [], AU: [], JP: [], TW: [], KR: [], CN: []
+    Global: [], US: [], EU: [], AU: [], JP: [], TW: [], KR: [], CN: []
   };
 }
 
 // Region mapping for YouTube API - Optimized for quota efficiency
 const REGION_CONFIG = {
-  "Global": ["US"], // Focus on US as global representative
+  "Global": ["GB", "US", "AU", "CA"], // Truly global: multiple English-speaking regions
+  "US": ["US", "CA"], // North America (US + Canada)
   "EU": ["GB"], // UK as EU representative  
   "AU": ["AU"], // Australia
   "JP": ["JP"], // Japan
@@ -60,7 +61,13 @@ const API_BASE = "https://www.googleapis.com/youtube/v3";
 // Using specific channel names and stricter geographic terms
 const SEARCH_QUERIES = {
   "Global": [
-    "CNN live",                // US major networks only
+    "BBC World News live",     // International English content
+    "CNN International live", 
+    "DW News English live",
+    "Al Jazeera English live"
+  ],
+  "US": [
+    "CNN live",               // US-specific major networks
     "Fox News Channel live", 
     "MSNBC live",
     "CBS News live"
@@ -106,6 +113,10 @@ const SEARCH_QUERIES = {
 // Known major channel names to prioritize - helps filter out incorrect regions
 const PRIORITY_CHANNELS = {
   "Global": [
+    "BBC World News", "CNN International", "DW News", "Al Jazeera English", 
+    "euronews", "France 24 English", "Reuters", "Associated Press"
+  ],
+  "US": [
     "CNN", "Fox News", "MSNBC", "CBS News", "NBC News", "ABC News", 
     "PBS NewsHour", "C-SPAN", "Bloomberg Television"
   ],

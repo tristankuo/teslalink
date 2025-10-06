@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-06T05:12:41.014Z",
+  "lastUpdated": "2025-10-06T06:31:31.250Z",
   "Global": [
     {
       "channel": "CNN TÜRK",
@@ -229,6 +229,31 @@
       }
     },
     {
+      "channel": "FRANCE 24 English",
+      "title": "FRANCE 24 English – LIVE – International Breaking News &amp; Top stories - 24/7 stream • FRANCE 24",
+      "url": "https://www.youtube.com/watch?v=Ap-UM1O9RBU",
+      "videoId": "Ap-UM1O9RBU",
+      "type": "news",
+      "publishedAt": "2024-06-21T08:37:25Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "ARY News",
       "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
       "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
@@ -377,31 +402,6 @@
           "height": 360
         }
       }
-    },
-    {
-      "channel": "CNA",
-      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
-      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
-      "videoId": "XWq5kBlakcQ",
-      "type": "news",
-      "publishedAt": "2020-04-21T11:15:18Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
     }
   ],
   "AU": [
@@ -450,31 +450,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "DW News",
-      "title": "DW News livestream | Headline news from around the world",
-      "url": "https://www.youtube.com/watch?v=LuKwFajn37U",
-      "videoId": "LuKwFajn37U",
-      "type": "news",
-      "publishedAt": "2025-03-31T17:47:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/LuKwFajn37U/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/LuKwFajn37U/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/LuKwFajn37U/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -604,6 +579,31 @@
           "height": 360
         }
       }
+    },
+    {
+      "channel": "CNA",
+      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
+      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
+      "videoId": "XWq5kBlakcQ",
+      "type": "news",
+      "publishedAt": "2020-04-21T11:15:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
     }
   ],
   "JP": [
@@ -627,6 +627,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/Anr15FA9OCI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "NHK WORLD-JAPAN",
+      "title": "LIVE: NHK WORLD-JAPAN News",
+      "url": "https://www.youtube.com/watch?v=f0lYkdA-Gtw",
+      "videoId": "f0lYkdA-Gtw",
+      "type": "news",
+      "publishedAt": "2022-03-10T00:41:06Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/f0lYkdA-Gtw/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/f0lYkdA-Gtw/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/f0lYkdA-Gtw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -683,6 +708,31 @@
       }
     },
     {
+      "channel": "日テレNEWS",
+      "title": "【24H NEWS LIVE】 最新ニュース ライブ配信中 ──24H LATEST NEWS LIVE NOW from JAPAN, Tokyo, NIPPON TV（日テレNEWS LIVE）",
+      "url": "https://www.youtube.com/watch?v=t9kwjZBLI-A",
+      "videoId": "t9kwjZBLI-A",
+      "type": "news",
+      "publishedAt": "2025-01-27T04:10:34Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/t9kwjZBLI-A/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/t9kwjZBLI-A/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/t9kwjZBLI-A/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "STVニュース北海道",
       "title": "ニュースを２４時間配信 どさんこワイドの最新ニュース ＳＴＶニュース北海道２４",
       "url": "https://www.youtube.com/watch?v=hA46WfBYdgo",
@@ -702,56 +752,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/hA46WfBYdgo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "【公式】HOME広島ニュース",
-      "title": "【LIVE】広島ニュース24　～広島の最新ニュースを24時間配信中！～",
-      "url": "https://www.youtube.com/watch?v=e2pgLUmaxGs",
-      "videoId": "e2pgLUmaxGs",
-      "type": "news",
-      "publishedAt": "2023-03-04T09:02:56Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/e2pgLUmaxGs/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/e2pgLUmaxGs/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/e2pgLUmaxGs/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "福岡・佐賀 KBC NEWS",
-      "title": "KBC NEWS LIVE 24～福岡・佐賀の最新ニュースを24時間配信～",
-      "url": "https://www.youtube.com/watch?v=4hpUbFP13-M",
-      "videoId": "4hpUbFP13-M",
-      "type": "news",
-      "publishedAt": "2023-02-02T07:26:30Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/4hpUbFP13-M/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/4hpUbFP13-M/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/4hpUbFP13-M/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1012,25 +1012,25 @@
   ],
   "KR": [
     {
-      "channel": "YTN 라디오",
-      "title": "[YTN 라디오] 듣는 라디오 / YTN RADIO LIVE",
-      "url": "https://www.youtube.com/watch?v=SMQJyQ0UMvI",
-      "videoId": "SMQJyQ0UMvI",
+      "channel": "KBS News",
+      "title": "[🔴LIVE] 멈추지 않는다! KBS 뉴스24",
+      "url": "https://www.youtube.com/watch?v=M1WrMEUOBsU",
+      "videoId": "M1WrMEUOBsU",
       "type": "news",
-      "publishedAt": "2024-09-11T12:12:06Z",
+      "publishedAt": "2025-02-06T07:18:51Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/SMQJyQ0UMvI/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/SMQJyQ0UMvI/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/SMQJyQ0UMvI/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1081,31 +1081,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/2C2WCLhDsR4/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "KBS 1라디오",
-      "title": "🔴[KBS 1라디오] 실시간 스트리밍",
-      "url": "https://www.youtube.com/watch?v=bGaaVyyFGwQ",
-      "videoId": "bGaaVyyFGwQ",
-      "type": "news",
-      "publishedAt": "2025-10-03T08:03:00Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/bGaaVyyFGwQ/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/bGaaVyyFGwQ/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/bGaaVyyFGwQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1181,6 +1156,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "사피엔스 스튜디오",
+      "title": "[🔴실시간]  레전드 회차＜벌거벗은 세계사＞ 스트리밍 몰아보기 📖",
+      "url": "https://www.youtube.com/watch?v=b5UeAVqz4cI",
+      "videoId": "b5UeAVqz4cI",
+      "type": "news",
+      "publishedAt": "2023-06-05T02:17:22Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/b5UeAVqz4cI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/b5UeAVqz4cI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/b5UeAVqz4cI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1314,31 +1314,6 @@
       }
     },
     {
-      "channel": "東森新聞 CH51",
-      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
-      "videoId": "V1p33hqPrUk",
-      "type": "news",
-      "publishedAt": "2024-06-24T20:17:40Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "寰宇新聞 頻道",
       "title": "【日首女相有望】寰宇新聞台灣台 24小時直播｜TaiwanNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中  @globalnewstw",
       "url": "https://www.youtube.com/watch?v=w87VGpgd90U",
@@ -1383,6 +1358,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/6IquAgfvYmc/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "中視新聞 HD直播頻道｜Taiwan CTV news HD Live",
+      "title": "中視新聞LIVE直播頻道24小時線上直播｜Taiwan CTV news HD 24h live news |台湾のCTV ニュースHD 대만 24시간 뉴스채널  | (生放送)",
+      "url": "https://www.youtube.com/watch?v=TCnaIE_SAtM",
+      "videoId": "TCnaIE_SAtM",
+      "type": "news",
+      "publishedAt": "2021-09-22T02:25:48Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

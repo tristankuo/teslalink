@@ -137,9 +137,34 @@ Before running production deployment:
 - [ ] Production repository exists and is accessible
 - [ ] Staging deployment working correctly
 
+## 🤖 Dependency Management
+
+This repository uses **Dependabot** for automated dependency updates:
+
+- **Configuration**: `.github/dependabot.yml`
+- **Update Schedule**: Weekly on Monday mornings (UTC)
+- **Scope**: npm packages and GitHub Actions
+- **Auto-assignment**: Updates are automatically assigned to repository owner
+- **Grouping**: Minor and patch updates are grouped to reduce PR noise
+
+### Dependabot Features:
+- **Security Updates**: Automatic security vulnerability fixes
+- **Version Updates**: Regular dependency version updates
+- **Smart Grouping**: Related updates bundled together
+- **Semantic Commits**: Uses `deps:` and `ci:` prefixes
+- **Auto-labeling**: PRs tagged with `dependencies` and `automerge` labels
+
+### Managing Dependabot PRs:
+1. **Review**: Check the changelog and test results
+2. **Test**: Automated tests run on all Dependabot PRs
+3. **Merge**: Use "Squash and merge" for clean commit history
+4. **Monitor**: Watch for any breaking changes after deployment
+
 ## 📚 Additional Resources
 
 - [GitHub Secrets Documentation](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
 - [Firebase Setup Guide](https://firebase.google.com/docs/web/setup)
 - [YouTube Data API Setup](https://developers.google.com/youtube/v3/getting-started)
 - [Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- [Dependabot Documentation](https://docs.github.com/en/code-security/dependabot)
+- [Dependabot Configuration](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file)

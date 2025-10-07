@@ -32,10 +32,12 @@ export const getBasePath = (): string => {
   
   if (environment === 'staging') {
     // Extract repository name from pathname for GitHub Pages
-    const pathParts = window.location.pathname.split('/');
-    return pathParts[1] ? `/${pathParts[1]}` : '/';
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    if (pathParts.length > 0) {
+      return `/${pathParts[0]}`;
+    }
+    return '/';
   }
-  
   return '/';
 };
 
@@ -63,7 +65,8 @@ export const getCanonicalUrl = (): string => {
  */
 export const getQRUrl = (sessionId: string, theme: string): string => {
   const baseUrl = getBaseUrl();
-  return `${baseUrl}/add-app/${sessionId}?theme=${theme}`;
+  const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+  return `${cleanBaseUrl}/add-app/${sessionId}?theme=${theme}`;
 };
 
 /**
@@ -72,6 +75,10 @@ export const getQRUrl = (sessionId: string, theme: string): string => {
 export const getAssetUrl = (assetPath: string): string => {
   const basePath = getBasePath();
   const cleanPath = assetPath.startsWith('/') ? assetPath : `/${assetPath}`;
+  // Avoid double slashes in production
+  if (basePath === '/') {
+    return cleanPath;
+  }
   return `${basePath}${cleanPath}`;
 };
 

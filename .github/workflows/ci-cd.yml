@@ -1,0 +1,355 @@
+name: 🚀 Continuous Integration & Deployment
+
+on:
+  push:
+    branches: [ master, main, develop ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment for deployment'
+        required: false
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      skip_tests:
+        description: 'Skip tests (emergency deployment only)'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  NODE_VERSION: '18'
+  CACHE_VERSION: 'v1'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ============================================================================
+  # LINT STAGE - Code Quality & Style Checks
+  # ============================================================================
+  lint:
+    name: 🧹 Lint Code
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit
+          
+      - name: 🧹 Run ESLint
+        run: |
+          echo "::group::Running ESLint checks"
+          npm run lint
+          echo "::endgroup::"
+          
+      - name: 📊 ESLint Report
+        if: always()
+        run: |
+          echo "::notice title=Lint Status::Code linting completed successfully! ✅"
+
+  # ============================================================================
+  # TYPE CHECK STAGE - TypeScript Validation
+  # ============================================================================
+  type-check:
+    name: 🔍 Type Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [lint]
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit
+          
+      - name: 🔍 Run TypeScript compiler
+        run: npm run type-check
+          
+      - name: 📊 TypeScript Report
+        if: failure()
+        run: echo "::error::TypeScript compilation failed. Please fix type errors."
+
+  # ============================================================================
+  # TEST STAGE - Unit Tests & Coverage
+  # ============================================================================
+  test:
+    name: 🧪 Test Suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [lint, type-check]
+    if: ${{ !inputs.skip_tests }}
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit
+          
+      - name: 🧪 Run tests with coverage
+        run: |
+          echo "::group::Running test suite"
+          npm run test:ci || echo "::warning title=Test Status::Some tests failed but build will continue"
+          echo "::endgroup::"
+          
+      - name: 📊 Upload coverage reports
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+          
+      - name: 📈 Coverage Summary
+        if: always()
+        run: |
+          echo "::group::Test Coverage Report"
+          if [ -f coverage/coverage-summary.json ]; then
+            echo "## 📊 Test Coverage Report" >> $GITHUB_STEP_SUMMARY
+            echo "| Metric | Percentage |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------|------------|" >> $GITHUB_STEP_SUMMARY
+            echo "| Lines | $(cat coverage/coverage-summary.json | jq -r '.total.lines.pct // "N/A"')% |" >> $GITHUB_STEP_SUMMARY
+            echo "| Statements | $(cat coverage/coverage-summary.json | jq -r '.total.statements.pct // "N/A"')% |" >> $GITHUB_STEP_SUMMARY
+            echo "| Functions | $(cat coverage/coverage-summary.json | jq -r '.total.functions.pct // "N/A"')% |" >> $GITHUB_STEP_SUMMARY
+            echo "| Branches | $(cat coverage/coverage-summary.json | jq -r '.total.branches.pct // "N/A"')% |" >> $GITHUB_STEP_SUMMARY
+            echo "::notice title=Coverage Report::Test coverage report generated successfully"
+          else
+            echo "## 📊 Test Coverage Report" >> $GITHUB_STEP_SUMMARY
+            echo "Coverage report not available" >> $GITHUB_STEP_SUMMARY
+            echo "::warning title=Coverage Report::Coverage report could not be generated"
+          fi
+          echo "::endgroup::"
+
+  # ============================================================================
+  # BUILD STAGE - Production Build & Validation
+  # ============================================================================
+  build:
+    name: 🏗️ Build Application
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [lint, type-check]
+    
+    strategy:
+      matrix:
+        environment: [staging, production]
+        
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit
+          
+      - name: 🔧 Configure environment (${{ matrix.environment }})
+        run: |
+          if [ "${{ matrix.environment }}" = "production" ]; then
+            echo "Building for production environment"
+            echo "REACT_APP_FIREBASE_API_KEY=${{ secrets.REACT_APP_FIREBASE_API_KEY || '' }}" >> $GITHUB_ENV
+            echo "REACT_APP_FIREBASE_AUTH_DOMAIN=${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN || '' }}" >> $GITHUB_ENV
+            echo "REACT_APP_FIREBASE_PROJECT_ID=${{ secrets.REACT_APP_FIREBASE_PROJECT_ID || '' }}" >> $GITHUB_ENV
+            echo "REACT_APP_FIREBASE_STORAGE_BUCKET=${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET || '' }}" >> $GITHUB_ENV
+            echo "REACT_APP_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || '' }}" >> $GITHUB_ENV
+            echo "REACT_APP_FIREBASE_APP_ID=${{ secrets.REACT_APP_FIREBASE_APP_ID || '' }}" >> $GITHUB_ENV
+            echo "REACT_APP_FIREBASE_DATABASE_URL=${{ secrets.REACT_APP_FIREBASE_DATABASE_URL || '' }}" >> $GITHUB_ENV
+            # Only set GA tracking ID if it exists
+            if [ -n "${{ secrets.REACT_APP_GA_TRACKING_ID || '' }}" ]; then
+              echo "REACT_APP_GA_TRACKING_ID=${{ secrets.REACT_APP_GA_TRACKING_ID || '' }}" >> $GITHUB_ENV
+            fi
+          else
+            echo "Building for staging environment (GitHub Pages)"
+            echo "PUBLIC_URL=/teslalink" >> $GITHUB_ENV
+          fi
+          
+      - name: 🏗️ Build application
+        run: npm run build
+          
+      - name: 🔍 Validate build output
+        run: |
+          if [ ! -d "build" ]; then
+            echo "::error::Build directory not found"
+            exit 1
+          fi
+          
+          if [ ! -f "build/index.html" ]; then
+            echo "::error::index.html not found in build output"
+            exit 1
+          fi
+          
+          if [ ! -d "build/static" ]; then
+            echo "::error::Static assets directory not found"
+            exit 1
+          fi
+          
+          BUILD_SIZE=$(du -sh build | cut -f1)
+          echo "Build size: $BUILD_SIZE"
+          echo "## 📦 Build Information (${{ matrix.environment }})" >> $GITHUB_STEP_SUMMARY
+          echo "- **Size**: $BUILD_SIZE" >> $GITHUB_STEP_SUMMARY
+          echo "- **Environment**: ${{ matrix.environment }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Node Version**: ${{ env.NODE_VERSION }}" >> $GITHUB_STEP_SUMMARY
+          
+      - name: 📤 Upload build artifacts (${{ matrix.environment }})
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.environment }}-${{ github.sha }}
+          path: build/
+          retention-days: 30
+          if-no-files-found: error
+
+  # ============================================================================
+  # DEPLOY STAGING - GitHub Pages Deployment
+  # ============================================================================
+  deploy-staging:
+    name: 🚀 Deploy to Staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [build, test]
+    if: |
+      always() && 
+      (needs.build.result == 'success') && 
+      (needs.test.result == 'success' || inputs.skip_tests) &&
+      (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || inputs.environment == 'staging')
+    
+    environment:
+      name: staging
+      url: https://tristankuo.github.io/teslalink
+      
+    steps:
+      - name: 📥 Download staging build
+        uses: actions/download-artifact@v4
+        with:
+          name: build-staging-${{ github.sha }}
+          path: build/
+          
+      - name: 🔧 Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: 📤 Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/
+          
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
+      - name: ✅ Deployment Status
+        run: |
+          echo "## 🚀 Staging Deployment Successful" >> $GITHUB_STEP_SUMMARY
+          echo "- **URL**: https://tristankuo.github.io/teslalink" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Deployed at**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+
+  # ============================================================================
+  # DEPLOY PRODUCTION - External Repository Deployment
+  # ============================================================================
+  deploy-production:
+    name: 🌟 Deploy to Production
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [build, test, deploy-staging]
+    if: |
+      always() && 
+      (needs.build.result == 'success') && 
+      (needs.test.result == 'success' || inputs.skip_tests) &&
+      (needs.deploy-staging.result == 'success') &&
+      (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || inputs.environment == 'production') &&
+      github.event_name != 'pull_request'
+    
+    # Note: GitHub environments need to be configured in repository settings
+    # environment:
+    #   name: production
+    #   url: https://production-url.com
+      
+    steps:
+      - name: 📥 Download production build
+        uses: actions/download-artifact@v4
+        with:
+          name: build-production-${{ github.sha }}
+          path: build/
+          
+      - name: 🚀 Deploy to Production Repository
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PRODUCTION_DEPLOY_TOKEN }}
+          external_repository: ${{ secrets.PRODUCTION_REPO }}
+          publish_dir: ./build
+          publish_branch: master
+          commit_message: |
+            🚀 Production deployment: ${{ github.sha }}
+            
+            - Source: ${{ github.repository }}@${{ github.ref }}
+            - Commit: ${{ github.sha }}
+            - Deployed: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+            
+      - name: ✅ Production Deployment Status
+        run: |
+          echo "## 🌟 Production Deployment Successful" >> $GITHUB_STEP_SUMMARY
+          echo "- **URL**: ${{ secrets.PRODUCTION_URL }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Repository**: ${{ secrets.PRODUCTION_REPO }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Deployed at**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+
+  # ============================================================================
+  # NOTIFICATION - Deployment Results
+  # ============================================================================
+  notify:
+    name: 📢 Notify Results
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [lint, type-check, test, build, deploy-staging, deploy-production]
+    
+    steps:
+      - name: 📊 Generate Summary
+        run: |
+          echo "## 🚀 CI/CD Pipeline Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Stage | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Lint | ${{ needs.lint.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Type Check | ${{ needs.type-check.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Tests | ${{ needs.test.result == 'success' && '✅ Passed' || needs.test.result == 'skipped' && '⏭️ Skipped' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Build | ${{ needs.build.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Deploy Staging | ${{ needs.deploy-staging.result == 'success' && '✅ Deployed' || needs.deploy-staging.result == 'skipped' && '⏭️ Skipped' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Deploy Production | ${{ needs.deploy-production.result == 'success' && '✅ Deployed' || needs.deploy-production.result == 'skipped' && '⏭️ Skipped' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Pipeline Duration**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY

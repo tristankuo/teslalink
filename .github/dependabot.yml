@@ -1,0 +1,69 @@
+# Dependabot configuration for automated dependency updates
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # Enable version updates for npm (Node.js/React dependencies)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "tristankuo"
+    assignees:
+      - "tristankuo"
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+    labels:
+      - "dependencies"
+      - "automerge"
+    # Group minor and patch updates together to reduce PR noise
+    groups:
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    # Ignore specific packages if needed (uncomment and modify as needed)
+    # ignore:
+    #   - dependency-name: "react"
+    #     versions: ["18.x"]
+
+  # Enable security updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "tristankuo"
+    assignees:
+      - "tristankuo"
+    commit-message:
+      prefix: "ci"
+    labels:
+      - "github-actions"
+      - "automerge"
+
+  # Enable updates for Docker (if we add Dockerfile in the future)
+  # - package-ecosystem: "docker"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+
+# Configuration notes:
+# - Weekly updates on Monday morning (UTC) to start the week with fresh dependencies
+# - Limited to 10 npm PRs and 5 GitHub Actions PRs to avoid overwhelming notifications
+# - Groups minor and patch updates together to reduce noise
+# - Auto-assigns to repository owner for review
+# - Uses semantic commit prefixes (deps, deps-dev, ci)
+# - Adds appropriate labels for easy filtering and potential auto-merge rules

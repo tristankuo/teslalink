@@ -312,8 +312,19 @@ function filterByRegion(streams, regionName) {
       "hindi", "हिंदी", "भारत", "india tv", "aaj tak", "zee news",
       "urdu", "اردو", "پاکستان", "dunya news"
     ],
+    "US": [
+      "arabic", "العربية", "الجزيرة", "العالم", "قناة", "الإخبارية",
+      "hindi", "हिंदी", "भारत", "india tv", "aaj tak", "zee news",
+      "chinese", "中文", "taiwan", "台灣", "香港", "tvb news",
+      "korean", "한국", "kbs", "mbc", "sbs", "ytn",
+      "japanese", "日本", "nhk world", "テレビ朝日", "日本テレビ",
+      "german", "deutsch", "dw news", "ard", "zdf",
+      "french", "français", "france 24", "tf1", "france 2",
+      "spanish", "español", "telemundo", "univision", "rt español",
+      "african", "swahili", "hausa", "amharic", "ethiopian"
+    ],
     "EU": [
-      "arabic", "العربية", "الجزيرة", "hindi", "हिंदी", "भारत", 
+      "arabic", "العربية", "الجزيرة", "hindi", "हिंदی", "भारत", 
       "africa", "african", "swahili", "hausa", "amharic",
       "middle east", "الشرق الأوسط"
     ],

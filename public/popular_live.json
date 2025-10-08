@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-06T13:08:49.770Z",
+  "lastUpdated": "2025-10-08T06:30:56.024Z",
   "Global": [
     {
       "channel": "Al Jazeera English",
@@ -153,7 +153,7 @@
     },
     {
       "channel": "24 News",
-      "title": "24 News Live TV |  Live Updates | Malayalam News Live | HD Live Streaming | 24 News",
+      "title": "24 News Live TV |  Live Updates | Malayalam News Live | HD Live Streaming | 24 News Live",
       "url": "https://www.youtube.com/watch?v=1wECsnGZcfc",
       "videoId": "1wECsnGZcfc",
       "type": "news",
@@ -329,31 +329,6 @@
       }
     },
     {
-      "channel": "News18 India",
-      "title": "🔴News18 India LIVE TV: Bhaiyaji Kahin With Prateek Trivedi | Bihar Election 2025 Date Announcement",
-      "url": "https://www.youtube.com/watch?v=Io-G_aiF8HA",
-      "videoId": "Io-G_aiF8HA",
-      "type": "news",
-      "publishedAt": "2024-05-10T09:24:07Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/Io-G_aiF8HA/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/Io-G_aiF8HA/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/Io-G_aiF8HA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "Al Jazeera English",
       "title": "🔴 Al Jazeera English | Live",
       "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
@@ -402,9 +377,59 @@
           "height": 360
         }
       }
+    },
+    {
+      "channel": "ABC News (Australia)",
+      "title": "Watch ABC NEWS Australia live | ABC NEWS",
+      "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
+      "videoId": "vOTiJkg1voo",
+      "type": "news",
+      "publishedAt": "2022-02-19T23:50:36Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
     }
   ],
   "AU": [
+    {
+      "channel": "ABC News (Australia)",
+      "title": "Watch ABC NEWS Australia live | ABC NEWS",
+      "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
+      "videoId": "vOTiJkg1voo",
+      "type": "news",
+      "publishedAt": "2022-02-19T23:50:36Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
     {
       "channel": "LiveNOW from FOX",
       "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
@@ -425,31 +450,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ABC News",
-      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
-      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
-      "videoId": "iipR5yUp36o",
-      "type": "news",
-      "publishedAt": "2025-05-01T13:51:58Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -885,25 +885,25 @@
       }
     },
     {
-      "channel": "中視新聞 HD直播頻道｜Taiwan CTV news HD Live",
-      "title": "中視新聞LIVE直播頻道24小時線上直播｜Taiwan CTV news HD 24h live news |台湾のCTV ニュースHD 대만 24시간 뉴스채널  | (生放送)",
-      "url": "https://www.youtube.com/watch?v=TCnaIE_SAtM",
-      "videoId": "TCnaIE_SAtM",
+      "channel": "57東森財經新聞",
+      "title": "EBC 東森財經新聞24小時線上直播｜Taiwan EBC Financial News｜台湾 EBC 金融ニュース｜대만 뉴스 생방송",
+      "url": "https://www.youtube.com/watch?v=1I2iq41Akmo",
+      "videoId": "1I2iq41Akmo",
       "type": "news",
-      "publishedAt": "2021-09-22T02:25:48Z",
+      "publishedAt": "2024-11-25T09:45:27Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/1I2iq41Akmo/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/1I2iq41Akmo/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/1I2iq41Akmo/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -935,25 +935,25 @@
       }
     },
     {
-      "channel": "寰宇新聞 頻道",
-      "title": "寰宇新聞台 24小時線上直播｜GlobalNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中 ｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=6IquAgfvYmc",
-      "videoId": "6IquAgfvYmc",
+      "channel": "57東森財經新聞",
+      "title": "【看盤不中斷】EBC東森財經股市24小時直播｜Taiwan EBC Financial News 24hr Live｜台湾 EBC 金融ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "url": "https://www.youtube.com/watch?v=AEBeWMM1atA",
+      "videoId": "AEBeWMM1atA",
       "type": "news",
-      "publishedAt": "2023-09-07T12:57:00Z",
+      "publishedAt": "2024-08-13T08:10:06Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/AEBeWMM1atA/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/AEBeWMM1atA/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/AEBeWMM1atA/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1416,25 +1416,25 @@
   ],
   "US": [
     {
-      "channel": "CNN Brasil",
-      "title": "AO VIVO: LIVE CNN - 06/10/2025",
-      "url": "https://www.youtube.com/watch?v=Y6AxtQevD7o",
-      "videoId": "Y6AxtQevD7o",
+      "channel": "CNN TÜRK",
+      "title": "CNN TÜRK - 🔴 Canlı Yayın ᴴᴰ - Canlı TV izle | HABER",
+      "url": "https://www.youtube.com/watch?v=6N8_r2uwLEc",
+      "videoId": "6N8_r2uwLEc",
       "type": "news",
-      "publishedAt": "2025-10-03T16:38:30Z",
+      "publishedAt": "2025-09-04T09:14:35Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/Y6AxtQevD7o/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/6N8_r2uwLEc/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/Y6AxtQevD7o/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/6N8_r2uwLEc/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/Y6AxtQevD7o/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/6N8_r2uwLEc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1466,75 +1466,125 @@
       }
     },
     {
-      "channel": "AlArabiya العربية",
-      "title": "AlArabiya Livestream العربية مباشر.. بث حي لآخر الأخبار لحظة بلحظة",
-      "url": "https://www.youtube.com/watch?v=n7eQejkXbnM",
-      "videoId": "n7eQejkXbnM",
+      "channel": "Citizen TV Kenya",
+      "title": "Citizen TV Live",
+      "url": "https://www.youtube.com/watch?v=YDaBv4FXI9w",
+      "videoId": "YDaBv4FXI9w",
       "type": "news",
-      "publishedAt": "2025-01-16T09:06:02Z",
+      "publishedAt": "2025-09-12T06:23:08Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/n7eQejkXbnM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/n7eQejkXbnM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/n7eQejkXbnM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Todo Noticias",
-      "title": "TN EN VIVO - SEGUÍ LA TRANSMISIÓN EN VIVO DE TODO NOTICIAS",
-      "url": "https://www.youtube.com/watch?v=cb12KmMMDJA",
-      "videoId": "cb12KmMMDJA",
+      "channel": "ARY News",
+      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
+      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
+      "videoId": "RqUZ2Fv9l8w",
       "type": "news",
-      "publishedAt": "2023-10-01T19:46:03Z",
+      "publishedAt": "2025-04-11T16:31:43Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/cb12KmMMDJA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/cb12KmMMDJA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/cb12KmMMDJA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "FRANCE 24",
-      "title": "FRANCE 24 – EN DIRECT – Info et actualités internationales en continu 24h/24 • FRANCE 24",
-      "url": "https://www.youtube.com/watch?v=l8PMl7tUDIE",
-      "videoId": "l8PMl7tUDIE",
+      "channel": "GBNews",
+      "title": "GB News Live: Watch GB News 24/7",
+      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
+      "videoId": "QliL4CGc7iY",
       "type": "news",
-      "publishedAt": "2023-09-19T09:32:31Z",
+      "publishedAt": "2025-03-03T15:58:38Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Sky News",
+      "title": "Watch Sky News",
+      "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
+      "videoId": "YDvsBbKfLPA",
+      "type": "news",
+      "publishedAt": "2024-12-10T12:06:22Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "KOMPASTV",
+      "title": "LIVE STREAMING 24 JAM KOMPASTV",
+      "url": "https://www.youtube.com/watch?v=DOOrIxw5xOw",
+      "videoId": "DOOrIxw5xOw",
+      "type": "news",
+      "publishedAt": "2024-02-06T12:37:01Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1560,56 +1610,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "AlJazeera Arabic  قناة الجزيرة",
-      "title": "Al Jazeera Arabic Live قناة الجزيرة | البث الحي | البث المباشر",
-      "url": "https://www.youtube.com/watch?v=bNyUyrR0PHo",
-      "videoId": "bNyUyrR0PHo",
-      "type": "news",
-      "publishedAt": "2022-11-25T20:02:12Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/bNyUyrR0PHo/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/bNyUyrR0PHo/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/bNyUyrR0PHo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "العربي - أخبار ",
-      "title": "Alaraby TV News Live قناة العربي أخبار | البث الحي المباشر",
-      "url": "https://www.youtube.com/watch?v=e2RgSa1Wt5o",
-      "videoId": "e2RgSa1Wt5o",
-      "type": "news",
-      "publishedAt": "2022-09-06T15:38:58Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/e2RgSa1Wt5o/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/e2RgSa1Wt5o/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/e2RgSa1Wt5o/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

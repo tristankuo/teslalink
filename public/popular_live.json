@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-08T06:30:56.024Z",
+  "lastUpdated": "2025-10-09T06:31:08.674Z",
   "Global": [
     {
       "channel": "Al Jazeera English",
@@ -337,17 +337,17 @@
       "publishedAt": "2023-03-10T00:24:38Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -431,25 +431,25 @@
       }
     },
     {
-      "channel": "LiveNOW from FOX",
-      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
-      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
-      "videoId": "4nMfRpesYfw",
+      "channel": "ABC News",
+      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
+      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
+      "videoId": "iipR5yUp36o",
       "type": "news",
-      "publishedAt": "2025-09-20T12:20:56Z",
+      "publishedAt": "2025-05-01T13:51:58Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1215,7 +1215,7 @@
   "CN": [
     {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視官方 #24小時直播 】在太空過中秋 神舟二十乘組發來宇宙級祝福｜鳳凰專訪全球堅韌船隊成員：途中不斷遇襲｜特朗普：若政府裁員 都算在民主黨頭上｜#鳳凰衛視 #大事發生看鳳凰",
+      "title": "【鳳凰衛視官方 #24小時直播 】中國商務部：對稀土相關技術實施出口管制｜美國參議院再否決撥款案 政府關門進入第二周｜美聯儲會議紀要顯示年底前或再降息兩次｜#鳳凰衛視 #大事發生看鳳凰",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",
@@ -1289,31 +1289,6 @@
       }
     },
     {
-      "channel": "LIVE NOW",
-      "title": "【正在直播：CCTV中文国际（亚洲）】全球新闻热点、时事点评、深度报道、纪录片、电视剧等 | LIVE NOW",
-      "url": "https://www.youtube.com/watch?v=SdzewdkJa-o",
-      "videoId": "SdzewdkJa-o",
-      "type": "news",
-      "publishedAt": "2024-12-21T13:05:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/SdzewdkJa-o/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/SdzewdkJa-o/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/SdzewdkJa-o/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "寰宇新聞 頻道",
       "title": "寰宇新聞台灣台 24小時直播｜TaiwanNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中  @globalnewstw",
       "url": "https://www.youtube.com/watch?v=w87VGpgd90U",
@@ -1358,6 +1333,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/6IquAgfvYmc/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "中天電視",
+      "title": "【#中天新聞不斷電直播Live】 CTI中天新聞24小時HD新聞直播 │ CTITV Taiwan News HD Live｜台湾のHDニュース放送｜ 대만 HD 뉴스 방송@中天電視CtiTv",
+      "url": "https://www.youtube.com/watch?v=vr3XyVCR4T0",
+      "videoId": "vr3XyVCR4T0",
+      "type": "news",
+      "publishedAt": "2022-05-13T04:09:36Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1566,25 +1566,25 @@
       }
     },
     {
-      "channel": "KOMPASTV",
-      "title": "LIVE STREAMING 24 JAM KOMPASTV",
-      "url": "https://www.youtube.com/watch?v=DOOrIxw5xOw",
-      "videoId": "DOOrIxw5xOw",
+      "channel": "Habertürk TV",
+      "title": "Habertürk TV Canlı Yayın ᴴᴰ",
+      "url": "https://www.youtube.com/watch?v=RNVNlJSUFoE",
+      "videoId": "RNVNlJSUFoE",
       "type": "news",
-      "publishedAt": "2024-02-06T12:37:01Z",
+      "publishedAt": "2024-08-19T09:05:09Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/RNVNlJSUFoE/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/RNVNlJSUFoE/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/RNVNlJSUFoE/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

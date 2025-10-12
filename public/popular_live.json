@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-11T06:27:20.816Z",
+  "lastUpdated": "2025-10-12T06:27:31.936Z",
   "Global": [
     {
       "channel": "Al Jazeera English",
@@ -254,6 +254,31 @@
       }
     },
     {
+      "channel": "Top Gear Classic",
+      "title": "🔴 LIVE: Non-stop Classic Top Gear Moments",
+      "url": "https://www.youtube.com/watch?v=5Bw7xtfpUV4",
+      "videoId": "5Bw7xtfpUV4",
+      "type": "news",
+      "publishedAt": "2025-08-27T13:39:00Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/5Bw7xtfpUV4/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/5Bw7xtfpUV4/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/5Bw7xtfpUV4/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "Dunya News",
       "title": "🔴 𝗟𝗶𝘃𝗲 𝗗𝘂𝗻𝘆𝗮 𝗡𝗲𝘄𝘀: 24/7 Non-Stop Coverage | Headlines, Breaking News from Pakistan &amp; Top TV Shows",
       "url": "https://www.youtube.com/watch?v=GlHSFtTFfJE",
@@ -298,31 +323,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "GBNews",
-      "title": "GB News Live: Watch GB News 24/7",
-      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
-      "videoId": "QliL4CGc7iY",
-      "type": "news",
-      "publishedAt": "2025-03-03T15:58:38Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -608,31 +608,6 @@
   ],
   "JP": [
     {
-      "channel": "TBS NEWS DIG Powered by JNN",
-      "title": "【24h LIVE】最新ニュースをライブ配信中！ |  TBS NEWS DIG",
-      "url": "https://www.youtube.com/watch?v=Anr15FA9OCI",
-      "videoId": "Anr15FA9OCI",
-      "type": "news",
-      "publishedAt": "2025-07-13T21:04:12Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/Anr15FA9OCI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/Anr15FA9OCI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/Anr15FA9OCI/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "NHK WORLD-JAPAN",
       "title": "LIVE: NHK WORLD-JAPAN News",
       "url": "https://www.youtube.com/watch?v=f0lYkdA-Gtw",
@@ -758,25 +733,50 @@
       }
     },
     {
-      "channel": "メ〜テレニュース",
-      "title": "メ～テレ NEWS LIVE 24 ～愛知・岐阜・三重の最新ニュースを24時間配信",
-      "url": "https://www.youtube.com/watch?v=-C6FE2m7kX8",
-      "videoId": "-C6FE2m7kX8",
+      "channel": "STVニュース北海道",
+      "title": "ニュースを２４時間配信 どさんこワイドの最新ニュース ＳＴＶニュース北海道２４",
+      "url": "https://www.youtube.com/watch?v=hA46WfBYdgo",
+      "videoId": "hA46WfBYdgo",
       "type": "news",
-      "publishedAt": "2021-07-21T04:47:07Z",
+      "publishedAt": "2024-01-26T08:03:14Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/-C6FE2m7kX8/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/hA46WfBYdgo/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/-C6FE2m7kX8/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/hA46WfBYdgo/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/-C6FE2m7kX8/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/hA46WfBYdgo/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "【公式】HOME広島ニュース",
+      "title": "【LIVE】広島ニュース24　～広島の最新ニュースを24時間配信中！～",
+      "url": "https://www.youtube.com/watch?v=e2pgLUmaxGs",
+      "videoId": "e2pgLUmaxGs",
+      "type": "news",
+      "publishedAt": "2023-03-04T09:02:56Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/e2pgLUmaxGs/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/e2pgLUmaxGs/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/e2pgLUmaxGs/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1063,7 +1063,7 @@
     },
     {
       "channel": "KBS 1라디오",
-      "title": "🔴[KBS 1라디오] 실시간 스트리밍",
+      "title": "🔴[KBS 1라디오 | 정관용의 시사본부] 2부 실시간 스트리밍",
       "url": "https://www.youtube.com/watch?v=YNm5I2XLrfk",
       "videoId": "YNm5I2XLrfk",
       "type": "news",
@@ -1215,7 +1215,7 @@
   "CN": [
     {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視官方 #24小時直播 】石破茂答鳳凰記者問：不否認侵略戰爭 亞洲人未忘歷史｜中國商務部：堅決反對美國濫用出口管制措施｜國台辦：賴清德所言所行只會破壞台海穩定｜#鳳凰衛視 #大事發生看鳳凰",
+      "title": "【鳳凰衛視官方 #24小時直播 】美国宣布對中國加徵100%關稅 中方商務部作出回應｜石破茂答鳳凰記者問：不否認侵略戰爭｜國台辦：賴清德所言所行只會破壞台海穩定｜#鳳凰衛視 #大事發生看鳳凰",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",
@@ -1416,50 +1416,25 @@
   ],
   "US": [
     {
-      "channel": "CNN TÜRK",
-      "title": "CNN TÜRK - 🔴 Canlı Yayın ᴴᴰ - Canlı TV izle | HABER",
-      "url": "https://www.youtube.com/watch?v=6N8_r2uwLEc",
-      "videoId": "6N8_r2uwLEc",
+      "channel": "TRT Haber",
+      "title": "TRT Haber Canlı Yayın",
+      "url": "https://www.youtube.com/watch?v=ZdLjZxaqCeQ",
+      "videoId": "ZdLjZxaqCeQ",
       "type": "news",
-      "publishedAt": "2025-09-04T09:14:35Z",
+      "publishedAt": "2025-09-30T13:23:53Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/6N8_r2uwLEc/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/ZdLjZxaqCeQ/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/6N8_r2uwLEc/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ZdLjZxaqCeQ/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/6N8_r2uwLEc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ENG Ashraf Sameh",
-      "title": "[LIVE] Gutfeld! Greg Gutfeld October 10, 2025 | FOX BREAKING NEWS LIVE TRUMP 10/10/2025 FULL 1080P",
-      "url": "https://www.youtube.com/watch?v=qrsp3MiWCpo",
-      "videoId": "qrsp3MiWCpo",
-      "type": "news",
-      "publishedAt": "2025-10-11T01:46:46Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/qrsp3MiWCpo/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/qrsp3MiWCpo/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/qrsp3MiWCpo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ZdLjZxaqCeQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1491,6 +1466,31 @@
       }
     },
     {
+      "channel": "Citizen TV Kenya",
+      "title": "Citizen TV Live",
+      "url": "https://www.youtube.com/watch?v=YDaBv4FXI9w",
+      "videoId": "YDaBv4FXI9w",
+      "type": "news",
+      "publishedAt": "2025-09-12T06:23:08Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "ARY News",
       "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
       "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
@@ -1516,6 +1516,31 @@
       }
     },
     {
+      "channel": "GBNews",
+      "title": "GB News Live: Watch GB News 24/7",
+      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
+      "videoId": "QliL4CGc7iY",
+      "type": "news",
+      "publishedAt": "2025-03-03T15:58:38Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "Sky News",
       "title": "Watch Sky News",
       "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
@@ -1535,31 +1560,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Habertürk TV",
-      "title": "Habertürk TV Canlı Yayın ᴴᴰ",
-      "url": "https://www.youtube.com/watch?v=RNVNlJSUFoE",
-      "videoId": "RNVNlJSUFoE",
-      "type": "news",
-      "publishedAt": "2024-08-19T09:05:09Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/RNVNlJSUFoE/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/RNVNlJSUFoE/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/RNVNlJSUFoE/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

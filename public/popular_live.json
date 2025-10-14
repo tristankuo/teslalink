@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-13T06:32:45.727Z",
+  "lastUpdated": "2025-10-14T06:30:34.124Z",
   "Global": [
     {
       "channel": "Al Jazeera English",
@@ -110,17 +110,17 @@
       "publishedAt": "2024-12-10T12:06:22Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -203,31 +203,6 @@
     }
   ],
   "EU": [
-    {
-      "channel": "BBC News",
-      "title": "LIVE: Handover of Israeli hostages begins in Gaza | BBC News",
-      "url": "https://www.youtube.com/watch?v=61vv06qAHKs",
-      "videoId": "61vv06qAHKs",
-      "type": "news",
-      "publishedAt": "2025-10-09T17:00:30Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/61vv06qAHKs/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/61vv06qAHKs/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/61vv06qAHKs/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
     {
       "channel": "Sky News",
       "title": "Watch Sky News",
@@ -402,6 +377,31 @@
           "height": 360
         }
       }
+    },
+    {
+      "channel": "CNA",
+      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
+      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
+      "videoId": "XWq5kBlakcQ",
+      "type": "news",
+      "publishedAt": "2020-04-21T11:15:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
     }
   ],
   "AU": [
@@ -431,25 +431,25 @@
       }
     },
     {
-      "channel": "LiveNOW from FOX",
-      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
-      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
-      "videoId": "4nMfRpesYfw",
+      "channel": "ABC News",
+      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
+      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
+      "videoId": "iipR5yUp36o",
       "type": "news",
-      "publishedAt": "2025-09-20T12:20:56Z",
+      "publishedAt": "2025-05-01T13:51:58Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1013,49 +1013,24 @@
   "KR": [
     {
       "channel": "KBS News",
-      "title": "[🔴LIVE] 2025 국회 과학기술정보방송통신위원회 국정감사 생중계/2025년 10월 13일(월)/KBS",
-      "url": "https://www.youtube.com/watch?v=kGmWt2vths0",
-      "videoId": "kGmWt2vths0",
+      "title": "[🔴LIVE] 국회 국토교통위원회 국정감사/2025년 10월 14일(화)/KBS",
+      "url": "https://www.youtube.com/watch?v=KOs8geGBqaE",
+      "videoId": "KOs8geGBqaE",
       "type": "news",
-      "publishedAt": "2025-10-13T00:22:14Z",
+      "publishedAt": "2025-10-14T00:32:28Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/kGmWt2vths0/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/KOs8geGBqaE/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/kGmWt2vths0/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/KOs8geGBqaE/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/kGmWt2vths0/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "KBS News",
-      "title": "[🔴LIVE] 2025 국회 법제사법위원회 국정감사 생중계/2025년 10월 13일(월)/KBS",
-      "url": "https://www.youtube.com/watch?v=rn-Juih9pQ0",
-      "videoId": "rn-Juih9pQ0",
-      "type": "news",
-      "publishedAt": "2025-10-13T00:17:56Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/rn-Juih9pQ0/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/rn-Juih9pQ0/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/rn-Juih9pQ0/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/KOs8geGBqaE/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1113,7 +1088,7 @@
     },
     {
       "channel": "KBS Drama Classic",
-      "title": "[🔴LIVE] 🔥KBS 24시간 무한 사극 스트리밍🔥대조영 - 광개토태왕 - 태종이방원 -해신   🔥 #마구니합창단 #사극   #KBS   ㅣ KBS방송",
+      "title": "[🔴LIVE] 🔥KBS 24시간 무한 사극 스트리밍🔥대조영 - 광개토태왕 - 태종이방원 -해신-태조왕건   🔥 #마구니합창단 #사극   #KBS   ㅣ KBS방송",
       "url": "https://www.youtube.com/watch?v=1bROU5AqM8w",
       "videoId": "1bROU5AqM8w",
       "type": "news",
@@ -1187,6 +1162,31 @@
       }
     },
     {
+      "channel": "사피엔스 스튜디오",
+      "title": "[🔴실시간]  레전드 회차＜벌거벗은 세계사＞ 스트리밍 몰아보기 📖",
+      "url": "https://www.youtube.com/watch?v=b5UeAVqz4cI",
+      "videoId": "b5UeAVqz4cI",
+      "type": "news",
+      "publishedAt": "2023-06-05T02:17:22Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/b5UeAVqz4cI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/b5UeAVqz4cI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/b5UeAVqz4cI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "매일경제TV",
       "title": "[라이브] 대한민국 대표 재테크 채널 매일경제TV",
       "url": "https://www.youtube.com/watch?v=s9xL1DpBsfQ",
@@ -1215,7 +1215,7 @@
   "CN": [
     {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視官方 #24小時直播 】特朗普表態：若俄烏局勢惡化 或援助烏克蘭以“戰斧”｜巴勒斯坦總統將出席加沙和平峰會 特朗普：令人興奮｜國民黨主席之爭白熱化 政見再交鋒｜#鳳凰衛視 #大事發生看鳳凰",
+      "title": "【鳳凰衛視官方 #24小時直播 】中國對涉美國船舶收取特別港務費 維護中方合法權益｜特朗普以色列演講遭打斷 場面尷尬｜美財長：對華加徵100%關稅不一定發生｜#鳳凰衛視 #大事發生看鳳凰",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",
@@ -1441,31 +1441,6 @@
       }
     },
     {
-      "channel": "Reuters",
-      "title": "LIVE: Hamas to release 20 Israeli hostages | REUTERS",
-      "url": "https://www.youtube.com/watch?v=6hfugBVGGj8",
-      "videoId": "6hfugBVGGj8",
-      "type": "news",
-      "publishedAt": "2025-10-13T03:32:27Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/6hfugBVGGj8/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/6hfugBVGGj8/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/6hfugBVGGj8/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "Halktv",
       "title": "HALK TV CANLI YAYINI | FULL HD",
       "url": "https://www.youtube.com/watch?v=VBU0QX6brew",
@@ -1510,6 +1485,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "ARY News",
+      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
+      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
+      "videoId": "RqUZ2Fv9l8w",
+      "type": "news",
+      "publishedAt": "2025-04-11T16:31:43Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

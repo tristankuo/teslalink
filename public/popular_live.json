@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-14T06:30:34.124Z",
+  "lastUpdated": "2025-10-15T06:31:12.675Z",
   "Global": [
     {
       "channel": "Al Jazeera English",
@@ -110,17 +110,17 @@
       "publishedAt": "2024-12-10T12:06:22Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default.jpg",
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault.jpg",
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -152,25 +152,25 @@
       }
     },
     {
-      "channel": "24 News",
-      "title": "24 News Live TV |  Live Updates | Malayalam News Live | HD Live Streaming | 24 News Live",
-      "url": "https://www.youtube.com/watch?v=1wECsnGZcfc",
-      "videoId": "1wECsnGZcfc",
+      "channel": "MediaoneTV Live",
+      "title": "MediaOne TV | Malayalam Live News 24x7 | HD Live Streaming | മീഡിയവൺ ന്യൂസ് ലൈവ് 24X7",
+      "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
+      "videoId": "-8d8-c0yvyU",
       "type": "news",
-      "publishedAt": "2024-02-19T03:55:22Z",
+      "publishedAt": "2024-08-26T05:32:18Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1013,24 +1013,24 @@
   "KR": [
     {
       "channel": "KBS News",
-      "title": "[🔴LIVE] 국회 국토교통위원회 국정감사/2025년 10월 14일(화)/KBS",
-      "url": "https://www.youtube.com/watch?v=KOs8geGBqaE",
-      "videoId": "KOs8geGBqaE",
+      "title": "[🔴LIVE] 멈추지 않는다! KBS 뉴스24",
+      "url": "https://www.youtube.com/watch?v=M1WrMEUOBsU",
+      "videoId": "M1WrMEUOBsU",
       "type": "news",
-      "publishedAt": "2025-10-14T00:32:28Z",
+      "publishedAt": "2025-02-06T07:18:51Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/KOs8geGBqaE/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/KOs8geGBqaE/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/KOs8geGBqaE/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/M1WrMEUOBsU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1215,7 +1215,7 @@
   "CN": [
     {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視官方 #24小時直播 】中國對涉美國船舶收取特別港務費 維護中方合法權益｜特朗普以色列演講遭打斷 場面尷尬｜美財長：對華加徵100%關稅不一定發生｜#鳳凰衛視 #大事發生看鳳凰",
+      "title": "【鳳凰衛視官方 #24小時直播 】中方：中國已做好與美貿易戰準備 但不會關閉談判大門｜特朗普：正考慮終止與中國部分貿易往來｜國際金價再創新高 銀價維持高位徘徊｜#鳳凰衛視 #大事發生看鳳凰",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",

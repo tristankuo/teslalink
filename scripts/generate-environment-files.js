@@ -61,7 +61,19 @@ function generateIndexHtml() {
  * Generate environment-specific 404.html
  */
 function generate404Html() {
-  console.log('[BUILD-ENV] 404.html uses dynamic path detection - no changes needed');
+  const { environment, fullUrl } = getEnvironmentFromHomepage();
+
+  if (environment === 'staging') {
+    const username = fullUrl.split('.')[0].replace('https://', '');
+    const templatePath = path.join(__dirname, '../public/404.html.template');
+    let template = fs.readFileSync(templatePath, 'utf8');
+    template = template.replace(/\{\{GHPAGES_USERNAME\}\}/g, username);
+    const outputPath = path.join(__dirname, '../public/404.html');
+    fs.writeFileSync(outputPath, template);
+    console.log(`[BUILD-ENV] Generated 404.html for GitHub Pages user: ${username}`);
+  } else {
+    console.log('[BUILD-ENV] 404.html uses dynamic path detection - no changes needed for production');
+  }
 }
 
 /**

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-15T06:31:12.675Z",
+  "lastUpdated": "2025-10-16T06:30:49.573Z",
   "Global": [
     {
       "channel": "Al Jazeera English",
@@ -152,25 +152,25 @@
       }
     },
     {
-      "channel": "MediaoneTV Live",
-      "title": "MediaOne TV | Malayalam Live News 24x7 | HD Live Streaming | മീഡിയവൺ ന്യൂസ് ലൈവ് 24X7",
-      "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
-      "videoId": "-8d8-c0yvyU",
+      "channel": "24 News",
+      "title": "24 News Live TV |  Live Updates | Malayalam News Live | HD Live Streaming | 24 News Live",
+      "url": "https://www.youtube.com/watch?v=1wECsnGZcfc",
+      "videoId": "1wECsnGZcfc",
       "type": "news",
-      "publishedAt": "2024-08-26T05:32:18Z",
+      "publishedAt": "2024-02-19T03:55:22Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1215,7 +1215,7 @@
   "CN": [
     {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視官方 #24小時直播 】中方：中國已做好與美貿易戰準備 但不會關閉談判大門｜特朗普：正考慮終止與中國部分貿易往來｜國際金價再創新高 銀價維持高位徘徊｜#鳳凰衛視 #大事發生看鳳凰",
+      "title": "【鳳凰衛視官方 #24小時直播 】美財長：可能延長關稅暫停期 換中國推遲稀土管制｜特朗普：莫迪已保證印度將停止購買俄石油｜白宮繼續大規模裁員計劃 規模將超萬人｜#鳳凰衛視 #大事發生看鳳凰",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",
@@ -1441,6 +1441,31 @@
       }
     },
     {
+      "channel": "RTVE Noticias",
+      "title": "CANAL 24 HORAS 🔴 EN DIRECTO: Toda la ACTUALIDAD NACIONAL e INTERNACIONAL | RTVE Noticias",
+      "url": "https://www.youtube.com/watch?v=ku09JnYKhz0",
+      "videoId": "ku09JnYKhz0",
+      "type": "news",
+      "publishedAt": "2025-09-15T11:21:41Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/ku09JnYKhz0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/ku09JnYKhz0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/ku09JnYKhz0/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "Halktv",
       "title": "HALK TV CANLI YAYINI | FULL HD",
       "url": "https://www.youtube.com/watch?v=VBU0QX6brew",
@@ -1467,7 +1492,7 @@
     },
     {
       "channel": "Citizen TV Kenya",
-      "title": "Citizen TV Live",
+      "title": "Citizen TV Live: Kenya Mourns Raila Odinga",
       "url": "https://www.youtube.com/watch?v=YDaBv4FXI9w",
       "videoId": "YDaBv4FXI9w",
       "type": "news",
@@ -1485,31 +1510,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ARY News",
-      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
-      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
-      "videoId": "RqUZ2Fv9l8w",
-      "type": "news",
-      "publishedAt": "2025-04-11T16:31:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

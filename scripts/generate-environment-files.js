@@ -57,29 +57,7 @@ function generateIndexHtml() {
   console.log(`[BUILD-ENV] Generated index.html with canonical URL: ${fullUrl}`);
 }
 
-/**
- * Generate environment-specific 404.html
- */
-function generate404Html() {
-  const { environment, fullUrl } = getEnvironmentFromHomepage();
 
-  if (environment === 'staging') {
-    const username = fullUrl.split('.')[0].replace('https://', '');
-    const templatePath = path.join(__dirname, '../public/404.html.template');
-    let template = fs.readFileSync(templatePath, 'utf8');
-    template = template.replace(/\{\{GHPAGES_USERNAME\}\}/g, username);
-    const outputPath = path.join(__dirname, '../public/404.html');
-    fs.writeFileSync(outputPath, template);
-    console.log(`[BUILD-ENV] Generated 404.html for GitHub Pages user: ${username}`);
-  } else if (environment === 'production') {
-    const outputPath = path.join(__dirname, '../public/404.html');
-    const content = '<!DOCTYPE html><html><head><title>Page Not Found</title></head><body><h1>404 - Page Not Found</h1></body></html>';
-    fs.writeFileSync(outputPath, content);
-    console.log('[BUILD-ENV] Generated simple 404.html for production');
-  } else {
-    console.log('[BUILD-ENV] 404.html not needed for development');
-  }
-}
 
 /**
  * Update workflow files
@@ -91,7 +69,6 @@ function updateWorkflowFiles() {
 // Run all generators
 try {
   generateIndexHtml();
-  generate404Html();
   updateWorkflowFiles();
   console.log('[BUILD-ENV] ✅ Environment-specific files generated successfully');
 } catch (error) {

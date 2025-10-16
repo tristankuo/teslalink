@@ -32,6 +32,12 @@ jobs:
           
       - name: 📦 Install dependencies
         run: npm install --legacy-peer-deps
+
+      - name: 📝 Update package.json for staging
+        run: |
+          npm pkg set homepage="https://tristankuo.github.io/teslalink"
+          echo "✅ Updated homepage for staging deployment: https://tristankuo.github.io/teslalink"
+
         
       - name: 🛠️ Build application
         env:

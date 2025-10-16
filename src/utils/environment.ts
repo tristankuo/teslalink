@@ -28,15 +28,7 @@ export const getCurrentEnvironment = (): 'staging' | 'production' | 'development
  * For local development: /
  */
 export const getBasePath = (): string => {
-  const environment = getCurrentEnvironment();
-  
-  if (environment === 'staging') {
-    // Extract repository name from pathname for GitHub Pages
-    const pathParts = window.location.pathname.split('/');
-    return pathParts[1] ? `/${pathParts[1]}` : '/';
-  }
-  
-  return '/';
+  return process.env.PUBLIC_URL || '/';
 };
 
 /**
@@ -62,8 +54,11 @@ export const getCanonicalUrl = (): string => {
  * This ensures the URL works correctly in all environments
  */
 export const getQRUrl = (sessionId: string, theme: string): string => {
-  const baseUrl = getBaseUrl();
-  return `${baseUrl}/add-app/${sessionId}?theme=${theme}`;
+  const origin = window.location.origin;
+  const basePath = getBasePath();
+  // Ensure there is no double slash between origin and basePath
+  const fullBasePath = basePath === '/' ? '' : basePath;
+  return `${origin}${fullBasePath}/#/add-app/${sessionId}?theme=${theme}`;
 };
 
 /**

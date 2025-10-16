@@ -83,7 +83,6 @@ const AddAppQR: React.FC = () => {
         url: urlToSave,
       }).then(() => {
         setStatus('success');
-        setTimeout(() => window.close(), 1500);
       }).catch((error) => {
         console.error('Failed to send data:', error);
         setStatus('error');

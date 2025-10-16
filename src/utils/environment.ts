@@ -58,7 +58,7 @@ export const getQRUrl = (sessionId: string, theme: string): string => {
   const basePath = getBasePath();
   // Ensure there is no double slash between origin and basePath
   const fullBasePath = basePath === '/' ? '' : basePath;
-  return `${origin}${fullBasePath}/#/add-app/${sessionId}?theme=${theme}`;
+  return `${origin}${fullBasePath}/add-app/${sessionId}?theme=${theme}`;
 };
 
 /**

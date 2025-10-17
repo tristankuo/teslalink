@@ -1,0 +1,795 @@
+{
+  "lastUpdated": "2025-10-17T13:12:51.852Z",
+  "Global": [
+    {
+      "channel": "Siyatha News",
+      "title": "🔴 LIVE | Siyatha News | 06.00 PM | 17 - 10 - 2025",
+      "url": "https://www.youtube.com/watch?v=tSLrPX_XUcM",
+      "videoId": "tSLrPX_XUcM",
+      "type": "news",
+      "publishedAt": "2025-10-17T12:11:09Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/tSLrPX_XUcM/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/tSLrPX_XUcM/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/tSLrPX_XUcM/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Republic World",
+      "title": "Republic TV LIVE: October 17 | Political | Sports | Global News | US News | National News",
+      "url": "https://www.youtube.com/watch?v=XvmtG0F5_dg",
+      "videoId": "XvmtG0F5_dg",
+      "type": "news",
+      "publishedAt": "2025-10-17T01:28:36Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "NBC News",
+      "title": "LIVE: NBC News NOW - Oct. 17",
+      "url": "https://www.youtube.com/watch?v=4W-i2WfM0Ys",
+      "videoId": "4W-i2WfM0Ys",
+      "type": "news",
+      "publishedAt": "2025-10-16T21:43:44Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/4W-i2WfM0Ys/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/4W-i2WfM0Ys/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/4W-i2WfM0Ys/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Geo News",
+      "title": "🔴 𝗚𝗘𝗢 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲: 𝗟𝗮𝘁𝗲𝘀𝘁 𝗣𝗮𝗸𝗶𝘀𝘁𝗮𝗻 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲 𝟐4/𝟕 Breaking News &amp; Headlines (Today News) #pakistannews",
+      "url": "https://www.youtube.com/watch?v=ifgOMEerYQI",
+      "videoId": "ifgOMEerYQI",
+      "type": "news",
+      "publishedAt": "2025-10-09T12:57:08Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "NTV Kenya",
+      "title": "NTV LIVE | Raila Odinga&#39;s Last March",
+      "url": "https://www.youtube.com/watch?v=CJcAxIxIJMo",
+      "videoId": "CJcAxIxIJMo",
+      "type": "news",
+      "publishedAt": "2025-10-01T07:37:33Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/CJcAxIxIJMo/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/CJcAxIxIJMo/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/CJcAxIxIJMo/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Citizen TV Kenya",
+      "title": "Citizen TV Live: Raila Odinga&#39;s State Funeral",
+      "url": "https://www.youtube.com/watch?v=YDaBv4FXI9w",
+      "videoId": "YDaBv4FXI9w",
+      "type": "news",
+      "publishedAt": "2025-09-12T06:23:08Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/YDaBv4FXI9w/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "SOMOY TV",
+      "title": "SOMOY TV LIVE | LIVE NOW | সরাসরি সময় টিভি | 4K LIVE TV | LIVE STREAMING | BANGLA TV LIVE | TV",
+      "url": "https://www.youtube.com/watch?v=TdwhCOFh9OA",
+      "videoId": "TdwhCOFh9OA",
+      "type": "news",
+      "publishedAt": "2025-07-16T10:30:46Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/TdwhCOFh9OA/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/TdwhCOFh9OA/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/TdwhCOFh9OA/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "ARY News",
+      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
+      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
+      "videoId": "RqUZ2Fv9l8w",
+      "type": "news",
+      "publishedAt": "2025-04-11T16:31:43Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    }
+  ],
+  "EU": [
+    {
+      "channel": "BBC News",
+      "title": "BBC News Live",
+      "url": "https://www.youtube.com/watch?v=JQmF3D6Vdms",
+      "videoId": "JQmF3D6Vdms",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/JQmF3D6Vdms/hqdefault.jpg"
+    },
+    {
+      "channel": "DW News",
+      "title": "DW News Live",
+      "url": "https://www.youtube.com/watch?v=pqabxBKzZ6M",
+      "videoId": "pqabxBKzZ6M",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/pqabxBKzZ6M/hqdefault.jpg"
+    },
+    {
+      "channel": "Euronews",
+      "title": "Euronews Live",
+      "url": "https://www.youtube.com/watch?v=sPgqEHsONK8",
+      "videoId": "sPgqEHsONK8",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/sPgqEHsONK8/hqdefault.jpg"
+    },
+    {
+      "channel": "FRANCE 24",
+      "title": "France 24 English Live",
+      "url": "https://www.youtube.com/watch?v=GgRKl8rS8DU",
+      "videoId": "GgRKl8rS8DU",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/GgRKl8rS8DU/hqdefault.jpg"
+    },
+    {
+      "channel": "CNN TÜRK",
+      "title": "CNN TÜRK Canlı Yayın",
+      "url": "https://www.youtube.com/watch?v=V4P0fZz7mWw",
+      "videoId": "V4P0fZz7mWw",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/V4P0fZz7mWw/hqdefault.jpg"
+    }
+  ],
+  "AU": [
+    {
+      "channel": "ABC News (Australia)",
+      "title": "ABC News Australia Live",
+      "url": "https://www.youtube.com/watch?v=wEIZlDddpbc",
+      "videoId": "wEIZlDddpbc",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/wEIZlDddpbc/hqdefault.jpg"
+    },
+    {
+      "channel": "Sky News Australia",
+      "title": "Sky News Australia Live",
+      "url": "https://www.youtube.com/watch?v=9TZXsZItgdw",
+      "videoId": "9TZXsZItgdw",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/9TZXsZItgdw/hqdefault.jpg"
+    },
+    {
+      "channel": "7NEWS",
+      "title": "7NEWS Live",
+      "url": "https://www.youtube.com/watch?v=zNTAIfvCkRA",
+      "videoId": "zNTAIfvCkRA",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/zNTAIfvCkRA/hqdefault.jpg"
+    },
+    {
+      "channel": "9News",
+      "title": "9News Australia Live",
+      "url": "https://www.youtube.com/watch?v=wEIZlDddpbc",
+      "videoId": "wEIZlDddpbc",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/wEIZlDddpbc/hqdefault.jpg"
+    }
+  ],
+  "JP": [
+    {
+      "channel": "NHK WORLD-JAPAN",
+      "title": "NHK World Live",
+      "url": "https://www.youtube.com/watch?v=8jQq8T7o-Uw",
+      "videoId": "8jQq8T7o-Uw",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/8jQq8T7o-Uw/hqdefault.jpg"
+    },
+    {
+      "channel": "TBS NEWS DIG",
+      "title": "TBS News Live",
+      "url": "https://www.youtube.com/watch?v=MejTIt2NBbA",
+      "videoId": "MejTIt2NBbA",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/MejTIt2NBbA/hqdefault.jpg"
+    },
+    {
+      "channel": "ANNnewsCH",
+      "title": "ANN News Live",
+      "url": "https://www.youtube.com/watch?v=uxRzU6F0ySo",
+      "videoId": "uxRzU6F0ySo",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/uxRzU6F0ySo/hqdefault.jpg"
+    },
+    {
+      "channel": "FNN Prime",
+      "title": "FNN Prime Live",
+      "url": "https://www.youtube.com/watch?v=L6uY7sG7KxU",
+      "videoId": "L6uY7sG7KxU",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/L6uY7sG7KxU/hqdefault.jpg"
+    }
+  ],
+  "TW": [
+    {
+      "channel": "東森新聞",
+      "title": "ETtoday News Live",
+      "url": "https://www.youtube.com/watch?v=R0uPzqG3A2E",
+      "videoId": "R0uPzqG3A2E",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/R0uPzqG3A2E/hqdefault.jpg"
+    },
+    {
+      "channel": "三立新聞",
+      "title": "SETN News Live",
+      "url": "https://www.youtube.com/watch?v=FoBfXvlOR6I",
+      "videoId": "FoBfXvlOR6I",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/FoBfXvlOR6I/hqdefault.jpg"
+    },
+    {
+      "channel": "TVBS",
+      "title": "TVBS News Live",
+      "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
+      "videoId": "m_dhMSvUCIc",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/m_dhMSvUCIc/hqdefault.jpg"
+    },
+    {
+      "channel": "華視",
+      "title": "CTS News Live",
+      "url": "https://www.youtube.com/watch?v=4Z8zJ4m6jRM",
+      "videoId": "4Z8zJ4m6jRM",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/4Z8zJ4m6jRM/hqdefault.jpg"
+    },
+    {
+      "channel": "民視新聞",
+      "title": "FTV News Live",
+      "url": "https://www.youtube.com/watch?v=XxJKnDLYZz4",
+      "videoId": "XxJKnDLYZz4",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/XxJKnDLYZz4/hqdefault.jpg"
+    }
+  ],
+  "KR": [
+    {
+      "channel": "KBS News",
+      "title": "KBS News Live",
+      "url": "https://www.youtube.com/watch?v=U3p5nZ8a4fE",
+      "videoId": "U3p5nZ8a4fE",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/U3p5nZ8a4fE/hqdefault.jpg"
+    },
+    {
+      "channel": "YTN",
+      "title": "YTN Live",
+      "url": "https://www.youtube.com/watch?v=Q5SzYQK7m6M",
+      "videoId": "Q5SzYQK7m6M",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/Q5SzYQK7m6M/hqdefault.jpg"
+    },
+    {
+      "channel": "MBC News",
+      "title": "MBC News Live",
+      "url": "https://www.youtube.com/watch?v=lT6hZpE2J9M",
+      "videoId": "lT6hZpE2J9M",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/lT6hZpE2J9M/hqdefault.jpg"
+    },
+    {
+      "channel": "SBS News",
+      "title": "SBS News 24 Live",
+      "url": "https://www.youtube.com/watch?v=U3p5nZ8a4fE",
+      "videoId": "U3p5nZ8a4fE",
+      "type": "news",
+      "thumbnails": "https://i.ytimg.com/vi/U3p5nZ8a4fE/hqdefault.jpg"
+    }
+  ],
+  "CN": [
+    {
+      "channel": "鳳凰衛視PhoenixTV Official",
+      "title": "【鳳凰衛視官方 #24小時直播 】特朗普與普京通話 定兩周後在匈牙利會晤｜白宮援助美國豆農 為農產品尋找非中國市場｜中國商務部部長會見蘋果CEO庫克 共話中美經貿合作前景｜#鳳凰衛視 #大事發生看鳳凰",
+      "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
+      "videoId": "fN9uYWCjQaw",
+      "type": "news",
+      "publishedAt": "2025-09-03T03:30:33Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "TVBS NEWS",
+      "title": "🔴LIVE：TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
+      "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
+      "videoId": "m_dhMSvUCIc",
+      "type": "news",
+      "publishedAt": "2023-04-27T08:31:43Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "寰宇新聞 頻道",
+      "title": "寰宇新聞台 24小時線上直播｜GlobalNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中 ｜대만 뉴스 생방송",
+      "url": "https://www.youtube.com/watch?v=6IquAgfvYmc",
+      "videoId": "6IquAgfvYmc",
+      "type": "news",
+      "publishedAt": "2023-09-07T12:57:00Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "中天電視",
+      "title": "【#中天新聞不斷電直播Live】 CTI中天新聞24小時HD新聞直播 │ CTITV Taiwan News HD Live｜台湾のHDニュース放送｜ 대만 HD 뉴스 방송@中天電視CtiTv",
+      "url": "https://www.youtube.com/watch?v=vr3XyVCR4T0",
+      "videoId": "vr3XyVCR4T0",
+      "type": "news",
+      "publishedAt": "2022-05-13T04:09:36Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "中視新聞 HD直播頻道｜Taiwan CTV news HD Live",
+      "title": "中視新聞LIVE直播頻道24小時線上直播｜Taiwan CTV news HD 24h live news |台湾のCTV ニュースHD 대만 24시간 뉴스채널  | (生放送)",
+      "url": "https://www.youtube.com/watch?v=TCnaIE_SAtM",
+      "videoId": "TCnaIE_SAtM",
+      "type": "news",
+      "publishedAt": "2021-09-22T02:25:48Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "華視新聞 CH52",
+      "title": "#LIVE: 華視新聞直播 CH52 | Taiwan CTS News | 台湾のニュースを24時間配信 | 대만 24시간 뉴스채널 | 24小時 線上看 LIVE新聞【On Air】",
+      "url": "https://www.youtube.com/watch?v=wM0g8EoUZ_E",
+      "videoId": "wM0g8EoUZ_E",
+      "type": "news",
+      "publishedAt": "2021-08-11T01:23:30Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/wM0g8EoUZ_E/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/wM0g8EoUZ_E/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/wM0g8EoUZ_E/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "台視新聞 TTV NEWS",
+      "title": "台視新聞台HD 24 小時線上直播｜TAIWAN TTV NEWS HD (Live)｜台湾のTTV ニュースHD (生放送)｜대만 뉴스 라이브",
+      "url": "https://www.youtube.com/watch?v=xL0ch83RAK8",
+      "videoId": "xL0ch83RAK8",
+      "type": "news",
+      "publishedAt": "2020-10-12T04:48:11Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "CNA",
+      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
+      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
+      "videoId": "XWq5kBlakcQ",
+      "type": "news",
+      "publishedAt": "2020-04-21T11:15:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    }
+  ],
+  "US": [
+    {
+      "channel": "Bloomberg Television",
+      "title": "Bloomberg Business News Live",
+      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
+      "videoId": "iEpJwprxDdk",
+      "type": "news",
+      "publishedAt": "2024-10-18T14:53:08Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Republic World",
+      "title": "Republic TV LIVE: October 17 | Political | Sports | Global News | US News | National News",
+      "url": "https://www.youtube.com/watch?v=XvmtG0F5_dg",
+      "videoId": "XvmtG0F5_dg",
+      "type": "news",
+      "publishedAt": "2025-10-17T01:28:36Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "TIMES NOW",
+      "title": "Trump LIVE: US President Donald Trump Urgent Address To The World From White House | Russia | China",
+      "url": "https://www.youtube.com/watch?v=nXu0zTJEXkM",
+      "videoId": "nXu0zTJEXkM",
+      "type": "news",
+      "publishedAt": "2025-10-16T12:07:31Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/nXu0zTJEXkM/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/nXu0zTJEXkM/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/nXu0zTJEXkM/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "LiveNOW from FOX",
+      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
+      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
+      "videoId": "4nMfRpesYfw",
+      "type": "news",
+      "publishedAt": "2025-09-20T12:20:56Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Republic World",
+      "title": "Republic TV LIVE: Rajnath Singh Inaugurates Indigenous Tejas MK1A | Chandigarh Hit &amp; Run Case",
+      "url": "https://www.youtube.com/watch?v=EKZ9o6kApH0",
+      "videoId": "EKZ9o6kApH0",
+      "type": "news",
+      "publishedAt": "2025-06-16T10:30:32Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Sky News",
+      "title": "Watch Sky News",
+      "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
+      "videoId": "YDvsBbKfLPA",
+      "type": "news",
+      "publishedAt": "2024-12-10T12:06:22Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Bloomberg Podcasts",
+      "title": "Bloomberg Live: Business, Finance, Earnings &amp; Investment News | Watch 7AM - 6PM ET Weekdays",
+      "url": "https://www.youtube.com/watch?v=f39oHo6vFLg",
+      "videoId": "f39oHo6vFLg",
+      "type": "news",
+      "publishedAt": "2024-01-23T20:59:02Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Al Jazeera English",
+      "title": "🔴 Al Jazeera English | Live",
+      "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
+      "videoId": "gCNeDWCI0vo",
+      "type": "news",
+      "publishedAt": "2023-03-10T00:24:38Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    }
+  ]
+}

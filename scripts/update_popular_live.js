@@ -59,55 +59,36 @@ const API_BASE = "https://www.googleapis.com/youtube/v3";
 
 // Optimized search queries targeting major local broadcasters and networks
 // Using specific channel names and stricter geographic terms
-const SEARCH_QUERIES = {
+// Channel IDs from popular_live.json (example Global, add others as needed)
+const CHANNEL_IDS = {
   "Global": [
-    "BBC World News live",     // International English content
-    "CNN International live", 
-    "DW News English live",
-    "Al Jazeera English live"
+    "UCNye-wNBqNL5ZzHSJj3l8Bg", // Al Jazeera English
+    "UCoMdktPbSTixAyNGwb-UYkQ", // Sky News
+    "UCIALMKvObZNtJ6AmdCLP7Lg", // Bloomberg Television
+    "UCknLrEdhRCp1aegoMqRaCZg", // DW News
+    "UChqUTb7k4E7NBk0l5hG3S0g"  // Reuters
   ],
   "US": [
-    "CNN live",               // US-specific major networks
-    "Fox News Channel live", 
-    "MSNBC live",
-    "CBS News live"
-  ],
-  "EU": [
-    "BBC News UK live",        // UK-specific terms
-    "Sky News UK live", 
-    "ITV News Britain live",
-    "Channel 4 News UK live"
-  ],
-  "AU": [
-    "ABC News Australia live", // Australia-specific
-    "Channel 7 News Australia", 
-    "Channel 9 News Australia",
-    "Sky News Australia live"
-  ],
-  "JP": [
-    "NHK ニュース live",        // Japanese language terms
-    "日本テレビ ニュース live", 
-    "TBS ニュース live",
-    "フジテレビ ニュース live"
-  ],
-  "TW": [
-    "中視新聞台 live",          // Traditional Chinese terms
-    "TVBS新聞台 live", 
-    "民視新聞台 live",
-    "東森新聞台 live"
-  ],
-  "KR": [
-    "KBS 뉴스 live",           // Korean language terms
-    "MBC 뉴스 live", 
-    "SBS 뉴스 live",
-    "YTN 뉴스 live"
+    "UCYfdidRxbB8Qhf0Nx7ioOYw", // Fox News
+    "UCupvZG-5ko_eiXAupbDfxWw", // CNN
+    "UCVxYKQ8G0S1sQG1bTg2dQHw", // MSNBC
+    "UCXIJgqnII2ZOINSWNOGFThA", // CBS News
+    "UCaXkIU1QidjPwiAYu6GcHjg"  // ABC News
   ],
   "CN": [
-    "CGTN 中文 live",          // Chinese terms for HK/China
-    "鳳凰衛視 live", 
-    "TVB 新聞 live",
-    "Now 新聞台 live"
+    "UC6Qm7kJQ7g6VqFQNYrJ5mKQ", // CGTN
+    "UCwbtZdh9pKjF8QG1dA1yqCQ", // 凤凰卫视
+    "UC1QwQk5y6AR2lV8h1T6QY2g", // TVB
+    "UCw8ZhLPdQ0u_Y-TLKd61hGA"  // Now TV
   ]
+  // Add EU, AU, JP, TW, KR channel IDs as needed
+};
+
+const SEARCH_QUERIES = {
+  "Global": ["news live", "breaking news live"],
+  "US": ["US news live", "breaking news US"],
+  "CN": ["香港新聞 live", "中國新聞 live"]
+  // Add more/fallback queries for other regions as needed
 };
 
 // Known major channel names to prioritize - helps filter out incorrect regions
@@ -147,6 +128,67 @@ const PRIORITY_CHANNELS = {
 };
 
 async function fetchLiveStreams(regionCode, query) {
+  if (!trackQuotaUsage(100, `Channel Search: ${channelId} (${regionCode})`)) {
+    console.warn(`⚠️  Skipping channel search for ${channelId} due to quota limit`);
+    return [];
+  }
+  const searchUrl = `${API_BASE}/search?` + new URLSearchParams({
+    part: 'snippet',
+    channelId: channelId,
+    eventType: 'live',
+    type: 'video',
+    regionCode: regionCode,
+    maxResults: '2',
+    order: 'viewCount',
+    key: API_KEY
+  });
+  try {
+    const response = await fetch(searchUrl);
+    if (!response.ok) return [];
+    const data = await response.json();
+    if (!data.items || data.items.length === 0) return [];
+    return data.items.map(item => ({
+      channel: item.snippet.channelTitle || "Unknown Channel",
+      title: item.snippet.title || "Live Stream",
+      url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+      videoId: item.id.videoId,
+      type: detectContentType(item.snippet.title, item.snippet.channelTitle),
+      publishedAt: item.snippet.publishedAt,
+      thumbnails: item.snippet.thumbnails
+    }));
+  } catch (error) {
+    return [];
+  }
+}
+
+async function fetchLiveStreams(regionCode, query) {
+async function main() {
+  const result = { lastUpdated: new Date().toISOString() };
+  for (const region of Object.keys(CHANNEL_IDS)) {
+    let regionStreams = [];
+    // 1. Try channel ID search first
+    for (const channelId of CHANNEL_IDS[region]) {
+      const streams = await fetchLiveStreamsByChannel(region, channelId);
+      regionStreams.push(...streams);
+      if (regionStreams.length >= 8) break;
+    }
+    // 2. If not enough, fallback to keyword search
+    if (regionStreams.length < 8 && SEARCH_QUERIES[region]) {
+      for (const query of SEARCH_QUERIES[region]) {
+        const streams = await fetchLiveStreams(region, query);
+        regionStreams.push(...streams);
+        if (regionStreams.length >= 8) break;
+      }
+    }
+    // 3. Validate and trim to 8
+    regionStreams = await validateStreams(regionStreams);
+    result[region] = regionStreams.slice(0, 8);
+  }
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2));
+  console.log('✅ popular_live.json updated');
+}
+
+// Remove orphaned duplicate main and fetchLiveStreams definitions
   // Check quota before making API call
   if (!trackQuotaUsage(100, `Search: ${query} (${regionCode})`)) {
     console.warn(`⚠️  Skipping search for "${query}" due to quota limit`);

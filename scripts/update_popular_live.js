@@ -154,7 +154,7 @@ async function fetchLiveStreams(regionCode, query) {
       videoId: item.id.videoId,
       type: detectContentType(item.snippet.title, item.snippet.channelTitle),
       publishedAt: item.snippet.publishedAt,
-      thumbnails: item.snippet.thumbnails
+      thumbnails: item.snippet.thumbnails // Always use full thumbnail object
     }));
   } catch (error) {
     return [];

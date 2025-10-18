@@ -1,76 +1,101 @@
 {
-  "lastUpdated": "2025-10-17T13:12:51.852Z",
+  "lastUpdated": "2025-10-18T06:27:52.022Z",
   "Global": [
     {
-      "channel": "Siyatha News",
-      "title": "🔴 LIVE | Siyatha News | 06.00 PM | 17 - 10 - 2025",
-      "url": "https://www.youtube.com/watch?v=tSLrPX_XUcM",
-      "videoId": "tSLrPX_XUcM",
+      "channel": "DZMM Teleradyo",
+      "title": "LIVE: DZMM Radyo Patrol 630, DZMM Teleradyo Afternoon Shows (18 October 2025)",
+      "url": "https://www.youtube.com/watch?v=52X_Bd2P7n0",
+      "videoId": "52X_Bd2P7n0",
       "type": "news",
-      "publishedAt": "2025-10-17T12:11:09Z",
+      "publishedAt": "2025-10-18T03:45:13Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/tSLrPX_XUcM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/52X_Bd2P7n0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/tSLrPX_XUcM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/52X_Bd2P7n0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/tSLrPX_XUcM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/52X_Bd2P7n0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Republic World",
-      "title": "Republic TV LIVE: October 17 | Political | Sports | Global News | US News | National News",
-      "url": "https://www.youtube.com/watch?v=XvmtG0F5_dg",
-      "videoId": "XvmtG0F5_dg",
+      "channel": "TV9 Marathi",
+      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 18 October 2025 | tv9 Marathi",
+      "url": "https://www.youtube.com/watch?v=Dk_oX19Zc7I",
+      "videoId": "Dk_oX19Zc7I",
       "type": "news",
-      "publishedAt": "2025-10-17T01:28:36Z",
+      "publishedAt": "2025-10-18T01:44:11Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/Dk_oX19Zc7I/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/Dk_oX19Zc7I/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/XvmtG0F5_dg/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/Dk_oX19Zc7I/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "NBC News",
-      "title": "LIVE: NBC News NOW - Oct. 17",
-      "url": "https://www.youtube.com/watch?v=4W-i2WfM0Ys",
-      "videoId": "4W-i2WfM0Ys",
+      "channel": "Polimer News",
+      "title": "🔴PolimerNews LIVE |TVK Vijay Karur Stampede | CMStalin | Rain Weather | PMModi | EPS ADMK| Annamalai",
+      "url": "https://www.youtube.com/watch?v=lZWN7zq_A7E",
+      "videoId": "lZWN7zq_A7E",
       "type": "news",
-      "publishedAt": "2025-10-16T21:43:44Z",
+      "publishedAt": "2025-10-16T17:34:10Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/4W-i2WfM0Ys/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/lZWN7zq_A7E/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/4W-i2WfM0Ys/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/lZWN7zq_A7E/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/4W-i2WfM0Ys/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/lZWN7zq_A7E/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "KTN News Kenya",
+      "title": "LIVE: Farewell Baba | Kenya Remembers Raila Odinga",
+      "url": "https://www.youtube.com/watch?v=6TKeMd9M7VQ",
+      "videoId": "6TKeMd9M7VQ",
+      "type": "news",
+      "publishedAt": "2025-10-16T08:10:30Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/6TKeMd9M7VQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/6TKeMd9M7VQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/6TKeMd9M7VQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -128,7 +153,7 @@
     },
     {
       "channel": "Citizen TV Kenya",
-      "title": "Citizen TV Live: Raila Odinga&#39;s State Funeral",
+      "title": "Citizen TV Live: Kenya Mourns Raila Odinga",
       "url": "https://www.youtube.com/watch?v=YDaBv4FXI9w",
       "videoId": "YDaBv4FXI9w",
       "type": "news",
@@ -152,50 +177,25 @@
       }
     },
     {
-      "channel": "SOMOY TV",
-      "title": "SOMOY TV LIVE | LIVE NOW | সরাসরি সময় টিভি | 4K LIVE TV | LIVE STREAMING | BANGLA TV LIVE | TV",
-      "url": "https://www.youtube.com/watch?v=TdwhCOFh9OA",
-      "videoId": "TdwhCOFh9OA",
+      "channel": "中天電視",
+      "title": "【#中天新聞不斷電直播Live】 CTI中天新聞24小時HD新聞直播 │ CTITV Taiwan News HD Live｜台湾のHDニュース放送｜ 대만 HD 뉴스 방송@中天電視CtiTv",
+      "url": "https://www.youtube.com/watch?v=vr3XyVCR4T0",
+      "videoId": "vr3XyVCR4T0",
       "type": "news",
-      "publishedAt": "2025-07-16T10:30:46Z",
+      "publishedAt": "2022-05-13T04:09:36Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/TdwhCOFh9OA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/TdwhCOFh9OA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/TdwhCOFh9OA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ARY News",
-      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
-      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
-      "videoId": "RqUZ2Fv9l8w",
-      "type": "news",
-      "publishedAt": "2025-04-11T16:31:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -391,7 +391,7 @@
   "CN": [
     {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視官方 #24小時直播 】特朗普與普京通話 定兩周後在匈牙利會晤｜白宮援助美國豆農 為農產品尋找非中國市場｜中國商務部部長會見蘋果CEO庫克 共話中美經貿合作前景｜#鳳凰衛視 #大事發生看鳳凰",
+      "title": "【鳳凰衛視官方 #24小時直播 】特朗普：兩周內與中國國家領導人會面｜法國外交部：中法合作有助於促進世界穩定｜美國政府停擺第16天 參議院再否決法案｜#鳳凰衛視 #大事發生看鳳凰",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",
@@ -441,7 +441,7 @@
     },
     {
       "channel": "寰宇新聞 頻道",
-      "title": "寰宇新聞台 24小時線上直播｜GlobalNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中 ｜대만 뉴스 생방송",
+      "title": "【國民黨選新主席】寰宇新聞台 24小時線上直播｜GlobalNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中 ｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=6IquAgfvYmc",
       "videoId": "6IquAgfvYmc",
       "type": "news",
@@ -592,25 +592,25 @@
   ],
   "US": [
     {
-      "channel": "Bloomberg Television",
-      "title": "Bloomberg Business News Live",
-      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
-      "videoId": "iEpJwprxDdk",
+      "channel": "ABC News (Australia)",
+      "title": "Watch ABC NEWS Australia live | ABC NEWS",
+      "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
+      "videoId": "vOTiJkg1voo",
       "type": "news",
-      "publishedAt": "2024-10-18T14:53:08Z",
+      "publishedAt": "2022-02-19T23:50:36Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -642,75 +642,25 @@
       }
     },
     {
-      "channel": "TIMES NOW",
-      "title": "Trump LIVE: US President Donald Trump Urgent Address To The World From White House | Russia | China",
-      "url": "https://www.youtube.com/watch?v=nXu0zTJEXkM",
-      "videoId": "nXu0zTJEXkM",
+      "channel": "Geo News",
+      "title": "🔴 𝗚𝗘𝗢 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲: 𝗟𝗮𝘁𝗲𝘀𝘁 𝗣𝗮𝗸𝗶𝘀𝘁𝗮𝗻 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲 𝟐4/𝟕 Breaking News &amp; Headlines (Today News) #pakistannews",
+      "url": "https://www.youtube.com/watch?v=ifgOMEerYQI",
+      "videoId": "ifgOMEerYQI",
       "type": "news",
-      "publishedAt": "2025-10-16T12:07:31Z",
+      "publishedAt": "2025-10-09T12:57:08Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/nXu0zTJEXkM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/nXu0zTJEXkM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/nXu0zTJEXkM/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "LiveNOW from FOX",
-      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
-      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
-      "videoId": "4nMfRpesYfw",
-      "type": "news",
-      "publishedAt": "2025-09-20T12:20:56Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Republic World",
-      "title": "Republic TV LIVE: Rajnath Singh Inaugurates Indigenous Tejas MK1A | Chandigarh Hit &amp; Run Case",
-      "url": "https://www.youtube.com/watch?v=EKZ9o6kApH0",
-      "videoId": "EKZ9o6kApH0",
-      "type": "news",
-      "publishedAt": "2025-06-16T10:30:32Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -742,25 +692,50 @@
       }
     },
     {
-      "channel": "Bloomberg Podcasts",
-      "title": "Bloomberg Live: Business, Finance, Earnings &amp; Investment News | Watch 7AM - 6PM ET Weekdays",
-      "url": "https://www.youtube.com/watch?v=f39oHo6vFLg",
-      "videoId": "f39oHo6vFLg",
+      "channel": "MediaoneTV Live",
+      "title": "MediaOne TV | Malayalam Live News 24x7 | HD Live Streaming | മീഡിയവൺ ന്യൂസ് ലൈവ് 24X7",
+      "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
+      "videoId": "-8d8-c0yvyU",
       "type": "news",
-      "publishedAt": "2024-01-23T20:59:02Z",
+      "publishedAt": "2024-08-26T05:32:18Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/f39oHo6vFLg/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "NTV Telugu",
+      "title": "NTV Telugu News LIVE | Ntv Live",
+      "url": "https://www.youtube.com/watch?v=L0RktSIM980",
+      "videoId": "L0RktSIM980",
+      "type": "news",
+      "publishedAt": "2023-04-20T18:36:26Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -786,6 +761,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "TV9 Telugu Live",
+      "title": "TV9 Telugu News LIVE",
+      "url": "https://www.youtube.com/watch?v=II_m28Bm-iM",
+      "videoId": "II_m28Bm-iM",
+      "type": "news",
+      "publishedAt": "2021-09-13T10:03:22Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/II_m28Bm-iM/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/II_m28Bm-iM/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/II_m28Bm-iM/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

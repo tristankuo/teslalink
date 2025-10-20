@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-20T06:39:36.042Z",
+  "lastUpdated": "2025-10-20T06:54:59.969Z",
   "Global": [
     {
       "channel": "TV9 Marathi",
@@ -46,6 +46,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/kvMhzwvIWfc/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "INQUIRER.net",
+      "title": "LIVE: Senate hearing on 2026 proposed budget of Department of Public Works and Highways | Oct 20",
+      "url": "https://www.youtube.com/watch?v=nCq851s6Wl8",
+      "videoId": "nCq851s6Wl8",
+      "type": "news",
+      "publishedAt": "2025-10-20T00:07:19Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/nCq851s6Wl8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/nCq851s6Wl8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/nCq851s6Wl8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -171,31 +196,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "KOMPASTV",
-      "title": "LIVE STREAMING 24 JAM KOMPASTV",
-      "url": "https://www.youtube.com/watch?v=DOOrIxw5xOw",
-      "videoId": "DOOrIxw5xOw",
-      "type": "news",
-      "publishedAt": "2024-02-06T12:37:01Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/DOOrIxw5xOw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -835,6 +835,56 @@
       }
     },
     {
+      "channel": "大新聞大爆卦",
+      "title": "【#大新聞大爆卦】現正直播中 20251020 @大新聞大爆卦HotNewsTalk",
+      "url": "https://www.youtube.com/watch?v=ooTyqR5rQhI",
+      "videoId": "ooTyqR5rQhI",
+      "type": "news",
+      "publishedAt": "2025-10-20T03:02:44Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/ooTyqR5rQhI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/ooTyqR5rQhI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/ooTyqR5rQhI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "壹電視NEXT TV",
+      "title": "【#狠狠抖內幕】正藍潰敗、紅統當道？#鄭麗文 嗨喊見#習近平！藍成中共直營門市？#解放軍「網絡部隊」出鞘？砸上億網軍天網？#黃國昌 秒投誠？咆哮姊弟文昌配？周刊爆料極限施壓！昌喊告落陷阱？",
+      "url": "https://www.youtube.com/watch?v=XyFNOmaG9og",
+      "videoId": "XyFNOmaG9og",
+      "type": "news",
+      "publishedAt": "2025-10-20T02:21:31Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XyFNOmaG9og/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XyFNOmaG9og/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XyFNOmaG9og/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "三立LIVE新聞",
       "title": "共伴效應&quot;交會帶就在北海岸&quot; 雙北豪雨特報 觀感?昌出席活動 小朋友大跳&quot;國昌哥哥腹肌有8塊&quot;! ｜王偊菁主持｜【前進新台灣 完整版】20251020｜三立新聞台",
       "url": "https://www.youtube.com/watch?v=t1sYpZsmp6o",
@@ -860,31 +910,6 @@
       }
     },
     {
-      "channel": "GBNews",
-      "title": "GB News Live: Watch GB News 24/7",
-      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
-      "videoId": "QliL4CGc7iY",
-      "type": "news",
-      "publishedAt": "2025-03-03T15:58:38Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "Sky News",
       "title": "Watch Sky News",
       "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
@@ -904,31 +929,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Bloomberg Television",
-      "title": "Bloomberg Business News Live",
-      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
-      "videoId": "iEpJwprxDdk",
-      "type": "news",
-      "publishedAt": "2024-10-18T14:53:08Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1491,31 +1491,6 @@
       }
     },
     {
-      "channel": "LiveNOW from FOX",
-      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
-      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
-      "videoId": "4nMfRpesYfw",
-      "type": "news",
-      "publishedAt": "2025-09-20T12:20:56Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "NewsTamil 24X7",
       "title": "🔴LIVE NEWS TODAY: இன்றைய முக்கிய செய்திகள் | Today Breaking News Tamil | NewsTamil 24X7",
       "url": "https://www.youtube.com/watch?v=gynWNinqmjw",
@@ -1535,6 +1510,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gynWNinqmjw/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Republic World",
+      "title": "Republic TV LIVE: Forces First Conclave | Land Remains The Currency Of Victory: Army Chief",
+      "url": "https://www.youtube.com/watch?v=EKZ9o6kApH0",
+      "videoId": "EKZ9o6kApH0",
+      "type": "news",
+      "publishedAt": "2025-06-16T10:30:32Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

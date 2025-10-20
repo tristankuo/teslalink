@@ -42,89 +42,109 @@ function loadExistingData() {
   };
 }
 
-// Region mapping for YouTube API - Optimized for quota efficiency
+// --- Consolidated Channel Data (from sample) ---
+const CONSOLIDATED_MEDIA_CHANNELS = [
+    { name: "Reuters", id: "UChqUTb7kYRX8-EiaN3XFrSQ", region: "Global", category: "News" },
+    { name: "BBC News", id: "UC16niRr50-MSBwiO3YDb3Eg", region: "Global", category: "News" },
+    { name: "Al Jazeera English", id: "UCNye-wBq0MfVKGtkv0x3VCw", region: "Global", category: "News" },
+    { name: "Associated Press (AP)", id: "UCSTXqC-99B7D-qA70oK3yFA", region: "Global", category: "News" },
+    { name: "AFP News Agency", id: "UC8x9YCGjzdXQDfJpgB544ag", region: "Global", category: "News" },
+    { name: "CNA (Channel NewsAsia)", id: "UC83jt4dlz1Gjl58fzQrrKZg", region: "Global", category: "News" },
+    { name: "WION (World is One News)", id: "UC_j0-t_G7qY1u2S8qL3gPGA", region: "Global", category: "News" },
+    { name: "FIFA (Football)", id: "UCP_x-t0kYtLqD6iG7K-jS9w", region: "Global", category: "Sports" },
+    { name: "Discovery Channel", id: "UCbA0G2V04xXg1g7eO_mX90g", region: "Global", category: "General TV" },
+    { name: "ABC News", id: "UCBi2MRPN3SSYA6hP3yCq0vw", region: "US", category: "News" },
+    { name: "CBS News", id: "UC85dFzW_G4sKz320oO_X57w", region: "US", category: "News" },
+    { name: "NBC News", id: "UCeY0bbntWzzU8K0Qf3szGnw", region: "US", category: "News" },
+    { name: "Wall Street Journal", id: "UCLihBPbQJ1-vY0f-bL3g_Fw", region: "US", category: "News" },
+    { name: "New York Times", id: "UCqaw0leR97y_4goDqD_D-LA", region: "US", category: "News" },
+    { name: "CBC News (Canada)", id: "UCF-y2yHCSKq57BvY2wO1BTA", region: "US", category: "News" },
+    { name: "CTV News (Canada)", id: "UCiYvL_n_eM-8sWdI6Xszc9g", region: "US", category: "News" },
+    { name: "ESPN", id: "UC-b-tA_z_fE0v4y6l6F0LdQ", region: "US", category: "Sports" },
+    { name: "The Weather Channel", id: "UC0_QdK5vVz8923V_VbQ065g", region: "US", category: "Weather" },
+    { name: "Euronews", id: "UCSrZ3UV4jOidv8ppoVuvW9Q", region: "EU", category: "News" },
+    { name: "TRT World", id: "UC7M-8yGFD3_d48N3jO-R7Lw", region: "EU", category: "News" },
+    { name: "Sky News (UK)", id: "UC-pSIn_k8-bXG_5f1_f326g", region: "EU", category: "News" },
+    { name: "The Guardian (UK)", id: "UCRIZtPl-f9mWm_bF6QftI_g", region: "EU", category: "News" },
+    { name: "France 24 English", id: "UCQfwfsi5VrQ8yKZ-UWmAEFg", region: "EU", category: "News" },
+    { name: "DW News (Germany)", id: "UC_zSfnY_d9b-Fk2s3qH2_RA", region: "EU", category: "News" },
+    { name: "El País (Spain)", id: "UCgXNn6aR1-pE8sS-2eN436A", region: "EU", category: "News" },
+    { name: "The Olympic Channel", id: "UC0yQ2Pq3FGQWz6oU5DGZqbw", region: "EU", category: "Sports" },
+    { name: "Eurosport", id: "UCc61pMvXWq9j1U-6g72L-oA", region: "EU", category: "Sports" },
+    { name: "ABC News (Australia)", id: "UC_L5X7c3cQhWwN3sW2yV_6w", region: "AU", category: "News" },
+    { name: "Sky News Australia", id: "UCO0akufu9MOzyz3nvGIXAAw", region: "AU", category: "News" },
+    { name: "9 News Australia", id: "UCIYLOcEUX6TbBo7HQVF2PKA", region: "AU", category: "News" },
+    { name: "7NEWS Australia", id: "UCeC2D_4_p-tA12tJ31vM0uw", region: "AU", category: "News" },
+    { name: "Fox Sports Australia", id: "UC-lFk21_O_WjTz7H6zR85Jg", region: "AU", category: "Sports" },
+    { name: "SBS Australia", id: "UC9cK95c_i8U8R9H7x16sQ9Q", region: "AU", category: "General TV" },
+    { name: "CCTV English (China)", id: "UCGj0Qn3Xw-yB6mK2H11-53Q", region: "CN", category: "News" },
+    { name: "CGTN (China)", id: "UCmdxK-LhIqgTqg-qC-gEw7Q", region: "CN", category: "News" },
+    { name: "SCMP (Hong Kong)", id: "UCi9G_iX6iC32fCILiS58-iA", region: "CN", category: "News" },
+    { name: "RTHK (Hong Kong)", id: "UCmJ-2y2Qe0eH3gN2gGf3e1w", region: "CN", category: "News" },
+    { name: "Phoenix TV (Hong Kong)", id: "UCW-j65BwB2f9E4q7b7s00bA", region: "CN", category: "News" },
+    { name: "i-Cable News (Hong Kong)", id: "UCQk5Ld8s4e1_P8T8L3z8d3w", region: "CN", category: "News" },
+    { name: "CCTV Documentary (China)", id: "UC3-S2_Q18g5eF-Kk7jT4V7g", region: "CN", category: "General TV" },
+    { name: "CCTV Chinese Theatre (China)", id: "UC2w-t-vRzW1f6_1z0Yv6J_Q", region: "CN", category: "General TV" },
+    { name: "NHK News", id: "UC_m7pC2pP-5x-Jz3R_G2N8w", region: "JP", category: "News" },
+    { name: "Fuji News Network (FNN)", id: "UCO_M5c0Q-P9-r_oVDfR1k_Q", region: "JP", category: "News" },
+    { name: "TV Asahi (ANNnewsCH)", id: "UCGCZAYq5XbVw5VfA0_AHK2w", region: "JP", category: "News" },
+    { name: "TBS NEWS DIG", id: "UC6AG81pAkf6Lbi_1VC5NmPA", region: "JP", category: "News" },
+    { name: "NHK World-Japan (Intl TV)", id: "UCcD8k8V1B6-d6Q2380dM7ng", region: "JP", category: "General TV" },
+    { name: "J SPORTS", id: "UC1oUj9M-47P-w25W2YQ8vJA", region: "JP", category: "Sports" },
+    { name: "KBS News", id: "UCcQ_B-rXj6iYhXkE-7L715A", region: "KR", category: "News" },
+    { name: "YTN", id: "UCh-2K5-xI-3c1A48Q2y-bJA", region: "KR", category: "News" },
+    { name: "Yonhap News", id: "UCw7K2T6m5t9B-tI_P1Vp7KQ", region: "KR", category: "News" },
+    { name: "SBS News", id: "UCkinYTS9IHqOEwR1Sze2JTw", region: "KR", category: "News" },
+    { name: "MBN News", id: "UCG9aFJTZ-lMCHAiO1KJsirg", region: "KR", category: "News" },
+    { name: "KBS World (General TV)", id: "UCkMhoB-X3W9cI-b71Ea-s7w", region: "KR", category: "General TV" },
+    { name: "SBS Sports", id: "UCY7Y2eG-nFfR1eW2k922g3w", region: "KR", category: "Sports" },
+    { name: "FTV News (民視新聞網)", id: "UC_V1e0z0wB7T8tB05N5cR_Q", region: "TW", category: "News" },
+    { name: "TVBS NEWS", id: "UC5nwNW4KdC0SzrhF9BXEYOQ", region: "TW", category: "News" },
+    { name: "EBC News (東森新聞)", id: "UCR3asjvr_WAaxwJYEDV_Bfw", region: "TW", category: "News" },
+    { name: "CTS News (華視新聞)", id: "UC9dGWaE-NMYvEwM6sD2_Y3A", region: "TW", category: "News" },
+    { name: "TTV News (台視新聞)", id: "UCu3pC5oHwY1k4_kGqY33rMQ", region: "TW", category: "News" },
+    { name: "ELTA Sports", id: "UCzD9N2S0Q4_6JmR5V1W9B3A", region: "TW", category: "Sports" },
+    { name: "Sanlih E-Television (SET)", id: "UCVh-X_W6n64G6t-1k1q-w2A", region: "TW", category: "General TV" },
+];
+
+const MEDIA_CHANNELS_BY_REGION = CONSOLIDATED_MEDIA_CHANNELS.reduce((acc, channel) => {
+    if (!acc[channel.region]) {
+        acc[channel.region] = [];
+    }
+    acc[channel.region].push(channel);
+    return acc;
+}, {});
+
+const CHANNEL_IDS = Object.keys(MEDIA_CHANNELS_BY_REGION).reduce((acc, region) => {
+    acc[region] = MEDIA_CHANNELS_BY_REGION[region].map(c => c.id);
+    return acc;
+}, {});
+
+const PRIORITY_CHANNELS = Object.keys(MEDIA_CHANNELS_BY_REGION).reduce((acc, region) => {
+    acc[region] = MEDIA_CHANNELS_BY_REGION[region].map(c => c.name);
+    return acc;
+}, {});
+
 const REGION_CONFIG = {
-  "Global": ["GB", "US", "AU", "CA"], // Truly global: multiple English-speaking regions
-  "US": ["US", "CA"], // North America (US + Canada)
-  "EU": ["GB"], // UK as EU representative  
-  "AU": ["AU"], // Australia
-  "JP": ["JP"], // Japan
-  "TW": ["TW"], // Taiwan
-  "KR": ["KR"], // Korea
-  "CN": ["HK"] // Hong Kong (YouTube blocked in mainland China)
-};
-
-const MAX_RESULTS_PER_REGION = 12; // Reduced from 15 to save quota
-const API_BASE = "https://www.googleapis.com/youtube/v3";
-
-// Optimized search queries targeting major local broadcasters and networks
-// Using specific channel names and stricter geographic terms
-// Channel IDs from popular_live.json (example Global, add others as needed)
-const CHANNEL_IDS = {
-  "Global": [
-    "UCNye-wNBqNL5ZzHSJj3l8Bg", // Al Jazeera English
-    "UCoMdktPbSTixAyNGwb-UYkQ", // Sky News
-    "UCIALMKvObZNtJ6AmdCLP7Lg", // Bloomberg Television
-    "UCknLrEdhRCp1aegoMqRaCZg", // DW News
-    "UChqUTb7k4E7NBk0l5hG3S0g"  // Reuters
-  ],
-  "US": [
-    "UCYfdidRxbB8Qhf0Nx7ioOYw", // Fox News
-    "UCupvZG-5ko_eiXAupbDfxWw", // CNN
-    "UCVxYKQ8G0S1sQG1bTg2dQHw", // MSNBC
-    "UCXIJgqnII2ZOINSWNOGFThA", // CBS News
-    "UCaXkIU1QidjPwiAYu6GcHjg"  // ABC News
-  ],
-  "CN": [
-    "UC6Qm7kJQ7g6VqFQNYrJ5mKQ", // CGTN
-    "UCwbtZdh9pKjF8QG1dA1yqCQ", // 凤凰卫视
-    "UC1QwQk5y6AR2lV8h1T6QY2g", // TVB
-    "UCw8ZhLPdQ0u_Y-TLKd61hGA"  // Now TV
-  ]
-  // Add EU, AU, JP, TW, KR channel IDs as needed
+  "Global": ["GB", "US", "AU", "CA"], 
+  "US": ["US", "CA"],
+  "EU": ["GB", "FR", "DE"],
+  "AU": ["AU", "NZ"],
+  "JP": ["JP"],
+  "TW": ["TW"],
+  "KR": ["KR"],
+  "CN": ["HK"]
 };
 
 const SEARCH_QUERIES = {
-  "Global": ["news live", "breaking news live"],
-  "US": ["US news live", "breaking news US"],
-  "CN": ["香港新聞 live", "中國新聞 live"]
-  // Add more/fallback queries for other regions as needed
-};
-
-// Known major channel names to prioritize - helps filter out incorrect regions
-const PRIORITY_CHANNELS = {
-  "Global": [
-    "BBC World News", "CNN International", "DW News", "Al Jazeera English", 
-    "euronews", "France 24 English", "Reuters", "Associated Press"
-  ],
-  "US": [
-    "CNN", "Fox News", "MSNBC", "CBS News", "NBC News", "ABC News", 
-    "PBS NewsHour", "C-SPAN", "Bloomberg Television"
-  ],
-  "EU": [
-    "BBC News", "Sky News", "ITV News", "Channel 4 News", "euronews", 
-    "France 24 English", "DW News", "RT UK"
-  ],
-  "AU": [
-    "ABC News (Australia)", "7NEWS Australia", "9 News Australia", 
-    "Sky News Australia", "SBS News", "10 News First"
-  ],
-  "JP": [
-    "NHK World-Japan", "TBS NEWS", "Fuji News Network", "TV Asahi", 
-    "Nippon TV", "テレビ朝日", "日本テレビ", "TBS"
-  ],
-  "TW": [
-    "TVBS NEWS", "中視", "民視", "東森新聞", "華視", "公視", 
-    "三立新聞", "年代新聞"
-  ],
-  "KR": [
-    "KBS News", "MBC News", "SBS", "YTN", "채널A", "JTBC", 
-    "TV조선", "MBN"
-  ],
-  "CN": [
-    "CGTN", "鳳凰衛視", "TVB", "Now TV", "香港電台", "有線新聞", 
-    "無綫新聞", "亞洲電視"
-  ]
+  "Global": ["news live", "breaking news live", "live stream football"],
+  "US": ["US news live", "breaking news US", "weather news live"],
+  "EU": ["europe news live", "breaking news europe", "sports live"],
+  "AU": ["australian news live", "breaking news australia"],
+  "JP": ["ニュース ライブ", "速報", "スポーツ ライブ"],
+  "TW": ["新聞直播", "即時新聞", "體育直播"],
+  "KR": ["뉴스 라이브", "속보", "스포츠 라이브"],
+  "CN": ["香港新聞 live", "中國新聞 live", "時事直播"]
 };
 
 async function fetchLiveStreams(regionCode, query) {

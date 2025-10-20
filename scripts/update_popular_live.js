@@ -8,6 +8,7 @@ if (!API_KEY) {
 }
 
 const OUTPUT_FILE = 'public/popular_live.json';
+const API_BASE = "https://www.googleapis.com/youtube/v3";
 
 // Quota management - Critical protection against exceeding daily limits
 const QUOTA_LIMIT = 9000; // Stay well below 10,000 daily limit  

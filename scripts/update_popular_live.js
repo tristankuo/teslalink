@@ -187,7 +187,7 @@ async function main() {
   const result = { lastUpdated: new Date().toISOString() };
   for (const region of Object.keys(CHANNEL_IDS)) {
     let regionStreams = [];
-    // 1. Try channel ID search first
+    // 1. Try channel ID search first (local channels only)
     for (const channelId of CHANNEL_IDS[region]) {
       const streams = await fetchLiveStreamsByChannel(region, channelId);
       regionStreams.push(...streams);
@@ -197,7 +197,9 @@ async function main() {
     if (regionStreams.length < 8 && SEARCH_QUERIES[region]) {
       for (const query of SEARCH_QUERIES[region]) {
         const streams = await fetchLiveStreams(region, query);
-        regionStreams.push(...streams);
+        // Filter fallback results to only include streams from curated local channel IDs
+        const filteredStreams = streams.filter(s => CHANNEL_IDS[region].includes(s.channelId));
+        regionStreams.push(...filteredStreams);
         if (regionStreams.length >= 8) break;
       }
     }

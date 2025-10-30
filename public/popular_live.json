@@ -1,26 +1,26 @@
 {
-  "lastUpdated": "2025-10-29T06:32:58.675Z",
+  "lastUpdated": "2025-10-30T06:31:14.360Z",
   "Global": [
     {
-      "channel": "News18 MP Chhattisgarh",
-      "title": "Cyclone Montha Live Updates : 110 की स्पीड से आगे बढ़ा तूफान! | IMD | Weather | Rain | Breaking News",
-      "url": "https://www.youtube.com/watch?v=JEDvm9QAVgg",
-      "videoId": "JEDvm9QAVgg",
+      "channel": "Al Jazeera English",
+      "title": "🔴 Al Jazeera English | Live",
+      "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
+      "videoId": "gCNeDWCI0vo",
       "type": "news",
-      "publishedAt": "2025-10-29T02:39:39Z",
+      "publishedAt": "2023-03-10T00:24:38Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/JEDvm9QAVgg/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/JEDvm9QAVgg/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/JEDvm9QAVgg/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -28,24 +28,24 @@
     },
     {
       "channel": "CNBC Awaaz.",
-      "title": "Market Today Updates | Stock Market | Sensex | Nifty | Business Updates | Business News| 29 October",
-      "url": "https://www.youtube.com/watch?v=PsCxeZxau_g",
-      "videoId": "PsCxeZxau_g",
+      "title": "Market Today Updates | Stock Market | Sensex | Nifty | Business Updates | Business News| 30 October",
+      "url": "https://www.youtube.com/watch?v=yANg5aclnts",
+      "videoId": "yANg5aclnts",
       "type": "news",
-      "publishedAt": "2025-10-29T01:02:26Z",
+      "publishedAt": "2025-10-30T01:10:17Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/PsCxeZxau_g/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/yANg5aclnts/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/PsCxeZxau_g/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/yANg5aclnts/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/PsCxeZxau_g/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/yANg5aclnts/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -53,49 +53,24 @@
     },
     {
       "channel": "TV9 Marathi",
-      "title": "Afternoon News LIVE Update | दुपारच्या महत्वाच्या बातम्या | 29 October 2025 | tv9 Marathi",
-      "url": "https://www.youtube.com/watch?v=IbuaHq7bGaU",
-      "videoId": "IbuaHq7bGaU",
+      "title": "Morning  News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 30 October 2025 | tv9 Marathi",
+      "url": "https://www.youtube.com/watch?v=uCrExeBA8hg",
+      "videoId": "uCrExeBA8hg",
       "type": "news",
-      "publishedAt": "2025-10-29T00:59:42Z",
+      "publishedAt": "2025-10-30T01:06:41Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/IbuaHq7bGaU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/uCrExeBA8hg/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/IbuaHq7bGaU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/uCrExeBA8hg/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/IbuaHq7bGaU/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Air Power ",
-      "title": "LIVE 🔴 Hurricane Melissa Hits Jamaica (2025) – Extreme Winds, Heavy Rain &amp; Storm Updates 🌪️🇯🇲",
-      "url": "https://www.youtube.com/watch?v=9_OpKBfA9Wc",
-      "videoId": "9_OpKBfA9Wc",
-      "type": "news",
-      "publishedAt": "2025-10-28T18:51:13Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/9_OpKBfA9Wc/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/9_OpKBfA9Wc/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/9_OpKBfA9Wc/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/uCrExeBA8hg/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -196,6 +171,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "中天電視",
+      "title": "【#中天新聞不斷電直播Live】 CTI中天新聞24小時HD新聞直播 │ CTITV Taiwan News HD Live｜台湾のHDニュース放送｜ 대만 HD 뉴스 방송@中天電視CtiTv",
+      "url": "https://www.youtube.com/watch?v=vr3XyVCR4T0",
+      "videoId": "vr3XyVCR4T0",
+      "type": "news",
+      "publishedAt": "2022-05-13T04:09:36Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -379,25 +379,25 @@
       }
     },
     {
-      "channel": "franceinfo",
-      "title": "franceinfo - DIRECT TV - actualité France et monde, interviews, documentaires et analyses",
-      "url": "https://www.youtube.com/watch?v=Z-Nwo-ypKtM",
-      "videoId": "Z-Nwo-ypKtM",
+      "channel": "CNA",
+      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
+      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
+      "videoId": "XWq5kBlakcQ",
       "type": "news",
-      "publishedAt": "2021-08-12T15:20:17Z",
+      "publishedAt": "2020-04-21T11:15:18Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/Z-Nwo-ypKtM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/Z-Nwo-ypKtM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/Z-Nwo-ypKtM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -609,24 +609,24 @@
   "JP": [
     {
       "channel": "ウェザーニュース",
-      "title": "【ライブ】最新天気ニュース・地震情報 2025年10月29日(水)／西日本から東海は青空 日本海側の雨や雪は収まる〈ウェザーニュースLiVEアフタヌーン・戸北美月／宇野沢達也〉",
-      "url": "https://www.youtube.com/watch?v=ZJ4c1rjyncE",
-      "videoId": "ZJ4c1rjyncE",
+      "title": "【ライブ】最新天気ニュース・地震情報 2025年10月30日(木)／全国的に晴れる所が多い 朝と昼間の気温差大〈ウェザーニュースLiVEアフタヌーン・小川千奈／本田竜也〉",
+      "url": "https://www.youtube.com/watch?v=45JfYLT2bD0",
+      "videoId": "45JfYLT2bD0",
       "type": "news",
-      "publishedAt": "2025-10-28T03:03:17Z",
+      "publishedAt": "2025-10-29T01:28:07Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/ZJ4c1rjyncE/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/45JfYLT2bD0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/ZJ4c1rjyncE/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/45JfYLT2bD0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/ZJ4c1rjyncE/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/45JfYLT2bD0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -708,25 +708,25 @@
       }
     },
     {
-      "channel": "東森新聞 CH51",
-      "title": "🔴【川普亞洲行】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
-      "videoId": "V1p33hqPrUk",
+      "channel": "TVBS NEWS",
+      "title": "🔴LIVE【川習會登場】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
+      "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
+      "videoId": "m_dhMSvUCIc",
       "type": "news",
-      "publishedAt": "2024-06-24T20:17:40Z",
+      "publishedAt": "2023-04-27T08:31:43Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -811,7 +811,7 @@
   "TW": [
     {
       "channel": "TVBS NEWS",
-      "title": "🔴LIVE：【非洲豬瘟威脅】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
+      "title": "🔴LIVE【川習會登場】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
       "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
       "videoId": "m_dhMSvUCIc",
       "type": "news",
@@ -835,25 +835,50 @@
       }
     },
     {
-      "channel": "V6 News Telugu",
-      "title": "V6 News LIVE  | Telangana Live TV Channel  | V6 News",
-      "url": "https://www.youtube.com/watch?v=nrb8P8shbDk",
-      "videoId": "nrb8P8shbDk",
+      "channel": "壹電視NEXT TV",
+      "title": "【#狠狠抖內幕】中央#疫調 團集結！#盧秀燕 信用破產？盧餘湯恐外送台北？藍委怨海關查太嚴？#鄭麗文 有統一行事曆？#KMT 成統戰分部？#川習會 釜山登場！#川普 稱台灣就是台灣！",
+      "url": "https://www.youtube.com/watch?v=eW7hmDLzlRE",
+      "videoId": "eW7hmDLzlRE",
       "type": "news",
-      "publishedAt": "2025-03-16T00:11:14Z",
+      "publishedAt": "2025-10-30T01:56:25Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/nrb8P8shbDk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/eW7hmDLzlRE/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/nrb8P8shbDk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/eW7hmDLzlRE/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/nrb8P8shbDk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/eW7hmDLzlRE/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "三立LIVE新聞",
+      "title": "突拋震撼彈 川普:美國立即恢復核試!出招劍指? 鄭麗文喊&quot;我是中國人&quot;衝擊2026?藍色憂鬱擴散?｜王偊菁主持｜【前進新台灣 完整版】20251030｜三立新聞台",
+      "url": "https://www.youtube.com/watch?v=56_Mbaj9fvM",
+      "videoId": "56_Mbaj9fvM",
+      "type": "news",
+      "publishedAt": "2025-10-30T01:33:57Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/56_Mbaj9fvM/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/56_Mbaj9fvM/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/56_Mbaj9fvM/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -879,31 +904,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Sky News",
-      "title": "Watch Sky News",
-      "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
-      "videoId": "YDvsBbKfLPA",
-      "type": "news",
-      "publishedAt": "2024-12-10T12:06:22Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -936,7 +936,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【川普亞洲行】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴【川習會登場】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -954,31 +954,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": " YTN",
-      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
-      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
-      "videoId": "FJfwehhzIhw",
-      "type": "news",
-      "publishedAt": "2022-07-11T18:19:59Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1004,6 +979,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "台視新聞 TTV NEWS",
+      "title": "台視新聞台HD 24 小時線上直播｜TAIWAN TTV NEWS HD (Live)｜台湾のTTV ニュースHD (生放送)｜대만 뉴스 라이브",
+      "url": "https://www.youtube.com/watch?v=xL0ch83RAK8",
+      "videoId": "xL0ch83RAK8",
+      "type": "news",
+      "publishedAt": "2020-10-12T04:48:11Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1037,50 +1037,25 @@
       }
     },
     {
-      "channel": "MBCNEWS",
-      "title": "한미 정상회담 - [끝까지LIVE] MBC 중계방송 2025년 10월 29일",
-      "url": "https://www.youtube.com/watch?v=GqrhQ1unNXI",
-      "videoId": "GqrhQ1unNXI",
-      "type": "news",
-      "publishedAt": "2025-10-29T04:43:23Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/GqrhQ1unNXI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/GqrhQ1unNXI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/GqrhQ1unNXI/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "[팟빵] 매불쇼",
-      "title": "●10월 29일 수요일 [LIVE] - 뉴스(민동기,김용남,박주민,김기표,봉지욱,김승원)",
-      "url": "https://www.youtube.com/watch?v=UoCVy7xH6qM",
-      "videoId": "UoCVy7xH6qM",
+      "title": "●10월 30일 목요일 [LIVE] - 뉴스(민동기,김용남,신인규,박시동,이기헌,전혁수),뻗을레오(최광철,신혜리,송영길),세계사(썬킴)",
+      "url": "https://www.youtube.com/watch?v=jErFmapvqus",
+      "videoId": "jErFmapvqus",
       "type": "news",
-      "publishedAt": "2025-10-29T04:27:32Z",
+      "publishedAt": "2025-10-30T04:15:05Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/UoCVy7xH6qM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/jErFmapvqus/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/UoCVy7xH6qM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/jErFmapvqus/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/UoCVy7xH6qM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/jErFmapvqus/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1088,24 +1063,24 @@
     },
     {
       "channel": "MBCNEWS",
-      "title": "한미 정상회담‥관세협상 담판 주목 - [LIVE] MBC뉴스특보 1~3부 2025년 10월 29일",
-      "url": "https://www.youtube.com/watch?v=0G_Cyw_AOJM",
-      "videoId": "0G_Cyw_AOJM",
+      "title": "트럼프-시진핑 &quot;희토류 수출통제 유예&quot;‥오후에 한일정상 첫 대면 - [LIVE] MBC뉴스특보 1~3부 2025년 10월 30일",
+      "url": "https://www.youtube.com/watch?v=SsZFl3vpml0",
+      "videoId": "SsZFl3vpml0",
       "type": "news",
-      "publishedAt": "2025-10-28T23:22:36Z",
+      "publishedAt": "2025-10-29T22:17:09Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/0G_Cyw_AOJM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/SsZFl3vpml0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/0G_Cyw_AOJM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/SsZFl3vpml0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/0G_Cyw_AOJM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/SsZFl3vpml0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1138,7 +1113,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【川普亞洲行】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴【川習會登場】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1162,25 +1137,25 @@
       }
     },
     {
-      "channel": "연합뉴스TV",
-      "title": "[생방송] 24시간 현장을 전합니다 / 연합뉴스TV  (YonhapnewsTV)",
-      "url": "https://www.youtube.com/watch?v=6QZ_qc75ihU",
-      "videoId": "6QZ_qc75ihU",
+      "channel": "24 News",
+      "title": "24 News Live TV |  Live Updates | Malayalam News Live | HD Live Streaming | 24 News Live",
+      "url": "https://www.youtube.com/watch?v=1wECsnGZcfc",
+      "videoId": "1wECsnGZcfc",
       "type": "news",
-      "publishedAt": "2023-07-28T07:51:42Z",
+      "publishedAt": "2024-02-19T03:55:22Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/1wECsnGZcfc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1210,12 +1185,62 @@
           "height": 360
         }
       }
+    },
+    {
+      "channel": "매일경제TV",
+      "title": "[라이브] 대한민국 대표 재테크 채널 매일경제TV",
+      "url": "https://www.youtube.com/watch?v=s9xL1DpBsfQ",
+      "videoId": "s9xL1DpBsfQ",
+      "type": "news",
+      "publishedAt": "2022-06-09T06:54:27Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
     }
   ],
   "CN": [
     {
+      "channel": "策略王電視",
+      "title": "【策略王電視 Live】講股世一｜20251030",
+      "url": "https://www.youtube.com/watch?v=aQdJxnXuLkI",
+      "videoId": "aQdJxnXuLkI",
+      "type": "news",
+      "publishedAt": "2025-10-28T09:17:07Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/aQdJxnXuLkI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/aQdJxnXuLkI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/aQdJxnXuLkI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視#24小時直播間】特朗普：期待中美元首會晤達成新協議｜美國將降低芬太尼相關對華關稅｜台灣正值流感高峰 新增13人死｜24-hour live news｜24小时直播间 #鳳凰衛視",
+      "title": "【鳳凰衛視#24小時直播間 】中美元首會晤 鳳凰專家全盤解讀 今晚八點特別直播放送｜習近平:中美相互成就 共同繁榮｜神舟二十一號發射在即｜24-hour live news｜24小时直播间 #鳳凰衛視",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",
@@ -1240,32 +1265,7 @@
     },
     {
       "channel": "寰宇新聞 頻道",
-      "title": "寰宇新聞台灣台 24小時直播｜TaiwanNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中  @globalnewstw",
-      "url": "https://www.youtube.com/watch?v=w87VGpgd90U",
-      "videoId": "w87VGpgd90U",
-      "type": "news",
-      "publishedAt": "2023-11-26T10:11:20Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/w87VGpgd90U/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/w87VGpgd90U/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/w87VGpgd90U/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "寰宇新聞 頻道",
-      "title": "【習近平川普世紀會面】寰宇新聞台 24小時線上直播｜GlobalNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中 ｜대만 뉴스 생방송",
+      "title": "【川習會釜山登場】寰宇新聞台 24小時線上直播｜GlobalNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中 ｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=6IquAgfvYmc",
       "videoId": "6IquAgfvYmc",
       "type": "news",
@@ -1290,7 +1290,7 @@
     },
     {
       "channel": "TVBS NEWS",
-      "title": "🔴LIVE：【非洲豬瘟威脅】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
+      "title": "🔴LIVE【川習會登場】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
       "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
       "videoId": "m_dhMSvUCIc",
       "type": "news",
@@ -1416,31 +1416,6 @@
   ],
   "US": [
     {
-      "channel": "ABC News",
-      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
-      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
-      "videoId": "iipR5yUp36o",
-      "type": "news",
-      "publishedAt": "2025-05-01T13:51:58Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "ABC News (Australia)",
       "title": "Watch ABC NEWS Australia live | ABC NEWS",
       "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
@@ -1467,24 +1442,24 @@
     },
     {
       "channel": "Republic World",
-      "title": "Republic TV LIVE: October 29 | Political | Sports | Global News | US News | National News",
-      "url": "https://www.youtube.com/watch?v=S09UL4oTPEA",
-      "videoId": "S09UL4oTPEA",
+      "title": "Republic TV LIVE: October 30 | Political | Sports | Global News | US News | National News",
+      "url": "https://www.youtube.com/watch?v=krpWR0ZpQf8",
+      "videoId": "krpWR0ZpQf8",
       "type": "news",
-      "publishedAt": "2025-10-29T02:12:52Z",
+      "publishedAt": "2025-10-30T00:13:45Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/S09UL4oTPEA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/krpWR0ZpQf8/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/S09UL4oTPEA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/krpWR0ZpQf8/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/S09UL4oTPEA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/krpWR0ZpQf8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1492,24 +1467,24 @@
     },
     {
       "channel": "LiveNOW from FOX",
-      "title": "NEWS TODAY: Trump in South Korea, Hurricane Melissa, government shutdown, latest updates",
-      "url": "https://www.youtube.com/watch?v=ZMajCLA8Wew",
-      "videoId": "ZMajCLA8Wew",
+      "title": "NEWS TODAY: Trump, Xi meeting, government shutdown, latest updates",
+      "url": "https://www.youtube.com/watch?v=jJDXOMNsmrI",
+      "videoId": "jJDXOMNsmrI",
       "type": "news",
-      "publishedAt": "2025-10-28T06:20:58Z",
+      "publishedAt": "2025-10-29T09:34:02Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/ZMajCLA8Wew/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/jJDXOMNsmrI/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/ZMajCLA8Wew/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/jJDXOMNsmrI/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/ZMajCLA8Wew/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/jJDXOMNsmrI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1585,6 +1560,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "MediaoneTV Live",
+      "title": "MediaOne TV | Malayalam Live News 24x7 | HD Live Streaming | മീഡിയവൺ ന്യൂസ് ലൈവ് 24X7",
+      "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
+      "videoId": "-8d8-c0yvyU",
+      "type": "news",
+      "publishedAt": "2024-08-26T05:32:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

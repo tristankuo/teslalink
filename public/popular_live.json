@@ -1,26 +1,51 @@
 {
-  "lastUpdated": "2025-11-02T06:30:02.481Z",
+  "lastUpdated": "2025-11-03T06:33:24.148Z",
   "Global": [
     {
-      "channel": "TV9 Marathi",
-      "title": "TV9 Marathi News LIVE | Afternoon news | दुपारच्या बातम्या |  Fast News | 2 November 2025",
-      "url": "https://www.youtube.com/watch?v=942VBMuLXV0",
-      "videoId": "942VBMuLXV0",
+      "channel": "Zee Business",
+      "title": "First Trade 3rd November 2025 : Zee Business Live | Share Market Live Updates | Stock Market News",
+      "url": "https://www.youtube.com/watch?v=0RRrjHvCR0s",
+      "videoId": "0RRrjHvCR0s",
       "type": "news",
-      "publishedAt": "2025-11-02T01:26:18Z",
+      "publishedAt": "2025-11-03T01:18:20Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/942VBMuLXV0/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/0RRrjHvCR0s/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/942VBMuLXV0/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/0RRrjHvCR0s/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/942VBMuLXV0/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/0RRrjHvCR0s/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "CNBC Awaaz.",
+      "title": "Market Today Updates | Stock Market | Sensex | Nifty | Business Updates | Business News|3rd November",
+      "url": "https://www.youtube.com/watch?v=hP--NMgWpt8",
+      "videoId": "hP--NMgWpt8",
+      "type": "news",
+      "publishedAt": "2025-11-03T01:07:31Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/hP--NMgWpt8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/hP--NMgWpt8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/hP--NMgWpt8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -77,25 +102,25 @@
       }
     },
     {
-      "channel": "ARY News",
-      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
-      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
-      "videoId": "RqUZ2Fv9l8w",
+      "channel": "NewsTamil 24X7",
+      "title": "🔴LIVE NEWS TODAY: இன்றைய முக்கிய செய்திகள் | Today Breaking News Tamil | NewsTamil 24X7",
+      "url": "https://www.youtube.com/watch?v=gynWNinqmjw",
+      "videoId": "gynWNinqmjw",
       "type": "news",
-      "publishedAt": "2025-04-11T16:31:43Z",
+      "publishedAt": "2025-07-12T18:31:12Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/gynWNinqmjw/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/gynWNinqmjw/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/gynWNinqmjw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -103,7 +128,7 @@
     },
     {
       "channel": "TV9 Marathi",
-      "title": "TV9 Marathi News LIVE | Devendra Fadnavis | Raj-Uddhav Thackeray | Rohit Arya Case | Shinde",
+      "title": "TV9 Marathi News LIVE | India Win Women World Cup 2025 | Raj-Uddhav Thackeray | Fadnavis | Shinde",
       "url": "https://www.youtube.com/watch?v=hfwPLazLbd4",
       "videoId": "hfwPLazLbd4",
       "type": "news",
@@ -127,33 +152,8 @@
       }
     },
     {
-      "channel": "GBNews",
-      "title": "GB News Live: Watch GB News 24/7",
-      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
-      "videoId": "QliL4CGc7iY",
-      "type": "news",
-      "publishedAt": "2025-03-03T15:58:38Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "東森新聞 CH51",
-      "title": "🔴【海鷗颱風生成】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -223,31 +223,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "LiveNOW from FOX",
-      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
-      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
-      "videoId": "4nMfRpesYfw",
-      "type": "news",
-      "publishedAt": "2025-09-20T12:20:56Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -398,6 +373,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/Z-Nwo-ypKtM/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "CNA",
+      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
+      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
+      "videoId": "XWq5kBlakcQ",
+      "type": "news",
+      "publishedAt": "2020-04-21T11:15:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -609,24 +609,24 @@
   "JP": [
     {
       "channel": "ウェザーニュース",
-      "title": "【ライブ】最新天気ニュース・地震情報 2025年11月2日(日)／連休中日は関東以西で日差し 北日本や北陸は雷雨に注意〈ウェザーニュースLiVEアフタヌーン・小林李衣奈／森田清輝〉",
-      "url": "https://www.youtube.com/watch?v=0mKU8HzRYU8",
-      "videoId": "0mKU8HzRYU8",
+      "title": "【ライブ】最新天気ニュース・地震情報 2025年11月3日(月)／〈ウェザーニュースLiVEアフタヌーン・白井ゆかり／本田竜也〉",
+      "url": "https://www.youtube.com/watch?v=ceKzuzhT4ig",
+      "videoId": "ceKzuzhT4ig",
       "type": "news",
-      "publishedAt": "2025-11-01T08:08:44Z",
+      "publishedAt": "2025-11-02T00:47:27Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/0mKU8HzRYU8/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/ceKzuzhT4ig/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/0mKU8HzRYU8/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ceKzuzhT4ig/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/0mKU8HzRYU8/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ceKzuzhT4ig/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -683,25 +683,50 @@
       }
     },
     {
-      "channel": "株式会社ティーファイブプロジェクト",
-      "title": "【ライブ】日本全国 緊急地震速報ライブ The Real-time Earthquake Alert Channel for Japan (Tokyo) since 2012",
-      "url": "https://www.youtube.com/watch?v=c7_kqMFDE8c",
-      "videoId": "c7_kqMFDE8c",
+      "channel": "Bloomberg Television",
+      "title": "Bloomberg Business News Live",
+      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
+      "videoId": "iEpJwprxDdk",
       "type": "news",
-      "publishedAt": "2024-01-11T00:05:34Z",
+      "publishedAt": "2024-10-18T14:53:08Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/c7_kqMFDE8c/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/c7_kqMFDE8c/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/c7_kqMFDE8c/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "東森新聞 CH51",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
+      "videoId": "V1p33hqPrUk",
+      "type": "news",
+      "publishedAt": "2024-06-24T20:17:40Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -752,31 +777,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": " YTN",
-      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
-      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
-      "videoId": "FJfwehhzIhw",
-      "type": "news",
-      "publishedAt": "2022-07-11T18:19:59Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -836,24 +836,24 @@
     },
     {
       "channel": "大新聞大爆卦",
-      "title": "【#週末大爆卦 LIVE】現正直播中 20251102 @大新聞大爆卦HotNewsTalk",
-      "url": "https://www.youtube.com/watch?v=rAeHWoa33Ac",
-      "videoId": "rAeHWoa33Ac",
+      "title": "【#大新聞大爆卦 LIVE】郭正亮爆林岱樺豁出去了!賴清德輸了?柯志恩貴人多翻轉高雄!鄭麗文帶獅群打爆綠!青鳥男神出大事了完了?綠甩不掉了?20251103 @大新聞大爆卦HotNewsTalk",
+      "url": "https://www.youtube.com/watch?v=a-9fPOmaaD4",
+      "videoId": "a-9fPOmaaD4",
       "type": "news",
-      "publishedAt": "2025-11-02T03:51:18Z",
+      "publishedAt": "2025-11-03T03:02:32Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/rAeHWoa33Ac/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/a-9fPOmaaD4/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/rAeHWoa33Ac/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/a-9fPOmaaD4/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/rAeHWoa33Ac/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/a-9fPOmaaD4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -885,31 +885,6 @@
       }
     },
     {
-      "channel": "GBNews",
-      "title": "GB News Live: Watch GB News 24/7",
-      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
-      "videoId": "QliL4CGc7iY",
-      "type": "news",
-      "publishedAt": "2025-03-03T15:58:38Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "Sky News",
       "title": "Watch Sky News",
       "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
@@ -935,8 +910,33 @@
       }
     },
     {
+      "channel": "Bloomberg Television",
+      "title": "Bloomberg Business News Live",
+      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
+      "videoId": "iEpJwprxDdk",
+      "type": "news",
+      "publishedAt": "2024-10-18T14:53:08Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "東森新聞 CH51",
-      "title": "🔴【海鷗颱風生成】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1037,25 +1037,25 @@
       }
     },
     {
-      "channel": "MBCNEWS",
-      "title": "공개회담서 &#39;훅&#39;..핵잠 승부수 통했다, &quot;게임체인저&quot; 보수도 칭찬..전세계 &#39;깜짝&#39; - [핫이슈PLAY] MBC뉴스 2025년 11월 2일",
-      "url": "https://www.youtube.com/watch?v=hN-F81eHNyM",
-      "videoId": "hN-F81eHNyM",
+      "channel": "[팟빵] 매불쇼",
+      "title": "●11월 3일 월요일 [LIVE] - 뉴스(곽수산,양지열,신장식,박진영,박시동,이건태,김종훈),특집(진선미,이봉우,오윤혜),뻗을레오(송영길,김준형,조정식,최광철)",
+      "url": "https://www.youtube.com/watch?v=OXHPmL5t36o",
+      "videoId": "OXHPmL5t36o",
       "type": "news",
-      "publishedAt": "2025-11-01T14:05:47Z",
+      "publishedAt": "2025-11-03T04:24:50Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/hN-F81eHNyM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/OXHPmL5t36o/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/hN-F81eHNyM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/OXHPmL5t36o/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/hN-F81eHNyM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/OXHPmL5t36o/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1087,25 +1087,25 @@
       }
     },
     {
-      "channel": "三立LIVE新聞",
-      "title": "#LIVE 三立新聞 24小時直播｜ 24hrs LIVE Taiwan News│台湾 SET+ 24hrs ニュースオンライン放送│대만 채널 SET+ 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=MV9mI0GChwo",
-      "videoId": "MV9mI0GChwo",
+      "channel": "Bloomberg Television",
+      "title": "Bloomberg Business News Live",
+      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
+      "videoId": "iEpJwprxDdk",
       "type": "news",
-      "publishedAt": "2024-10-07T13:52:02Z",
+      "publishedAt": "2024-10-18T14:53:08Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/MV9mI0GChwo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/MV9mI0GChwo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/MV9mI0GChwo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1113,7 +1113,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【海鷗颱風生成】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1162,50 +1162,50 @@
       }
     },
     {
-      "channel": "연합뉴스TV",
-      "title": "[생방송] 24시간 현장을 전합니다 / 연합뉴스TV  (YonhapnewsTV)",
-      "url": "https://www.youtube.com/watch?v=6QZ_qc75ihU",
-      "videoId": "6QZ_qc75ihU",
+      "channel": "한국경제TV",
+      "title": "[한국경제TV LIVE]",
+      "url": "https://www.youtube.com/watch?v=NJUjU9ALj4A",
+      "videoId": "NJUjU9ALj4A",
       "type": "news",
-      "publishedAt": "2023-07-28T07:51:42Z",
+      "publishedAt": "2023-02-08T15:03:01Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "民視新聞網 Formosa TV News network",
-      "title": "🟢LIVE 民視新聞 FTV 新聞直播｜Taiwan News Live｜台湾ニュース Live｜대만 뉴스 방송 Live @FTV_News",
-      "url": "https://www.youtube.com/watch?v=ylYJSBUgaMA",
-      "videoId": "ylYJSBUgaMA",
+      "channel": "매일경제TV",
+      "title": "[라이브] 대한민국 대표 재테크 채널 매일경제TV",
+      "url": "https://www.youtube.com/watch?v=s9xL1DpBsfQ",
+      "videoId": "s9xL1DpBsfQ",
       "type": "news",
-      "publishedAt": "2022-09-13T02:34:47Z",
+      "publishedAt": "2022-06-09T06:54:27Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1214,8 +1214,58 @@
   ],
   "CN": [
     {
+      "channel": "Channel WE HK",
+      "title": "立法會換屆選舉提名  LIVE  |   巴黎奧運女子個人重劍金牌得主江旻憓報名參選 2025 年立法會換屆選舉   報名前會聯同支持者見記者   |  炮台山  |  Channel WE HK",
+      "url": "https://www.youtube.com/watch?v=hsPcQF_SnKA",
+      "videoId": "hsPcQF_SnKA",
+      "type": "news",
+      "publishedAt": "2025-11-03T04:00:13Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/hsPcQF_SnKA/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/hsPcQF_SnKA/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/hsPcQF_SnKA/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "策略王電視",
+      "title": "【策略王電視 Live】午市直擊｜20251103",
+      "url": "https://www.youtube.com/watch?v=fneQXeyR64I",
+      "videoId": "fneQXeyR64I",
+      "type": "news",
+      "publishedAt": "2025-11-03T00:18:22Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/fneQXeyR64I/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/fneQXeyR64I/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/fneQXeyR64I/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視#24小時直播間 】習近平完滿結束韓國之行 乘專機回中國｜李在明談中韓關係：仍有傷痕｜特朗普：不排除重啟地下核試驗｜24-hour live news｜24小时直播间 #鳳凰衛視",
+      "title": "【鳳凰衛視#24小時直播間 】特朗普:美軍或派兵空襲尼日利亞 ｜李在明:中韓元首會談意義深遠｜國家移民管理局推10項移民與出入境舉措｜24-hour live news｜24小时直播间 #鳳凰衛視",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",
@@ -1233,56 +1283,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "寰宇新聞 頻道",
-      "title": "寰宇新聞台灣台 24小時直播｜TaiwanNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中  @globalnewstw",
-      "url": "https://www.youtube.com/watch?v=w87VGpgd90U",
-      "videoId": "w87VGpgd90U",
-      "type": "news",
-      "publishedAt": "2023-11-26T10:11:20Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/w87VGpgd90U/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/w87VGpgd90U/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/w87VGpgd90U/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "東森新聞 CH51",
-      "title": "EBC 東森新聞 51 頻道 24小時線上直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=E0zhe2gkXBs",
-      "videoId": "E0zhe2gkXBs",
-      "type": "news",
-      "publishedAt": "2023-09-21T08:51:08Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/E0zhe2gkXBs/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/E0zhe2gkXBs/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/E0zhe2gkXBs/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1466,8 +1466,33 @@
       }
     },
     {
+      "channel": "NewsTamil 24X7",
+      "title": "🔴LIVE NEWS TODAY: இன்றைய முக்கிய செய்திகள் | Today Breaking News Tamil | NewsTamil 24X7",
+      "url": "https://www.youtube.com/watch?v=gynWNinqmjw",
+      "videoId": "gynWNinqmjw",
+      "type": "news",
+      "publishedAt": "2025-07-12T18:31:12Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/gynWNinqmjw/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/gynWNinqmjw/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/gynWNinqmjw/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "Republic World",
-      "title": "Republic TV LIVE: Mahagathbandhan vs Mahagathbandhan For Bihar Elections? | Trump Tariff War",
+      "title": "Republic TV LIVE: Indian Women&#39;s Cricket Team Clinch Their First ICC Women&#39;s World Cup Title",
       "url": "https://www.youtube.com/watch?v=EKZ9o6kApH0",
       "videoId": "EKZ9o6kApH0",
       "type": "news",
@@ -1485,31 +1510,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ABC7",
-      "title": "LIVE: ABC7 Eyewitness News",
-      "url": "https://www.youtube.com/watch?v=s3iVFJoxrYc",
-      "videoId": "s3iVFJoxrYc",
-      "type": "news",
-      "publishedAt": "2024-12-13T20:06:15Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/s3iVFJoxrYc/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/s3iVFJoxrYc/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/s3iVFJoxrYc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

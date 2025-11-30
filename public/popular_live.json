@@ -1,26 +1,26 @@
 {
-  "lastUpdated": "2025-11-29T06:31:01.247Z",
+  "lastUpdated": "2025-11-30T06:32:01.300Z",
   "Global": [
     {
       "channel": "TV9 Marathi",
-      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 29 November 2025 | tv9 Marathi",
-      "url": "https://www.youtube.com/watch?v=kq_C0W1WKu4",
-      "videoId": "kq_C0W1WKu4",
+      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 30 November 2025 | tv9 Marathi",
+      "url": "https://www.youtube.com/watch?v=em9sSykldhc",
+      "videoId": "em9sSykldhc",
       "type": "news",
-      "publishedAt": "2025-11-29T01:11:24Z",
+      "publishedAt": "2025-11-30T01:24:00Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/kq_C0W1WKu4/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/em9sSykldhc/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/kq_C0W1WKu4/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/em9sSykldhc/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/kq_C0W1WKu4/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/em9sSykldhc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -28,74 +28,124 @@
     },
     {
       "channel": "Polimer News",
-      "title": "🔴PolimerNews LIVE | Ditwah Cyclone | TVKVijay | Sengottaiyan | PMModi | CMStalin | EPS | SIR | Rain",
-      "url": "https://www.youtube.com/watch?v=Ei6NUWLQCQM",
-      "videoId": "Ei6NUWLQCQM",
+      "title": "🔴LIVE : Today Headlines - 30 Nov 2025 | 12 மணி தலைப்புச் செய்திகள் | Headlines | PM Modi | TAMILNADU",
+      "url": "https://www.youtube.com/watch?v=tfLsDx7lsTs",
+      "videoId": "tfLsDx7lsTs",
       "type": "news",
-      "publishedAt": "2025-11-28T18:40:14Z",
+      "publishedAt": "2025-11-29T23:55:47Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/Ei6NUWLQCQM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/tfLsDx7lsTs/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/Ei6NUWLQCQM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/tfLsDx7lsTs/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/Ei6NUWLQCQM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/tfLsDx7lsTs/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Polimer News",
-      "title": "🔴LIVE : Today Headlines - 29 Nov 2025 | 12 மணி தலைப்புச் செய்திகள் | Headlines | PM Modi | TAMILNADU",
-      "url": "https://www.youtube.com/watch?v=pUS2vFseT0k",
-      "videoId": "pUS2vFseT0k",
+      "channel": "DZMM Teleradyo",
+      "title": "LIVE: Kilos Kontra Korapsyon DZMM Special Coverage (30 November 2025)",
+      "url": "https://www.youtube.com/watch?v=PLqEPRASpRQ",
+      "videoId": "PLqEPRASpRQ",
       "type": "news",
-      "publishedAt": "2025-11-28T07:10:14Z",
+      "publishedAt": "2025-11-29T14:12:06Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/pUS2vFseT0k/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/PLqEPRASpRQ/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/pUS2vFseT0k/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/PLqEPRASpRQ/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/pUS2vFseT0k/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/PLqEPRASpRQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "News Malayalam 24x7",
-      "title": "News Malayalam 24x7 Live | News Malayalam |  ന്യൂസ് മലയാളം 24x7 | Rahul Mamkootathil",
-      "url": "https://www.youtube.com/watch?v=vkXkV1y_oCI",
-      "videoId": "vkXkV1y_oCI",
+      "channel": "INQUIRER.net",
+      "title": "LIVE: November 30: Rallies against corruption",
+      "url": "https://www.youtube.com/watch?v=ksH1vdmXrsU",
+      "videoId": "ksH1vdmXrsU",
       "type": "news",
-      "publishedAt": "2025-10-22T09:16:18Z",
+      "publishedAt": "2025-11-29T10:29:23Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/vkXkV1y_oCI/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/ksH1vdmXrsU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/vkXkV1y_oCI/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ksH1vdmXrsU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/vkXkV1y_oCI/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ksH1vdmXrsU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "GMA Integrated News",
+      "title": "LIVE - Protesta ng Bayan - A GMA Integrated News Special Coverage (Nov. 30) | GMA Integrated News",
+      "url": "https://www.youtube.com/watch?v=8d-rnSwNrck",
+      "videoId": "8d-rnSwNrck",
+      "type": "news",
+      "publishedAt": "2025-11-28T21:18:22Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/8d-rnSwNrck/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/8d-rnSwNrck/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/8d-rnSwNrck/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Citizen TV Kenya",
+      "title": "Citizen TV Live",
+      "url": "https://www.youtube.com/watch?v=CfLSE8zGRww",
+      "videoId": "CfLSE8zGRww",
+      "type": "news",
+      "publishedAt": "2025-11-25T03:29:17Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/CfLSE8zGRww/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/CfLSE8zGRww/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/CfLSE8zGRww/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -127,75 +177,25 @@
       }
     },
     {
-      "channel": "asianetnews",
-      "title": "Asianet News Live | Malayalam News Live | Breaking News Live | Kerala News Live | ഏഷ്യാനെറ്റ് ന്യൂസ്",
-      "url": "https://www.youtube.com/watch?v=tXRuaacO-ZU",
-      "videoId": "tXRuaacO-ZU",
+      "channel": "TV9 Marathi",
+      "title": "TV9 Marathi News LIVE | ZP Election Update | Maharashtra Politics | Gauri Garje Case | Fadnavis",
+      "url": "https://www.youtube.com/watch?v=hfwPLazLbd4",
+      "videoId": "hfwPLazLbd4",
       "type": "news",
-      "publishedAt": "2025-05-31T07:04:10Z",
+      "publishedAt": "2025-04-02T15:34:54Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/tXRuaacO-ZU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/tXRuaacO-ZU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/tXRuaacO-ZU/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "東森新聞 CH51",
-      "title": "🔴【香港大火】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
-      "videoId": "V1p33hqPrUk",
-      "type": "news",
-      "publishedAt": "2024-06-24T20:17:40Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "PuthiyathalaimuraiTV",
-      "title": "🔴LIVE Puthiyathalaimurai | முக்கிய செய்திகள் | Ditwa Cyclone | Rain | 𝗪𝗲𝗮𝘁𝗵𝗲𝗿 𝗨𝗽𝗱𝗮𝘁𝗲 | School Leave",
-      "url": "https://www.youtube.com/watch?v=RUzgphgBRzI",
-      "videoId": "RUzgphgBRzI",
-      "type": "news",
-      "publishedAt": "2024-01-31T17:58:56Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/RUzgphgBRzI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/RUzgphgBRzI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/RUzgphgBRzI/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -304,6 +304,31 @@
       }
     },
     {
+      "channel": "FRANCE 24",
+      "title": "FRANCE 24 – EN DIRECT – Info et actualités internationales en continu 24h/24 • FRANCE 24",
+      "url": "https://www.youtube.com/watch?v=l8PMl7tUDIE",
+      "videoId": "l8PMl7tUDIE",
+      "type": "news",
+      "publishedAt": "2023-09-19T09:32:31Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "Al Jazeera English",
       "title": "🔴 Al Jazeera English | Live",
       "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
@@ -373,31 +398,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/Z-Nwo-ypKtM/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "CNA",
-      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
-      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
-      "videoId": "XWq5kBlakcQ",
-      "type": "news",
-      "publishedAt": "2020-04-21T11:15:18Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -531,6 +531,31 @@
       }
     },
     {
+      "channel": "WebcamSydney",
+      "title": "WebcamSydney 1 Live Stream of Harbour 24/7 (~4K)",
+      "url": "https://www.youtube.com/watch?v=5uZa3-RMFos",
+      "videoId": "5uZa3-RMFos",
+      "type": "news",
+      "publishedAt": "2024-11-11T22:49:00Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/5uZa3-RMFos/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/5uZa3-RMFos/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/5uZa3-RMFos/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "FRANCE 24 English",
       "title": "FRANCE 24 English – LIVE – International Breaking News &amp; Top stories - 24/7 stream • FRANCE 24",
       "url": "https://www.youtube.com/watch?v=Ap-UM1O9RBU",
@@ -556,50 +581,25 @@
       }
     },
     {
-      "channel": "Al Jazeera English",
-      "title": "🔴 Al Jazeera English | Live",
-      "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
-      "videoId": "gCNeDWCI0vo",
+      "channel": "CNBC",
+      "title": "LIVE: CNBC Marathon - Documentaries and deep dives 24/7",
+      "url": "https://www.youtube.com/watch?v=9NyxcX3rhQs",
+      "videoId": "9NyxcX3rhQs",
       "type": "news",
-      "publishedAt": "2023-03-10T00:24:38Z",
+      "publishedAt": "2022-11-03T13:17:55Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/9NyxcX3rhQs/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/9NyxcX3rhQs/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "euronews",
-      "title": "Euronews English Live",
-      "url": "https://www.youtube.com/watch?v=pykpO5kQJ98",
-      "videoId": "pykpO5kQJ98",
-      "type": "news",
-      "publishedAt": "2022-12-12T16:24:46Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/pykpO5kQJ98/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/pykpO5kQJ98/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/pykpO5kQJ98/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/9NyxcX3rhQs/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -607,6 +607,31 @@
     }
   ],
   "JP": [
+    {
+      "channel": "ウェザーニュース",
+      "title": "【ライブ】最新天気ニュース・地震情報 2025年11月30日(日)／11月最終日も広く行楽日和 北海道、東北北部は雨や雪〈ウェザーニュースLiVEアフタヌーン・岡本結子リサ／森田清輝〉",
+      "url": "https://www.youtube.com/watch?v=MbKCZ2fVo0o",
+      "videoId": "MbKCZ2fVo0o",
+      "type": "news",
+      "publishedAt": "2025-11-29T00:47:03Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/MbKCZ2fVo0o/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/MbKCZ2fVo0o/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/MbKCZ2fVo0o/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
     {
       "channel": "GBNews",
       "title": "GB News Live: Watch GB News 24/7",
@@ -659,7 +684,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【香港大火】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -727,31 +752,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "民視新聞網 Formosa TV News network",
-      "title": "🟢LIVE 民視新聞 FTV 新聞直播｜Taiwan News Live｜台湾ニュース Live｜대만 뉴스 방송 Live @FTV_News",
-      "url": "https://www.youtube.com/watch?v=ylYJSBUgaMA",
-      "videoId": "ylYJSBUgaMA",
-      "type": "news",
-      "publishedAt": "2022-09-13T02:34:47Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -836,7 +836,7 @@
     },
     {
       "channel": "News Malayalam 24x7",
-      "title": "News Malayalam 24x7 Live | News Malayalam |  ന്യൂസ് മലയാളം 24x7 | Rahul Mamkootathil",
+      "title": "News Malayalam 24x7 Live | News Malayalam | ന്യൂസ് മലയാളം 24x7 | Rahul Mamkootathil",
       "url": "https://www.youtube.com/watch?v=vkXkV1y_oCI",
       "videoId": "vkXkV1y_oCI",
       "type": "news",
@@ -936,7 +936,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【香港大火】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1038,24 +1038,49 @@
     },
     {
       "channel": "MBCNEWS",
-      "title": "새벽4시 &#39;검찰총장 지라시&#39; 메시지 띵!..&quot;내 수사는 어떻게?&quot; 문자 띵띵!..계엄 한 방 리스크 처리? &#39;양특검&#39; 협공 - [핫이슈PLAY] 2025.11.29",
-      "url": "https://www.youtube.com/watch?v=9iHwN_7ktNI",
-      "videoId": "9iHwN_7ktNI",
+      "title": "장경태 더불어민주당 의원 긴급 기자회견 - [끝까지 LIVE] MBC 중계방송 2025년 11월 30일",
+      "url": "https://www.youtube.com/watch?v=Wf_wWaZXYj8",
+      "videoId": "Wf_wWaZXYj8",
       "type": "news",
-      "publishedAt": "2025-11-28T13:02:11Z",
+      "publishedAt": "2025-11-30T05:40:38Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/9iHwN_7ktNI/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/Wf_wWaZXYj8/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/9iHwN_7ktNI/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/Wf_wWaZXYj8/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/9iHwN_7ktNI/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/Wf_wWaZXYj8/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "채널A News",
+      "title": "[🔴라이브를 켜라] [LIVE] [속보] 장경태 긴급 기자회견…실시간 국회 현장  / 채널A",
+      "url": "https://www.youtube.com/watch?v=sMcKgGAqoKI",
+      "videoId": "sMcKgGAqoKI",
+      "type": "news",
+      "publishedAt": "2025-11-29T06:14:03Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/sMcKgGAqoKI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/sMcKgGAqoKI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/sMcKgGAqoKI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1113,7 +1138,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【香港大火】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1131,31 +1156,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "런닝맨 - 스브스 공식 채널",
-      "title": "[🔴LIVE] 🏃‍♂️런닝맨 몰아보기🏃‍♂️ | 📺스브스 런닝맨 실시간 스트리밍📢",
-      "url": "https://www.youtube.com/watch?v=lDcWeklf6DI",
-      "videoId": "lDcWeklf6DI",
-      "type": "news",
-      "publishedAt": "2024-05-14T06:16:00Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/lDcWeklf6DI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/lDcWeklf6DI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/lDcWeklf6DI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1187,25 +1187,25 @@
       }
     },
     {
-      "channel": "民視新聞網 Formosa TV News network",
-      "title": "🟢LIVE 民視新聞 FTV 新聞直播｜Taiwan News Live｜台湾ニュース Live｜대만 뉴스 방송 Live @FTV_News",
-      "url": "https://www.youtube.com/watch?v=ylYJSBUgaMA",
-      "videoId": "ylYJSBUgaMA",
+      "channel": "TVBS NEWS",
+      "title": "🔴LIVE：【香港大埔大火】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
+      "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
+      "videoId": "m_dhMSvUCIc",
       "type": "news",
-      "publishedAt": "2022-09-13T02:34:47Z",
+      "publishedAt": "2023-04-27T08:31:43Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1214,33 +1214,8 @@
   ],
   "CN": [
     {
-      "channel": "中天電視",
-      "title": "【中天直播 #LIVE】​宏福苑大火128死! 港府宣布全港降半旗3天 李家超率官員默哀｜港府初判防護網起火延燒保麗龍板 20251129 @中天電視CtiTv​",
-      "url": "https://www.youtube.com/watch?v=oMsufuUAGbI",
-      "videoId": "oMsufuUAGbI",
-      "type": "news",
-      "publishedAt": "2025-11-28T23:11:04Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/oMsufuUAGbI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/oMsufuUAGbI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/oMsufuUAGbI/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "IndiaTV",
-      "title": "INDIA TV LIVE : Aaj Ki Baat | Imran Khan | Pakistan | Asim Munir | Karnataka Congress Crisis | Modi",
+      "title": "INDIA TV LIVE : PM Modi Mann Ki Baat LIVE  | Cyclone Ditwah | Bihar  | PM Modi |  Imran Khan | News",
       "url": "https://www.youtube.com/watch?v=e1FIApIafWE",
       "videoId": "e1FIApIafWE",
       "type": "news",
@@ -1264,8 +1239,33 @@
       }
     },
     {
+      "channel": "鳳凰衛視PhoenixTV Official",
+      "title": "【鳳凰衛視#24小時直播間 】外交部斥高市：向“台獨”發出嚴重錯誤信號｜香港宏福苑災民入住過渡性房屋｜中國公民在塔吉克斯坦邊境遇襲｜24-hour live news｜24小时直播间#鳳凰衛視",
+      "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
+      "videoId": "fN9uYWCjQaw",
+      "type": "news",
+      "publishedAt": "2025-09-03T03:30:33Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/fN9uYWCjQaw/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "東森新聞 CH51",
-      "title": "🔴【香港大火】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1290,7 +1290,7 @@
     },
     {
       "channel": "News18 India",
-      "title": "🔴News18 India LIVE TV: PM Modi | Putin India Visit | Pakistan | Imran Khan | Mamata Banerjee | SIR",
+      "title": "🔴News18 India LIVE TV: Imran Khan Death News | Asim Munir | Cyclone Ditwah | PM Modi | Rahul Gandhi",
       "url": "https://www.youtube.com/watch?v=Io-G_aiF8HA",
       "videoId": "Io-G_aiF8HA",
       "type": "news",
@@ -1308,31 +1308,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/Io-G_aiF8HA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "寰宇新聞 頻道",
-      "title": "【#香港大埔大火】維修工程涉貪導致大火 港府拘捕8人！寰宇新聞24小時線上直播｜GlobalNewsTV 24h live news｜ 台湾のニュース24時間ライブ配信中 ｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=6IquAgfvYmc",
-      "videoId": "6IquAgfvYmc",
-      "type": "news",
-      "publishedAt": "2023-09-07T12:57:00Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/6IquAgfvYmc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1389,6 +1364,31 @@
       }
     },
     {
+      "channel": "中視新聞 HD直播頻道｜Taiwan CTV news HD Live",
+      "title": "中視新聞LIVE直播頻道24小時線上直播｜Taiwan CTV news HD 24h live news |台湾のCTV ニュースHD 대만 24시간 뉴스채널  | (生放送)",
+      "url": "https://www.youtube.com/watch?v=TCnaIE_SAtM",
+      "videoId": "TCnaIE_SAtM",
+      "type": "news",
+      "publishedAt": "2021-09-22T02:25:48Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "台視新聞 TTV NEWS",
       "title": "台視新聞台HD 24 小時線上直播｜TAIWAN TTV NEWS HD (Live)｜台湾のTTV ニュースHD (生放送)｜대만 뉴스 라이브",
       "url": "https://www.youtube.com/watch?v=xL0ch83RAK8",
@@ -1416,31 +1416,6 @@
   ],
   "US": [
     {
-      "channel": "ABC News",
-      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
-      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
-      "videoId": "iipR5yUp36o",
-      "type": "news",
-      "publishedAt": "2025-05-01T13:51:58Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "ABC News (Australia)",
       "title": "Watch ABC NEWS Australia live | ABC NEWS",
       "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
@@ -1460,31 +1435,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Firstpost",
-      "title": "LIVE: Trump Claims He Threatened 350% Tariffs to End India-Pak Conflict | Vantage with Palki Sharma",
-      "url": "https://www.youtube.com/watch?v=eDYplCeDdtw",
-      "videoId": "eDYplCeDdtw",
-      "type": "news",
-      "publishedAt": "2025-11-20T16:59:22Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/eDYplCeDdtw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/eDYplCeDdtw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/eDYplCeDdtw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1516,50 +1466,25 @@
       }
     },
     {
-      "channel": "Republic World",
-      "title": "Republic TV LIVE: Is Imran Khan Dead Or Alive? Pak Govt&#39;s Radio Silence | India Economic Summit 2025",
-      "url": "https://www.youtube.com/watch?v=EKZ9o6kApH0",
-      "videoId": "EKZ9o6kApH0",
+      "channel": "GBNews",
+      "title": "GB News Live: Watch GB News 24/7",
+      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
+      "videoId": "QliL4CGc7iY",
       "type": "news",
-      "publishedAt": "2025-06-16T10:30:32Z",
+      "publishedAt": "2025-03-03T15:58:38Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/EKZ9o6kApH0/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Arise News",
-      "title": "Arise News Live",
-      "url": "https://www.youtube.com/watch?v=srJg6ZIPmvU",
-      "videoId": "srJg6ZIPmvU",
-      "type": "news",
-      "publishedAt": "2025-06-04T17:25:30Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1610,6 +1535,81 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "MediaoneTV Live",
+      "title": "MediaOne TV | Malayalam Live News 24x7 | HD Live Streaming | മീഡിയവൺ ന്യൂസ് ലൈവ് 24X7",
+      "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
+      "videoId": "-8d8-c0yvyU",
+      "type": "news",
+      "publishedAt": "2024-08-26T05:32:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "ABN Telugu ",
+      "title": "ABN Telugu News LIVE || Telugu News Live Updates || ABN Telugu",
+      "url": "https://www.youtube.com/watch?v=HoYsWagMFfE",
+      "videoId": "HoYsWagMFfE",
+      "type": "news",
+      "publishedAt": "2024-05-15T09:21:45Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/HoYsWagMFfE/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/HoYsWagMFfE/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/HoYsWagMFfE/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Al Jazeera English",
+      "title": "🔴 Al Jazeera English | Live",
+      "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
+      "videoId": "gCNeDWCI0vo",
+      "type": "news",
+      "publishedAt": "2023-03-10T00:24:38Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

@@ -1,101 +1,51 @@
 {
-  "lastUpdated": "2025-12-13T06:32:51.257Z",
+  "lastUpdated": "2025-12-14T06:32:15.093Z",
   "Global": [
     {
-      "channel": "CNBC-TV18",
-      "title": "Messi in India LIVE: Lionel Messi Arrives in India for the &quot;GOAT Tour&quot; | Shah Rukh Khan | N18L",
-      "url": "https://www.youtube.com/watch?v=3THP2ZqEypU",
-      "videoId": "3THP2ZqEypU",
+      "channel": "TV9 Marathi",
+      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 14 December 2025 | tv9 Marathi",
+      "url": "https://www.youtube.com/watch?v=nS5AL31o1lU",
+      "videoId": "nS5AL31o1lU",
       "type": "news",
-      "publishedAt": "2025-12-13T03:18:51Z",
+      "publishedAt": "2025-12-14T01:14:22Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/3THP2ZqEypU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/nS5AL31o1lU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/3THP2ZqEypU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/nS5AL31o1lU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/3THP2ZqEypU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/nS5AL31o1lU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "News18 Kerala",
-      "title": "HD LIVE | NDA Leads In Kerala Local Body Election Results 2025 | UDF | NDA | Thiruvananthapuram",
-      "url": "https://www.youtube.com/watch?v=z6ZFhbLVeAY",
-      "videoId": "z6ZFhbLVeAY",
+      "channel": "Agenda-Free TV",
+      "title": "Mass Shooting at Brown University - LIVE Breaking News Coverage",
+      "url": "https://www.youtube.com/watch?v=pL8PO8qmbaI",
+      "videoId": "pL8PO8qmbaI",
       "type": "news",
-      "publishedAt": "2025-12-13T03:16:20Z",
+      "publishedAt": "2025-12-13T21:37:35Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/z6ZFhbLVeAY/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/pL8PO8qmbaI/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/z6ZFhbLVeAY/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/pL8PO8qmbaI/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/z6ZFhbLVeAY/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Mathrubhumi News",
-      "title": "തദ്ദേശ തിരഞ്ഞെടുപ്പ്; ആദ്യ ഫലസൂചനകൾ പുറത്ത് | Kerala Local Body Election Results | Live Updates",
-      "url": "https://www.youtube.com/watch?v=sUYuRujcmVI",
-      "videoId": "sUYuRujcmVI",
-      "type": "news",
-      "publishedAt": "2025-12-13T01:23:28Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/sUYuRujcmVI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/sUYuRujcmVI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/sUYuRujcmVI/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Manorama News",
-      "title": "തദ്ദേശ ഭരണ തിരഞ്ഞെടുപ്പ് 2025 ഫലം തൽസമയം — Kerala Local Body Election 2025 Result Live | Manorama",
-      "url": "https://www.youtube.com/watch?v=i-oZriebXY0",
-      "videoId": "i-oZriebXY0",
-      "type": "news",
-      "publishedAt": "2025-12-12T17:46:24Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/i-oZriebXY0/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/i-oZriebXY0/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/i-oZriebXY0/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/pL8PO8qmbaI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -121,6 +71,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/CfLSE8zGRww/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "SOMOY TV Bulletin",
+      "title": "SOMOY TV LIVE | LIVE NOW | সরাসরি সময় টিভি | 4K LIVE TV | LIVE STREAMING | BANGLA TV LIVE | TV",
+      "url": "https://www.youtube.com/watch?v=cg_ev1tLo1Y",
+      "videoId": "cg_ev1tLo1Y",
+      "type": "news",
+      "publishedAt": "2025-11-14T13:16:12Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/cg_ev1tLo1Y/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/cg_ev1tLo1Y/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/cg_ev1tLo1Y/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -177,25 +152,50 @@
       }
     },
     {
-      "channel": "Janam TV",
-      "title": "LIVE | LSGD ELECTION RESULTS | | ELECTION NEWS LIVE UPDATES | JANAM TV | ജനം ടിവി | JANAM NEWS LIVE",
-      "url": "https://www.youtube.com/watch?v=yKWe25rKSpU",
-      "videoId": "yKWe25rKSpU",
+      "channel": "ARY News",
+      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
+      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
+      "videoId": "RqUZ2Fv9l8w",
       "type": "news",
-      "publishedAt": "2025-05-29T00:23:37Z",
+      "publishedAt": "2025-04-11T16:31:43Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/yKWe25rKSpU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/yKWe25rKSpU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/yKWe25rKSpU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "TV9 Marathi",
+      "title": "Tv9 Marathi News LIVE | Maharashtra Assembly Winter Session | Pawar | Fadnavis | Nagpur",
+      "url": "https://www.youtube.com/watch?v=hfwPLazLbd4",
+      "videoId": "hfwPLazLbd4",
+      "type": "news",
+      "publishedAt": "2025-04-02T15:34:54Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -229,25 +229,25 @@
       }
     },
     {
-      "channel": "The Enforcer",
-      "title": "RUSSIA WARNS OF MAJOR MISSILE ATTACKS, EUROPE HALTS RUSSIAN ASSETS! Breaking War News W The Enforcer",
-      "url": "https://www.youtube.com/watch?v=8Omvat53NnE",
-      "videoId": "8Omvat53NnE",
+      "channel": "ABC News",
+      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
+      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
+      "videoId": "iipR5yUp36o",
       "type": "news",
-      "publishedAt": "2025-12-13T03:01:10Z",
+      "publishedAt": "2025-05-01T13:51:58Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/8Omvat53NnE/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/8Omvat53NnE/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/8Omvat53NnE/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -431,6 +431,31 @@
       }
     },
     {
+      "channel": "cricket.com.au",
+      "title": "Cricket Gold - 24/7 LIVE Channel",
+      "url": "https://www.youtube.com/watch?v=9SFHa0NYHdE",
+      "videoId": "9SFHa0NYHdE",
+      "type": "news",
+      "publishedAt": "2025-12-10T22:36:59Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/9SFHa0NYHdE/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/9SFHa0NYHdE/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/9SFHa0NYHdE/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "ABC News",
       "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
       "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
@@ -475,31 +500,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/LuKwFajn37U/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Yahoo Finance",
-      "title": "Stock market today: Live coverage from Yahoo Finance",
-      "url": "https://www.youtube.com/watch?v=KQp-e_XQnDE",
-      "videoId": "KQp-e_XQnDE",
-      "type": "news",
-      "publishedAt": "2024-12-18T17:36:21Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/KQp-e_XQnDE/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/KQp-e_XQnDE/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/KQp-e_XQnDE/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -609,24 +609,49 @@
   "JP": [
     {
       "channel": "ウェザーニュース",
-      "title": "【ライブ】最新天気ニュース・地震情報 2025年12月13日(土) ／西から天気下り坂　日本海側の雪は収まる〈ウェザーニュースLiVEアフタヌーン・白井ゆかり／森田清輝〉",
-      "url": "https://www.youtube.com/watch?v=NEaRpqSksss",
-      "videoId": "NEaRpqSksss",
+      "title": "【ライブ】最新天気ニュース・地震情報 2025年12月14日(日) ／北日本や北陸は荒天に警戒 関東は雨から曇り空へ〈ウェザーニュースLiVEアフタヌーン・青原桃香／森田清輝〉",
+      "url": "https://www.youtube.com/watch?v=zSWsxkzeK1Q",
+      "videoId": "zSWsxkzeK1Q",
       "type": "news",
-      "publishedAt": "2025-12-12T00:36:43Z",
+      "publishedAt": "2025-12-13T00:34:45Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/NEaRpqSksss/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/zSWsxkzeK1Q/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/NEaRpqSksss/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/zSWsxkzeK1Q/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/NEaRpqSksss/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/zSWsxkzeK1Q/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "GBNews",
+      "title": "GB News Live: Watch GB News 24/7",
+      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
+      "videoId": "QliL4CGc7iY",
+      "type": "news",
+      "publishedAt": "2025-03-03T15:58:38Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -752,31 +777,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": " YTN",
-      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
-      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
-      "videoId": "FJfwehhzIhw",
-      "type": "news",
-      "publishedAt": "2022-07-11T18:19:59Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1037,50 +1037,25 @@
       }
     },
     {
-      "channel": "MBCNEWS",
-      "title": "3월 안가회동 &#39;비상조치 언급&#39; 술술..&#39;군 개입&#39; 우려 김용현에 &#39;항의&#39; ..&#39;붕짜자붕짜&#39; 국면마다 의외의 &#39;반전&#39; - [핫이슈PLAY] 2025년 12월 12일",
-      "url": "https://www.youtube.com/watch?v=6b3w0iW6SoA",
-      "videoId": "6b3w0iW6SoA",
+      "channel": "ABC News",
+      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
+      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
+      "videoId": "iipR5yUp36o",
       "type": "news",
-      "publishedAt": "2025-12-12T12:55:37Z",
+      "publishedAt": "2025-05-01T13:51:58Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/6b3w0iW6SoA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/6b3w0iW6SoA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/6b3w0iW6SoA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TBS NEWS DIG Powered by JNN",
-      "title": "【24h LIVE】最新ニュースをライブ配信中！ |  TBS NEWS DIG",
-      "url": "https://www.youtube.com/watch?v=Anr15FA9OCI",
-      "videoId": "Anr15FA9OCI",
-      "type": "news",
-      "publishedAt": "2025-07-13T21:04:12Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/Anr15FA9OCI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/Anr15FA9OCI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/Anr15FA9OCI/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1181,6 +1156,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/6QZ_qc75ihU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "民視新聞網 Formosa TV News network",
+      "title": "🟢LIVE 民視新聞24小時直播  FTV 新聞直播｜Taiwan News Live｜台湾ニュース Live｜대만 뉴스 방송 Live @FTV_News",
+      "url": "https://www.youtube.com/watch?v=ylYJSBUgaMA",
+      "videoId": "ylYJSBUgaMA",
+      "type": "news",
+      "publishedAt": "2022-09-13T02:34:47Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/ylYJSBUgaMA/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1416,100 +1416,100 @@
   ],
   "US": [
     {
-      "channel": "ABC News",
-      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
-      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
-      "videoId": "iipR5yUp36o",
+      "channel": "The Enforcer",
+      "title": "US FORCES AMBUSHED IN SYRIA, RUSSIA SLAMMED IN COUNTEROFFENSIVE! Breaking War News W/ The Enforcer",
+      "url": "https://www.youtube.com/watch?v=SD8PZ60BWe4",
+      "videoId": "SD8PZ60BWe4",
       "type": "news",
-      "publishedAt": "2025-05-01T13:51:58Z",
+      "publishedAt": "2025-12-14T03:01:06Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/SD8PZ60BWe4/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/SD8PZ60BWe4/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/SD8PZ60BWe4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "ABC News (Australia)",
-      "title": "Watch ABC NEWS Australia live | ABC NEWS",
-      "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
-      "videoId": "vOTiJkg1voo",
+      "channel": "Agenda-Free TV",
+      "title": "Mass Shooting at Brown University - LIVE Breaking News Coverage",
+      "url": "https://www.youtube.com/watch?v=pL8PO8qmbaI",
+      "videoId": "pL8PO8qmbaI",
       "type": "news",
-      "publishedAt": "2022-02-19T23:50:36Z",
+      "publishedAt": "2025-12-13T21:37:35Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/pL8PO8qmbaI/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/pL8PO8qmbaI/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/pL8PO8qmbaI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Firstpost",
-      "title": "LIVE: World War 3 Soon? Trump Warns of &quot;World War III&quot; as NATO Claims It&#39;s &quot;Russia&#39;s Next Target&quot;",
-      "url": "https://www.youtube.com/watch?v=lUIjUhJqWO0",
-      "videoId": "lUIjUhJqWO0",
+      "channel": "LiveNOW from FOX",
+      "title": "NEWS: 2 dead, 8 critical in Brown University shooting",
+      "url": "https://www.youtube.com/watch?v=GmEwOZQ2shE",
+      "videoId": "GmEwOZQ2shE",
       "type": "news",
-      "publishedAt": "2025-12-12T17:03:11Z",
+      "publishedAt": "2025-12-13T12:51:10Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/GmEwOZQ2shE/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/GmEwOZQ2shE/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/GmEwOZQ2shE/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "TV9 Bharatvarsh",
-      "title": "Russia-Ukraine War LIVE Update: Putin चक्रवर्ती सम्राट, US-यूक्रेन-Europe की हार! | Zelenskyy -TV9",
-      "url": "https://www.youtube.com/watch?v=3IwgMGy3EUo",
-      "videoId": "3IwgMGy3EUo",
+      "channel": "Guitar Repair@StringTech",
+      "title": "LIVE: Trump Announces Important News About Crypto! This Speech Will Change the Crypto Industry",
+      "url": "https://www.youtube.com/watch?v=wn48Y6PjqtE",
+      "videoId": "wn48Y6PjqtE",
       "type": "news",
-      "publishedAt": "2025-12-12T14:10:31Z",
+      "publishedAt": "2025-12-07T06:58:25Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/3IwgMGy3EUo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/wn48Y6PjqtE/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/3IwgMGy3EUo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/wn48Y6PjqtE/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/3IwgMGy3EUo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/wn48Y6PjqtE/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1567,7 +1567,7 @@
     },
     {
       "channel": "MediaoneTV Live",
-      "title": "Kerala Local Body Election 2025 Results LIVE | MediaOne TV | Malayalam News",
+      "title": "MediaOne TV LIVE | | Malayalam News | Malayalam Live News 24x7",
       "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
       "videoId": "-8d8-c0yvyU",
       "type": "news",

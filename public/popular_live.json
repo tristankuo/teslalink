@@ -1,26 +1,76 @@
 {
-  "lastUpdated": "2025-12-16T06:36:20.521Z",
+  "lastUpdated": "2025-12-17T06:36:01.852Z",
   "Global": [
     {
-      "channel": "Zee Business",
-      "title": "First Trade 16th December 2025 : Zee Business Live | Share Market Live Updates | Stock Market News",
-      "url": "https://www.youtube.com/watch?v=ILd0FQL1ShA",
-      "videoId": "ILd0FQL1ShA",
+      "channel": "PTC NEWS",
+      "title": "Punjab  Result Breaking  : Zila Parishad and  Panchayat Samiti   | Punjabi News",
+      "url": "https://www.youtube.com/watch?v=GLgbUHwHwpk",
+      "videoId": "GLgbUHwHwpk",
       "type": "news",
-      "publishedAt": "2025-12-16T00:58:56Z",
+      "publishedAt": "2025-12-17T02:30:51Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/ILd0FQL1ShA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/GLgbUHwHwpk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/ILd0FQL1ShA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/GLgbUHwHwpk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/ILd0FQL1ShA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/GLgbUHwHwpk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Living India News Punjab",
+      "title": "Election Result News | ਸ਼ੁਰੂ ਹੋਈ ਵੋਟਾਂ ਦੀ ਗਿਣਤੀ, ਤਾਜ਼ਾ ਅੰਕੜੇ ਵੇਖੋ LIVE | Re-Polling | Zila Parishad",
+      "url": "https://www.youtube.com/watch?v=NBLZkxBLpec",
+      "videoId": "NBLZkxBLpec",
+      "type": "news",
+      "publishedAt": "2025-12-17T01:18:08Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/NBLZkxBLpec/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/NBLZkxBLpec/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/NBLZkxBLpec/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Zee Business",
+      "title": "First Trade 17th December 2025 : Zee Business Live | Share Market Live Updates | Stock Market News",
+      "url": "https://www.youtube.com/watch?v=kVqZV3qAzs4",
+      "videoId": "kVqZV3qAzs4",
+      "type": "news",
+      "publishedAt": "2025-12-17T01:08:44Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/kVqZV3qAzs4/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/kVqZV3qAzs4/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/kVqZV3qAzs4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -102,50 +152,25 @@
       }
     },
     {
-      "channel": "asianetnews",
-      "title": "Asianet News Live | Malayalam News Live | Live Breaking News l Kerala News | Live News Streaming",
-      "url": "https://www.youtube.com/watch?v=tXRuaacO-ZU",
-      "videoId": "tXRuaacO-ZU",
+      "channel": "TV9 Marathi",
+      "title": "Tv9 Marathi News LIVE | BMC Election | Fadnavis | Thackeray | Local Body Election | Shivsena | BJP",
+      "url": "https://www.youtube.com/watch?v=hfwPLazLbd4",
+      "videoId": "hfwPLazLbd4",
       "type": "news",
-      "publishedAt": "2025-05-31T07:04:10Z",
+      "publishedAt": "2025-04-02T15:34:54Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/tXRuaacO-ZU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/tXRuaacO-ZU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/tXRuaacO-ZU/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ARY News",
-      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
-      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
-      "videoId": "RqUZ2Fv9l8w",
-      "type": "news",
-      "publishedAt": "2025-04-11T16:31:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -175,229 +200,204 @@
           "height": 360
         }
       }
-    },
-    {
-      "channel": "CNBC Awaaz.",
-      "title": "Stock Market Updates Live: आज कहां करें इन्वेस्ट |Business &amp; Finance | 16 December 2025 | CNBC Awaaz",
-      "url": "https://www.youtube.com/watch?v=I_wF_Xai6mM",
-      "videoId": "I_wF_Xai6mM",
-      "type": "business",
-      "publishedAt": "2025-12-16T01:03:05Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/I_wF_Xai6mM/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/I_wF_Xai6mM/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/I_wF_Xai6mM/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
     }
   ],
   "EU": [
     {
-      "channel": "Euronews по-русски",
-      "title": "Прямой эфир Euronews",
-      "url": "https://www.youtube.com/watch?v=lwYzwdBiaho",
-      "videoId": "lwYzwdBiaho",
+      "channel": "BBC News",
+      "title": "Can Europe protect Ukraine if the US backs out of talks? | BBC Ukrainecast",
+      "url": "https://www.youtube.com/watch?v=ISvcAi0mHqk",
+      "videoId": "ISvcAi0mHqk",
       "type": "news",
-      "publishedAt": "2022-12-14T11:11:07Z",
+      "publishedAt": "2025-12-05T22:30:04Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/lwYzwdBiaho/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/ISvcAi0mHqk/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/lwYzwdBiaho/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ISvcAi0mHqk/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/lwYzwdBiaho/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ISvcAi0mHqk/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "GBNews",
-      "title": "GB News Live: Watch GB News 24/7",
-      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
-      "videoId": "QliL4CGc7iY",
+      "channel": "BBC News",
+      "title": "Why has Vladimir Putin said he is &#39;ready for war&#39; with Europe? | BBC Newscast",
+      "url": "https://www.youtube.com/watch?v=nm8awEQT1J4",
+      "videoId": "nm8awEQT1J4",
       "type": "news",
-      "publishedAt": "2025-03-03T15:58:38Z",
+      "publishedAt": "2025-12-03T21:15:03Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/nm8awEQT1J4/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/nm8awEQT1J4/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/nm8awEQT1J4/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Sky News",
-      "title": "Watch Sky News",
-      "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
-      "videoId": "YDvsBbKfLPA",
+      "channel": "Europe: Informed. Connected",
+      "title": "Grim news from Europe: Germany takes a sly step, France expels.",
+      "url": "https://www.youtube.com/watch?v=83KZtVNY01E",
+      "videoId": "83KZtVNY01E",
       "type": "news",
-      "publishedAt": "2024-12-10T12:06:22Z",
+      "publishedAt": "2025-09-20T07:00:07Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/83KZtVNY01E/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/83KZtVNY01E/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/83KZtVNY01E/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Bloomberg Television",
-      "title": "Bloomberg Business News Live",
-      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
-      "videoId": "iEpJwprxDdk",
+      "channel": "CNN-News18",
+      "title": "EU Summit Brussels 2025 LIVE | Emergency EU Summit For Ukraine LIVE | Zelensky News LIVE | N18G",
+      "url": "https://www.youtube.com/watch?v=ecxQgtcIMkM",
+      "videoId": "ecxQgtcIMkM",
       "type": "news",
-      "publishedAt": "2024-10-18T14:53:08Z",
+      "publishedAt": "2025-03-07T03:03:49Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/ecxQgtcIMkM/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ecxQgtcIMkM/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/ecxQgtcIMkM/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "FRANCE 24",
-      "title": "FRANCE 24 – EN DIRECT – Info et actualités internationales en continu 24h/24 • FRANCE 24",
-      "url": "https://www.youtube.com/watch?v=l8PMl7tUDIE",
-      "videoId": "l8PMl7tUDIE",
+      "channel": "Associated Press",
+      "title": "LIVE: European Union holds emergency summit on Ukraine and Europe&#39;s security",
+      "url": "https://www.youtube.com/watch?v=3EXuvvy5ZiY",
+      "videoId": "3EXuvvy5ZiY",
       "type": "news",
-      "publishedAt": "2023-09-19T09:32:31Z",
+      "publishedAt": "2025-03-07T00:43:37Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/3EXuvvy5ZiY/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/3EXuvvy5ZiY/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/l8PMl7tUDIE/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/3EXuvvy5ZiY/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Al Jazeera English",
-      "title": "🔴 Al Jazeera English | Live",
-      "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
-      "videoId": "gCNeDWCI0vo",
+      "channel": "CNBC-TV18",
+      "title": "Ukraine Crisis LIVE: EU Leaders Tell Zelensky Europe is Stronger Than Russia | Putin | Macron | N18G",
+      "url": "https://www.youtube.com/watch?v=2pxKctpF1fg",
+      "videoId": "2pxKctpF1fg",
       "type": "news",
-      "publishedAt": "2023-03-10T00:24:38Z",
+      "publishedAt": "2025-03-06T19:49:36Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/2pxKctpF1fg/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/2pxKctpF1fg/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/2pxKctpF1fg/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "ABC News (Australia)",
-      "title": "Watch ABC NEWS Australia live | ABC NEWS",
-      "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
-      "videoId": "vOTiJkg1voo",
+      "channel": "Times News",
+      "title": "LIVE: Europe&#39;s hard-right leaders rally in Spain",
+      "url": "https://www.youtube.com/watch?v=dTIh6Fox44U",
+      "videoId": "dTIh6Fox44U",
       "type": "news",
-      "publishedAt": "2022-02-19T23:50:36Z",
+      "publishedAt": "2025-02-08T18:59:05Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/dTIh6Fox44U/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/dTIh6Fox44U/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/dTIh6Fox44U/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "franceinfo",
-      "title": "franceinfo - DIRECT TV - actualité France et monde, interviews, documentaires et analyses",
-      "url": "https://www.youtube.com/watch?v=Z-Nwo-ypKtM",
-      "videoId": "Z-Nwo-ypKtM",
+      "channel": "WION",
+      "title": "WION Live broadcast: Watch top news of the hour | Flash floods wreak havoc in Western Europe",
+      "url": "https://www.youtube.com/watch?v=IgPb8hL-dlA",
+      "videoId": "IgPb8hL-dlA",
       "type": "news",
-      "publishedAt": "2021-08-12T15:20:17Z",
+      "publishedAt": "2021-07-16T13:08:08Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/Z-Nwo-ypKtM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/IgPb8hL-dlA/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/Z-Nwo-ypKtM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/IgPb8hL-dlA/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/Z-Nwo-ypKtM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/IgPb8hL-dlA/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -406,125 +406,100 @@
   ],
   "AU": [
     {
+      "channel": "Sky News Australia",
+      "title": "&#39;Not the Australia I know and love’: Minister teary-eyed following Bondi Beach atrocity",
+      "url": "https://www.youtube.com/watch?v=fzMHbtRIuSo",
+      "videoId": "fzMHbtRIuSo",
+      "type": "news",
+      "publishedAt": "2025-12-15T07:51:55Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/fzMHbtRIuSo/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/fzMHbtRIuSo/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/fzMHbtRIuSo/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Sky News Australia",
+      "title": "‘Un-Australian’: Palestine activist removed from Bondi Beach vigil after causing disruption",
+      "url": "https://www.youtube.com/watch?v=q1FoB4y5WpM",
+      "videoId": "q1FoB4y5WpM",
+      "type": "news",
+      "publishedAt": "2025-12-15T06:51:09Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/q1FoB4y5WpM/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/q1FoB4y5WpM/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/q1FoB4y5WpM/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "ABC News (Australia)",
-      "title": "Watch ABC NEWS Australia live | ABC NEWS",
-      "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
-      "videoId": "vOTiJkg1voo",
+      "title": "IN FULL: Breaking news coverage of the Bondi Beach terror attack | ABC NEWS",
+      "url": "https://www.youtube.com/watch?v=bC2D8ehLfdQ",
+      "videoId": "bC2D8ehLfdQ",
       "type": "news",
-      "publishedAt": "2022-02-19T23:50:36Z",
+      "publishedAt": "2025-12-14T14:22:20Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/bC2D8ehLfdQ/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/bC2D8ehLfdQ/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/bC2D8ehLfdQ/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Republic Bharat",
-      "title": "Big Breaking on Sydney Terror Attack LIVE: Pakistan में बम धमाके! | PM Anthony Vs Terrorism",
-      "url": "https://www.youtube.com/watch?v=4yMy_nN-VLg",
-      "videoId": "4yMy_nN-VLg",
+      "channel": "9 News Australia",
+      "title": "October 7 survivor injured in Bondi massacre | 9 News Australia",
+      "url": "https://www.youtube.com/watch?v=JXMrENfoJr0",
+      "videoId": "JXMrENfoJr0",
       "type": "news",
-      "publishedAt": "2025-12-16T04:17:01Z",
+      "publishedAt": "2025-12-14T12:17:52Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/4yMy_nN-VLg/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/JXMrENfoJr0/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/4yMy_nN-VLg/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/JXMrENfoJr0/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/4yMy_nN-VLg/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TV9 Bharatvarsh",
-      "title": "Sydney Bondi Beach attack Live: Pakistan 100% आतंकी देश- Geert Wilders | Netanyahu | Australia -TV9",
-      "url": "https://www.youtube.com/watch?v=OvV7-Z_8lHo",
-      "videoId": "OvV7-Z_8lHo",
-      "type": "news",
-      "publishedAt": "2025-12-16T02:09:19Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/OvV7-Z_8lHo/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/OvV7-Z_8lHo/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/OvV7-Z_8lHo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "LiveNOW from FOX",
-      "title": "NEWS: Update on Bondi Beach shooting, Rob Reiner and wife found dead, White House latest, more",
-      "url": "https://www.youtube.com/watch?v=1Be2qPXjQY4",
-      "videoId": "1Be2qPXjQY4",
-      "type": "news",
-      "publishedAt": "2025-12-15T11:34:40Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/1Be2qPXjQY4/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/1Be2qPXjQY4/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/1Be2qPXjQY4/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ABC News",
-      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
-      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
-      "videoId": "iipR5yUp36o",
-      "type": "news",
-      "publishedAt": "2025-05-01T13:51:58Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/JXMrENfoJr0/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -532,74 +507,74 @@
     },
     {
       "channel": "Sky News",
-      "title": "Watch Sky News",
-      "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
-      "videoId": "YDvsBbKfLPA",
+      "title": "Bondi Beach mass shooting | Sky News full live coverage | December 2025",
+      "url": "https://www.youtube.com/watch?v=P-cZrhecMxg",
+      "videoId": "P-cZrhecMxg",
       "type": "news",
-      "publishedAt": "2024-12-10T12:06:22Z",
+      "publishedAt": "2025-12-14T19:01:47Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/P-cZrhecMxg/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/P-cZrhecMxg/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/P-cZrhecMxg/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "FRANCE 24 English",
-      "title": "FRANCE 24 English – LIVE – International Breaking News &amp; Top stories - 24/7 stream • FRANCE 24",
-      "url": "https://www.youtube.com/watch?v=Ap-UM1O9RBU",
-      "videoId": "Ap-UM1O9RBU",
+      "channel": "Agenda-Free TV",
+      "title": "Mass Shooting at Bondi Beach in Sydney, Australia - LIVE Breaking News Coverage",
+      "url": "https://www.youtube.com/watch?v=70epRhZhiqQ",
+      "videoId": "70epRhZhiqQ",
       "type": "news",
-      "publishedAt": "2024-06-21T08:37:25Z",
+      "publishedAt": "2025-12-14T13:00:19Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/70epRhZhiqQ/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/70epRhZhiqQ/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/Ap-UM1O9RBU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/70epRhZhiqQ/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Al Jazeera English",
-      "title": "🔴 Al Jazeera English | Live",
-      "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
-      "videoId": "gCNeDWCI0vo",
+      "channel": "The Australian",
+      "title": "Minutes of terror: What witnesses saw in the Bondi Beach shooting",
+      "url": "https://www.youtube.com/watch?v=L5DPPerrR84",
+      "videoId": "L5DPPerrR84",
       "type": "news",
-      "publishedAt": "2023-03-10T00:24:38Z",
+      "publishedAt": "2025-12-14T10:47:40Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/L5DPPerrR84/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/L5DPPerrR84/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/L5DPPerrR84/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -609,24 +584,24 @@
   "JP": [
     {
       "channel": "ウェザーニュース",
-      "title": "【ライブ】最新天気ニュース・地震情報 2025年12月16日(火) ／日本海側は強い雨や雪に注意〈ウェザーニュースLiVEアフタヌーン・岡本結子リサ／飯島栄一〉",
-      "url": "https://www.youtube.com/watch?v=fSE3mfE_XLk",
-      "videoId": "fSE3mfE_XLk",
+      "title": "【ライブ】最新天気ニュース・地震情報 2025年12月17日(水) ／北海道は日本海側で吹雪　西日本の雨は太平洋側にも拡大〈ウェザーニュースLiVEアフタヌーン・川畑玲／飯島栄一〉",
+      "url": "https://www.youtube.com/watch?v=9fJJqCplVY8",
+      "videoId": "9fJJqCplVY8",
       "type": "news",
-      "publishedAt": "2025-12-15T00:45:46Z",
+      "publishedAt": "2025-12-16T08:17:01Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/fSE3mfE_XLk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/9fJJqCplVY8/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/fSE3mfE_XLk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/9fJJqCplVY8/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/fSE3mfE_XLk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/9fJJqCplVY8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -677,31 +652,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Bloomberg Television",
-      "title": "Bloomberg Business News Live",
-      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
-      "videoId": "iEpJwprxDdk",
-      "type": "news",
-      "publishedAt": "2024-10-18T14:53:08Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -806,6 +756,31 @@
           "height": 360
         }
       }
+    },
+    {
+      "channel": " YTN",
+      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
+      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
+      "videoId": "FJfwehhzIhw",
+      "type": "news",
+      "publishedAt": "2022-07-11T18:19:59Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
     }
   ],
   "TW": [
@@ -835,31 +810,6 @@
       }
     },
     {
-      "channel": "三立LIVE新聞",
-      "title": "高虹安涉貪二審改判無罪 高檢署:研議提起上訴 台派金主應訊承認匯千萬 證昌才是凱思幕後老闆?│王偊菁 主持│【前進新台灣 完整版】20251216│三立新聞台",
-      "url": "https://www.youtube.com/watch?v=jZxrJSl-28U",
-      "videoId": "jZxrJSl-28U",
-      "type": "news",
-      "publishedAt": "2025-12-16T00:31:57Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/jZxrJSl-28U/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/jZxrJSl-28U/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/jZxrJSl-28U/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "News Malayalam 24x7",
       "title": "News Malayalam 24x7 Live | News Malayalam | ന്യൂസ് മലയാളം 24x7 | Malayalam News",
       "url": "https://www.youtube.com/watch?v=vkXkV1y_oCI",
@@ -879,6 +829,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/vkXkV1y_oCI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Geo News",
+      "title": "🔴 𝗚𝗘𝗢 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲: 𝗟𝗮𝘁𝗲𝘀𝘁 𝗣𝗮𝗸𝗶𝘀𝘁𝗮𝗻 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲 𝟐4/𝟕 Breaking News &amp; Headlines (Today News) #pakistannews",
+      "url": "https://www.youtube.com/watch?v=ifgOMEerYQI",
+      "videoId": "ifgOMEerYQI",
+      "type": "news",
+      "publishedAt": "2025-10-09T12:57:08Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1012,200 +987,175 @@
   ],
   "KR": [
     {
-      "channel": " YTN",
-      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
-      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
-      "videoId": "FJfwehhzIhw",
-      "type": "news",
-      "publishedAt": "2022-07-11T18:19:59Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "[팟빵] 매불쇼",
-      "title": "●12월 16일 화요일 [LIVE] - 뉴스(곽수산,신인규,최혁진,김경호,김규현,임태훈,박지원,정민철),초대석(김영훈),뻗을레오(김준형,알파고)",
+      "title": "김건희 도움을 받은 검사들은 김건희를 덮고 싶겠지?｜풀버전",
       "url": "https://www.youtube.com/watch?v=tbHmSGl3av4",
       "videoId": "tbHmSGl3av4",
       "type": "news",
-      "publishedAt": "2025-12-16T04:03:27Z",
+      "publishedAt": "2025-12-16T08:19:58Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/tbHmSGl3av4/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/tbHmSGl3av4/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/tbHmSGl3av4/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/tbHmSGl3av4/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/tbHmSGl3av4/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/tbHmSGl3av4/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Sky News",
-      "title": "Watch Sky News",
-      "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
-      "videoId": "YDvsBbKfLPA",
+      "channel": "MBCNEWS",
+      "title": "&#39;내란&#39; 특검 수사 종료‥&quot;권력독점 위해 계엄&quot; - [LIVE] MBC 뉴스투데이 2025년 12월 16일",
+      "url": "https://www.youtube.com/watch?v=QDJcsujagxA",
+      "videoId": "QDJcsujagxA",
       "type": "news",
-      "publishedAt": "2024-12-10T12:06:22Z",
+      "publishedAt": "2025-12-15T22:51:57Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/QDJcsujagxA/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/QDJcsujagxA/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/QDJcsujagxA/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Bloomberg Television",
-      "title": "Bloomberg Business News Live",
-      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
-      "videoId": "iEpJwprxDdk",
+      "channel": "JTBC News",
+      "title": "[다시보기] 뉴스룸｜&quot;권력 독점&quot; 왜 12·3? 계엄의 전모 / &quot;다 망쳤다&quot; 윤 부부, 계엄 후 크게 싸워 / [단독] 통일교 돈으로 해외행사(25.12.15) JTBC News",
+      "url": "https://www.youtube.com/watch?v=zwVQYUyHBI0",
+      "videoId": "zwVQYUyHBI0",
       "type": "news",
-      "publishedAt": "2024-10-18T14:53:08Z",
+      "publishedAt": "2025-12-15T10:48:00Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/zwVQYUyHBI0/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/zwVQYUyHBI0/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/zwVQYUyHBI0/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "東森新聞 CH51",
-      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
-      "videoId": "V1p33hqPrUk",
+      "channel": "MBCNEWS",
+      "title": "&#39;내란&#39; 특검, 결과 발표‥&#39;계엄 동기·목적&#39; 주목 - [LIVE] MBC 뉴스투데이 2025년 12월 15일",
+      "url": "https://www.youtube.com/watch?v=vvL_kwx_J14",
+      "videoId": "vvL_kwx_J14",
       "type": "news",
-      "publishedAt": "2024-06-24T20:17:40Z",
+      "publishedAt": "2025-12-14T22:52:00Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/vvL_kwx_J14/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/vvL_kwx_J14/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/vvL_kwx_J14/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "TVBS NEWS",
-      "title": "🔴LIVE：TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
-      "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
-      "videoId": "m_dhMSvUCIc",
+      "channel": "뉴스피스",
+      "title": "명태균에게 노래도 불러준 김건희.. 옛날 버릇일까? | 주기자라이브 명태균 주진우",
+      "url": "https://www.youtube.com/watch?v=xPreP38fwvA",
+      "videoId": "xPreP38fwvA",
       "type": "news",
-      "publishedAt": "2023-04-27T08:31:43Z",
+      "publishedAt": "2025-11-28T23:30:20Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/xPreP38fwvA/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/xPreP38fwvA/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/xPreP38fwvA/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "한국경제TV",
-      "title": "[한국경제TV LIVE]",
-      "url": "https://www.youtube.com/watch?v=NJUjU9ALj4A",
-      "videoId": "NJUjU9ALj4A",
+      "channel": "독립신문TV",
+      "title": "(라이브뉴스) 속보  / 한동훈 연락 두절 / 2023.12.23",
+      "url": "https://www.youtube.com/watch?v=7virJentx2I",
+      "videoId": "7virJentx2I",
       "type": "news",
-      "publishedAt": "2023-02-08T15:03:01Z",
+      "publishedAt": "2023-12-23T14:59:02Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/7virJentx2I/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/7virJentx2I/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/NJUjU9ALj4A/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/7virJentx2I/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "매일경제TV",
-      "title": "[라이브] 대한민국 대표 재테크 채널 매일경제TV",
-      "url": "https://www.youtube.com/watch?v=s9xL1DpBsfQ",
-      "videoId": "s9xL1DpBsfQ",
+      "channel": "디글 :Diggle",
+      "title": "[#내귀에캔디] 외부인 절~대! 출입 금지🚫 방송 최초 공개! 소문난 깔끔쟁이 서장훈의 집🏡 | #편집자는",
+      "url": "https://www.youtube.com/watch?v=cKnnY5T_sR0",
+      "videoId": "cKnnY5T_sR0",
       "type": "news",
-      "publishedAt": "2022-06-09T06:54:27Z",
+      "publishedAt": "2023-02-16T13:00:22Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/cKnnY5T_sR0/default.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/cKnnY5T_sR0/mqdefault.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/s9xL1DpBsfQ/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/cKnnY5T_sR0/hqdefault.jpg",
           "width": 480,
           "height": 360
         }
@@ -1214,33 +1164,8 @@
   ],
   "CN": [
     {
-      "channel": "策略王電視",
-      "title": "【策略王電視 Live】瑞銀王者策略｜20251216",
-      "url": "https://www.youtube.com/watch?v=vW9EveM7Ojw",
-      "videoId": "vW9EveM7Ojw",
-      "type": "news",
-      "publishedAt": "2025-12-15T09:03:16Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/vW9EveM7Ojw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/vW9EveM7Ojw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/vW9EveM7Ojw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "鳳凰衛視PhoenixTV Official",
-      "title": "【鳳凰衛視#24小時直播間 】中駐英使館：強烈譴責英方干預香港司法｜美歐承諾支持烏建設武裝力量 加入歐盟｜悉尼民眾於邦迪海灘悼念遇難者｜24-hour live news｜24小时直播间#鳳凰衛視",
+      "title": "【鳳凰衛視#24小時直播間 】美報告：美無力“保台” 國台辦：統一擋不住｜中國駐俄大使：中俄協作 國際秩序就亂不了｜烏代表團將前往美國磋商｜24-hour live news｜24小时直播间#鳳凰衛視",
       "url": "https://www.youtube.com/watch?v=fN9uYWCjQaw",
       "videoId": "fN9uYWCjQaw",
       "type": "news",
@@ -1364,6 +1289,31 @@
       }
     },
     {
+      "channel": "中視新聞 HD直播頻道｜Taiwan CTV news HD Live",
+      "title": "中視新聞LIVE直播頻道24小時線上直播｜Taiwan CTV news HD 24h live news |台湾のCTV ニュースHD 대만 24시간 뉴스채널  | (生放送)",
+      "url": "https://www.youtube.com/watch?v=TCnaIE_SAtM",
+      "videoId": "TCnaIE_SAtM",
+      "type": "news",
+      "publishedAt": "2021-09-22T02:25:48Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/TCnaIE_SAtM/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "華視新聞 CH52",
       "title": "#LIVE: 華視新聞直播 CH52 | Taiwan CTS News | 台湾のニュースを24時間配信 | 대만 24시간 뉴스채널 | 24小時 線上看 LIVE新聞【On Air】",
       "url": "https://www.youtube.com/watch?v=wM0g8EoUZ_E",
@@ -1466,50 +1416,50 @@
       }
     },
     {
-      "channel": "Guitar Repair@StringTech",
-      "title": "LIVE: Trump Announces Important News About Crypto! This Speech Will Change the Crypto Industry",
-      "url": "https://www.youtube.com/watch?v=WNjd5vnNnHo",
-      "videoId": "WNjd5vnNnHo",
+      "channel": "LiveNOW from FOX",
+      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
+      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
+      "videoId": "4nMfRpesYfw",
       "type": "news",
-      "publishedAt": "2025-12-13T09:06:34Z",
+      "publishedAt": "2025-09-20T12:20:56Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/WNjd5vnNnHo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/WNjd5vnNnHo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/WNjd5vnNnHo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "GBNews",
-      "title": "GB News Live: Watch GB News 24/7",
-      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
-      "videoId": "QliL4CGc7iY",
+      "channel": "Arise News",
+      "title": "Arise News Live",
+      "url": "https://www.youtube.com/watch?v=srJg6ZIPmvU",
+      "videoId": "srJg6ZIPmvU",
       "type": "news",
-      "publishedAt": "2025-03-03T15:58:38Z",
+      "publishedAt": "2025-06-04T17:25:30Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1566,31 +1516,6 @@
       }
     },
     {
-      "channel": "MediaoneTV Live",
-      "title": "MediaOne TV Live | Malayalam Live News 24x7 | Live Breaking News l Live News Streaming",
-      "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
-      "videoId": "-8d8-c0yvyU",
-      "type": "news",
-      "publishedAt": "2024-08-26T05:32:18Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "Al Jazeera English",
       "title": "🔴 Al Jazeera English | Live",
       "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
@@ -1610,6 +1535,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "CNBC Awaaz.",
+      "title": "CNBC Awaaz Live: Share Market Live Update| Tenneco Clean Air| Nifty, Sensex, Business Market Updates",
+      "url": "https://www.youtube.com/watch?v=i_1g_M0JSy4",
+      "videoId": "i_1g_M0JSy4",
+      "type": "business",
+      "publishedAt": "2025-07-16T07:59:10Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/i_1g_M0JSy4/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/i_1g_M0JSy4/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/i_1g_M0JSy4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

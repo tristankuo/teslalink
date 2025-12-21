@@ -1,76 +1,26 @@
 {
-  "lastUpdated": "2025-12-20T06:32:58.597Z",
+  "lastUpdated": "2025-12-21T06:32:50.640Z",
   "Global": [
     {
-      "channel": "SOMOY TV",
-      "title": "🔴LIVE:ওসমান হাদির জানাজা আজ, পালিত হচ্ছে রাষ্ট্রীয় শোক | Osman Hadi  Live Update",
-      "url": "https://www.youtube.com/watch?v=nL8QzS9QfVM",
-      "videoId": "nL8QzS9QfVM",
-      "type": "news",
-      "publishedAt": "2025-12-20T04:04:34Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/nL8QzS9QfVM/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/nL8QzS9QfVM/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/nL8QzS9QfVM/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Manorama News",
-      "title": "ശ്രീനിവാസന് വിട | Malayalam actor and filmmaker Sreenivasan passes away",
-      "url": "https://www.youtube.com/watch?v=SSoIgvRb3Nw",
-      "videoId": "SSoIgvRb3Nw",
-      "type": "news",
-      "publishedAt": "2025-12-20T03:37:25Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/SSoIgvRb3Nw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/SSoIgvRb3Nw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/SSoIgvRb3Nw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "Mathrubhumi News",
-      "title": "നടൻ ശ്രീനിവാസൻ അന്തരിച്ചു | Sreenivasan Passes away | Malayalam Cinema | Live",
-      "url": "https://www.youtube.com/watch?v=I7a57KMrdyU",
-      "videoId": "I7a57KMrdyU",
+      "title": "ശ്രീനിക്ക് നാടിന്റെ യാത്രാമൊഴി | Sreenivasan Passes Away | Malayalam Cinema | Live",
+      "url": "https://www.youtube.com/watch?v=q0_yThd_3ic",
+      "videoId": "q0_yThd_3ic",
       "type": "news",
-      "publishedAt": "2025-12-20T03:16:20Z",
+      "publishedAt": "2025-12-21T04:14:33Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/I7a57KMrdyU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/q0_yThd_3ic/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/I7a57KMrdyU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/q0_yThd_3ic/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/I7a57KMrdyU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/q0_yThd_3ic/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -78,99 +28,24 @@
     },
     {
       "channel": "TV9 Marathi",
-      "title": "Afternoon News LIVE Update | दुपारच्या महत्वाच्या बातम्या | 20 December 2025 | tv9 Marathi",
-      "url": "https://www.youtube.com/watch?v=oHV33dVy6X8",
-      "videoId": "oHV33dVy6X8",
+      "title": "Maharashtra Nagar Parishad Election Results LIVE |  नगरपरिषद,नगरपंचायतीत गुलाल कुणाचा?",
+      "url": "https://www.youtube.com/watch?v=-M7pU2hcjT8",
+      "videoId": "-M7pU2hcjT8",
       "type": "news",
-      "publishedAt": "2025-12-20T01:34:28Z",
+      "publishedAt": "2025-12-21T04:05:44Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/oHV33dVy6X8/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/-M7pU2hcjT8/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/oHV33dVy6X8/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-M7pU2hcjT8/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/oHV33dVy6X8/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Jamuna TV",
-      "title": "JAMUNA TV LIVE | যমুনা টিভি লাইভ | সরাসরি যমুনা টিভি | LIVE TV | LIVE STREAMING | JAMUNA TV | TV",
-      "url": "https://www.youtube.com/watch?v=WNYjOlc8ERU",
-      "videoId": "WNYjOlc8ERU",
-      "type": "news",
-      "publishedAt": "2025-12-14T23:41:27Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/WNYjOlc8ERU/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/WNYjOlc8ERU/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/WNYjOlc8ERU/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "SOMOY TV Bulletin",
-      "title": "SOMOY TV LIVE | LIVE NOW | সরাসরি সময় টিভি | 4K LIVE TV | LIVE STREAMING | BANGLA TV LIVE | TV",
-      "url": "https://www.youtube.com/watch?v=tY0wPxuKVzU",
-      "videoId": "tY0wPxuKVzU",
-      "type": "news",
-      "publishedAt": "2025-12-14T14:22:51Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/tY0wPxuKVzU/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/tY0wPxuKVzU/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/tY0wPxuKVzU/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Geo News",
-      "title": "🔴 𝗚𝗘𝗢 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲: 𝗟𝗮𝘁𝗲𝘀𝘁 𝗣𝗮𝗸𝗶𝘀𝘁𝗮𝗻 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲 𝟐4/𝟕 Breaking News &amp; Headlines (Today News) #pakistannews",
-      "url": "https://www.youtube.com/watch?v=ifgOMEerYQI",
-      "videoId": "ifgOMEerYQI",
-      "type": "news",
-      "publishedAt": "2025-10-09T12:57:08Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-M7pU2hcjT8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -178,7 +53,132 @@
     },
     {
       "channel": "TV9 Marathi",
-      "title": "Tv9 Marathi News LIVE | Maharashtra Local Body Elections 2025 | Manikrao Kokate | Fadnavis | Shinde",
+      "title": "Maharashtra Local Body Election Results LIVE  | नगरपंचायत-नगरपरिषद निवडणूक निकाल | MVA VS Mahayuti",
+      "url": "https://www.youtube.com/watch?v=TVwwnCuO038",
+      "videoId": "TVwwnCuO038",
+      "type": "news",
+      "publishedAt": "2025-12-21T01:34:46Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/TVwwnCuO038/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/TVwwnCuO038/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/TVwwnCuO038/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "TV9 Marathi",
+      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 21  December 2025 | tv9 Marathi",
+      "url": "https://www.youtube.com/watch?v=mngqF_WI9O8",
+      "videoId": "mngqF_WI9O8",
+      "type": "news",
+      "publishedAt": "2025-12-21T01:23:51Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/mngqF_WI9O8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/mngqF_WI9O8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/mngqF_WI9O8/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "HPN Marathi News",
+      "title": "NagarParishad Election Result LIVE -पंढरपूर, मंगळवेढा नगरपरिषद निवडणूक मतमोजणी LIVE",
+      "url": "https://www.youtube.com/watch?v=XOksP1UNuTI",
+      "videoId": "XOksP1UNuTI",
+      "type": "news",
+      "publishedAt": "2025-12-20T19:54:12Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XOksP1UNuTI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XOksP1UNuTI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XOksP1UNuTI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "ABP MAJHA",
+      "title": "ABP Majha LIVE |Nagarpalika Nagarparishad Election Result | Maharashtra Politics | Marathi News 24*7",
+      "url": "https://www.youtube.com/watch?v=a5B0FhXuLoY",
+      "videoId": "a5B0FhXuLoY",
+      "type": "news",
+      "publishedAt": "2025-11-05T04:20:14Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/a5B0FhXuLoY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/a5B0FhXuLoY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/a5B0FhXuLoY/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "News Malayalam 24x7",
+      "title": "News Malayalam 24x7 Live | Sreenivasan | ന്യൂസ് മലയാളം 24x7 | Malayalam News",
+      "url": "https://www.youtube.com/watch?v=vkXkV1y_oCI",
+      "videoId": "vkXkV1y_oCI",
+      "type": "news",
+      "publishedAt": "2025-10-22T09:16:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/vkXkV1y_oCI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/vkXkV1y_oCI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/vkXkV1y_oCI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "TV9 Marathi",
+      "title": "Tv9 Marathi News LIVE | Nagar Parishad Election Results |  Mahayuti Vs MVA | Maharashtra Politics",
       "url": "https://www.youtube.com/watch?v=hfwPLazLbd4",
       "videoId": "hfwPLazLbd4",
       "type": "news",
@@ -229,25 +229,25 @@
       }
     },
     {
-      "channel": "ABC News",
-      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
-      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
-      "videoId": "iipR5yUp36o",
+      "channel": "Firstpost",
+      "title": "LIVE: World War 3 Soon? Trump Warns of &quot;World War III&quot; as NATO Claims It&#39;s &quot;Russia&#39;s Next Target&quot;",
+      "url": "https://www.youtube.com/watch?v=lUIjUhJqWO0",
+      "videoId": "lUIjUhJqWO0",
       "type": "news",
-      "publishedAt": "2025-05-01T13:51:58Z",
+      "publishedAt": "2025-12-12T17:03:11Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -481,6 +481,31 @@
       }
     },
     {
+      "channel": "DW News",
+      "title": "DW News livestream | Headline news from around the world",
+      "url": "https://www.youtube.com/watch?v=LuKwFajn37U",
+      "videoId": "LuKwFajn37U",
+      "type": "news",
+      "publishedAt": "2025-03-31T17:47:43Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/LuKwFajn37U/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/LuKwFajn37U/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/LuKwFajn37U/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "GBNews",
       "title": "GB News Live: Watch GB News 24/7",
       "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
@@ -579,54 +604,29 @@
           "height": 360
         }
       }
-    },
-    {
-      "channel": "Sports Updates By Chandan 1",
-      "title": "Ashes Live: Australia vs England 3rd Test Day 4 Live | AUS vs ENG 3rd Test Live Scores &amp; Commentary",
-      "url": "https://www.youtube.com/watch?v=M3suiZfHcUo",
-      "videoId": "M3suiZfHcUo",
-      "type": "sports",
-      "publishedAt": "2025-12-19T23:18:30Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/M3suiZfHcUo/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/M3suiZfHcUo/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/M3suiZfHcUo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
     }
   ],
   "JP": [
     {
       "channel": "ウェザーニュース",
-      "title": "【ライブ】最新天気ニュース・地震情報 2025年12月20日(土) ／各地で雨具が活躍　全国的に寒さは控えめ〈ウェザーニュースLiVEアフタヌーン・山岸愛梨／森田清輝〉",
-      "url": "https://www.youtube.com/watch?v=uDB7qJRQ_fU",
-      "videoId": "uDB7qJRQ_fU",
+      "title": "【ライブ】最新天気ニュース・地震情報 2025年12月21日(日) 〈ウェザーニュースLiVEアフタヌーン　田辺真南葉／森田清輝〉",
+      "url": "https://www.youtube.com/watch?v=T98o7c3IPkE",
+      "videoId": "T98o7c3IPkE",
       "type": "news",
-      "publishedAt": "2025-12-19T08:13:20Z",
+      "publishedAt": "2025-12-20T02:11:23Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/uDB7qJRQ_fU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/T98o7c3IPkE/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/uDB7qJRQ_fU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/T98o7c3IPkE/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/uDB7qJRQ_fU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/T98o7c3IPkE/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -659,7 +659,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【北捷恐怖連續式攻擊】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴【北捷隨機攻擊】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -835,31 +835,6 @@
       }
     },
     {
-      "channel": "大新聞大爆卦",
-      "title": "【#週末大爆卦 LIVE】現正直播中 20251220 @大新聞大爆卦HotNewsTalk",
-      "url": "https://www.youtube.com/watch?v=6aVdz4PRUDY",
-      "videoId": "6aVdz4PRUDY",
-      "type": "news",
-      "publishedAt": "2025-12-20T03:42:03Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/6aVdz4PRUDY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/6aVdz4PRUDY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/6aVdz4PRUDY/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "News Malayalam 24x7",
       "title": "News Malayalam 24x7 Live | Sreenivasan | ന്യൂസ് മലയാളം 24x7 | Malayalam News",
       "url": "https://www.youtube.com/watch?v=vkXkV1y_oCI",
@@ -879,6 +854,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/vkXkV1y_oCI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "GBNews",
+      "title": "GB News Live: Watch GB News 24/7",
+      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
+      "videoId": "QliL4CGc7iY",
+      "type": "news",
+      "publishedAt": "2025-03-03T15:58:38Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -911,7 +911,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【北捷恐怖連續式攻擊】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴【北捷隨機攻擊】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1088,7 +1088,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【北捷恐怖連續式攻擊】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴【北捷隨機攻擊】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1215,7 +1215,7 @@
   "CN": [
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【北捷恐怖連續式攻擊】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴【北捷隨機攻擊】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1466,25 +1466,25 @@
       }
     },
     {
-      "channel": "Republic World",
-      "title": "Republic TV LIVE: 20 December 2025 | Political | Sports | Global News | US News | National News",
-      "url": "https://www.youtube.com/watch?v=fkBuRS9bctU",
-      "videoId": "fkBuRS9bctU",
+      "channel": "Villager's Foods",
+      "title": "LIVE: Trump Announces Important News About Crypto! This Speech Will Change the Crypto Industry",
+      "url": "https://www.youtube.com/watch?v=RWibSJqZToo",
+      "videoId": "RWibSJqZToo",
       "type": "news",
-      "publishedAt": "2025-12-20T04:17:42Z",
+      "publishedAt": "2025-12-20T16:06:02Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/fkBuRS9bctU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/RWibSJqZToo/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/fkBuRS9bctU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/RWibSJqZToo/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/fkBuRS9bctU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/RWibSJqZToo/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1516,25 +1516,25 @@
       }
     },
     {
-      "channel": "Arise News",
-      "title": "Arise News Live",
-      "url": "https://www.youtube.com/watch?v=srJg6ZIPmvU",
-      "videoId": "srJg6ZIPmvU",
+      "channel": "LiveNOW from FOX",
+      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
+      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
+      "videoId": "4nMfRpesYfw",
       "type": "news",
-      "publishedAt": "2025-06-04T17:25:30Z",
+      "publishedAt": "2025-09-20T12:20:56Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/srJg6ZIPmvU/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1566,25 +1566,25 @@
       }
     },
     {
-      "channel": "Bloomberg Television",
-      "title": "Bloomberg Business News Live",
-      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
-      "videoId": "iEpJwprxDdk",
+      "channel": "MediaoneTV Live",
+      "title": "Sreenivasan passes away l MediaOne TV Live | Malayalam Live News 24x7 | Live Streaming",
+      "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
+      "videoId": "-8d8-c0yvyU",
       "type": "news",
-      "publishedAt": "2024-10-18T14:53:08Z",
+      "publishedAt": "2024-08-26T05:32:18Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

@@ -21,8 +21,6 @@
   { "name": "Fubo", "url": "https://www.fubo.tv", "region": "US" },
   { "name": "Sling TV", "url": "https://www.sling.com", "region": "US" },
   { "name": "ESPN+", "url": "https://plus.espn.com", "region": "US" },
-  { "name": "The Roku Channel", "url": "https://therokuchannel.roku.com", "region": "US" },
-  { "name": "Plex", "url": "https://www.plex.tv/watch-free", "region": "US" },
 
   { "name": "BBC iPlayer", "url": "https://www.bbc.co.uk/iplayer", "region": "EU" },
   { "name": "ITVX", "url": "https://www.itv.com", "region": "EU" },
@@ -57,7 +55,7 @@
   { "name": "Bilibili", "url": "https://www.bilibili.com", "region": "CN" },
   { "name": "Mango TV", "url": "https://www.mgtv.com", "region": "CN" },
   { "name": "Viu", "url": "https://www.viu.com", "region": "CN" },
-  { "name": "Now E", "url": "https://www.nowe.com", "region": "CN" },
+  { "name": "Now TV", "url": "https://nowplayer.now.com", "region": "CN" },
   { "name": "myTV SUPER", "url": "https://www.mytvsuper.com", "region": "CN" },
   { "name": "TVB Anywhere+", "url": "https://plus.tvbanywhere.com", "region": "CN" },
   { "name": "CCTV", "url": "https://www.cctv.com", "region": "CN" },
@@ -79,6 +77,7 @@
   { "name": "Wavve", "url": "https://www.wavve.com", "region": "KR" },
   { "name": "KakaoTV", "url": "https://tv.kakao.com", "region": "KR" },
   { "name": "Weverse", "url": "https://weverse.io", "region": "KR" },
+  { "name": "Chzzk", "url": "https://chzzk.naver.com", "region": "KR" },
   { "name": "Viu", "url": "https://www.viu.com", "region": "KR" },
 
   { "name": "iQIYI", "url": "https://www.iq.com", "region": "TW" },

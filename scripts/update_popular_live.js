@@ -43,7 +43,7 @@ function loadExistingData() {
   };
 }
 
-// --- Consolidated Channel Data (from sample) ---
+// --- Consolidated Channel Data ---
 const CONSOLIDATED_MEDIA_CHANNELS = [
     { name: "Reuters", id: "UChqUTb7kYRX8-EiaN3XFrSQ", region: "Global", category: "News" },
     { name: "BBC News", id: "UC16niRr50-MSBwiO3YDb3Eg", region: "Global", category: "News" },
@@ -148,26 +148,26 @@ const SEARCH_QUERIES = {
   "CN": ["香港新聞 live", "中國新聞 live", "時事直播"]
 };
 
-async function fetchLiveStreams(regionCode, query) {
-  if (!trackQuotaUsage(100, `Channel Search: ${channelId} (${regionCode})`)) {
-    console.warn(`⚠️  Skipping channel search for ${channelId} due to quota limit`);
+async function fetchLiveStreamsByChannelId(channelId) {
+  if (!trackQuotaUsage(100, `Channel Search: ${channelId}`)) {
     return [];
   }
+  
   const searchUrl = `${API_BASE}/search?` + new URLSearchParams({
     part: 'snippet',
     channelId: channelId,
     eventType: 'live',
     type: 'video',
-    regionCode: regionCode,
-    maxResults: '2',
-    order: 'viewCount',
+    maxResults: '1',
     key: API_KEY
   });
+
   try {
     const response = await fetch(searchUrl);
     if (!response.ok) return [];
     const data = await response.json();
     if (!data.items || data.items.length === 0) return [];
+    
     return data.items.map(item => ({
       channel: item.snippet.channelTitle || "Unknown Channel",
       title: item.snippet.title || "Live Stream",
@@ -178,40 +178,12 @@ async function fetchLiveStreams(regionCode, query) {
       thumbnails: item.snippet.thumbnails
     }));
   } catch (error) {
+    console.error(`Error fetching channel ${channelId}:`, error.message);
     return [];
   }
 }
 
 async function fetchLiveStreams(regionCode, query) {
-async function main() {
-  const result = { lastUpdated: new Date().toISOString() };
-  for (const region of Object.keys(CHANNEL_IDS)) {
-    let regionStreams = [];
-    // 1. Try channel ID search first (local channels only)
-    for (const channelId of CHANNEL_IDS[region]) {
-      const streams = await fetchLiveStreamsByChannel(region, channelId);
-      regionStreams.push(...streams);
-      if (regionStreams.length >= 8) break;
-    }
-    // 2. If not enough, fallback to keyword search
-    if (regionStreams.length < 8 && SEARCH_QUERIES[region]) {
-      for (const query of SEARCH_QUERIES[region]) {
-        const streams = await fetchLiveStreams(region, query);
-        // Filter fallback results to only include streams from curated local channel IDs
-        const filteredStreams = streams.filter(s => CHANNEL_IDS[region].includes(s.channelId));
-        regionStreams.push(...filteredStreams);
-        if (regionStreams.length >= 8) break;
-      }
-    }
-    // 3. Validate and trim to 8
-    regionStreams = await validateStreams(regionStreams);
-    result[region] = regionStreams.slice(0, 8);
-  }
-  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2));
-  console.log('✅ popular_live.json updated');
-}
-
-// Remove orphaned duplicate main and fetchLiveStreams definitions
   // Check quota before making API call
   if (!trackQuotaUsage(100, `Search: ${query} (${regionCode})`)) {
     console.warn(`⚠️  Skipping search for "${query}" due to quota limit`);
@@ -225,7 +197,7 @@ async function main() {
     eventType: 'live',
     regionCode: regionCode,
     maxResults: '12',
-    order: 'viewCount',        // Changed from 'relevance' to 'viewCount' for popularity
+    order: 'viewCount',
     relevanceLanguage: getLanguageForRegion(regionCode),
     key: API_KEY
   });
@@ -386,7 +358,8 @@ function filterByRegion(streams, regionName) {
       "german", "deutsch", "dw news", "ard", "zdf",
       "french", "français", "france 24", "tf1", "france 2",
       "spanish", "español", "telemundo", "univision", "rt español",
-      "african", "swahili", "hausa", "amharic", "ethiopian"
+      "african", "swahili", "hausa", "amharic", "ethiopian",
+      "republic world", "times now", "cnbc awaaz"
     ],
     "EU": [
       "arabic", "العربية", "الجزيرة", "hindi", "हिंदی", "भारत", 
@@ -427,16 +400,30 @@ async function fetchRegionStreams(regionName) {
   const queries = SEARCH_QUERIES[regionName];
   let allStreams = [];
 
-  // Search across all region codes and queries
-  for (const regionCode of regionCodes) {
-    for (const query of queries) {
-      console.log(`  📡 Searching ${regionCode} for "${query}"`);
-      
-      const streams = await fetchLiveStreams(regionCode, query);
+  // 1. Try channel ID search first (local channels only)
+  if (CHANNEL_IDS[regionName]) {
+    console.log(`  📡 Searching ${CHANNEL_IDS[regionName].length} curated channels for ${regionName}`);
+    for (const channelId of CHANNEL_IDS[regionName]) {
+      const streams = await fetchLiveStreamsByChannelId(channelId);
       allStreams.push(...streams);
-      
-      // Rate limiting - be nice to YouTube API
-      await new Promise(resolve => setTimeout(resolve, 400));
+      // Rate limiting
+      await new Promise(resolve => setTimeout(resolve, 200));
+    }
+  }
+
+  // 2. If not enough, fallback to keyword search
+  if (allStreams.length < 4 && queries) {
+    console.log(`  ⚠️ Not enough curated streams (${allStreams.length}), falling back to keyword search`);
+    for (const regionCode of regionCodes) {
+      for (const query of queries) {
+        console.log(`  📡 Searching ${regionCode} for "${query}"`);
+        
+        const streams = await fetchLiveStreams(regionCode, query);
+        allStreams.push(...streams);
+        
+        // Rate limiting - be nice to YouTube API
+        await new Promise(resolve => setTimeout(resolve, 400));
+      }
     }
   }
 

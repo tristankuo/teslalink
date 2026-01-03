@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6KZVT65');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <link rel="icon" href="/resources/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Contact us for support, feedback, or suggestions regarding TeslaLink." />
+    <title>Contact Us - TeslaLink</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --container-bg-light: rgba(255, 255, 255, 0.98);
+            --container-bg-dark: rgba(42, 42, 42, 0.95);
+            --text-primary-light: #2c3e50;
+            --text-primary-dark: #ecf0f1;
+            --text-secondary-light: #34495e;
+            --text-secondary-dark: #bdc3c7;
+            --link-color-light: #2980b9;
+            --link-color-dark: #85c1e9;
+            --card-bg-light: #ffffff;
+            --card-bg-dark: rgba(73, 80, 87, 0.3);
+            --button-bg-light: #3498db;
+            --button-bg-dark: #2980b9;
+            --button-hover-light: #2980b9;
+            --button-hover-dark: #3498db;
+        }
+        
+        [data-theme="light"] {
+            --bg-gradient: var(--bg-gradient-light);
+            --container-bg: var(--container-bg-light);
+            --text-primary: var(--text-primary-light);
+            --text-secondary: var(--text-secondary-light);
+            --link-color: var(--link-color-light);
+            --card-bg: var(--card-bg-light);
+            --button-bg: var(--button-bg-light);
+            --button-hover: var(--button-hover-light);
+        }
+        
+        [data-theme="dark"] {
+            --bg-gradient: var(--bg-gradient-dark);
+            --container-bg: var(--container-bg-dark);
+            --text-primary: var(--text-primary-dark);
+            --text-secondary: var(--text-secondary-dark);
+            --link-color: var(--link-color-dark);
+            --card-bg: var(--card-bg-dark);
+            --button-bg: var(--button-bg-dark);
+            --button-hover: var(--button-hover-dark);
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-secondary);
+            min-height: 100vh;
+            margin: 0;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .container {
+            background: var(--container-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            max-width: 900px;
+            transition: background 0.3s ease;
+        }
+        h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; color: var(--text-primary); }
+        p { line-height: 1.7; }
+        a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { text-decoration: underline; }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .contact-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 5px solid var(--link-color);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .contact-card:hover { transform: translateY(-5px); }
+        .contact-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .contact-card p {
+            margin-bottom: 20px;
+        }
+        .contact-card .cta-button {
+            padding: 12px 30px;
+            background-color: var(--button-bg);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .contact-card .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: scale(1.05);
+        }
+
+        .main-cta .cta-button {
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .main-cta .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+    <script src="js/main.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/donate.js"></script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6KZVT65"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+        <div class="main-cta" style="text-align: left; margin-bottom: 20px;">
+            <a href="./" class="cta-button back-link">&larr; Back</a>
+        </div>
+        <h1 class="text-center">Contact & Feedback</h1>
+        <p class="lead text-center" style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 30px auto;">TeslaLink is a community-driven project. We'd love to hear your feedback, suggestions, and support!</p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>💬 Share Your Feedback</h3>
+                <p>Have ideas for new features like Live Channels improvements, suggestions for app additions, or found a bug? We value your input in making TeslaLink better for the entire Tesla community.</p>
+            </div>
+            <div class="contact-card">
+                <h3>☕ Support the Project</h3>
+                <p>TeslaLink is free and open-source. Your support helps us maintain servers, develop new features, and keep the Live Channels data fresh and updated.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <h2>Connect with Us on Ko-fi</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px auto;">Ko-fi provides a simple platform where you can support open-source projects and share feedback directly with developers. Your messages and contributions help us understand what features matter most to the Tesla community.</p>
+            <a href="https://ko-fi.com/teslalink" target="_blank" rel="noopener noreferrer" class="cta-button" style="background-color: #FF5E5B; padding: 15px 40px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; display: inline-block; font-size: 1.1rem;">Visit Ko-fi for Feedback & Support</a>
+        </div>
+    </div>
+</body>
+</html>

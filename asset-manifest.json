@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/teslalink/static/css/main.9afd5400.css",
+    "main.js": "/teslalink/static/js/main.a455a44c.js",
+    "index.html": "/teslalink/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.9afd5400.css",
+    "static/js/main.a455a44c.js"
+  ]
+}

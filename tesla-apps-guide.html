@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6KZVT65');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <link rel="icon" href="/resources/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="A comprehensive guide to using TeslaLink for an enhanced in-car web experience." />
+    <title>TeslaLink User Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --container-bg-light: rgba(255, 255, 255, 0.98);
+            --container-bg-dark: rgba(42, 42, 42, 0.95);
+            --text-primary-light: #2c3e50;
+            --text-primary-dark: #ecf0f1;
+            --text-secondary-light: #34495e;
+            --text-secondary-dark: #bdc3c7;
+            --link-color-light: #2980b9;
+            --link-color-dark: #85c1e9;
+            --feature-bg-light: #ffffff;
+            --feature-bg-dark: rgba(73, 80, 87, 0.3);
+            --code-bg-light: #e8eaed;
+            --code-bg-dark: #3b4754;
+            --button-bg-light: #3498db;
+            --button-bg-dark: #2980b9;
+            --button-hover-light: #2980b9;
+            --button-hover-dark: #3498db;
+        }
+        
+        [data-theme="light"] {
+            --bg-gradient: var(--bg-gradient-light);
+            --container-bg: var(--container-bg-light);
+            --text-primary: var(--text-primary-light);
+            --text-secondary: var(--text-secondary-light);
+            --link-color: var(--link-color-light);
+            --feature-bg: var(--feature-bg-light);
+            --code-bg: var(--code-bg-light);
+            --button-bg: var(--button-bg-light);
+            --button-hover: var(--button-hover-light);
+        }
+        
+        [data-theme="dark"] {
+            --bg-gradient: var(--bg-gradient-dark);
+            --container-bg: var(--container-bg-dark);
+            --text-primary: var(--text-primary-dark);
+            --text-secondary: var(--text-secondary-dark);
+            --link-color: var(--link-color-dark);
+            --feature-bg: var(--feature-bg-dark);
+            --code-bg: var(--code-bg-dark);
+            --button-bg: var(--button-bg-dark);
+            --button-hover: var(--button-hover-dark);
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-secondary);
+            min-height: 100vh;
+            margin: 0;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .container {
+            background: var(--container-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            max-width: 900px;
+            transition: background 0.3s ease;
+        }
+        h1, h2, h3 { color: var(--text-primary); transition: color 0.3s ease; }
+        h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 20px; }
+        h2 { margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid var(--link-color); padding-bottom: 10px; }
+        p, li { line-height: 1.7; }
+        a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { text-decoration: underline; }
+        
+        .step {
+            background: var(--feature-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--link-color);
+            transition: background 0.3s ease;
+        }
+        .step h3 { margin-top: 0; font-size: 1.5rem; }
+        
+        code {
+            background-color: var(--code-bg);
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            transition: background-color 0.3s ease;
+        }
+        
+        .main-cta {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        .main-cta .cta-button {
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .main-cta .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+    <script src="js/main.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/donate.js"></script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6KZVT65"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+        <div class="main-cta" style="text-align: left; margin-bottom: 20px;">
+            <a href="./" class="cta-button back-link">&larr; Back</a>
+        </div>
+        <h1 class="text-center">TeslaLink User Guide</h1>
+        <p class="lead text-center" style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 30px auto;">Master your Tesla's browser with this complete guide to TeslaLink. Learn how to customize your dashboard, manage apps, and use advanced features.</p>
+
+        
+
+        <h2>Getting Started: Your First Visit</h2>
+        <div class="step">
+            <h3>1. Open the Browser in Your Tesla</h3>
+            <p>Navigate to your Tesla's web browser and visit TeslaLink by entering the URL in your browser.</p>
+            <p><strong>Tip:</strong> Bookmark the site for quick access later! You can do this from the browser's address bar.</p>
+        </div>
+        <div class="step">
+            <h3>2. Explore the Dashboard</h3>
+            <p>When you first load TeslaLink, you'll see a dashboard with default apps and the new Live Channels section. Browse trending YouTube channels and popular content, or start customizing with your own apps.</p>
+        </div>
+
+        <h2>Latest Features</h2>
+        <div class="step">
+            <h3>📺 Live Channels</h3>
+            <p>Discover trending YouTube channels and live streams popular in the Tesla community. The Live Channels section shows real-time trending content, updated regularly to keep you connected with the hottest videos and channels. Perfect for finding entertainment during charging stops!</p>
+        </div>
+        <div class="step">
+            <h3>📱 Enhanced QR Code Scanner</h3>
+            <p>Adding apps is now easier than ever! Click "Scan QR" to display a QR code on your Tesla screen. On your phone, visit any website, use your phone's share menu to generate a QR code, then scan it with your Tesla to instantly add the app to your dashboard.</p>
+        </div>
+
+        <h2>Customizing Your Dashboard</h2>
+        <div class="step">
+            <h3>Adding a New App</h3>
+            <p>There are two easy ways to add a new app to your dashboard:</p>
+            <ul>
+                <li><strong>Manually:</strong> Click the "Add App" button. A dialog will appear where you can enter the App Name, URL, and an optional Icon URL.</li>
+                <li><strong>With QR Code:</strong> Click the "Scan QR" button. A QR code will appear on your Tesla screen. On your phone, go to the website you want to add, then use your phone's share menu to generate a QR code for that page. Scan the QR code on your Tesla screen with your phone to instantly add the app.</li>
+            </ul>
+        </div>
+        <div class="step">
+            <h3>Editing and Deleting Apps</h3>
+            <p>Click the "Edit" toggle at the top of the dashboard. This will reveal "Edit" and "Delete" buttons on each app icon. Click "Edit" to modify an app's details or "Delete" to remove it.</p>
+        </div>
+        <div class="step">
+            <h3>Reordering Apps</h3>
+            <p>While in "Edit" mode, you can rearrange your apps. Simply press and hold an app icon, then drag it to your desired position and release. This allows you to prioritize your most-used apps.</p>
+        </div>
+
+        <h2>Advanced Features</h2>
+        <div class="step">
+            <h3>Fullscreen Mode</h3>
+            <p>For a more immersive experience, especially with video streaming apps, you can use the Fullscreen feature. Click the "Fullscreen" button on the main dashboard. This will open a new, synchronized tab. Launch an app from your main dashboard, and it will open in the fullscreen tab, removing the browser's address bar.</p>
+        </div>
+        <div class="step">
+            <h3>Changing Regions</h3>
+            <p>TeslaLink provides default app lists for various regions. You can switch your region at any time by clicking the region selector (e.g., "USA") at the top of the page. This will update the "Default Apps" list, which you can use to add popular local services to your dashboard.</p>
+        </div>
+        <div class="step">
+            <h3>Light & Dark Themes</h3>
+            <p>TeslaLink automatically detects your Tesla's system theme (Light or Dark) and adjusts its appearance to match. There's no need to change this manually; it just works.</p>
+        </div>
+
+    </div>
+</body>
+</html>

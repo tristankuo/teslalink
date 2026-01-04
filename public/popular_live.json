@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-01-04T06:10:00.550Z",
+  "lastUpdated": "2026-01-04T08:59:49.944Z",
   "Global": [
     {
       "channel": "TV9 Marathi",
-      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 04 January 2026 | tv9 Marathi",
+      "title": "Afternoon News LIVE Update | दुपारच्या महत्वाच्या बातम्या | 04 January 2026 | tv9 Marathi",
       "url": "https://www.youtube.com/watch?v=4r0ztzEeQO4",
       "videoId": "4r0ztzEeQO4",
       "type": "news",
@@ -21,6 +21,56 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/4r0ztzEeQO4/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Sky News",
+      "title": "Nicolas Maduro escorted by agents in handcuffs after landing on US soil | Sky news coverage",
+      "url": "https://www.youtube.com/watch?v=SYx8Z2tXhZQ",
+      "videoId": "SYx8Z2tXhZQ",
+      "type": "news",
+      "publishedAt": "2026-01-03T22:57:33Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/SYx8Z2tXhZQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/SYx8Z2tXhZQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/SYx8Z2tXhZQ/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "SOMOY TV Bulletin",
+      "title": "SOMOY TV LIVE | LIVE NOW | সরাসরি সময় টিভি | 4K LIVE TV | LIVE STREAMING | BANGLA TV LIVE | TV",
+      "url": "https://www.youtube.com/watch?v=MC10wHkt8K8",
+      "videoId": "MC10wHkt8K8",
+      "type": "news",
+      "publishedAt": "2026-01-03T16:51:31Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/MC10wHkt8K8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/MC10wHkt8K8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/MC10wHkt8K8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -46,56 +96,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/8oYqEVKqzVc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "LiveNOW from FOX",
-      "title": "NEWS: Nicolás Maduro brought to New York detention center after U.S. capture, strikes in Caracas",
-      "url": "https://www.youtube.com/watch?v=jeTaY9FiJ38",
-      "videoId": "jeTaY9FiJ38",
-      "type": "news",
-      "publishedAt": "2026-01-03T12:29:16Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "NBC News",
-      "title": "LIVE: NBC News NOW",
-      "url": "https://www.youtube.com/watch?v=4QpKKf07Oy8",
-      "videoId": "4QpKKf07Oy8",
-      "type": "news",
-      "publishedAt": "2026-01-02T22:47:02Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/4QpKKf07Oy8/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/4QpKKf07Oy8/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/4QpKKf07Oy8/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -153,7 +153,7 @@
     },
     {
       "channel": "TV9 Marathi",
-      "title": "Tv9 Marathi News LIVE | BMC Election 2026 | Maharashtra Politics | CM Fadnavis | Shinde | Pawar",
+      "title": "Tv9 Marathi News LIVE | BMC Election 2026 | Thackeray Brothers Vachannama | Raj-Uddhav | CM Fadnavis",
       "url": "https://www.youtube.com/watch?v=hfwPLazLbd4",
       "videoId": "hfwPLazLbd4",
       "type": "news",
@@ -254,6 +254,31 @@
       }
     },
     {
+      "channel": "Firstpost",
+      "title": "LIVE: World War 3 Soon? Trump Warns of &quot;World War III&quot; as NATO Claims It&#39;s &quot;Russia&#39;s Next Target&quot;",
+      "url": "https://www.youtube.com/watch?v=lUIjUhJqWO0",
+      "videoId": "lUIjUhJqWO0",
+      "type": "news",
+      "publishedAt": "2025-12-12T17:03:11Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "GBNews",
       "title": "GB News Live: Watch GB News 24/7",
       "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
@@ -348,31 +373,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "ABC News (Australia)",
-      "title": "Watch ABC NEWS Australia live | ABC NEWS",
-      "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
-      "videoId": "vOTiJkg1voo",
-      "type": "news",
-      "publishedAt": "2022-02-19T23:50:36Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -556,6 +556,31 @@
       }
     },
     {
+      "channel": "TalkTV",
+      "title": "LIVE: Talk 24/7",
+      "url": "https://www.youtube.com/watch?v=DFYaNjzI1aI",
+      "videoId": "DFYaNjzI1aI",
+      "type": "news",
+      "publishedAt": "2024-04-27T09:49:06Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/DFYaNjzI1aI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/DFYaNjzI1aI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/DFYaNjzI1aI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "Al Jazeera English",
       "title": "🔴 Al Jazeera English | Live",
       "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
@@ -575,31 +600,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Sports Updates By Chandan 1",
-      "title": "Ashes Live: Australia vs England 5th Test Day 1 Live | AUS vs ENG 5th Test Live Scores &amp; Commentary",
-      "url": "https://www.youtube.com/watch?v=d8V1rM8ZDYw",
-      "videoId": "d8V1rM8ZDYw",
-      "type": "sports",
-      "publishedAt": "2026-01-03T23:22:47Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/d8V1rM8ZDYw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/d8V1rM8ZDYw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/d8V1rM8ZDYw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -634,24 +634,49 @@
     },
     {
       "channel": "ウェザーニュース",
-      "title": "【ライブ】最新天気ニュース・地震情報 2026年1月4日(日) ／北日本日本海側や北陸は強まる雨雪に注意〈ウェザーニュースLiVEアフタヌーン・小林李衣奈／森田清輝〉",
-      "url": "https://www.youtube.com/watch?v=hYgCaSLVjt4",
-      "videoId": "hYgCaSLVjt4",
+      "title": "【ライブ】最新天気ニュース・地震情報 2026年1月4日(日)／北海道で積雪急増　東北や北陸も雪の強まりに注意〈ウェザーニュースLiVEイブニング・小川千奈／森田清輝〉",
+      "url": "https://www.youtube.com/watch?v=96GdfOXraZ4",
+      "videoId": "96GdfOXraZ4",
       "type": "news",
-      "publishedAt": "2026-01-03T00:21:07Z",
+      "publishedAt": "2026-01-03T12:39:30Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/hYgCaSLVjt4/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/96GdfOXraZ4/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/hYgCaSLVjt4/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/96GdfOXraZ4/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/hYgCaSLVjt4/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/96GdfOXraZ4/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "GBNews",
+      "title": "GB News Live: Watch GB News 24/7",
+      "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
+      "videoId": "QliL4CGc7iY",
+      "type": "news",
+      "publishedAt": "2025-03-03T15:58:38Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/QliL4CGc7iY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -733,6 +758,31 @@
       }
     },
     {
+      "channel": "TVBS NEWS",
+      "title": "🔴LIVE：【冷氣團來襲】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
+      "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
+      "videoId": "m_dhMSvUCIc",
+      "type": "news",
+      "publishedAt": "2023-04-27T08:31:43Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "Al Jazeera English",
       "title": "🔴 Al Jazeera English | Live",
       "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
@@ -752,56 +802,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": " YTN",
-      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
-      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
-      "videoId": "FJfwehhzIhw",
-      "type": "news",
-      "publishedAt": "2022-07-11T18:19:59Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "中天電視",
-      "title": "【#中天新聞不斷電直播Live】 CTI中天新聞24小時HD新聞直播 │ CTITV Taiwan News HD Live｜台湾のHDニュース放送｜ 대만 HD 뉴스 방송@中天電視CtiTv",
-      "url": "https://www.youtube.com/watch?v=vr3XyVCR4T0",
-      "videoId": "vr3XyVCR4T0",
-      "type": "news",
-      "publishedAt": "2022-05-13T04:09:36Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -835,58 +835,8 @@
       }
     },
     {
-      "channel": "TVBS NEWS",
-      "title": "🔴LIVE：【冷氣團來襲】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
-      "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
-      "videoId": "m_dhMSvUCIc",
-      "type": "news",
-      "publishedAt": "2023-04-27T08:31:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "LiveNOW from FOX",
-      "title": "NEWS: Nicolás Maduro brought to New York detention center after U.S. capture, strikes in Caracas",
-      "url": "https://www.youtube.com/watch?v=jeTaY9FiJ38",
-      "videoId": "jeTaY9FiJ38",
-      "type": "news",
-      "publishedAt": "2026-01-03T12:29:16Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "東森新聞 CH51",
-      "title": "🔴直播／馬杜洛被押至紐約最新畫面曝！川普空襲委內瑞拉「震山敲虎」學者：矛頭指向中俄",
+      "title": "🔴直播／美軍絕對決心行動「癱瘓北京神盾」2.2小時活捉馬杜洛！",
       "url": "https://www.youtube.com/watch?v=AN9cyHVWuK4",
       "videoId": "AN9cyHVWuK4",
       "type": "news",
@@ -904,31 +854,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/AN9cyHVWuK4/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Sky News",
-      "title": "Watch Sky News",
-      "url": "https://www.youtube.com/watch?v=YDvsBbKfLPA",
-      "videoId": "YDvsBbKfLPA",
-      "type": "news",
-      "publishedAt": "2024-12-10T12:06:22Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -960,50 +885,25 @@
       }
     },
     {
-      "channel": " YTN",
-      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
-      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
-      "videoId": "FJfwehhzIhw",
+      "channel": "東森新聞 CH51",
+      "title": "EBC 東森新聞 51 頻道 24小時線上直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "url": "https://www.youtube.com/watch?v=E0zhe2gkXBs",
+      "videoId": "E0zhe2gkXBs",
       "type": "news",
-      "publishedAt": "2022-07-11T18:19:59Z",
+      "publishedAt": "2023-09-21T08:51:08Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/E0zhe2gkXBs/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/E0zhe2gkXBs/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "中天電視",
-      "title": "【#中天新聞不斷電直播Live】 CTI中天新聞24小時HD新聞直播 │ CTITV Taiwan News HD Live｜台湾のHDニュース放送｜ 대만 HD 뉴스 방송@中天電視CtiTv",
-      "url": "https://www.youtube.com/watch?v=vr3XyVCR4T0",
-      "videoId": "vr3XyVCR4T0",
-      "type": "news",
-      "publishedAt": "2022-05-13T04:09:36Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/E0zhe2gkXBs/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1037,25 +937,175 @@
       }
     },
     {
-      "channel": "SBS 뉴스",
-      "title": "[🔴속보] &quot;미국 즉각 개입&quot; 이란 반정부 시위에 트럼프 참전하자 &quot;폭도는 강경진압&quot; 하메네이 경고 | SBS 이슈라이브",
-      "url": "https://www.youtube.com/watch?v=HfHqwhFmWAs",
-      "videoId": "HfHqwhFmWAs",
+      "channel": " YTN",
+      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
+      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
+      "videoId": "FJfwehhzIhw",
       "type": "news",
-      "publishedAt": "2026-01-03T14:13:36Z",
+      "publishedAt": "2022-07-11T18:19:59Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/HfHqwhFmWAs/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/HfHqwhFmWAs/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/HfHqwhFmWAs/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "뉴스토마토",
+      "title": "[LIVE] 윤석열 결국 사형 확정! &quot;다 이유가 있어요&quot; #끝장뉴스 #윤석열 #내란 #재판 (0104_일)",
+      "url": "https://www.youtube.com/watch?v=wKxAxUKMPkY",
+      "videoId": "wKxAxUKMPkY",
+      "type": "news",
+      "publishedAt": "2026-01-04T06:25:28Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/wKxAxUKMPkY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/wKxAxUKMPkY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/wKxAxUKMPkY/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "SBS 뉴스",
+      "title": "🔴LIVE &quot;당분간 미국이 통치&quot; 베네수엘라 석유 꺼낸 트럼프..&quot;마두로 즉시 석방해&quot; 중국 외교부 공식 반발  | SBS 실시간 라이브",
+      "url": "https://www.youtube.com/watch?v=7g5aCtosqTE",
+      "videoId": "7g5aCtosqTE",
+      "type": "news",
+      "publishedAt": "2026-01-04T04:59:23Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/7g5aCtosqTE/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/7g5aCtosqTE/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/7g5aCtosqTE/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "MBCNEWS",
+      "title": "[속보] 트럼프, &#39;마두로 압송 사진&#39; 공개..&quot;적정한 정권이양 때까지 베네수엘라 주둔 통치&quot; - [MBC뉴스속보] 2026년 01월 04일",
+      "url": "https://www.youtube.com/watch?v=fynVFwxlSnE",
+      "videoId": "fynVFwxlSnE",
+      "type": "news",
+      "publishedAt": "2026-01-03T17:54:07Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/fynVFwxlSnE/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/fynVFwxlSnE/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/fynVFwxlSnE/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "MBCNEWS",
+      "title": "&#39;940만 원 실화냐!&#39; 잘 나가는 테슬라 왜? FSD상륙·할인공습..전기차 시장 &#39;요동&#39; - [핫이슈PLAY] MBC뉴스 2026년 1월 4일",
+      "url": "https://www.youtube.com/watch?v=G7e2jsSACOU",
+      "videoId": "G7e2jsSACOU",
+      "type": "news",
+      "publishedAt": "2026-01-03T14:30:00Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/G7e2jsSACOU/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/G7e2jsSACOU/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/G7e2jsSACOU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "LiveNOW from FOX",
+      "title": "NEWS: Nicolás Maduro brought to New York detention center after U.S. capture, strikes in Caracas",
+      "url": "https://www.youtube.com/watch?v=jeTaY9FiJ38",
+      "videoId": "jeTaY9FiJ38",
+      "type": "news",
+      "publishedAt": "2026-01-03T12:29:16Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "채널A News",
+      "title": "[LIVE] 공천 헌금 의혹 개인 일탈? · ‘이혜훈 논란’ 함구령 / 채널A / 뉴스TOP10",
+      "url": "https://www.youtube.com/watch?v=jIU3kBxnPmE",
+      "videoId": "jIU3kBxnPmE",
+      "type": "news",
+      "publishedAt": "2026-01-03T11:59:02Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/jIU3kBxnPmE/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/jIU3kBxnPmE/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/jIU3kBxnPmE/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1141,33 +1191,8 @@
       }
     },
     {
-      "channel": "The Enforcer",
-      "title": "VENEZUELA MOBILIZES, US ANNOUNCES OCCUPATION; FIREFIGHTS ACROSS IRAN! Breaking War News The Enforcer",
-      "url": "https://www.youtube.com/watch?v=MEPVqPddi_s",
-      "videoId": "MEPVqPddi_s",
-      "type": "news",
-      "publishedAt": "2026-01-04T03:01:04Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/MEPVqPddi_s/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/MEPVqPddi_s/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/MEPVqPddi_s/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "Sky News",
-      "title": "Nicolas Maduro lands in US after capture as Trump says: &#39;We&#39;ll run Venezuela&#39; | Sky news coverage",
+      "title": "Nicolas Maduro escorted by agents in handcuffs after landing on US soil | Sky news coverage",
       "url": "https://www.youtube.com/watch?v=SYx8Z2tXhZQ",
       "videoId": "SYx8Z2tXhZQ",
       "type": "news",
@@ -1235,6 +1260,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/jeTaY9FiJ38/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Firstpost",
+      "title": "LIVE: World War 3 Soon? Trump Warns of &quot;World War III&quot; as NATO Claims It&#39;s &quot;Russia&#39;s Next Target&quot;",
+      "url": "https://www.youtube.com/watch?v=lUIjUhJqWO0",
+      "videoId": "lUIjUhJqWO0",
+      "type": "news",
+      "publishedAt": "2025-12-12T17:03:11Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

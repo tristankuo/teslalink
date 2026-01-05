@@ -1,51 +1,101 @@
 {
-  "lastUpdated": "2026-01-04T08:59:49.944Z",
+  "lastUpdated": "2026-01-05T06:12:48.660Z",
   "Global": [
     {
-      "channel": "TV9 Marathi",
-      "title": "Afternoon News LIVE Update | दुपारच्या महत्वाच्या बातम्या | 04 January 2026 | tv9 Marathi",
-      "url": "https://www.youtube.com/watch?v=4r0ztzEeQO4",
-      "videoId": "4r0ztzEeQO4",
+      "channel": "CNBC Awaaz.",
+      "title": "🔴 First Trade Live Updates: Stock Market | Share Market Updates | Latest Business News | CNBC Awaaz",
+      "url": "https://www.youtube.com/watch?v=qprDo0j6HYk",
+      "videoId": "qprDo0j6HYk",
       "type": "news",
-      "publishedAt": "2026-01-04T01:18:47Z",
+      "publishedAt": "2026-01-05T03:16:40Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/4r0ztzEeQO4/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/qprDo0j6HYk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/4r0ztzEeQO4/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/qprDo0j6HYk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/4r0ztzEeQO4/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/qprDo0j6HYk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "Sky News",
-      "title": "Nicolas Maduro escorted by agents in handcuffs after landing on US soil | Sky news coverage",
-      "url": "https://www.youtube.com/watch?v=SYx8Z2tXhZQ",
-      "videoId": "SYx8Z2tXhZQ",
+      "channel": "TV9 Marathi",
+      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 05 January 2025 | tv9 Marathi",
+      "url": "https://www.youtube.com/watch?v=srsgb3a6u20",
+      "videoId": "srsgb3a6u20",
       "type": "news",
-      "publishedAt": "2026-01-03T22:57:33Z",
+      "publishedAt": "2026-01-05T01:51:25Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/SYx8Z2tXhZQ/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/srsgb3a6u20/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/SYx8Z2tXhZQ/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/srsgb3a6u20/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/SYx8Z2tXhZQ/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/srsgb3a6u20/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Zee Business",
+      "title": "First Trade 5th January 2026 : Zee Business Live | Share Market Live Updates | Stock Market News",
+      "url": "https://www.youtube.com/watch?v=D9XwjUgsmEA",
+      "videoId": "D9XwjUgsmEA",
+      "type": "news",
+      "publishedAt": "2026-01-05T01:09:51Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/D9XwjUgsmEA/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/D9XwjUgsmEA/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/D9XwjUgsmEA/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "NDTV India",
+      "title": "Aaj Ki Taaza Khabar LIVE: 5 January 2026 | Venezuela-America War | Bangladesh Violence | Trump",
+      "url": "https://www.youtube.com/watch?v=x0iuKp3Q9Z0",
+      "videoId": "x0iuKp3Q9Z0",
+      "type": "news",
+      "publishedAt": "2026-01-04T16:59:57Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/x0iuKp3Q9Z0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/x0iuKp3Q9Z0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/x0iuKp3Q9Z0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -102,100 +152,50 @@
       }
     },
     {
-      "channel": "Geo News",
-      "title": "🔴 𝗚𝗘𝗢 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲: 𝗟𝗮𝘁𝗲𝘀𝘁 𝗣𝗮𝗸𝗶𝘀𝘁𝗮𝗻 𝗡𝗲𝘄𝘀 𝗟𝗶𝘃𝗲 𝟐4/𝟕 Breaking News &amp; Headlines (Today News) #pakistannews",
-      "url": "https://www.youtube.com/watch?v=ifgOMEerYQI",
-      "videoId": "ifgOMEerYQI",
+      "channel": "Polimer News",
+      "title": "🔴PolimerNews LIVE | TVKVijay | JanaNayagan | Amitshah BJP | PMModi | EPS ADMK| CMStalin DMK",
+      "url": "https://www.youtube.com/watch?v=KiJ-hpR8utc",
+      "videoId": "KiJ-hpR8utc",
       "type": "news",
-      "publishedAt": "2025-10-09T12:57:08Z",
+      "publishedAt": "2026-01-02T18:26:53Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/KiJ-hpR8utc/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/KiJ-hpR8utc/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/ifgOMEerYQI/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/KiJ-hpR8utc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "ARY News",
-      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
-      "url": "https://www.youtube.com/watch?v=RqUZ2Fv9l8w",
-      "videoId": "RqUZ2Fv9l8w",
+      "channel": "Citizen TV Kenya",
+      "title": "Citizen TV Live",
+      "url": "https://www.youtube.com/watch?v=iOR4msnTZso",
+      "videoId": "iOR4msnTZso",
       "type": "news",
-      "publishedAt": "2025-04-11T16:31:43Z",
+      "publishedAt": "2026-01-01T12:45:02Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/iOR4msnTZso/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iOR4msnTZso/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/RqUZ2Fv9l8w/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TV9 Marathi",
-      "title": "Tv9 Marathi News LIVE | BMC Election 2026 | Thackeray Brothers Vachannama | Raj-Uddhav | CM Fadnavis",
-      "url": "https://www.youtube.com/watch?v=hfwPLazLbd4",
-      "videoId": "hfwPLazLbd4",
-      "type": "news",
-      "publishedAt": "2025-04-02T15:34:54Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "CNA",
-      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
-      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
-      "videoId": "XWq5kBlakcQ",
-      "type": "news",
-      "publishedAt": "2020-04-21T11:15:18Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iOR4msnTZso/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

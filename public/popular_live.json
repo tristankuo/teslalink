@@ -1,26 +1,26 @@
 {
-  "lastUpdated": "2026-01-07T06:10:24.100Z",
+  "lastUpdated": "2026-01-08T06:10:47.936Z",
   "Global": [
     {
-      "channel": "CNBC Awaaz.",
-      "title": "Stock Market Updates Live: आज कहां करें इन्वेस्ट | Budget 2026 Update | 07 January 2026 | CNBC Awaaz",
-      "url": "https://www.youtube.com/watch?v=B_TdtQDrw1M",
-      "videoId": "B_TdtQDrw1M",
+      "channel": "TV9 Bharatvarsh",
+      "title": "Breaking News : भिड़ गए Putin-Trump ,समंदर में US-Russia मेंआर-पार की जंग शुरू! | TV9",
+      "url": "https://www.youtube.com/watch?v=xKSBYceXU-w",
+      "videoId": "xKSBYceXU-w",
       "type": "news",
-      "publishedAt": "2026-01-07T01:17:01Z",
+      "publishedAt": "2026-01-08T03:32:19Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/B_TdtQDrw1M/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/xKSBYceXU-w/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/B_TdtQDrw1M/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/xKSBYceXU-w/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/B_TdtQDrw1M/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/xKSBYceXU-w/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -28,24 +28,49 @@
     },
     {
       "channel": "TV9 Marathi",
-      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 07 January 2026 | tv9 Marathi",
-      "url": "https://www.youtube.com/watch?v=NkL0oloH42A",
-      "videoId": "NkL0oloH42A",
+      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 8 January 2026 | tv9 Marathi",
+      "url": "https://www.youtube.com/watch?v=MTSOOdsA4qk",
+      "videoId": "MTSOOdsA4qk",
       "type": "news",
-      "publishedAt": "2026-01-07T01:00:00Z",
+      "publishedAt": "2026-01-08T01:39:25Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/NkL0oloH42A/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/MTSOOdsA4qk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/NkL0oloH42A/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/MTSOOdsA4qk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/NkL0oloH42A/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/MTSOOdsA4qk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "Zee Business",
+      "title": "First Trade 8th January 2026 : Zee Business Live | Share Market Live Updates | Stock Market News",
+      "url": "https://www.youtube.com/watch?v=oYG1_f3BITI",
+      "videoId": "oYG1_f3BITI",
+      "type": "news",
+      "publishedAt": "2026-01-08T01:08:44Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/oYG1_f3BITI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/oYG1_f3BITI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/oYG1_f3BITI/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -71,31 +96,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/VUV-ReHGEFA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "News Malayalam 24x7",
-      "title": "News Malayalam 24x7 Live | ന്യൂസ് മലയാളം 24x7 | Kerala Breaking News",
-      "url": "https://www.youtube.com/watch?v=8oYqEVKqzVc",
-      "videoId": "8oYqEVKqzVc",
-      "type": "news",
-      "publishedAt": "2026-01-03T13:01:33Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/8oYqEVKqzVc/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/8oYqEVKqzVc/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/8oYqEVKqzVc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -152,25 +152,25 @@
       }
     },
     {
-      "channel": "東森新聞 CH51",
-      "title": "🔴【花蓮F-16戰機失事】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
-      "videoId": "V1p33hqPrUk",
+      "channel": "TV9 Marathi",
+      "title": "Tv9 Marathi News LIVE | BMC Election 2026 | Raj-Uddhav Thackery | CM Fadnavis | BJP | Eknath shinde",
+      "url": "https://www.youtube.com/watch?v=hfwPLazLbd4",
+      "videoId": "hfwPLazLbd4",
       "type": "news",
-      "publishedAt": "2024-06-24T20:17:40Z",
+      "publishedAt": "2025-04-02T15:34:54Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/hfwPLazLbd4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -406,6 +406,31 @@
   ],
   "AU": [
     {
+      "channel": "9 News Australia",
+      "title": "#LIVE: PM Anthony Albanese to call royal commission after Bondi attack | 9 News Australia",
+      "url": "https://www.youtube.com/watch?v=9SZ_frELUkI",
+      "videoId": "9SZ_frELUkI",
+      "type": "news",
+      "publishedAt": "2026-01-01T04:45:57Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/9SZ_frELUkI/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/9SZ_frELUkI/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/9SZ_frELUkI/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "ABC News (Australia)",
       "title": "Watch ABC NEWS Australia live | ABC NEWS",
       "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
@@ -425,6 +450,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "LiveNOW from FOX",
+      "title": "LIVE NEWS: LiveNOW FOX 24/7 LIVE STREAM",
+      "url": "https://www.youtube.com/watch?v=4nMfRpesYfw",
+      "videoId": "4nMfRpesYfw",
+      "type": "news",
+      "publishedAt": "2025-09-20T12:20:56Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/4nMfRpesYfw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -531,31 +581,6 @@
       }
     },
     {
-      "channel": "TalkTV",
-      "title": "LIVE: Talk 24/7",
-      "url": "https://www.youtube.com/watch?v=DFYaNjzI1aI",
-      "videoId": "DFYaNjzI1aI",
-      "type": "news",
-      "publishedAt": "2024-04-27T09:49:06Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/DFYaNjzI1aI/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/DFYaNjzI1aI/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/DFYaNjzI1aI/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "Al Jazeera English",
       "title": "🔴 Al Jazeera English | Live",
       "url": "https://www.youtube.com/watch?v=gCNeDWCI0vo",
@@ -575,31 +600,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/gCNeDWCI0vo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Sports Updates By Chandan 1",
-      "title": "Ashes Live: Australia vs England 5th Test Live Scores | AUS vs ENG 5th Test Live Scores &amp; Commentary",
-      "url": "https://www.youtube.com/watch?v=5AANhhWNYSw",
-      "videoId": "5AANhhWNYSw",
-      "type": "sports",
-      "publishedAt": "2026-01-07T04:53:59Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/5AANhhWNYSw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/5AANhhWNYSw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/5AANhhWNYSw/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -634,24 +634,24 @@
     },
     {
       "channel": "ウェザーニュース",
-      "title": "【ライブ】最新天気ニュース・地震情報 2026年1月7日(水) 日本海側は次第に雨や雪〈ウェザーニュースLiVEアフタヌーン・戸北美月／宇野沢達也〉",
-      "url": "https://www.youtube.com/watch?v=9h2Bc3Pckmo",
-      "videoId": "9h2Bc3Pckmo",
+      "title": "【ライブ】最新天気ニュース・地震情報 2026年1月8日(木) 日本海側は断続的に雪 大雪や吹雪に警戒 太平洋側は晴れても風が冷たい〈ウェザーニュースLiVEアフタヌーン・戸北美月／芳野達郎〉",
+      "url": "https://www.youtube.com/watch?v=SyNgbVYXAqY",
+      "videoId": "SyNgbVYXAqY",
       "type": "news",
-      "publishedAt": "2026-01-06T08:06:50Z",
+      "publishedAt": "2026-01-07T04:53:49Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/9h2Bc3Pckmo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/SyNgbVYXAqY/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/9h2Bc3Pckmo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/SyNgbVYXAqY/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/9h2Bc3Pckmo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/SyNgbVYXAqY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -684,7 +684,7 @@
     },
     {
       "channel": "東森新聞 CH51",
-      "title": "🔴【花蓮F-16戰機失事】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -709,7 +709,7 @@
     },
     {
       "channel": "TVBS NEWS",
-      "title": "🔴LIVE：TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
+      "title": "🔴LIVE：【寒流襲台】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
       "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
       "videoId": "m_dhMSvUCIc",
       "type": "news",
@@ -836,7 +836,7 @@
     },
     {
       "channel": "TVBS NEWS",
-      "title": "🔴LIVE：TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
+      "title": "🔴LIVE：【寒流襲台】TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
       "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
       "videoId": "m_dhMSvUCIc",
       "type": "news",
@@ -854,56 +854,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/m_dhMSvUCIc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "大新聞大爆卦",
-      "title": "【#大新聞大爆卦 LIVE】現正直播中 20260107@大新聞大爆卦HotNewsTalk",
-      "url": "https://www.youtube.com/watch?v=HplFxt9At6U",
-      "videoId": "HplFxt9At6U",
-      "type": "news",
-      "publishedAt": "2026-01-07T00:01:51Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/HplFxt9At6U/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/HplFxt9At6U/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/HplFxt9At6U/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "東森新聞 CH51",
-      "title": "🔴0107【Live】1140-1400東森午安新聞／F-16V戰機花蓮外海失事！辛柏毅「呼叫跳傘三次」未獲訊號／起飛到失事「問題出在哪」？軍方：飛官陷空間迷向／辛柏毅才度完蜜月！親友淚：拜託撐住回家",
-      "url": "https://www.youtube.com/watch?v=fqGpdgmTbqY",
-      "videoId": "fqGpdgmTbqY",
-      "type": "news",
-      "publishedAt": "2026-01-06T09:04:24Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/fqGpdgmTbqY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/fqGpdgmTbqY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/fqGpdgmTbqY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -935,8 +885,33 @@
       }
     },
     {
+      "channel": "Bloomberg Television",
+      "title": "Bloomberg Business News Live",
+      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
+      "videoId": "iEpJwprxDdk",
+      "type": "news",
+      "publishedAt": "2024-10-18T14:53:08Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "東森新聞 CH51",
-      "title": "🔴【花蓮F-16戰機失事】東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
       "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
       "videoId": "V1p33hqPrUk",
       "type": "news",
@@ -1008,29 +983,54 @@
           "height": 360
         }
       }
+    },
+    {
+      "channel": "台視新聞 TTV NEWS",
+      "title": "台視新聞台HD 24 小時線上直播｜TAIWAN TTV NEWS HD (Live)｜台湾のTTV ニュースHD (生放送)｜대만 뉴스 라이브",
+      "url": "https://www.youtube.com/watch?v=xL0ch83RAK8",
+      "videoId": "xL0ch83RAK8",
+      "type": "news",
+      "publishedAt": "2020-10-12T04:48:11Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
     }
   ],
   "KR": [
     {
       "channel": "MBN News",
-      "title": "🔴[LIVE] 법사위 &#39;2차 종합특검·통일교 특검&#39; 논의...여야, 새해 첫 격돌 예상 / 국회 법제사법위원회 전체회의 | MBN NEWS",
-      "url": "https://www.youtube.com/watch?v=JnHkUqVI_rA",
-      "videoId": "JnHkUqVI_rA",
+      "title": "[이슈] &quot;10대부터 PC방서 사이버범죄&quot;…프린스그룹 천즈, 중국 송환에 처벌 주목 / 캄보디아서 천즈 등 중국인 3명 체포…中, 스캠조직에 사형 선고 사례도 | MBN NEWS",
+      "url": "https://www.youtube.com/watch?v=rWGa1xeGsl0",
+      "videoId": "rWGa1xeGsl0",
       "type": "news",
-      "publishedAt": "2026-01-07T00:22:02Z",
+      "publishedAt": "2026-01-08T05:13:52Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/JnHkUqVI_rA/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/rWGa1xeGsl0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/JnHkUqVI_rA/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/rWGa1xeGsl0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/JnHkUqVI_rA/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/rWGa1xeGsl0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1038,24 +1038,24 @@
     },
     {
       "channel": "SBS 뉴스",
-      "title": "🔴LIVE &quot;KF-21, 현무까지 무기 대금 못 받아&quot; 국방비 1.8조 미지급 &quot;초유의 사태&quot; 대체 왜? | SBS 실시간 라이브",
-      "url": "https://www.youtube.com/watch?v=5lmOtAx5aqI",
-      "videoId": "5lmOtAx5aqI",
+      "title": "🔴LIVE &quot;재판 처음부터 다시 합시다!&quot; 윤석열 측에 지귀연 판사도 폭발..&quot;사형이냐, 무기징역이냐&quot; 구형 하루 앞두고 특검 긴급회의 | SBS 실시간 라이브",
+      "url": "https://www.youtube.com/watch?v=Orhu89oGdrs",
+      "videoId": "Orhu89oGdrs",
       "type": "news",
-      "publishedAt": "2026-01-06T15:06:54Z",
+      "publishedAt": "2026-01-08T01:25:19Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/5lmOtAx5aqI/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/Orhu89oGdrs/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/5lmOtAx5aqI/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/Orhu89oGdrs/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/5lmOtAx5aqI/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/Orhu89oGdrs/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1141,75 +1141,50 @@
       }
     },
     {
-      "channel": "ABC News (Australia)",
-      "title": "Watch ABC NEWS Australia live | ABC NEWS",
-      "url": "https://www.youtube.com/watch?v=vOTiJkg1voo",
-      "videoId": "vOTiJkg1voo",
+      "channel": "TV9 Bharatvarsh",
+      "title": "Breaking News : भिड़ गए Putin-Trump ,समंदर में US-Russia मेंआर-पार की जंग शुरू! | TV9",
+      "url": "https://www.youtube.com/watch?v=xKSBYceXU-w",
+      "videoId": "xKSBYceXU-w",
       "type": "news",
-      "publishedAt": "2022-02-19T23:50:36Z",
+      "publishedAt": "2026-01-08T03:32:19Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/xKSBYceXU-w/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/xKSBYceXU-w/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/vOTiJkg1voo/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/xKSBYceXU-w/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "NDTV India",
-      "title": "Aaj Ki Taaza Khabar LIVE: 7 January 2026 | Venezuela-America War | Bangladesh Violence | Trump",
-      "url": "https://www.youtube.com/watch?v=AI5_JTqhBhc",
-      "videoId": "AI5_JTqhBhc",
+      "channel": "LiveNOW from FOX",
+      "title": "NEWS TODAY: Minnesota ICE shooting, Venezuela, latest updates",
+      "url": "https://www.youtube.com/watch?v=qmzgu-8o6do",
+      "videoId": "qmzgu-8o6do",
       "type": "news",
-      "publishedAt": "2026-01-06T16:54:17Z",
+      "publishedAt": "2026-01-07T11:19:30Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/AI5_JTqhBhc/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/qmzgu-8o6do/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/AI5_JTqhBhc/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/qmzgu-8o6do/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/AI5_JTqhBhc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Firstpost",
-      "title": "LIVE: World War 3 Soon? Trump Warns of &quot;World War III&quot; as NATO Claims It&#39;s &quot;Russia&#39;s Next Target&quot;",
-      "url": "https://www.youtube.com/watch?v=lUIjUhJqWO0",
-      "videoId": "lUIjUhJqWO0",
-      "type": "news",
-      "publishedAt": "2025-12-12T17:03:11Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/qmzgu-8o6do/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1285,6 +1260,31 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "NTV Telugu",
+      "title": "NTV Telugu News LIVE | NTV LIVE",
+      "url": "https://www.youtube.com/watch?v=L0RktSIM980",
+      "videoId": "L0RktSIM980",
+      "type": "news",
+      "publishedAt": "2023-04-20T18:36:26Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }

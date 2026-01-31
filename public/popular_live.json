@@ -1,6 +1,106 @@
 {
-  "lastUpdated": "2026-01-30T06:19:35.375Z",
+  "lastUpdated": "2026-01-31T06:14:12.899Z",
   "Global": [
+    {
+      "channel": "TV9 Marathi",
+      "title": "Sharad Pawar  LIVE | शरद पवार लाईव्ह | NCP | TV9 Marathi Live",
+      "url": "https://www.youtube.com/watch?v=oIVZgeT19fA",
+      "videoId": "oIVZgeT19fA",
+      "type": "news",
+      "publishedAt": "2026-01-31T03:04:41Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/oIVZgeT19fA/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/oIVZgeT19fA/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/oIVZgeT19fA/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "TV9 Marathi",
+      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 31 January 2026 | tv9 Marathi",
+      "url": "https://www.youtube.com/watch?v=KcZkoBXU7hY",
+      "videoId": "KcZkoBXU7hY",
+      "type": "news",
+      "publishedAt": "2026-01-31T01:23:09Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/KcZkoBXU7hY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/KcZkoBXU7hY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/KcZkoBXU7hY/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "ABP NEWS",
+      "title": "100 News Today LIVE: सुबह की बड़ी खबरें | Headlines Today | Parliament Budget Session | 31 January",
+      "url": "https://www.youtube.com/watch?v=nD8aeN5WiBY",
+      "videoId": "nD8aeN5WiBY",
+      "type": "news",
+      "publishedAt": "2026-01-31T00:54:32Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/nD8aeN5WiBY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/nD8aeN5WiBY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/nD8aeN5WiBY/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "WELT Nachrichtensender",
+      "title": "IRAN: Armada von Trump in Position! USA ziehen Schlinge zu! Angriff auf Atomprogramm? I WELT STREAM",
+      "url": "https://www.youtube.com/watch?v=puqT85nQ6vA",
+      "videoId": "puqT85nQ6vA",
+      "type": "news",
+      "publishedAt": "2026-01-30T17:50:15Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/puqT85nQ6vA/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/puqT85nQ6vA/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/puqT85nQ6vA/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
     {
       "channel": "Citizen TV Kenya",
       "title": "Citizen TV Live",
@@ -21,106 +121,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/DVSRNx8VSFM/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "The Enforcer",
-      "title": "IRAN DECLARES MAJOR LIVE-FIRE EXERCISES, US SPECIAL FORCES MOVE IN! Breaking War News The Enfor",
-      "url": "https://www.youtube.com/watch?v=aOA7Wg4Jcjg",
-      "videoId": "aOA7Wg4Jcjg",
-      "type": "news",
-      "publishedAt": "2026-01-30T03:01:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/aOA7Wg4Jcjg/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/aOA7Wg4Jcjg/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/aOA7Wg4Jcjg/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "CNBC Awaaz.",
-      "title": "Stock Market Updates Live: आज कहां करें इन्वेस्ट | Budget 2026 Update | 30 January 2026 | CNBC Awaaz",
-      "url": "https://www.youtube.com/watch?v=LF5eCPrappc",
-      "videoId": "LF5eCPrappc",
-      "type": "news",
-      "publishedAt": "2026-01-30T01:16:20Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/LF5eCPrappc/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/LF5eCPrappc/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/LF5eCPrappc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Zee Business",
-      "title": "First Trade 30th January 2026 : Zee Business Live | Share Market Live Updates | Stock Market News",
-      "url": "https://www.youtube.com/watch?v=ayu9TjujmHQ",
-      "videoId": "ayu9TjujmHQ",
-      "type": "news",
-      "publishedAt": "2026-01-30T00:57:53Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/ayu9TjujmHQ/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/ayu9TjujmHQ/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/ayu9TjujmHQ/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TV9 Marathi",
-      "title": "Morning News LIVE Update | सकाळच्या महत्वाच्या बातम्या | 30 January 2026 | tv9 Marathi",
-      "url": "https://www.youtube.com/watch?v=Qr0oIHFXWhA",
-      "videoId": "Qr0oIHFXWhA",
-      "type": "news",
-      "publishedAt": "2026-01-30T00:54:11Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/Qr0oIHFXWhA/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/Qr0oIHFXWhA/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/Qr0oIHFXWhA/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -152,25 +152,25 @@
       }
     },
     {
-      "channel": "ARY News",
-      "title": "🔴 ARY NEWS LIVE | Latest Pakistan News 𝟐𝟒/𝟕 | Headlines, Bulletins, Breaking News",
-      "url": "https://www.youtube.com/watch?v=BahBc-d1jCc",
-      "videoId": "BahBc-d1jCc",
+      "channel": "ABP MAJHA",
+      "title": "ABP Majha LIVE | Sunetra Pawar DCM Oath Ceremony | Ajit Pawar Funeral | Baramati Plane Crash",
+      "url": "https://www.youtube.com/watch?v=a5B0FhXuLoY",
+      "videoId": "a5B0FhXuLoY",
       "type": "news",
-      "publishedAt": "2025-04-11T16:27:46Z",
+      "publishedAt": "2025-11-05T04:20:14Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/BahBc-d1jCc/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/a5B0FhXuLoY/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/BahBc-d1jCc/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/a5B0FhXuLoY/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/BahBc-d1jCc/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/a5B0FhXuLoY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -254,6 +254,31 @@
       }
     },
     {
+      "channel": "Firstpost",
+      "title": "LIVE: World War 3 Soon? Trump Warns of &quot;World War III&quot; as NATO Claims It&#39;s &quot;Russia&#39;s Next Target&quot;",
+      "url": "https://www.youtube.com/watch?v=lUIjUhJqWO0",
+      "videoId": "lUIjUhJqWO0",
+      "type": "news",
+      "publishedAt": "2025-12-12T17:03:11Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
       "channel": "GBNews",
       "title": "GB News Live: Watch GB News 24/7",
       "url": "https://www.youtube.com/watch?v=QliL4CGc7iY",
@@ -298,31 +323,6 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/YDvsBbKfLPA/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Bloomberg Television",
-      "title": "Bloomberg Business News Live",
-      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
-      "videoId": "iEpJwprxDdk",
-      "type": "news",
-      "publishedAt": "2024-10-18T14:53:08Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -431,50 +431,25 @@
       }
     },
     {
-      "channel": "TENNIS TALK with Cam Williams",
-      "title": "ALCARAZ vs ZVEREV • Australian Open 2026 SF • LIVE Tennis Watchalong",
-      "url": "https://www.youtube.com/watch?v=kFOQkrE2gBc",
-      "videoId": "kFOQkrE2gBc",
+      "channel": "ABC News",
+      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
+      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
+      "videoId": "iipR5yUp36o",
       "type": "news",
-      "publishedAt": "2026-01-29T22:33:36Z",
+      "publishedAt": "2025-05-01T13:51:58Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/kFOQkrE2gBc/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/kFOQkrE2gBc/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/kFOQkrE2gBc/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "Codice Break Point",
-      "title": "LIVE ALCARAZ - ZVEREV🎾🔥 SEMIFINALE AUSTRALIAN OPEN",
-      "url": "https://www.youtube.com/watch?v=xUE9Ty2vI_E",
-      "videoId": "xUE9Ty2vI_E",
-      "type": "news",
-      "publishedAt": "2026-01-29T06:04:07Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/xUE9Ty2vI_E/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/xUE9Ty2vI_E/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/xUE9Ty2vI_E/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -604,6 +579,31 @@
           "height": 360
         }
       }
+    },
+    {
+      "channel": "CNA",
+      "title": "[CNA 24/7 LIVE] Breaking news on Asia and award-winning documentaries and shows",
+      "url": "https://www.youtube.com/watch?v=XWq5kBlakcQ",
+      "videoId": "XWq5kBlakcQ",
+      "type": "news",
+      "publishedAt": "2020-04-21T11:15:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/XWq5kBlakcQ/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
     }
   ],
   "JP": [
@@ -634,24 +634,24 @@
     },
     {
       "channel": "ウェザーニュース",
-      "title": "【ライブ】最新天気ニュース・地震情報 2026年1月30日(金) ／北陸や東北日本海側で積雪急増に警戒 関東は昼間も真冬の寒さ〈ウェザーニュースLiVEアフタヌーン・小川千奈／宇野沢達也〉",
-      "url": "https://www.youtube.com/watch?v=LNXPoFxhbdM",
-      "videoId": "LNXPoFxhbdM",
+      "title": "【ライブ】最新天気ニュース・地震情報 2026年1月31日(土) ／札幌でドカ雪　昼頃までは積雪急増や視界不良に警戒〈ウェザーニュースLiVEアフタヌーン・田辺真南葉／森田清輝〉",
+      "url": "https://www.youtube.com/watch?v=CbZ5nJALEE0",
+      "videoId": "CbZ5nJALEE0",
       "type": "news",
-      "publishedAt": "2026-01-29T03:27:02Z",
+      "publishedAt": "2026-01-30T08:54:10Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/LNXPoFxhbdM/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/CbZ5nJALEE0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/LNXPoFxhbdM/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/CbZ5nJALEE0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/LNXPoFxhbdM/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/CbZ5nJALEE0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -683,25 +683,25 @@
       }
     },
     {
-      "channel": "ONE PIECE公式YouTubeチャンネル",
-      "title": "〖#いつでもワンピース〗TVアニメ『ONE PIECE』全話ライブ配信プロジェクト「ANYTIME ONE PIECE」",
-      "url": "https://www.youtube.com/watch?v=79XaA_4CYj8",
-      "videoId": "79XaA_4CYj8",
+      "channel": "東森新聞 CH51",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
+      "videoId": "V1p33hqPrUk",
       "type": "news",
-      "publishedAt": "2023-09-29T05:44:54Z",
+      "publishedAt": "2024-06-24T20:17:40Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/79XaA_4CYj8/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/79XaA_4CYj8/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/79XaA_4CYj8/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -811,56 +811,6 @@
   "TW": [
     {
       "channel": "TVBS NEWS",
-      "title": "【LIVE】韓國男團TWS抵台 將在高雄流行音樂中心開唱",
-      "url": "https://www.youtube.com/watch?v=S9-WKvao0sY",
-      "videoId": "S9-WKvao0sY",
-      "type": "news",
-      "publishedAt": "2026-01-30T04:51:26Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/S9-WKvao0sY/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/S9-WKvao0sY/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/S9-WKvao0sY/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TVBS NEWS",
-      "title": "【LIVE】立院今本會期最終日 法案清倉朝野大戰",
-      "url": "https://www.youtube.com/watch?v=oRsw24qdeJo",
-      "videoId": "oRsw24qdeJo",
-      "type": "news",
-      "publishedAt": "2026-01-30T00:35:18Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/oRsw24qdeJo/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/oRsw24qdeJo/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/oRsw24qdeJo/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "TVBS NEWS",
       "title": "🔴LIVE：TVBS NEWS網路獨家新聞24小時直播 Taiwan News 24hr 台湾世界中のニュースを24時間配信中 대만24시간뉴스채널 55台",
       "url": "https://www.youtube.com/watch?v=m_dhMSvUCIc",
       "videoId": "m_dhMSvUCIc",
@@ -910,152 +860,25 @@
       }
     },
     {
-      "channel": "東森新聞 CH51",
-      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
-      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
-      "videoId": "V1p33hqPrUk",
+      "channel": "三立LIVE新聞",
+      "title": "🔴台灣新聞 24hr 直播｜三立新聞 LIVE：國際焦點、地震氣象、民生議題｜Taiwan News 24/7 LIVE｜台湾 ニュース｜대만 뉴스",
+      "url": "https://www.youtube.com/watch?v=QsGswQvRmtU",
+      "videoId": "QsGswQvRmtU",
       "type": "news",
-      "publishedAt": "2024-06-24T20:17:40Z",
+      "publishedAt": "2025-11-28T07:58:57Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/QsGswQvRmtU/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/QsGswQvRmtU/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    }
-  ],
-  "KR": [
-    {
-      "channel": "MBN News",
-      "title": "[이슈] 한동훈 결국 &#39;제명&#39;에 친한계 집단 반발…국민의힘 내홍 격화 / 국힘 친한계 16명, 장동혁 지도부 사퇴 요구 &quot;韓제명은 해당행위&quot; | MBN NEWS",
-      "url": "https://www.youtube.com/watch?v=qw-V4Hw7vhQ",
-      "videoId": "qw-V4Hw7vhQ",
-      "type": "news",
-      "publishedAt": "2026-01-30T02:11:42Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/qw-V4Hw7vhQ/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/qw-V4Hw7vhQ/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/qw-V4Hw7vhQ/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": " YTN",
-      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
-      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
-      "videoId": "FJfwehhzIhw",
-      "type": "news",
-      "publishedAt": "2022-07-11T18:19:59Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "[팟빵] 최욱의 매불쇼",
-      "title": "●1월 30일 금요일 [LIVE] - 뉴스(최진봉,강성필,이병철,박은정,김승원,김현,봉지욱,이정주,신인규,김원장,최민희,이재정),영화(전찬일,라이너,김의성,거의없다)",
-      "url": "https://www.youtube.com/watch?v=MzQdwVUOcC4",
-      "videoId": "MzQdwVUOcC4",
-      "type": "news",
-      "publishedAt": "2026-01-30T04:02:34Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/MzQdwVUOcC4/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/MzQdwVUOcC4/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/MzQdwVUOcC4/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "SBS 뉴스",
-      "title": "[🔴이슈] &quot;월급쟁이가 나았을까?&quot; &#39;연체율 1위&#39; 빚더미 앉은 2030 청년 사장들의 절규 ㅣSBS 이슈라이브",
-      "url": "https://www.youtube.com/watch?v=H5xGxJfup_A",
-      "videoId": "H5xGxJfup_A",
-      "type": "news",
-      "publishedAt": "2026-01-30T01:42:46Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/H5xGxJfup_A/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/H5xGxJfup_A/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/H5xGxJfup_A/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "MBCNEWS",
-      "title": "[속보] 검경 합수본, 신천지 총회 본부와 평화의궁전 압수수색.. &#39;필라테스 작전 당원 가입&#39; 의혹 강제수사 착수 - [MBC뉴스속보] 2026년 01월 30일",
-      "url": "https://www.youtube.com/watch?v=skysZwJoRio",
-      "videoId": "skysZwJoRio",
-      "type": "news",
-      "publishedAt": "2026-01-30T00:39:44Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/skysZwJoRio/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/skysZwJoRio/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/skysZwJoRio/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/QsGswQvRmtU/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1087,50 +910,152 @@
       }
     },
     {
-      "channel": "Bloomberg Television",
-      "title": "Bloomberg Business News Live",
-      "url": "https://www.youtube.com/watch?v=iEpJwprxDdk",
-      "videoId": "iEpJwprxDdk",
+      "channel": "東森新聞 CH51",
+      "title": "🔴東森新聞 51 頻道 24 小時直播｜Taiwan EBC 24h live news｜台湾 EBC ニュース24 時間オンライン放送｜대만 뉴스 생방송",
+      "url": "https://www.youtube.com/watch?v=V1p33hqPrUk",
+      "videoId": "V1p33hqPrUk",
       "type": "news",
-      "publishedAt": "2024-10-18T14:53:08Z",
+      "publishedAt": "2024-06-24T20:17:40Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/V1p33hqPrUk/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "MTN 머니투데이방송",
-      "title": "[LIVE] 부자되는 좋은습관 MTN 머니투데이방송 (뉴스&amp;증권 경제방송)",
-      "url": "https://www.youtube.com/watch?v=lb1oB2feqkQ",
-      "videoId": "lb1oB2feqkQ",
+      "channel": " YTN",
+      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN",
+      "url": "https://www.youtube.com/watch?v=FJfwehhzIhw",
+      "videoId": "FJfwehhzIhw",
       "type": "news",
-      "publishedAt": "2024-10-06T00:56:00Z",
+      "publishedAt": "2022-07-11T18:19:59Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/lb1oB2feqkQ/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/lb1oB2feqkQ/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/lb1oB2feqkQ/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/FJfwehhzIhw/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "中天電視",
+      "title": "【#中天新聞不斷電直播Live】 CTI中天新聞24小時HD新聞直播 │ CTITV Taiwan News HD Live｜台湾のHDニュース放送｜ 대만 HD 뉴스 방송@中天電視CtiTv",
+      "url": "https://www.youtube.com/watch?v=vr3XyVCR4T0",
+      "videoId": "vr3XyVCR4T0",
+      "type": "news",
+      "publishedAt": "2022-05-13T04:09:36Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/vr3XyVCR4T0/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "台視新聞 TTV NEWS",
+      "title": "台視新聞台HD 24 小時線上直播｜TAIWAN TTV NEWS HD (Live)｜台湾のTTV ニュースHD (生放送)｜대만 뉴스 라이브",
+      "url": "https://www.youtube.com/watch?v=xL0ch83RAK8",
+      "videoId": "xL0ch83RAK8",
+      "type": "news",
+      "publishedAt": "2020-10-12T04:48:11Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/xL0ch83RAK8/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    }
+  ],
+  "KR": [
+    {
+      "channel": "MBN News",
+      "title": "[이슈] &#39;한동훈 제명&#39; 후폭풍…&quot;장동혁 재신임 투표&quot; &quot;해당 행위&quot; | MBN NEWS",
+      "url": "https://www.youtube.com/watch?v=lDN1BC_VzsY",
+      "videoId": "lDN1BC_VzsY",
+      "type": "news",
+      "publishedAt": "2026-01-31T02:18:30Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/lDN1BC_VzsY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/lDN1BC_VzsY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/lDN1BC_VzsY/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "SBS 뉴스",
+      "title": "[LIVE] SBS 15시 뉴스 - &#39;2차 관세 협의&#39;도 결론없이 종결..&quot;대화 계속&quot; 外",
+      "url": "https://www.youtube.com/watch?v=DDdE1rAu5y0",
+      "videoId": "DDdE1rAu5y0",
+      "type": "news",
+      "publishedAt": "2026-01-31T04:24:27Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/DDdE1rAu5y0/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/DDdE1rAu5y0/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/DDdE1rAu5y0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1191,100 +1116,50 @@
   ],
   "US": [
     {
-      "channel": "ABC News",
-      "title": "LIVE: ABC News Live - 24/7 news, context and analysis",
-      "url": "https://www.youtube.com/watch?v=iipR5yUp36o",
-      "videoId": "iipR5yUp36o",
-      "type": "news",
-      "publishedAt": "2025-05-01T13:51:58Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/iipR5yUp36o/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
-      "channel": "The Enforcer",
-      "title": "IRAN DECLARES MAJOR LIVE-FIRE EXERCISES, US SPECIAL FORCES MOVE IN! Breaking War News The Enfor",
-      "url": "https://www.youtube.com/watch?v=aOA7Wg4Jcjg",
-      "videoId": "aOA7Wg4Jcjg",
-      "type": "news",
-      "publishedAt": "2026-01-30T03:01:43Z",
-      "thumbnails": {
-        "default": {
-          "url": "https://i.ytimg.com/vi/aOA7Wg4Jcjg/default_live.jpg",
-          "width": 120,
-          "height": 90
-        },
-        "medium": {
-          "url": "https://i.ytimg.com/vi/aOA7Wg4Jcjg/mqdefault_live.jpg",
-          "width": 320,
-          "height": 180
-        },
-        "high": {
-          "url": "https://i.ytimg.com/vi/aOA7Wg4Jcjg/hqdefault_live.jpg",
-          "width": 480,
-          "height": 360
-        }
-      }
-    },
-    {
       "channel": "TV9 Bharatvarsh",
-      "title": "Iran-America War Live: Tehran से खबर-पक्की, US-युद्धपोत की &#39;जलसमाधि&#39;! | Khamenei | Trump | Israel",
-      "url": "https://www.youtube.com/watch?v=jZ3EwAQTCxg",
-      "videoId": "jZ3EwAQTCxg",
+      "title": "Iran-America War Live: सर्जिकल स्ट्राइक या लंबी जंग? ईरान पर ऐलान-ए-ट्रंप -TV9 |Khamenei | Trump |US",
+      "url": "https://www.youtube.com/watch?v=6i5qABW20O4",
+      "videoId": "6i5qABW20O4",
       "type": "news",
-      "publishedAt": "2026-01-29T14:08:37Z",
+      "publishedAt": "2026-01-31T04:30:57Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/jZ3EwAQTCxg/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/6i5qABW20O4/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/jZ3EwAQTCxg/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/6i5qABW20O4/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/jZ3EwAQTCxg/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/6i5qABW20O4/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       }
     },
     {
-      "channel": "V6 News Telugu",
-      "title": "V6 News LIVE  | Telangana Live TV Channel  | V6 News",
-      "url": "https://www.youtube.com/watch?v=U58aDf-zfmY",
-      "videoId": "U58aDf-zfmY",
+      "channel": "Firstpost",
+      "title": "LIVE: World War 3 Soon? Trump Warns of &quot;World War III&quot; as NATO Claims It&#39;s &quot;Russia&#39;s Next Target&quot;",
+      "url": "https://www.youtube.com/watch?v=lUIjUhJqWO0",
+      "videoId": "lUIjUhJqWO0",
       "type": "news",
-      "publishedAt": "2025-12-22T13:05:54Z",
+      "publishedAt": "2025-12-12T17:03:11Z",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/U58aDf-zfmY/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/U58aDf-zfmY/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/U58aDf-zfmY/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/lUIjUhJqWO0/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
@@ -1360,6 +1235,56 @@
         },
         "high": {
           "url": "https://i.ytimg.com/vi/iEpJwprxDdk/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "MediaoneTV Live",
+      "title": "MediaOne TV Live | Malayalam Live News 24x7 | Live Breaking News l Live News Streaming",
+      "url": "https://www.youtube.com/watch?v=-8d8-c0yvyU",
+      "videoId": "-8d8-c0yvyU",
+      "type": "news",
+      "publishedAt": "2024-08-26T05:32:18Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/-8d8-c0yvyU/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      }
+    },
+    {
+      "channel": "NTV Telugu",
+      "title": "NTV Telugu News LIVE | NTV LIVE",
+      "url": "https://www.youtube.com/watch?v=L0RktSIM980",
+      "videoId": "L0RktSIM980",
+      "type": "news",
+      "publishedAt": "2023-04-20T18:36:26Z",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/L0RktSIM980/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
